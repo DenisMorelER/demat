@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2f0596bd-6fa3-f011-bbd2-000d3adccbc3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{99b3de87-3c1e-47b6-bea2-4bd917b821a5}" IsUserDefined="1" labelid="{f39c16e5-7e04-438a-9c07-1c3bdfdc1384}">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="null_section_6" id="630d550b-9331-4615-9666-b37a65df0257" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{39b0b232-e48a-490f-b704-8a1e324d7397}">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{d9661a29-18ac-4cab-a1f8-848be57afe1b}" locklevel="0" colspan="1" rowspan="1" labelid="{2af5a06b-6c35-4f66-9510-24c49238bd26}">
+                        <labels>
+                          <label description="Statut de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_visite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_visite" disabled="false" />
+                      </cell>
+                      <cell id="{a67ca4a1-c0da-40c8-8877-13972bb1f4fa}" locklevel="0" colspan="1" rowspan="1" labelid="{73b23bd0-7e86-41b2-b365-fe8f78c544cb}">
+                        <labels>
+                          <label description="Date de début de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_debut_visite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_debut_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d8bc84c9-ed96-47d4-b247-0ccc278798c5}" locklevel="0" colspan="1" rowspan="1" labelid="{837165e8-5ca1-4ba8-82dd-a3d8c81ed4c5}">
+                        <labels>
+                          <label description="Site" languagecode="1036" />
+                        </labels>
+                        <control id="er_site" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ba473ad9-223d-4487-994e-62be77dd161a}" locklevel="0" colspan="2" rowspan="5" labelid="{c5058ae7-09ca-480b-b0ef-83101ede5808}">
+                        <labels>
+                          <label description="Détails de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_visite" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{c417c00a-6536-416d-adef-3bd2d577ae38}" rowspan="4" colspan="2" auto="false">
+                        <labels>
+                          <label description="Relevé d'index" languagecode="1036" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_releve_index_Visitedureleve_er_visite</RelationshipName>
+                            <TargetEntityType>er_releve_index</TargetEntityType>
+                            <ViewId>{CB0029B8-65A3-F011-BBD2-7CED8D4676DC}</ViewId>
+                            <ViewIds>{7816D680-901C-4893-8AF8-9C8F431D9B3D},{CB0029B8-65A3-F011-BBD2-7CED8D4676DC}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{56f60985-f080-420a-804c-1166a20231b7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d71493e4-ee57-472e-b57c-2c6f1abd08a7}" showlabel="false" labelid="{206d9cc1-9847-4ae0-a221-da54ddd15123}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{cdd9915a-5640-45bf-8401-d2cea176a7da}" showlabel="false" labelid="{4cf8e23f-d5c5-41a6-84d9-48ad679d5a34}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{0df23f54-ece3-46be-a2a9-46922f492d54}" showlabel="false" labelid="{bc0078d0-116c-4c8c-a0e1-a146d4cee4ee}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{27cd1d7a-e82d-4181-babe-978e1d9a2a5b}" locklevel="0" colspan="1" rowspan="1" labelid="{2523171b-8a49-4d54-8d88-d8da5688a1d9}">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{9731cf53-b2c6-43fe-97a0-d44e0d6c456c}" locklevel="0" colspan="1" rowspan="1" labelid="{9f9c0271-154e-4206-9eb9-fd7f126e998e}">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{86474cab-8b9e-4b1b-925b-1482dcbec07a}" locklevel="0" colspan="1" rowspan="1" labelid="{2ba30e6e-1ac9-4677-b547-5d5ab240b4a6}">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{0f6e606a-b842-4eb4-8ea3-ffb1813ce858}" locklevel="0" colspan="1" rowspan="1" labelid="{cb28dbe1-39c1-427a-a3b2-ac529a5f170f}">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{6894fc3a-4f02-49dd-b935-545b020f7af3}" labelid="{74162b7b-05ac-406d-9a55-8f898b04dc08}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{75f62a8a-f4f5-4c8a-9110-5be03423b2fd}" visible="false" labelid="{513a6ad8-133d-4693-a6e9-e14c4b961a61}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{14273fe4-bb3c-408d-8c29-69a55b225e16}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{314f0ad1-1154-47c2-bd16-10112ada4e6c}" showlabel="false" labelid="{0cfa65ed-c95d-4e55-aeeb-08e1541b6b93}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e73c082b-0cfb-4dff-ae52-d7c4602c9e58}" showlabel="false" labelid="{867db4f4-3d64-4224-9d14-dfb043e12578}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f49af704-27df-4b9a-9377-702e7f671d74}" showlabel="false" labelid="{787d92a2-8967-457e-a6d4-728c4dcbb69b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="5" FallbackForm="false">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{58397b64-f95a-49fe-8b6d-b2999f125d23}" />
+      </formLibraries>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Test" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

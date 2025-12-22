@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{249873c8-0658-4795-965b-31352ae30c6b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_annee" select="1" icon="1" preview="1">
+        <row name="result" id="er_seuils_anahid">
+          <cell name="er_annee" width="76" />
+          <cell name="er_anneeseuilanah" width="57" />
+          <cell name="er_date_debut_validite" width="184" />
+          <cell name="er_nbredepersonnes" width="145" />
+          <cell name="er_debut_tres_modeste" width="147" />
+          <cell name="er_debut_modeste" width="117" />
+          <cell name="er_debut_intermediaire" width="149" />
+          <cell name="er_debut_revenus_superieurs" width="216" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_seuils_anah">
+          <attribute name="er_seuils_anahid" />
+          <attribute name="er_annee" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_date_debut_validite" />
+          <attribute name="er_debut_modeste" />
+          <attribute name="er_debut_tres_modeste" />
+          <attribute name="er_debut_intermediaire" />
+          <attribute name="er_debut_revenus_superieurs" />
+          <attribute name="er_anneeseuilanah" />
+          <attribute name="er_nbredepersonnes" />
+          <order attribute="er_anneeseuilanah" descending="true" />
+          <order attribute="er_nbredepersonnes" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Seuils ANAH" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Seuils ANAH actifs" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

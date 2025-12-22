@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{bf9354ab-7f7d-f011-b4cc-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{07a6b26e-69e0-4199-a662-a7ea6483ce67}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{5836cbc9-356d-4283-a954-e43ba1b3d717}">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{9ff334ac-afd2-496c-8c12-5db5950894e3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f9522410-2d74-4ea3-81d1-9b2d80dd7203}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Appels téléphoniques" languagecode="1036" />
+                          <label description="Activities" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_2" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>new_phonecall_Menage_er_menage</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewId>
+                            <ViewIds>{AA799EF1-BD4D-F011-877A-6045BDDE3C36},{F6A2F891-6846-4B21-B922-712695AFD65C},{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{C95F3EEA-5BFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{7e73de4f-6aef-4bb3-a150-fbd820968822}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Emails" languagecode="1036" />
+                          <label description="Activities" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_3" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_Emails</RelationshipName>
+                            <TargetEntityType>email</TargetEntityType>
+                            <ViewId>{6FEF1242-D3E2-4358-912D-27C268ABD323}</ViewId>
+                            <ViewIds>{7AFF64B0-5B8C-4AD7-89F8-976777EEE178},{CC98CB1F-6552-4FD8-9E2F-39A1CAD2F710},{6FEF1242-D3E2-4358-912D-27C268ABD323}</ViewIds>
+                            <VisualizationId>{1EC1872A-23DE-4294-9D7F-1B76272A5FD5}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{e0c9ea41-a237-416e-952b-06b6becd4d33}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Courriers" languagecode="1036" />
+                          <label description="Activities" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_4" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_Letters</RelationshipName>
+                            <TargetEntityType>letter</TargetEntityType>
+                            <ViewId>{BF36046A-D017-4A5F-927D-086522EC08ED}</ViewId>
+                            <ViewIds>{ED36ABD8-7F54-4077-8B46-D6F9BF8E71DF},{BF36046A-D017-4A5F-927D-086522EC08ED}</ViewIds>
+                            <VisualizationId>{82D85B44-0FA5-4009-B840-B409E784673A}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Ménage formulaire d'aperçu - Activités" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

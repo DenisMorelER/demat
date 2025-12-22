@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{86dc84b9-0fef-4462-aca6-9bbf4af86230}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{1f4d1d2b-6bb4-4e31-b2b4-9659b8d89385}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e8555230-6278-4734-b76c-d4de37b33c9d}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{93f610cc-e930-4a9b-84c4-7024361f53ba}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_accompagnement_renforce" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_accompagnement_renforce" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a30b67b-6de7-4ebc-afc0-2f705a74e34d}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e7945731-1b35-4647-b21d-ab70fdf3ea1c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnostic_slime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnostic_slime" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f617e040-5d97-43d4-8aa9-7ef5b4895231}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Type d'Accompagnement Renforcé" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_accompagnement_renforce" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_type_accompagnement_renforce" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{695aba33-a89a-4a80-a84f-e079afa6430b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Sous-type d'accompagnement" languagecode="1036" />
+                        </labels>
+                        <control id="er_sous_type_accompagnement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_sous_type_accompagnement" disabled="false">
+                          <parameters>
+                            <DependentAttributeName>er_accompagnement_renforce.er_type_accompagnement_renforce</DependentAttributeName>
+                            <DependentAttributeType>er_type_accompagnements_renforces</DependentAttributeType>
+                            <FilterRelationshipName>er_type_accompagnement_renforce_sous_types</FilterRelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3393f182-d8ae-412c-be54-ba41c1101d90}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Détails" languagecode="1036" />
+                        </labels>
+                        <control id="er_details" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dac906f6-ccf0-4a47-acb9-f585b75d5ca0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Chargé du soutien renforcé" languagecode="1036" />
+                        </labels>
+                        <control id="er_charge_soutien_renforce" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_charge_soutien_renforce" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a8edf327-f5ae-4867-a192-eb4707ea0680}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Collaborateur en charge" languagecode="1036" />
+                        </labels>
+                        <control id="er_collaborateur_charge_accompagnement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_charge_accompagnement" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4bb30085-622e-4eca-ab0f-90c7f91f753a}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Acteur Relais" languagecode="1036" />
+                        </labels>
+                        <control id="er_acteur_relais" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_acteur_relais" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{4cc996d3-4cb1-44ba-9ef1-c9188187a986}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{62bdf6c2-7acc-40ab-9503-12ce897307f1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b3de834d-dd60-4c9a-affe-5d909b2cfd42}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{148aed72-d5fb-420c-b4bb-b91654f82af4}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{a4a54d37-a6e2-40ce-b679-cd6f3405b22a}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{79e92c17-d800-41bc-b7d6-5dcd142155c9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e8797e1d-55b6-4a94-970b-a0f112d75142}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{ce7d3d01-aabc-420c-aaef-9821deb7af9b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

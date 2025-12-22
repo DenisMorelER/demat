@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{30b36686-13b7-4121-95d0-aad8d44eec96}</savedqueryid>
+    <layoutxml>
+      <grid name="er_alertes" jump="er_id_alerte" select="1" icon="1" preview="1">
+        <row name="er_alerte" id="er_alerteid">
+          <cell name="er_id_alerte" width="101" />
+          <cell name="createdon" width="124" />
+          <cell name="er_siteconcerneparlalerte" width="179" />
+          <cell name="er_contactconcerneparlalerte" width="200" />
+          <cell name="er_contact_entite_donneur_alerte" width="245" />
+          <cell name="a_7b41620aa2a14f2887123f4a667712d1.parentcustomerid" width="343" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_alerte">
+          <attribute name="er_alerteid" />
+          <attribute name="er_id_alerte" />
+          <attribute name="createdon" />
+          <order attribute="er_id_alerte" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_siteconcerneparlalerte" />
+          <attribute name="er_contactconcerneparlalerte" />
+          <attribute name="er_contact_entite_donneur_alerte" />
+          <link-entity alias="a_7b41620aa2a14f2887123f4a667712d1" name="contact" to="er_contact_entite_donneur_alerte" from="contactid" link-type="outer" visible="false">
+            <attribute name="parentcustomerid" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue associée : Alerte" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,28 @@
+<appaction uniquename="er__LefichierDEP!de7bc57c5e1c4777bf1c015a485b1492!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <grouptitle default="Le fichier DEP">
+    <label description="Le fichier DEP" languagecode="1036" />
+  </grouptitle>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>LefichierDEP!de7bc57c5e1c4777bf1c015a485b1492</name>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__Aprslavisite!7bb7f3573c3a43488b4ec09209e0de9d!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>10000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>3</type>
+</appaction>

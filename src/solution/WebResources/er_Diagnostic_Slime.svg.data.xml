@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{2fcd4518-1004-f011-bae3-000d3adcbf81}</WebResourceId>
+  <Name>er_Diagnostic_Slime.svg</Name>
+  <DisplayName>Diagnostic_Slime.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/er_Diagnostic_Slimesvg2FCD4518-1004-F011-BAE3-000D3ADCBF81</FileName>
+</WebResource>

@@ -1,0 +1,784 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedsharepointonline_06f8c"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedexcelonlinebusiness_c12ab"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Site Sharepoint (er_Site_Sharepoint)": {
+          "defaultValue": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_Site_Sharepoint"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "873d4e88-ea03-41ac-b645-0539d2653638"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "triggerAuthenticationType": "Tenant",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "REFDemande": {
+                  "type": "string"
+                },
+                "Utilisateur": {
+                  "type": "string"
+                },
+                "IDEnregistrementConcerne": {
+                  "type": "string"
+                },
+                "x-api-token": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "actions": {
+        "Condition": {
+          "actions": {
+            "GET_-_Obtenir_les_lignes_avec_les_informations": {
+              "actions": {
+                "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": {
+                  "metadata": {
+                    "operationMetadataId": "54ba7514-983b-4f0b-a1d2-c5d530440019"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_diagnostic_slimes",
+                      "recordId": "@triggerBody()?['IDEnregistrementConcerne']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Visite": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF": [
+                      "Succeeded",
+                      "Failed"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "e09cecb7-26db-4e53-a94c-ed17c6ca352f"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_visites",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_visite_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Dossier": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "3651ffbb-7785-4960-b8e0-c0ffabf3aba1"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_dossiers",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_dossierparent_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Ménage": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Dossier": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "e92b3c6c-bfbc-4eef-ad9b-7787369d1d89"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_menages",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_menage_beneficiaire_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Site_Logement": {
+                  "runAfter": {
+                    "Lister_les_lignes_-_Dernier_total_annuel_Avis_Fiscaux": [
+                      "Succeeded",
+                      "Failed"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "e73780e0-05a0-4b7a-9ed5-1474b07ccdce"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_sites",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_site_concerne_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Référent_1": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Ménage": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "7d1eca1f-0aec-408d-a1c7-3bf3993352b7"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "contacts",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Ménage')?['body/_er_personne_referente_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Site_Logement": [
+                      "Succeeded",
+                      "Failed"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "7c90f025-1e65-4b72-aae6-9409d19a1590"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "contacts",
+                      "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/_er_sitetitulaireducontratedf_value']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Lister_les_lignes_-_Dernier_total_annuel_Avis_Fiscaux": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Référent_1": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "83d96f57-741d-4544-b8d9-c762d049e80f"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_bilanannuelavisfiscauxes",
+                      "$filter": "_er_menagedesavisfiscaux_value eq '@{outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_menage_beneficiaire_value']}'",
+                      "$orderby": "_er_anneedesai_value desc",
+                      "$top": 1
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "ListRecords",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Message_-_Infos_du_dernier_total_annuel_Avis_Fiscaux": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Visite": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "a67fdaf2-53b8-48ec-a7ad-b5ad3d98da9c"
+                  },
+                  "type": "Compose",
+                  "inputs": "@first(outputs('Lister_les_lignes_-_Dernier_total_annuel_Avis_Fiscaux')?['body']?['value'])"
+                },
+                "Réponse_-_Visite_manquante": {
+                  "runAfter": {
+                    "Obtenir_une_ligne_par_ID_-_Visite": [
+                      "Failed",
+                      "TimedOut",
+                      "Skipped"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "0c4ece4b-506b-47df-80c2-1d51da0fb3e1"
+                  },
+                  "type": "Response",
+                  "kind": "Http",
+                  "inputs": {
+                    "statusCode": 500,
+                    "body": {
+                      "Statut": "Erreur",
+                      "REFDemande": "@triggerBody()?['REFDemande']",
+                      "Utilisateur": "@triggerBody()?['Utilisateur']",
+                      "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+                      "Message": "Visite manquante: Veuillez planifier une visite avant la génération du fichier DEP."
+                    }
+                  }
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "f18422e3-6a50-46b8-a474-541d78ca14bf"
+              },
+              "type": "Scope"
+            },
+            "Portée_-_Vérification_de_la_présence_d'un_fichier_existant_-_DEP": {
+              "actions": {
+                "Obtenir_les_fichiers_(propriétés_uniquement)_-_Fichier_avec_le_même_nom": {
+                  "metadata": {
+                    "operationMetadataId": "e46ce28a-eabd-4989-baa9-fb762734936c"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                      "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+                      "$filter": "FileLeafRef eq '@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Fichier DEP - @{outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.xlsm'",
+                      "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "GetFileItems",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  }
+                },
+                "Obtenir_les_propriétés_du_fichier_-_Fichier_avec_l'ID_SharePoint_enregistré": {
+                  "metadata": {
+                    "operationMetadataId": "8bdd7a0b-b17f-4b55-9e0b-3ad99ed627d9"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                      "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+                      "id": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_sharepointiddufichierdep']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "operationId": "GetFileItem",
+                      "connectionName": "shared_sharepointonline"
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "GET_-_Obtenir_les_lignes_avec_les_informations": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "035bbcfd-2aeb-4add-ba50-38b1a9526053"
+              },
+              "type": "Scope"
+            },
+            "Condition_-_Si_pas_de_fichier_avec_le_nom_dans_le_dossier": {
+              "actions": {
+                "Condition_-_Si_pas_de_fichier_avec_l'ID_SharePoint_spécifié": {
+                  "actions": {
+                    "Obtenir_le_contenu_du_fichier_-_Modèle_DEP": {
+                      "metadata": {
+                        "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsx": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsx",
+                        "operationMetadataId": "910ee7f5-2b37-4820-8559-8cf52cc477ee",
+                        "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsm"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                          "id": "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm",
+                          "inferContentType": true
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                          "operationId": "GetFileContent",
+                          "connectionName": "shared_sharepointonline"
+                        }
+                      }
+                    },
+                    "Créer_un_fichier_-_DEP_pour_le_diagnostic_cible": {
+                      "runAfter": {
+                        "Obtenir_le_contenu_du_fichier_-_Modèle_DEP": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "f053a9d1-6641-4861-9ac8-d736bb18df3a"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                          "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}",
+                          "name": "@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Fichier DEP - @{outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.xlsm",
+                          "body": "@body('Obtenir_le_contenu_du_fichier_-_Modèle_DEP')"
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                          "operationId": "CreateFile",
+                          "connectionName": "shared_sharepointonline"
+                        }
+                      },
+                      "runtimeConfiguration": {
+                        "contentTransfer": {
+                          "transferMode": "Chunked"
+                        }
+                      }
+                    },
+                    "Exécuter_le_script_-_Importer_les_informations_du_Dataverse": {
+                      "runAfter": {
+                        "Message_-_Informations_à_passer_au_script_Excel": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "38360315-fd9d-4808-8c05-721e0ecf9a41",
+                        "tableId": null
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                          "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBRK31tYUTnZQ5aNsEHqGfJe",
+                          "file": "@outputs('Créer_un_fichier_-_DEP_pour_le_diagnostic_cible')?['body/Path']",
+                          "scriptId": "ms-officescript%3A%2F%2Fonedrive_business_itemlink%2F01IW7G4GVMWEAO5X7YMBE3GD25NPQX4A7K",
+                          "ScriptParameters/newData": "@outputs('Message_-_Informations_à_passer_au_script_Excel')"
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                          "operationId": "RunScriptProd",
+                          "connectionName": "shared_excelonlinebusiness"
+                        }
+                      }
+                    },
+                    "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": {
+                      "runAfter": {
+                        "Exécuter_le_script_-_Importer_les_informations_du_Dataverse": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "e1dfedae-4fec-4e4a-8140-402d2241db80"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "entityName": "er_diagnostic_slimes",
+                          "recordId": "@triggerBody()?['IDEnregistrementConcerne']",
+                          "item/er_sharepointiddufichierdep": "@outputs('Créer_un_fichier_-_DEP_pour_le_diagnostic_cible')?['body/ItemId']",
+                          "item/er_statutdudep": 122210000,
+                          "item/er_statutduformulaireslime": 122210000
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                          "operationId": "UpdateOnlyRecord",
+                          "connectionName": "shared_commondataserviceforapps"
+                        }
+                      }
+                    },
+                    "Réponse_-_Fichier_créé_avec_succès": {
+                      "runAfter": {
+                        "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "c5e638ba-97a9-440a-8690-1a0ad66b45f2"
+                      },
+                      "type": "Response",
+                      "kind": "Http",
+                      "inputs": {
+                        "statusCode": 200,
+                        "body": {
+                          "Statut": "Succès",
+                          "REFDemande": "@triggerBody()?['REFDemande']",
+                          "Utilisateur": "@triggerBody()?['Utilisateur']",
+                          "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+                          "Message": "Fichier DEP créé avec succès"
+                        }
+                      }
+                    },
+                    "Réponse_-_Erreur_lors_de_la_création_du_fichier": {
+                      "runAfter": {
+                        "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": [
+                          "Failed"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "80454f6f-5e0c-4683-8146-b296137d777f"
+                      },
+                      "type": "Response",
+                      "kind": "Http",
+                      "inputs": {
+                        "statusCode": 500,
+                        "body": {
+                          "Statut": "Erreur",
+                          "REFDemande": "@triggerBody()?['REFDemande']",
+                          "Utilisateur": "@triggerBody()?['Utilisateur']",
+                          "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+                          "Message": "Une erreur est survenue lors de la création du fichier DEP."
+                        }
+                      }
+                    },
+                    "Message_-_Informations_à_passer_au_script_Excel": {
+                      "runAfter": {
+                        "Mettre_à_jour_les_propriétés_du_fichier_-_Type_et_lien_Dataverse": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "872ea5e4-ae50-4a67-a8e3-ae03c3cbd76f"
+                      },
+                      "type": "Compose",
+                      "inputs": [
+                        "@formatDateTime(convertFromUtc(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_previsionnelle'],'Mauritius Standard Time'),'dd/MM/yyyy')",
+                        "@formatDateTime(convertFromUtc(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_previsionnelle'],'Mauritius Standard Time'),'HH:mm')",
+                        "@null",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/_er_collaborateur_spler_value@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_solidiagmotifdelalerte@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_solidiagmethodedereperage@OData.Community.Display.V1.FormattedValue']",
+                        "Le ménage lui-même",
+                        "Actions de repérage",
+                        "Donneur d'alerte",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/er_civilite@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/lastname']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/firstname']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/birthdate']",
+                        "@string(outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/mobilephone'])",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/telephone2']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/emailaddress1']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_numero']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_indice_repetition@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_nom_voie']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_complementdadresse']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_codepostal@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_libelleacheminement@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_commune@OData.Community.Display.V1.FormattedValue']",
+                        "Lieu dit",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_remarques']",
+                        "Orientation 1",
+                        "Acteur relais 1",
+                        "Orientation 2",
+                        "Acteur relais 2",
+                        "Orientation 3",
+                        "Acteur relais 3",
+                        "Orientation 4",
+                        "Acteur relais 4",
+                        "Orientation 5",
+                        "Acteur relais 5",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremisledavis']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremisledabaionnette']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremismousseurseconomes']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremisdouchetteeconome']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremisprogrammateur']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_nbredequipementsremisthermometrefrigo']",
+                        "installé LED à vis",
+                        "installé LED à baïonnette",
+                        "installé Mousseurs économes",
+                        "installé Douchette économe",
+                        "installé Programmateur",
+                        "installé Thermomètre de réfrigérateur",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_solidiagcompositiondumenage']",
+                        "@outputs('Message_-_Infos_du_dernier_total_annuel_Avis_Fiscaux')?['er_totalnombredepersonnes']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Référent_1')?['body/er_typedactivite@OData.Community.Display.V1.FormattedValue']",
+                        "@outputs('Message_-_Infos_du_dernier_total_annuel_Avis_Fiscaux')?['er_totalrevenufiscaldereference']",
+                        "@outputs('Message_-_Infos_du_dernier_total_annuel_Avis_Fiscaux')?['er_totalnombredepartsdec']",
+                        "Bénéficiez-vous de la CSS ?",
+                        "Allocataire CAF?",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Ménage')?['body/er_eligibiliteauchequeenergie']",
+                        "Des situation d'impayé",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_age_maison']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_surfacehabitable']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_typologiedelogement']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_altitudedusite']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_type_logement@OData.Community.Display.V1.FormattedValue']",
+                        "Type de logement",
+                        "Type d'habitation",
+                        "Situation foncière",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_bailleursocial']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_groupedhabitation']",
+                        "Pb de chaleur ?",
+                        "Pb de froid?",
+                        "Relevé d’index",
+                        "Date",
+                        "Si relevé impossible",
+                        "Type de chauffe eau",
+                        "Volume du ballon",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/er_reference_edf']",
+                        "@null",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF')?['body/er_civilite']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF')?['body/lastname']",
+                        "@outputs('Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF')?['body/firstname']",
+                        "Service",
+                        "Puissance souscrite",
+                        "Facture 1 - Mois 1",
+                        "Facture 1 - Mois 2",
+                        "Facture 1 - Mois 3",
+                        "Facture 1 - Mois 4",
+                        "Facture 1 - Mois 5",
+                        "Facture 1 - Mois 6",
+                        "Facture 1 - Base/ HP 1",
+                        "Facture 1 - Base/ HP 2",
+                        "Facture 1 - Base/ HP 3",
+                        "Facture 1 - Base/ HP 4",
+                        "Facture 1 - Base/ HP 5",
+                        "Facture 1 - Base/ HP 6",
+                        "Facture 1 - TNP/ HC 1",
+                        "Facture 1 - TNP/ HC 2",
+                        "Facture 1 - TNP/ HC 3",
+                        "Facture 1 - TNP/ HC 4",
+                        "Facture 1 - TNP/ HC 5",
+                        "Facture 1 - TNP/ HC 6",
+                        "Facture 2 - Mois 1",
+                        "Facture 2 - Mois 2",
+                        "Facture 2 - Mois 3",
+                        "Facture 2 - Mois 4",
+                        "Facture 2 - Mois 5",
+                        "Facture 2 - Mois 6",
+                        "Facture 2 - Base/ HP 1",
+                        "Facture 2 - Base/ HP 2",
+                        "Facture 2 - Base/ HP 3",
+                        "Facture 2 - Base/ HP 4",
+                        "Facture 2 - Base/ HP 5",
+                        "Facture 2 - Base/ HP 6",
+                        "Facture 2 - TNP/ HC 1",
+                        "Facture 2 - TNP/ HC 2",
+                        "Facture 2 - TNP/ HC 3",
+                        "Facture 2 - TNP/ HC 4",
+                        "Facture 2 - TNP/ HC 5",
+                        "Facture 2 - TNP/ HC 6",
+                        "Conso estimée du logement",
+                        "Puissance totale installée",
+                        "Conso estimée - Poste Eau chaude sanitaire",
+                        "Conso estimée - Poste Froid alimentaire",
+                        "Conso estimée - Poste Electroménager",
+                        "Conso estimée - Poste Cuisson",
+                        "Conso estimée - Poste Confort thermique",
+                        "Conso estimée - Poste Matériel médical",
+                        "Conso estimée - Poste Elcairage",
+                        "Conso estimée - Poste Multimédia",
+                        "Conso estimée - Poste Autres"
+                      ]
+                    },
+                    "Mettre_à_jour_les_propriétés_du_fichier_-_Type_et_lien_Dataverse": {
+                      "runAfter": {
+                        "Créer_un_fichier_-_DEP_pour_le_diagnostic_cible": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "c2e89e02-b1a5-48ee-9461-013d6ad077c9"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                          "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+                          "id": "@outputs('Créer_un_fichier_-_DEP_pour_le_diagnostic_cible')?['body/ItemId']",
+                          "item/TypededocumentSLIME/Value": "Fichier DEP (Excel)",
+                          "item/LiaisonavecDataVerse/Value": "Lié à Dataverse"
+                        },
+                        "host": {
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                          "operationId": "PatchFileItem",
+                          "connectionName": "shared_sharepointonline"
+                        }
+                      }
+                    }
+                  },
+                  "else": {
+                    "actions": {
+                      "Réponse_-_Un_fichier_existe_déjà_avec_l'ID_SharePoint": {
+                        "metadata": {
+                          "operationMetadataId": "d9fefa62-2a32-4609-859d-4f7d13f6db12"
+                        },
+                        "type": "Response",
+                        "kind": "Http",
+                        "inputs": {
+                          "statusCode": 500,
+                          "body": {
+                            "Statut": "Erreur",
+                            "REFDemande": "@triggerBody()?['REFDemande']",
+                            "Utilisateur": "@triggerBody()?['Utilisateur']",
+                            "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+                            "Message": "Un fichier avec l'ID SharePoint @{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_sharepointiddufichierdep']} existe déjà. Veuillez le supprimer avant de générer un nouveau fichier."
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "expression": {
+                    "or": [
+                      {
+                        "equals": [
+                          "@outputs('Obtenir_les_propriétés_du_fichier_-_Fichier_avec_l''ID_SharePoint_enregistré')?['body/status']",
+                          404
+                        ]
+                      },
+                      {
+                        "equals": [
+                          "@empty(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_sharepointiddufichierdep'])",
+                          "@true"
+                        ]
+                      }
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "f179902c-f696-4198-816d-6d81549076c4"
+                  },
+                  "type": "If"
+                }
+              },
+              "runAfter": {
+                "Portée_-_Vérification_de_la_présence_d'un_fichier_existant_-_DEP": [
+                  "Succeeded",
+                  "Failed"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Réponse_-_Un_fichier_existe_déjà_avec_ce_nom": {
+                    "metadata": {
+                      "operationMetadataId": "2277e05a-b201-418f-af29-4dd4390e0f1c"
+                    },
+                    "type": "Response",
+                    "kind": "Http",
+                    "inputs": {
+                      "statusCode": 500,
+                      "body": {
+                        "Statut": "Erreur",
+                        "REFDemande": "@triggerBody()?['REFDemande']",
+                        "Utilisateur": "@triggerBody()?['Utilisateur']",
+                        "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+                        "Message": "Un fichier nommé '@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Fichier DEP - @{outputs('Obtenir_une_ligne_par_ID_-_Dossier')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.xlsm' existe déjà à l'emplacement: /er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}. Veuillez le supprimer avant de générer un nouveau fichier."
+                      }
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "or": [
+                  {
+                    "equals": [
+                      "@empty(outputs('Obtenir_les_fichiers_(propriétés_uniquement)_-_Fichier_avec_le_même_nom')?['body/value'])",
+                      "@true"
+                    ]
+                  }
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1fdcab51-baea-4336-a9ed-4d18f542bde8"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {},
+          "else": {
+            "actions": {
+              "Réponse": {
+                "type": "Response",
+                "kind": "Http",
+                "inputs": {
+                  "statusCode": 400,
+                  "body": "@concat('Invalid','Request')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "or": [
+              {
+                "equals": [
+                  "@triggerBody()?['x-api-token']",
+                  "@base64(concat(\r\n  substring(formatDateTime(utcNow(), 'dddd'), 0, 2),\r\n  substring(formatDateTime(utcNow(), 'MMMM'), 0, 3),\r\n  'ER',\r\n  formatDateTime(utcNow(), 'dd/MM/yyyy')\r\n  )\r\n  )"
+                ]
+              }
+            ]
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

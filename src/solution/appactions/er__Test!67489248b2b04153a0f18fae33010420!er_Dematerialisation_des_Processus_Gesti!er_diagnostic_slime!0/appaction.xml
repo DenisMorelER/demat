@@ -1,0 +1,35 @@
+<appaction uniquename="er__Test!67489248b2b04153a0f18fae33010420!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Générer le formulaire SLIME">
+    <label description="Générer le formulaire SLIME" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>CreateOrder</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Test!67489248b2b04153a0f18fae33010420</name>
+  <onclickeventformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusgestidefaultcommandlibrary_e7ef3</name>
+  </onclickeventformulacomponentlibraryid>
+  <onclickeventformulacomponentname>92367ffa5994469dab969fa75b9a23a9</onclickeventformulacomponentname>
+  <onclickeventformulafunctionname>OnSelect</onclickeventformulafunctionname>
+  <onclickeventtype>1</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__LefichierDEP!aaeabc9c14e6473982deeed4b376d562!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>5000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

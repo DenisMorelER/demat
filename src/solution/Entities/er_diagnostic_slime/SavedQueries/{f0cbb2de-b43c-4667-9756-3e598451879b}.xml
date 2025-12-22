@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{f0cbb2de-b43c-4667-9756-3e598451879b}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_slime" select="1" icon="1" preview="1">
+        <row name="result" id="er_diagnostic_slimeid">
+          <cell name="er_id_slime" width="300" />
+          <cell name="er_collab_charge_visite" width="131" />
+          <cell name="er_doc_formulaire_slime" width="165" />
+          <cell name="er_visite" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_diagnostic_slime">
+          <attribute name="er_diagnostic_slimeid" />
+          <attribute name="er_id_slime" />
+          <order attribute="er_id_slime" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_collab_charge_visite" />
+          <attribute name="er_doc_formulaire_slime" />
+          <attribute name="er_visite" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Diagnostics SLIME actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

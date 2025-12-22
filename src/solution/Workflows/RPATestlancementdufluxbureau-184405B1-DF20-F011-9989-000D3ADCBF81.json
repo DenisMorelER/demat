@@ -1,0 +1,772 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_uiflow_1": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "er_shareduiflow_570c8"
+        },
+        "api": {
+          "name": "shared_uiflow"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedsharepointonline_06f8c"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_uiflow_3": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "er_shareduiflow_3e2b1"
+        },
+        "api": {
+          "name": "shared_uiflow"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "9370373b-0ff1-445e-bcb1-5f20fc6b6bb5"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "IDDiagSLIME",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "ID du diagnostic SLIME (er_id_slime)",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Initialiser_la_variable_-_Label_SOLIDIAG_Motif_de_l'alerte": {
+          "runAfter": {
+            "Étendue_-_Obtenir_les_lignes_dans_les_tables_Dataverse": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "9f2ca3de-eb57-4f2a-85db-bbd6117433c5"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Label SOLIDIAG Motif de l'alerte",
+                "type": "string",
+                "value": "@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagmotifdelalerte@OData.Community.Display.V1.FormattedValue']}"
+              }
+            ]
+          }
+        },
+        "Étendue_-_Obtenir_les_lignes_dans_les_tables_Dataverse": {
+          "actions": {
+            "Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c1a426b3-89e5-4925-9d32-acfb41fa7b29"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "recordId": "@triggerBody()['text']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Chargé_de_visite": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e4f342fd-1037-4be6-b584-d85c5f8cdd4b"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_titulaire_contrat_edf_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Infos_du_site": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c0bb40a3-b712-4be6-956f-ddda14aea55d"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_sites",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_site_concerne_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Liste_des_donneurs_d'alertes": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Infos_du_site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "8ae68408-e72b-471b-9cb6-060fdc97e9cb"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_solidiagdonneurdalertes",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_solidiagdonneurdalerte_value']",
+                  "$select": "er_primidsolidiag"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Chargé_de_visite": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "62d556ac-3968-4e6b-b285-4f1e67f1701a"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_collaborateur_splers",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_collab_charge_visite_value']",
+                  "$select": "er_nom_complet"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Visite": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Liste_des_donneurs_d'alertes": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b1c6ebb5-f90e-4170-a72c-a912bf74eccf"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_visites",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_visite_value']",
+                  "$select": "er_date_fin_visite"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Visite": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "bf0732d1-8ff8-4ee6-8632-607a0d7cdbd7"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_menage_concerne_value']"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "3bb1c48c-c739-43c5-b9c0-bdf0df0be524"
+          },
+          "type": "Scope"
+        },
+        "Initialiser_la_variable_Label_-_SOLIDIAG_Méthode_de_repérage": {
+          "runAfter": {
+            "Initialiser_la_variable_-_Label_SOLIDIAG_Motif_de_l'alerte": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "49f49f6e-b3be-4ced-b6f4-d9df1c355990"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Label - SOLIDIAG Méthode de repérage",
+                "type": "string",
+                "value": "@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagmethodedereperage@OData.Community.Display.V1.FormattedValue']}"
+              }
+            ]
+          }
+        },
+        "Initialiser_la_variable_Label_-_SOLIDIAG_Le_ménage_lui-même": {
+          "runAfter": {
+            "Initialiser_la_variable_Label_-_SOLIDIAG_Méthode_de_repérage": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "df5e75e5-b830-4488-b6bc-08f8a48e0745"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Label - SOLIDIAG Le ménage lui-même",
+                "type": "string",
+                "value": "@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiaglemenageluimeme@OData.Community.Display.V1.FormattedValue']}"
+              }
+            ]
+          }
+        },
+        "Initialiser_la_variable_Label_-_SOLIDIAG_Actions_de_repérage": {
+          "runAfter": {
+            "Initialiser_la_variable_Label_-_SOLIDIAG_Le_ménage_lui-même": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "491c9b43-0720-468b-9f50-5860ae18f342"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Label - SOLIDIAG Actions de repérage",
+                "type": "string",
+                "value": "@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagactionsdereperage@OData.Community.Display.V1.FormattedValue']}"
+              }
+            ]
+          }
+        },
+        "Message": {
+          "runAfter": {
+            "Condition": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "698925c9-bb08-4091-b359-46d93c8f6553"
+          },
+          "type": "Compose",
+          "inputs": "@outputs('Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau')?['body/varSortie_IDMenage']"
+        },
+        "Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau": {
+          "runAfter": {
+            "Terminer_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4b0db9ed-e264-4d35-8533-7d80df7f93b4"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_uiflow_1",
+              "operationId": "RunUIFlow_V2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_uiflow"
+            },
+            "parameters": {
+              "uiFlowId": "7b0f0046-da20-f011-998a-6045bdde3c36",
+              "runMode": "attended",
+              "runSession": "desktop",
+              "runPriority": "normal",
+              "item/varEntree_ChargéVisite": "@outputs('Obtenir_une_ligne_par_ID_-_Chargé_de_visite')?['body/er_nom_complet']",
+              "item/varEntree_Nom": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/lastname']",
+              "item/varEntree_Prénom": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/firstname']",
+              "item/varEntree_Adresse": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_adresse']",
+              "item/varEntree_CodePostal": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_code_postal']",
+              "item/varEntree_Ville": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_ville']",
+              "item/varEntree_Téléphone": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/mobilephone']",
+              "item/varEntree_Telephone2": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/telephone2']",
+              "item/varEntree_Email": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/emailaddress1']",
+              "item/varEntree_MotifAlerte": "@variables('Label SOLIDIAG Motif de l''alerte')",
+              "item/varEntree_MethodeReperage": "@variables('Label - SOLIDIAG Méthode de repérage')",
+              "item/varEntree_Batiment": "",
+              "item/varEntree_ComplementAdresse": "",
+              "item/varEntree_DonneurAlerteDetail": "@outputs('Obtenir_une_ligne_par_ID_-_Liste_des_donneurs_d''alertes')?['body/er_primidsolidiag']",
+              "item/varEntree_ReperageMenageDetails": "@variables('Label - SOLIDIAG Le ménage lui-même')",
+              "item/varEntree_ReperageActionsDetails": "@variables('Label - SOLIDIAG Actions de repérage')",
+              "item/varEntree_VisiteRealiseeDistance": "Non",
+              "item/varEntree_DiagnosticEffectue": "Oui",
+              "item/varEntree_CompositionMenage": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagcompositiondumenage@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_NombreOccupants": "@outputs('Obtenir_une_ligne_par_ID')?['body/er_total_nombre_personnes']",
+              "item/varEntree_StatutOccupation": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagstatutdoccupation@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_EligibleChequeEnergie": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiageligibleauchequeenergie']",
+              "item/varEntree_UtiliseChequeEnergie": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagautiliselechequeenergie']",
+              "item/varEntree_RevenuFiscalReference": "@outputs('Obtenir_une_ligne_par_ID')?['body/er_total_revenu_fiscal']",
+              "item/varEntree_MenageEuFroid": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiaglemenageaeufroidlhiverdernier']",
+              "item/varEntree_SituationRestrictionMenage": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagsituationderestrictionouprivationnrj']",
+              "item/varEntree_TypeChauffage": "",
+              "item/varEntree_TypeChauffagePrincipale": "",
+              "item/varEntree_PresenceChauffageAppointMobile": "",
+              "item/varEntree_TypeProductionEauChaude": "",
+              "item/varEntree_EnergieChauffagePrincipale": "",
+              "item/varEntree_AmpouleEconome": 0,
+              "item/varEntree_AmpouleLED": 1,
+              "item/varEntree_JointIsolant": 0,
+              "item/varEntree_Manchons": 0,
+              "item/varEntree_Thermometre": 0,
+              "item/varEntree_ReducteurDebit": 0,
+              "item/varEntree_StopDouche": 0,
+              "item/varEntree_Autre": 0,
+              "item/varEntree_AdaptateurCulot": 0,
+              "item/varEntree_AmpouleLedacVis": 0,
+              "item/varEntree_BasdePorte": 0,
+              "item/varEntree_DoubleRideau": 0,
+              "item/varEntree_ThermomètreRefrigerateur": 0,
+              "item/varEntree_MultipriseInterrupteur": 0,
+              "item/varEntree_Douchette": 0,
+              "item/varEntree_EquipementChasseEau": 0,
+              "item/varEntree_SablierDouche": 0,
+              "item/varEntree_SoutienRenforceMenage": "",
+              "item/varEntree_SuiviN1": "",
+              "item/varEntree_RestitutionEffectue": "",
+              "item/varEntree_NombreOrientations": 1,
+              "item/varEntree_IDChampsOrientations": 1,
+              "item/varEntree_MenageOrientable": "",
+              "item/varEntree_MenageNonOrientablePrecisions": "",
+              "item/varEntree_MotifOrientation1": "",
+              "item/varEntrée_MotifOrientation2": "",
+              "item/varEntree_MotifOrientation3": "",
+              "item/varEntree_MotifOrientation4": "",
+              "item/varEntree_MotifOrientation5": "",
+              "item/varEntree_MotifOrientation6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_5": "",
+              "item/varEntree_PrecisionsDispositifOrientation1": "",
+              "item/varEntree_PrecisionsDispositifOrientation2": "",
+              "item/varEntree_PrecisionsDispositifOrientation3": "",
+              "item/varEntree_PrecisionsDispositifOrientation4": "",
+              "item/varEntree_PrecisionsDispositifOrientation5": "",
+              "item/varEntree_PrecisionsDispositifOrientation6": "",
+              "item/varEntree_ActeurRelais1": "",
+              "item/varEntree_ActeurRelais2": "",
+              "item/varEntree_ActeurRelais3": "",
+              "item/varEntree_ActeurRelais4": "",
+              "item/varEntree_ActeurRelais5": "",
+              "item/varEntree_ActeurRelais6": "",
+              "item/varEntree_JourVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'dd')",
+              "item/varEntree_MoisVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'MM')",
+              "item/varEntree_AnneeVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'yyyy')",
+              "item/varEntree_HeureVisite": "",
+              "item/varEntree_MinuteVisite": "",
+              "item/varEntree_AnneeConstruction": "",
+              "item/varEntree_TypeAppoint": "",
+              "item/varEntree_URLSolidiag": "https://v2.solidiag.fr",
+              "item/varEntree_UtilisateurReaffectation": "",
+              "item/varEntree_LinkMenage": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_5": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_5": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_6": "",
+              "item/varEntree_ActeurRelaisDetails1": "",
+              "item/varEntree_ActeurRelaisDetails2": "",
+              "item/varEntree_ActeurRelaisDetails3": "",
+              "item/varEntree_ActeurRelaisDetails4": "",
+              "item/varEntree_ActeurRelaisDetails5": "",
+              "item/varEntree_ActeurRelaisDetails6": "",
+              "item/varEntree_StatutOrientation1": "",
+              "item/varEntree_StatutOrientation2": "",
+              "item/varEntree_StatutOrientation3": "",
+              "item/varEntree_StatutOrientation4": "",
+              "item/varEntree_StatutOrientation5": "",
+              "item/varEntree_StatutOrientation6": "",
+              "item/varEntree_IDDataverse": "",
+              "item/varEntree_EtapeOuvertureNav": true,
+              "item/varEntree_EtapeConnexionCompte": true,
+              "item/varEntree_EtapeInfosVisite": true,
+              "item/varEntree_EtapeTelRapportVisite": false,
+              "item/varEntree_EtapeReaffectation": false,
+              "item/varEntree_EtapeNouveauMenage": true,
+              "item/varEntree_BeneficiaireRSA": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagbeneficiairedursa@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_EligibleCMUouACS": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiageligiblecmuacs@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_PrimodeclarantDivorceRuptureDePACS": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagprimodeclarantoudivorcerupturedepacs']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Faire_un_upsert_avec_une_ligne_-_Créer_ou_MAJ_la_table_Doc_SPLER": {
+          "runAfter": {
+            "Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a99fedbc-7cda-4791-b8fa-0a9c4fd55adf"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_document_splers",
+              "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_doc_rapport_menage_solidiag_value']",
+              "item/er_menage_concerne@odata.bind": "/er_menages(@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_menage_concerne_value']})",
+              "item/er_nom_document": "RapportMenageSolidiag_@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/lastname']}_@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/firstname']}_@{formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'], 'ddMMyyyy')}",
+              "item/er_nomdufichierstockedanssharepoint": "RapportMenageSolidiag_@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_diagnostic_slimeid']}.pdf "
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Faire_un_upsert_avec_une_ligne_-_Créer_ou_MAJ_la_table_Diagnostics_SLIME": {
+          "runAfter": {
+            "Faire_un_upsert_avec_une_ligne_-_Créer_ou_MAJ_la_table_Doc_SPLER": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "daed3953-a8b9-4411-8539-73f3d9ec268f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "recordId": "@triggerBody()['text']",
+              "item/er_doc_rapport_menage_solidiag@odata.bind": "/er_document_splers(@{outputs('Faire_un_upsert_avec_une_ligne_-_Créer_ou_MAJ_la_table_Doc_SPLER')?['body/er_document_splerid']})"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Créer_un_fichier": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "393a53a7-b068-483a-9866-43503339440f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                },
+                "parameters": {
+                  "dataset": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+                  "folderPath": "@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_diagnostic_slimeid']}/@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/_er_menage_concerne_value']}",
+                  "name": "RapportMenageSolidiag_@{outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_diagnostic_slimeid']}.pdf ",
+                  "body": "@outputs('Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau')?['body/RapportMénageTéléchargé']"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Faire_un_upsert_avec_une_ligne_-_Créer_ou_MAJ_la_table_Diagnostics_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "not": {
+              "endsWith": [
+                "@outputs('Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau')?['body/RapportMénageTéléchargé']",
+                ".pdf"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "250da62f-7443-4cd2-9230-8c75e50c2ca1"
+          },
+          "type": "If"
+        },
+        "Terminer_2": {
+          "runAfter": {
+            "Message_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "55896c8d-2248-47c7-ab70-d4eae4f714d2"
+          },
+          "type": "Terminate",
+          "inputs": {
+            "runStatus": "Succeeded"
+          }
+        },
+        "Run_a_flow_built_with_Power_Automate_for_desktop": {
+          "runAfter": {
+            "Initialiser_la_variable_Label_-_SOLIDIAG_Actions_de_repérage": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "9a2a72bf-7d9a-432d-818e-41855b01d706"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_uiflow_3",
+              "operationId": "RunUIFlow_V2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_uiflow"
+            },
+            "parameters": {
+              "uiFlowId": "7b0f0046-da20-f011-998a-6045bdde3c36",
+              "runMode": "attended",
+              "item/varEntree_ChargéVisite": "@outputs('Obtenir_une_ligne_par_ID_-_Chargé_de_visite')?['body/er_nom_complet']",
+              "item/varEntree_Nom": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/lastname']",
+              "item/varEntree_Prénom": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/firstname']",
+              "item/varEntree_Adresse": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_adresse']",
+              "item/varEntree_CodePostal": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_code_postal']",
+              "item/varEntree_Ville": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_site')?['body/er_ville']",
+              "item/varEntree_Téléphone": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/mobilephone']",
+              "item/varEntree_Telephone2": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/telephone2']",
+              "item/varEntree_Email": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_titulaire_du_contrat_EDF')?['body/emailaddress1']",
+              "item/varEntree_MotifAlerte": "@variables('Label SOLIDIAG Motif de l''alerte')",
+              "item/varEntree_MotifPrecisions": "",
+              "item/varEntree_MethodeReperage": "@variables('Label - SOLIDIAG Méthode de repérage')",
+              "item/varEntree_Batiment": "",
+              "item/varEntree_ComplementAdresse": "",
+              "item/varEntree_DonneurAlerteDetail": "@outputs('Obtenir_une_ligne_par_ID_-_Liste_des_donneurs_d''alertes')?['body/er_primidsolidiag']",
+              "item/varEntree_ReperageMenageDetails": "@variables('Label - SOLIDIAG Le ménage lui-même')",
+              "item/varEntree_ReperageActionsDetails": "@variables('Label - SOLIDIAG Actions de repérage')",
+              "item/varEntree_VisiteRealiseeDistance": "",
+              "item/varEntree_DiagnosticEffectue": "",
+              "item/varEntree_CompositionMenage": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagcompositiondumenage@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_NombreOccupants": "@outputs('Obtenir_une_ligne_par_ID')?['body/er_total_nombre_personnes']",
+              "item/varEntree_StatutOccupation": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagstatutdoccupation@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_EligibleChequeEnergie": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiageligibleauchequeenergie']",
+              "item/varEntree_UtiliseChequeEnergie": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagautiliselechequeenergie']",
+              "item/varEntree_RevenuFiscalReference": "@outputs('Obtenir_une_ligne_par_ID')?['body/er_total_revenu_fiscal']",
+              "item/varEntree_MenageEuFroid": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiaglemenageaeufroidlhiverdernier']",
+              "item/varEntree_SituationRestrictionMenage": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagsituationderestrictionouprivationnrj']",
+              "item/varEntree_TypeHabitat": "",
+              "item/varEntree_SituationImpayee": "",
+              "item/varEntree_TypeChauffage": "",
+              "item/varEntree_TypeChauffagePrincipale": "",
+              "item/varEntree_PresenceChauffageAppointMobile": "",
+              "item/varEntree_TypeProductionEauChaude": "",
+              "item/varEntree_EnergieChauffagePrincipale": "",
+              "item/varEntree_AmpouleEconome": 0,
+              "item/varEntree_AmpouleLED": 1,
+              "item/varEntree_JointIsolant": 0,
+              "item/varEntree_Manchons": 0,
+              "item/varEntree_Thermometre": 0,
+              "item/varEntree_ReducteurDebit": 0,
+              "item/varEntree_StopDouche": 0,
+              "item/varEntree_Autre": 1,
+              "item/varEntree_AdaptateurCulot": 0,
+              "item/varEntree_AmpouleLedacVis": 3,
+              "item/varEntree_BasdePorte": 0,
+              "item/varEntree_DoubleRideau": 0,
+              "item/varEntree_ThermomètreRefrigerateur": 0,
+              "item/varEntree_MultipriseInterrupteur": 0,
+              "item/varEntree_Douchette": 1,
+              "item/varEntree_EquipementChasseEau": 0,
+              "item/varEntree_SablierDouche": 0,
+              "item/varEntree_SoutienRenforceMenage": "",
+              "item/varEntree_SuiviN1": "",
+              "item/varEntree_RestitutionEffectue": "",
+              "item/varEntree_CollecteInformationPersonnel": "",
+              "item/varEntree_AccepteTemoignage": "",
+              "item/varEntree_NombreOrientations": 1,
+              "item/varEntree_IDChampsOrientations": 1,
+              "item/varEntree_MenageOrientable": "",
+              "item/varEntree_MenageNonOrientablePrecisions": "",
+              "item/varEntree_MotifOrientation1": "",
+              "item/varEntrée_MotifOrientation2": "",
+              "item/varEntree_MotifOrientation3": "",
+              "item/varEntree_MotifOrientation4": "",
+              "item/varEntree_MotifOrientation5": "",
+              "item/varEntree_MotifOrientation6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau1_5": "",
+              "item/varEntree_PrecisionsDispositifOrientation1": "",
+              "item/varEntree_PrecisionsDispositifOrientation2": "",
+              "item/varEntree_PrecisionsDispositifOrientation3": "",
+              "item/varEntree_PrecisionsDispositifOrientation4": "",
+              "item/varEntree_PrecisionsDispositifOrientation5": "",
+              "item/varEntree_PrecisionsDispositifOrientation6": "",
+              "item/varEntree_ActeurRelais1": "",
+              "item/varEntree_ActeurRelais2": "",
+              "item/varEntree_ActeurRelais3": "",
+              "item/varEntree_ActeurRelais4": "",
+              "item/varEntree_ActeurRelais5": "",
+              "item/varEntree_ActeurRelais6": "",
+              "item/varEntree_JourVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'dd')",
+              "item/varEntree_MoisVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'MM')",
+              "item/varEntree_AnneeVisite": "@formatDateTime(outputs('Obtenir_une_ligne_par_ID_-_Visite')?['body/er_date_fin_visite'],'yyyy')",
+              "item/varEntree_HeureVisite": "",
+              "item/varEntree_MinuteVisite": "",
+              "item/varEntree_AnneeConstruction": "",
+              "item/varEntree_TypeAppoint": "",
+              "item/varEntree_URLSolidiag": "https://v2.solidiag.fr",
+              "item/varEntree_UtilisateurReaffectation": "",
+              "item/varEntree_LinkMenage": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_5": "",
+              "item/varEntree_PreconisationetDispositif_Niveau2_6": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_1": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_2": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_3": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_4": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_5": "",
+              "item/varEntree_PreconisationetDispositif_Niveau3_6": "",
+              "item/varEntree_ActeurRelaisDetails1": "",
+              "item/varEntree_ActeurRelaisDetails2": "",
+              "item/varEntree_ActeurRelaisDetails3": "",
+              "item/varEntree_ActeurRelaisDetails4": "",
+              "item/varEntree_ActeurRelaisDetails5": "",
+              "item/varEntree_ActeurRelaisDetails6": "",
+              "item/varEntree_StatutOrientation1": "",
+              "item/varEntree_StatutOrientation2": "",
+              "item/varEntree_StatutOrientation3": "",
+              "item/varEntree_StatutOrientation4": "",
+              "item/varEntree_StatutOrientation5": "",
+              "item/varEntree_StatutOrientation6": "",
+              "item/varEntree_IDDataverse": "",
+              "item/varEntree_EtapeOuvertureNav": true,
+              "item/varEntree_EtapeConnexionCompte": true,
+              "item/varEntree_EtapeInfosVisite": false,
+              "item/varEntree_EtapeTelRapportVisite": false,
+              "item/varEntree_EtapeReaffectation": false,
+              "item/varEntree_URLSolidiagNouveauMenage": "",
+              "item/varEntree_EtapeNouveauMenage": true,
+              "item/varEntree_URLSolidiagLogin": "",
+              "item/varEntree_NomDocSPLERRapportMénage": "",
+              "item/varEntree_BeneficiaireRSA": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagbeneficiairedursa@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_EligibleCMUouACS": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiageligiblecmuacs@OData.Community.Display.V1.FormattedValue']",
+              "item/varEntree_PrimodeclarantDivorceRuptureDePACS": "@outputs('Obtenir_une_ligne_par_ID_-_Infos_du_diagnostic_SLIME')?['body/er_solidiagprimodeclarantoudivorcerupturedepacs']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Message_2": {
+          "runAfter": {
+            "Run_a_flow_built_with_Power_Automate_for_desktop": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5840d7d9-743e-41dc-994d-14576bfbb64b"
+          },
+          "type": "Compose",
+          "inputs": "@outputs('Run_a_flow_built_with_Power_Automate_for_desktop')?['body/varSortie_IDMenage']"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

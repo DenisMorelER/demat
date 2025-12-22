@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{683d2a2f-2450-f011-877b-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{f4933a87-2ddb-47fa-bf36-2921cfa8d3a7}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{4553cf26-6151-4646-907a-d3455db0abdc}">
+                  <labels>
+                    <label description="Coordonées" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d173ad31-beda-4660-9f64-0e296eecaa35}" locklevel="0" colspan="1" rowspan="1" labelid="{d722a3e4-5aee-42be-ae91-2b378b0c21cc}">
+                        <labels>
+                          <label description="Civilité" languagecode="1036" />
+                        </labels>
+                        <control id="er_civilite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_civilite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{671008dd-8a75-462f-87c3-d4f109afce3b}" locklevel="0" colspan="1" rowspan="1" labelid="{f9cbbd0c-cde0-49c3-b2c3-0dc7ae9226e9}">
+                        <labels>
+                          <label description="Prénom" languagecode="1036" />
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="firstname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="firstname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{803b1fc5-ed75-4e7e-9cd4-9ab56875540f}" locklevel="0" colspan="1" rowspan="1" labelid="{c31b0437-0281-4e5f-94d8-edaa7e4e2ae1}">
+                        <labels>
+                          <label description="Nom de famille" languagecode="1036" />
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="lastname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{56e24290-890e-4474-a5a2-7c6ec03b9bb8}" locklevel="0" colspan="1" rowspan="1" labelid="{40c9c04f-ed39-4536-9cd6-545b463589a6}">
+                        <labels>
+                          <label description="Téléphone mobile" languagecode="1036" />
+                          <label description="Mobile Phone" languagecode="1033" />
+                        </labels>
+                        <control id="mobilephone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="mobilephone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8a42b7e-f991-416a-b871-1790baaa5200}" locklevel="0" colspan="1" rowspan="1" labelid="{cd9d1954-bd6b-4a17-8b3b-8953ff8f9465}">
+                        <labels>
+                          <label description="Téléphone personnel (Fixe)" languagecode="1036" />
+                          <label description="Home Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="telephone2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{36f45498-1435-4736-9a1e-6600d4c34c1c}" locklevel="0" colspan="1" rowspan="1" labelid="{2aa4b624-d2b0-4cb8-bc07-720f3ceb1f77}">
+                        <labels>
+                          <label description="Courrier électronique" languagecode="1036" />
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{51009ae9-2d73-431d-b830-762823ccb60b}">
+                  <labels>
+                    <label description="Adresse de résidence" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{f776d4ea-e5ff-4b5c-a2c7-f3b51adc2f61}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{acc7aca0-f4ec-47aa-b710-68e2cdd66525}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="0 DEPRECATED Adresse de résidence principale" languagecode="1036" />
+                        </labels>
+                        <control id="er_adressederesidenceprincipale" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_adressederesidenceprincipale" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{d02e3ef1-e912-4fc8-b95a-5c8220245d35}">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{0e9f86f6-8c2a-4965-8091-2885d73905b2}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Contact formulaire de création rapide Simple" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

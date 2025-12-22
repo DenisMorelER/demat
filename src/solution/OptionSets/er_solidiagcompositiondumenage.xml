@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="er_solidiagcompositiondumenage" localizedName="SOLIDIAG Composition du ménage" description="Choix selon l'outil SOLIDIAG" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="SOLIDIAG Composition du ménage" languagecode="1036" />
+  </displaynames>
+  <Descriptions>
+    <Description description="Choix selon l'outil SOLIDIAG" languagecode="1036" />
+  </Descriptions>
+  <options>
+    <option value="122210000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Personne seule" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Adulte avec enfants (monoparental)" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Couple avec enfants" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Couple sans enfants" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Autre" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

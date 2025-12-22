@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{91145d55-faaf-f011-bbd3-000d3adccbc3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_dossier" select="1" icon="1" preview="1">
+        <row name="result" id="er_dossierid">
+          <cell name="er_id_dossier" width="115" />
+          <cell name="createdon" width="140" />
+          <cell name="er_dossier_urgent" width="128" />
+          <cell name="er_statutdeverificationdeseligibilites" width="92" />
+          <cell name="er_statut_dossier" width="130" />
+          <cell name="er_commentaireseligibilites" width="224" />
+          <cell name="er_menage_beneficiaire" width="167" />
+          <cell name="er_site_concerne" width="290" />
+          <cell name="er_collaborateur_referent" width="169" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_dossier">
+          <attribute name="er_id_dossier" />
+          <attribute name="er_dossierid" />
+          <attribute name="er_menage_beneficiaire" />
+          <attribute name="createdon" />
+          <attribute name="er_dossier_urgent" />
+          <attribute name="er_site_concerne" />
+          <order attribute="er_dossier_urgent" descending="true" />
+          <order attribute="createdon" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="er_statut_dossier" operator="ne" value="122210001" />
+            <condition attribute="ownerid" operator="eq-userid" />
+          </filter>
+          <link-entity name="er_collaborateur_spler" alias="aa" link-type="outer" from="er_collaborateur_splerid" to="er_collaborateur_referent" />
+          <attribute name="er_statutdeverificationdeseligibilites" />
+          <attribute name="er_commentaireseligibilites" />
+          <attribute name="er_collaborateur_referent" />
+          <attribute name="er_statut_dossier" />
+          <filter type="and">
+            <condition attribute="er_collaborateur_splerid" operator="null" entityname="aa" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Mes dossiers créés - Non affectés" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Les dossiers que j'ai créés mais qui ne sont pas encore affectés" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

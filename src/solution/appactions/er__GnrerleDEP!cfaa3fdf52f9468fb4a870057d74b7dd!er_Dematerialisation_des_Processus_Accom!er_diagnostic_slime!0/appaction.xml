@@ -1,0 +1,35 @@
+<appaction uniquename="er__GnrerleDEP!cfaa3fdf52f9468fb4a870057d74b7dd!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Générer le DEP">
+    <label description="Générer le DEP" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>$clientsvg:ImportToExcel</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>GnrerleDEP!cfaa3fdf52f9468fb4a870057d74b7dd</name>
+  <onclickeventformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+  </onclickeventformulacomponentlibraryid>
+  <onclickeventformulacomponentname>e35247deb1cb490d8aaaa859ed35b43e</onclickeventformulacomponentname>
+  <onclickeventformulafunctionname>OnSelect</onclickeventformulafunctionname>
+  <onclickeventtype>1</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__LefichierDEP!51ee89fa680b4791adc2980f1af6b376!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>10000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

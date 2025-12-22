@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d5a7090a-ccd0-4a2b-b323-a658ae108e7b}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{09b65e23-b4af-4025-9a61-adfa1e310d69}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{7387f923-166d-4927-85f0-75e560fe8442}">
+                  <labels>
+                    <label description="GÉNÉRAL" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{15133225-ea4f-49ad-82bb-8ba53a324e5c}">
+                        <labels>
+                          <label description="Nom" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_nom" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{138cb2c1-8d7d-4134-8541-26724d45b759}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Formulaire Aperçu Ménage Informations" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

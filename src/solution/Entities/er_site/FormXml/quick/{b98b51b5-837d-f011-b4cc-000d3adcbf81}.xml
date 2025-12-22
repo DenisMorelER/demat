@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b98b51b5-837d-f011-b4cc-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{70c2dd3a-9946-438d-94b5-550be82374f0}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{dda20bc6-ff3d-4db8-b26a-7fd8750d7091}">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{48e230a1-acaa-4711-80cc-7ba2c35da65b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{65308720-4a75-48da-8f75-c59cb62cbafe}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Appels téléphoniques" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>new_phonecall_SiteLogement_er_site</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewId>
+                            <ViewIds>{AA799EF1-BD4D-F011-877A-6045BDDE3C36},{F6A2F891-6846-4B21-B922-712695AFD65C},{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{C95F3EEA-5BFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{dc41144a-158a-4b69-9bb2-fb93974b9c2c}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Visites" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_2" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_site_visites</RelationshipName>
+                            <TargetEntityType>er_visite</TargetEntityType>
+                            <ViewId>{500E232B-D0F3-4A57-9FD3-444706EAAFF6}</ViewId>
+                            <ViewIds>{500E232B-D0F3-4A57-9FD3-444706EAAFF6}</ViewIds>
+                            <VisualizationId>{0C717E76-AA04-F011-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="3" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Site / Logement formulaire d'aperçu - Activités" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

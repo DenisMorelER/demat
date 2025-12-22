@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{60f979fc-00a2-47db-84fe-91592f4140a6}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_document_spler" select="1" icon="1" preview="1">
+        <row name="result" id="er_document_splerid">
+          <cell name="er_id_document_spler" width="300" />
+          <cell name="er_nom_document" width="145" />
+          <cell name="er_offre_action_concernee" width="180" />
+          <cell name="er_statut_stockage_document" width="219" />
+          <cell name="er_statut_transmission_menage" width="228" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_document_spler">
+          <attribute name="er_document_splerid" />
+          <attribute name="er_id_document_spler" />
+          <order attribute="er_id_document_spler" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_nom_document" />
+          <attribute name="er_offre_action_concernee" />
+          <attribute name="er_statut_stockage_document" />
+          <attribute name="er_statut_transmission_menage" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Documents SPLER actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

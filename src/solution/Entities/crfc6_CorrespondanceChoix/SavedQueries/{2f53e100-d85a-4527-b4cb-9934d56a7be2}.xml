@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2f53e100-d85a-4527-b4cb-9934d56a7be2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="crfc6_nom" select="1" icon="1" preview="1">
+        <row name="result" id="crfc6_correspondancechoixid">
+          <cell name="crfc6_nom" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="crfc6_correspondancechoix">
+          <attribute name="crfc6_correspondancechoixid" />
+          <attribute name="crfc6_nom" />
+          <attribute name="createdon" />
+          <order attribute="crfc6_nom" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche avancée : Table de correspondance des Choix" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

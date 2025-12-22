@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{94f99c70-fb57-f011-bec1-7ced8d4a5292}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{de3a9829-a336-47cf-b9dc-dca2fa7c8164}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{ee9ee97b-8d68-4b1c-bf11-505d39b28638}">
+                  <labels>
+                    <label description="Résumé du dossier" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{0b28f666-8d5b-4272-9945-2cd66eadad20}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé le" languagecode="1036" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2828f59f-6cfc-4640-a18b-a361c08d6cb0}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="? Nom du dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom_dossier" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_nom_dossier" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{621b4290-7a3e-4f8c-8c06-eeefa3dd724a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier urgent?" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier_urgent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_dossier_urgent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb955337-efe7-48ef-9637-d94041c5e225}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de traitement du dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_dossier" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_dossier" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f6259316-1739-4db2-b8c4-2ef7266910e3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Collaborateur Référent" languagecode="1036" />
+                        </labels>
+                        <control id="er_collaborateur_referent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_referent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{10392a27-d227-489e-bbd7-f1db46af51da}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site Concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_concerne" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{beb86060-e6af-4e4b-af77-9668fcfea110}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage bénéficiaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_beneficiaire" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_beneficiaire" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a4f95076-94c6-4b90-ae1b-a9ae3c73d08d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Détails sur les projets" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_projets" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_projets" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Aperçu Dossier" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

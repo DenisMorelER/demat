@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c97a5307-d1f9-ef11-bae1-000d3a956350}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="{fe46c9f7-271b-4325-8542-e5de318d7223}" showlabel="false" name="New Tab" labelid="{de51077c-eace-427b-acf0-b1a9a3ba8ea9}">
+          <labels>
+            <label description="New Tab" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" columns="1" showbar="false" IsUserDefined="false" labelwidth="130" id="{f90d0ebb-9d60-4bd1-ad9b-20b48a5debeb}" name="New Section" labelid="{69b36034-4ae1-4c87-9dcb-bf1f082f1d89}">
+                  <labels>
+                    <label description="Détails du site" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row></row>
+                    <row>
+                      <cell id="{5d91708a-b74f-4b18-a306-88530dbd282c}" locklevel="0" colspan="1" rowspan="1" labelid="{d4a7b14c-244d-4840-9556-0c788bfbf511}">
+                        <labels>
+                          <label description="Adresse" languagecode="1036" />
+                        </labels>
+                        <control id="er_adresse" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_adresse" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16079d62-3889-4013-9d21-c0f6e1747f51}" locklevel="0" colspan="1" rowspan="1" labelid="{0f1da839-1449-4c6d-8ee0-94aa5ec0375c}">
+                        <labels>
+                          <label description="Zone Réunion / Secteur" languagecode="1036" />
+                        </labels>
+                        <control id="er_zone_reunion" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_zone_reunion" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Détails du site" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

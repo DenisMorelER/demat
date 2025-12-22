@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="er_statutdexecution" localizedName="Statut d'exécution" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Statut d'exécution" languagecode="1036" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1036" />
+  </Descriptions>
+  <options>
+    <option value="122210000" ExternalValue="" Color="#FFFF00" IsHidden="0">
+      <labels>
+        <label description="En attente" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210001" ExternalValue="" Color="#00B0F0" IsHidden="0">
+      <labels>
+        <label description="En cours" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210002" ExternalValue="" Color="#92D050" IsHidden="0">
+      <labels>
+        <label description="Terminé" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210003" ExternalValue="" Color="#EE0000" IsHidden="0">
+      <labels>
+        <label description="Erreur" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

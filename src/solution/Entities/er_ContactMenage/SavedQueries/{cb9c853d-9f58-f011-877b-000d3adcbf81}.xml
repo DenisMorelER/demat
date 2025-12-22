@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{cb9c853d-9f58-f011-877b-000d3adcbf81}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_name" select="1" icon="1" preview="1">
+        <row name="result" id="er_contactmenageid">
+          <cell name="er_contact" width="100" />
+          <cell name="er_liencontactmenage" width="169" />
+          <cell name="er_menage" width="100" />
+          <cell name="a_8628e518670742cfbb195dbdf1b193c4.er_personne_referente" width="213" />
+          <cell name="a_8628e518670742cfbb195dbdf1b193c4.er_personnereferente2" width="213" />
+          <cell name="a_8628e518670742cfbb195dbdf1b193c4.er_site_residence" width="193" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_contactmenage">
+          <attribute name="er_contactmenageid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_contact" />
+          <attribute name="er_menage" />
+          <attribute name="er_liencontactmenage" />
+          <link-entity alias="a_8628e518670742cfbb195dbdf1b193c4" name="er_menage" to="er_menage" from="er_menageid" link-type="outer" visible="false">
+            <attribute name="er_personne_referente" />
+            <attribute name="er_personnereferente2" />
+            <attribute name="er_site_residence" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="DM ContactsMénages actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

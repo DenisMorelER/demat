@@ -1,0 +1,259 @@
+{
+  "ConnectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+  "Definition": {
+    "Id": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+    "Name": "shared_sharepointonline",
+    "Properties": {
+      "IsCustomApi": false,
+      "Swagger": {
+        "basePath": "/apim/sharepointonline",
+        "definitions": {
+          "SPBlobMetadataResponse": {
+            "additionalProperties": null,
+            "example": null,
+            "properties": {
+              "ItemId": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "integer",
+                "default": null,
+                "description": "Valeur pouvant être utilisée pour obtenir ou mettre à jour les propriétés de fichiers dans les bibliothèques.",
+                "format": "int64"
+              },
+              "Id": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "ID unique du fichier ou dossier."
+              },
+              "Name": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Nom du fichier ou dossier."
+              },
+              "DisplayName": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Nom d'affichage du fichier ou dossier."
+              },
+              "Path": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Chemin d'accès au fichier ou dossier."
+              },
+              "LastModified": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Date et heure de dernière modification du fichier ou dossier.",
+                "format": "date-time"
+              },
+              "Size": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "integer",
+                "default": null,
+                "description": "Taille du fichier ou dossier.",
+                "format": "int64"
+              },
+              "MediaType": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Type multimédia du fichier ou dossier."
+              },
+              "IsFolder": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "boolean",
+                "default": null,
+                "description": "Valeur booléenne (true, false) déterminant si le blob est un dossier."
+              },
+              "ETag": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Etag du fichier ou dossier."
+              },
+              "FileLocator": {
+                "additionalProperties": null,
+                "example": null,
+                "type": "string",
+                "default": null,
+                "description": "Localisateur du fichier ou dossier."
+              }
+            },
+            "type": "object",
+            "default": null,
+            "description": "La version SharePoint de BlobMetadataResponse étend l'objet en ajoutant quelques champs supplémentaires à sérialiser"
+          }
+        },
+        "host": "europe-002.azure-apim.net",
+        "info": {
+          "title": "SharePoint",
+          "version": "1.0"
+        },
+        "parameters": {},
+        "paths": {
+          "/{connectionId}/datasets/{dataset}/files": {
+            "post": {
+              "x-ms-capabilities": {
+                "chunkTransfer": true
+              },
+              "consumes": [],
+              "deprecated": false,
+              "description": "Charge un fichier sur un site SharePoint. Veillez à choisir une bibliothèque existante.",
+              "externalDocs": {
+                "url": "https://docs.microsoft.com/connectors/sharepointonline/#create-file"
+              },
+              "operationId": "CreateFile",
+              "parameters": [
+                {
+                  "in": "path",
+                  "name": "connectionId",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "x-ms-visibility": "internal"
+                },
+                {
+                  "x-ms-dynamic-list": {
+                    "itemsPath": "value",
+                    "itemTitlePath": "DisplayName",
+                    "itemValuePath": "Name",
+                    "operationId": "GetDataSets",
+                    "parameters": {}
+                  },
+                  "in": "path",
+                  "name": "dataset",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Exemple : https://contoso.sharepoint.com/sites/sitename.",
+                  "x-ms-summary": "Adresse du site",
+                  "x-ms-url-encoding": "double"
+                },
+                {
+                  "x-ms-dynamic-tree": {
+                    "browse": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Path",
+                      "operationId": "ListFolder",
+                      "parameters": {
+                        "dataset": {
+                          "parameterReference": "dataset",
+                          "value": null
+                        },
+                        "id": {
+                          "selectedItemValuePath": "Id",
+                          "value": null
+                        }
+                      }
+                    },
+                    "open": {
+                      "itemFullTitlePath": "Path",
+                      "itemIsParent": "(IsFolder eq true)",
+                      "itemTitlePath": "DisplayName",
+                      "itemValuePath": "Path",
+                      "operationId": "ListAllRootFolders",
+                      "parameters": {
+                        "dataset": {
+                          "parameterReference": "dataset",
+                          "value": null
+                        }
+                      }
+                    },
+                    "settings": {
+                      "canSelectLeafNodes": false,
+                      "canSelectParentNodes": true
+                    }
+                  },
+                  "in": "query",
+                  "name": "folderPath",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Doit commencer par une bibliothèque existante. Ajoutez des dossiers si nécessaire.",
+                  "x-ms-summary": "Chemin d'accès du dossier"
+                },
+                {
+                  "in": "query",
+                  "name": "name",
+                  "required": true,
+                  "type": "string",
+                  "default": null,
+                  "description": "Nom du fichier.",
+                  "x-ms-summary": "Nom de fichier"
+                },
+                {
+                  "in": "body",
+                  "name": "body",
+                  "required": true,
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "type": "string",
+                    "default": null,
+                    "format": "binary"
+                  },
+                  "default": null,
+                  "description": "Contenu du fichier.",
+                  "x-ms-summary": "Contenu du fichier"
+                },
+                {
+                  "in": "query",
+                  "name": "queryParametersSingleEncoded",
+                  "required": false,
+                  "type": "boolean",
+                  "default": true,
+                  "x-ms-visibility": "internal"
+                }
+              ],
+              "produces": [
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+              ],
+              "responses": {
+                "200": {
+                  "description": "OK",
+                  "schema": {
+                    "additionalProperties": null,
+                    "example": null,
+                    "$ref": "#/definitions/SPBlobMetadataResponse",
+                    "default": null
+                  }
+                },
+                "default": {
+                  "description": "Échec de l'opération."
+                }
+              },
+              "summary": "Créer un fichier",
+              "x-ms-visibility": "important"
+            }
+          }
+        },
+        "responses": {},
+        "schemes": [
+          "https"
+        ],
+        "swagger": "2.0"
+      }
+    }
+  },
+  "DynamicSchemas": {},
+  "Locale": "fr-FR"
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{d0ae6d3a-b8fd-ef11-bae3-7c1e52879514}</WebResourceId>
+  <Name>er_Doc_SPLER.svg</Name>
+  <DisplayName>Doc_SPLER.svg</DisplayName>
+  <WebResourceType>11</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/er_Doc_SPLERsvgD0AE6D3A-B8FD-EF11-BAE3-7C1E52879514</FileName>
+</WebResource>

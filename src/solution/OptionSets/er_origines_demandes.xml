@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="er_origines_demandes" localizedName="Origines de demandes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Origines de demandes" languagecode="1036" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1036" />
+  </Descriptions>
+  <options>
+    <option value="122210000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="ANAH" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Assistante sociale" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="Autre" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210003" IsHidden="0">
+      <labels>
+        <label description="Bouche à oreilles" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210004" IsHidden="0">
+      <labels>
+        <label description="CCAS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210005" IsHidden="0">
+      <labels>
+        <label description="Donneur d'alertes" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210006" IsHidden="0">
+      <labels>
+        <label description="EDF" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210007" IsHidden="0">
+      <labels>
+        <label description="Entreprise" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210008" IsHidden="0">
+      <labels>
+        <label description="France services" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210009" IsHidden="0">
+      <labels>
+        <label description="Journal" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210010" IsHidden="0">
+      <labels>
+        <label description="Publicité sur internet" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210011" IsHidden="0">
+      <labels>
+        <label description="Publicité à la radio" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210012" IsHidden="0">
+      <labels>
+        <label description="Publicité à la télévision" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210013" IsHidden="0">
+      <labels>
+        <label description="Région Réunion" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210014" IsHidden="0">
+      <labels>
+        <label description="SOLIHA" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210015" IsHidden="0">
+      <labels>
+        <label description="SPLAR" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210016" IsHidden="0">
+      <labels>
+        <label description="Salon de la maison" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210018" IsHidden="0">
+      <labels>
+        <label description="Salon des séniors" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210017" IsHidden="0">
+      <labels>
+        <label description="Site internet" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

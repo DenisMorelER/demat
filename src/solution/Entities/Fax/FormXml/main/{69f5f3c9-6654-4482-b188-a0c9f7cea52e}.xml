@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{69f5f3c9-6654-4482-b188-a0c9f7cea52e}</formid>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <FormPresentation>0</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false" solutionaction="Modified">
+      <tabs>
+        <tab name="fax" verticallayout="true" id="{e2cadff0-2b21-4241-9812-7fc16a742719}" IsUserDefined="0" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section name="general information" showlabel="false" showbar="false" locklevel="0" id="{1d4d16d4-6cdf-4851-8537-a8cd80decf92}" IsUserDefined="0" layout="varwidth" columns="11" visible="false" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{d731af9a-1c18-457b-9989-51f4fe855c80}" ordinalvalue="10000">
+                        <labels>
+                          <label description="De" languagecode="1036" solutionaction="Modified" />
+                          <label description="From" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{56ff726c-6104-4c36-a7e5-140319d14fe4}" ordinalvalue="20001">
+                        <labels>
+                          <label description="Numéro de télécopie" languagecode="1036" solutionaction="Modified" />
+                          <label description="Fax Number" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{163b0870-efff-495c-a27e-df80f6d7ccce}" ordinalvalue="10002">
+                        <labels>
+                          <label description="À" languagecode="1036" solutionaction="Modified" />
+                          <label description="To" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{734c197d-9369-44de-9c9b-f5cae492b5df}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Direction" languagecode="1036" solutionaction="Modified" />
+                          <label description="Direction" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="fax description" showlabel="true" showbar="false" locklevel="0" id="{6B755775-B63F-465D-B7CA-56667398B982}" IsUserDefined="0" layout="varwidth" columns="11" height="auto" visible="false" ordinalvalue="1" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="false" locklevel="0" rowspan="1" colspan="2" id="{41908831-7551-4311-8b08-27e83e7d426b}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Objet" languagecode="1036" solutionaction="Modified" />
+                          <label description="Subject" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell colspan="2" showlabel="false" rowspan="5" auto="true" id="{5bcc6f3c-6b40-44ef-990e-bac7068c19f4}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Description" languagecode="1036" solutionaction="Modified" />
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="fax details" showlabel="false" showbar="false" locklevel="0" id="{7C5D3607-7381-4e32-A9FE-1F85A57D682B}" IsUserDefined="0" layout="varwidth" columns="11" visible="false" ordinalvalue="2" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{70726536-85bf-4611-badc-59b5b03f09f8}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Concernant" languagecode="1036" solutionaction="Modified" />
+                          <label description="Regarding" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{b5a07112-8b3c-4df1-824b-b79b883e8897}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" solutionaction="Modified" />
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{1130cf81-87a8-4aa3-85ef-c8d30ac0a507}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Durée" languagecode="1036" solutionaction="Modified" />
+                          <label description="Duration" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{2ec43484-cef2-4255-afcb-a951d68a3f1d}" ordinalvalue="20003">
+                        <labels>
+                          <label description="Priorité" languagecode="1036" solutionaction="Modified" />
+                          <label description="Priority" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{47750378-8654-46c5-8b01-159c132c7c8e}" ordinalvalue="10004">
+                        <labels />
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{f3da1d9b-b68f-4aa1-adc5-5a7cce14b0e7}" ordinalvalue="20005">
+                        <labels />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{e9fbd1e6-c8be-4526-94e6-5d2a6b54348c}" ordinalvalue="10006">
+                        <labels>
+                          <label description="Catégorie" languagecode="1036" solutionaction="Modified" />
+                          <label description="Category" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{048c03c7-aeb3-4cea-9d4b-7b86a63630ab}" ordinalvalue="20007">
+                        <labels>
+                          <label description="Sous-catégorie" languagecode="1036" solutionaction="Modified" />
+                          <label description="Sub-Category" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="fax_section_5" id="8fa82ef0-b663-4bec-9ecf-8dc45c13d8e3" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="3" solutionaction="Added">
+                  <labels>
+                    <label description="/!\ Non utilisable pour le moment : Ne pas enregistrer /!\" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell rowspan="6" id="{0bb83f2c-151f-4caf-a675-3cb559bcf51b}" showlabel="false" auto="false" colspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="work-in-progress (1)" languagecode="1036" />
+                        </labels>
+                        <control id="WebResource_new_1" classid="{587CDF98-C1D5-4BDE-8473-14A0BC7644A7}">
+                          <parameters>
+                            <WebResourceId>{8ca569c9-1bab-f011-bbd2-7ced8d4676dc}</WebResourceId>
+                            <Url>er_workinprogress1</Url>
+                            <ShowOnMobileClient>true</ShowOnMobileClient>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                            <VerticalAlignment>Middle</VerticalAlignment>
+                            <SizeType>StretchMaintainAspectRatio</SizeType>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="false" active="false" />
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="notes" id="{E5DC7302-A392-4785-B422-ADBD895A267B}" IsUserDefined="0" visible="false" ordinalvalue="1" solutionaction="Modified" />
+      </tabs>
+      <header id="{4393a270-f62b-4c4b-abf3-55b9b49e49c4}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{545f7e83-5302-40a2-b8fe-35ecedfa8e5c}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{680ccf64-03c7-4999-9158-0d0076f0f6be}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d6c8d0ed-bdde-4f08-bc77-e00b0f18a7ee}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{97cf1d2f-e30f-4b85-b298-bd5ed6084c16}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{6d00a3cc-87f1-4e54-b9e9-15ca72d51567}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{8e0276a7-d6b6-441f-81b0-c538a8e5307c}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f6c7f148-6f50-4a20-8174-1afe95dd41d5}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="2" FallbackForm="false" solutionaction="Added" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

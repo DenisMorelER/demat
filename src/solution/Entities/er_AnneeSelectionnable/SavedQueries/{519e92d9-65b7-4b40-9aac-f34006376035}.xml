@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{519e92d9-65b7-4b40-9aac-f34006376035}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_colanneeselectionnable" select="1" icon="1" preview="1">
+        <row name="result" id="er_anneeselectionnableid">
+          <cell name="er_colanneeselectionnable" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_anneeselectionnable">
+          <attribute name="er_anneeselectionnableid" />
+          <attribute name="er_colanneeselectionnable" />
+          <attribute name="createdon" />
+          <order attribute="er_colanneeselectionnable" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche avancée : Année sélectionnable" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,34 @@
+<appaction uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Remove!2">
+  <buttonaccessibilitytext default="Supprimer">
+    <label description="Supprimer" languagecode="1036" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Supprimer">
+    <label description="Supprimer" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Supprimer les enregistrements. &lt;br&gt;&lt;br&gt;Lorsque vous supprimez un enregistrement, il existe toujours dans le système.">
+    <label description="Supprimer les enregistrements. &lt;br&gt;&lt;br&gt;Lorsque vous supprimez un enregistrement, il existe toujours dans le système." languagecode="1036" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Supprimer">
+    <label description="Supprimer" languagecode="1036" />
+  </buttontooltiptitle>
+  <context>0</context>
+  <fonticon>$clientsvg:Delete</fonticon>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>2</location>
+  <name>Mscrm.SubGrid.{!EntityLogicalName}.Remove</name>
+  <onclickeventjavascriptfunctionname>XrmCore.Commands.Disassociate.gridDisassociate</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":8,"value":null},{"type":12,"value":null},{"type":10,"value":null}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>adea1aea-b2aa-e611-80d6-00155d88c343</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>1</origin>
+  <sequence>100100090.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>2</visibilitytype>
+</appaction>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{d53efd5e-1903-f011-bae3-000d3ab70811}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_echange" select="1" icon="1" preview="1">
+        <row name="result" id="er_echanges_menageid">
+          <cell name="er_id_echange" width="300" />
+          <cell name="er_menage" width="100" />
+          <cell name="er_dossier_concerne" width="137" />
+          <cell name="er_diagnostic_slime" width="147" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" distinct="true">
+        <entity name="er_echanges_menage">
+          <attribute name="er_echanges_menageid" />
+          <attribute name="er_id_echange" />
+          <order attribute="er_id_echange" descending="false" />
+          <attribute name="er_menage" />
+          <attribute name="er_dossier_concerne" />
+          <attribute name="er_diagnostic_slime" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="phonecall" alias="ac" link-type="inner" from="er_echange_menage" to="er_echanges_menageid">
+            <filter type="and">
+              <condition attribute="directioncode" operator="eq" value="1" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Echanges Ménages avec Appels sortants" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

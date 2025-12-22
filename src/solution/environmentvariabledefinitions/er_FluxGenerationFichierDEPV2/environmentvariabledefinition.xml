@@ -1,0 +1,13 @@
+<environmentvariabledefinition schemaname="er_FluxGenerationFichierDEPV2">
+  <description default="Flux pour la génération du fichier DEP .xlsx">
+    <label description="Flux pour la génération du fichier DEP .xlsx" languagecode="1036" />
+  </description>
+  <displayname default="Flux Génération Fichier DEP V2">
+    <label description="Flux Génération Fichier DEP V2" languagecode="1036" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

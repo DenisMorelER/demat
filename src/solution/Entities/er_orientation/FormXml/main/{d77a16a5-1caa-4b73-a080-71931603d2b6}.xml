@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d77a16a5-1caa-4b73-a080-71931603d2b6}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{8540a45d-c113-4a7d-9d21-cfde31d08b89}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{280833cd-b9d2-47d2-891d-c31b63f7703d}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e75274bb-f577-4e20-b803-eb546755dd75}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_orientation" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_orientation" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ffd59ce0-8459-4cbd-802e-44b6caa01c00}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnostic_slime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnostic_slime" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7946da28-8b06-4c7e-879e-42ffe6273bb5}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{150c1f9e-672f-4e6a-b5df-c5218359bf2c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_orientation" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_orientation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a77909b6-be51-4fbb-b1bf-c003b3663505}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Offre d'orientation" languagecode="1036" />
+                        </labels>
+                        <control id="er_offre_orientation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_offre_orientation" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{fc0e1b45-7298-449a-9f2e-68b1295677ce}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3cb442c2-bfd9-48e8-8504-762587eba25c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{96ca9431-ebee-406f-abed-80f3fb482e86}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{4287764a-7b3a-4c9f-9d89-dbed58d23050}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{ff6b9f88-3242-4240-a241-c53058d50231}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{328c86b8-1175-4dd3-b038-cb7c5828f237}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{71b54842-42c9-4e51-a43e-83905f93dbf9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{ade608a1-fd50-41ed-a355-c4222d66389e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Main Form Orientation Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

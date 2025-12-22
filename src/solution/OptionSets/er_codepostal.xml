@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="er_codepostal" localizedName="Code Postal" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Code Postal" languagecode="1036" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1036" />
+  </Descriptions>
+  <options>
+    <option value="122210000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97400" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97410" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97411" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97412" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97413" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210005" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97414" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210006" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97416" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210007" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97417" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210008" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97418" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210009" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97419" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210010" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97420" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210011" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97421" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210012" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97422" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210013" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97423" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210014" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97424" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210015" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97425" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210016" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97426" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210017" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97427" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210018" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97429" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210019" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97430" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210020" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97431" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210021" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97432" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210022" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97433" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210023" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97434" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210024" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97435" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210025" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97436" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210026" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97437" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210027" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97438" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210028" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97439" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210029" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97440" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210030" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97441" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210031" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97442" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210032" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97450" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210033" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97460" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210034" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97470" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210035" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97480" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210036" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="97490" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7a904563-7eec-42d4-b383-3c6bfb0e4223}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom" select="1" icon="1" preview="1">
+        <row name="result" id="er_menageid">
+          <cell name="er_nom" width="192" />
+          <cell name="er_personne_referente" width="171" />
+          <cell name="er_personnereferente2" width="171" />
+          <cell name="er_site_residence" width="240" />
+          <cell name="createdon" width="115" />
+          <cell name="createdby" width="122" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_menage">
+          <attribute name="er_menageid" />
+          <attribute name="er_nom" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_site_residence" />
+          <attribute name="createdon" />
+          <attribute name="createdby" />
+          <order attribute="er_nom" descending="false" />
+          <attribute name="er_personnereferente2" />
+          <attribute name="er_personne_referente" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Ménages actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

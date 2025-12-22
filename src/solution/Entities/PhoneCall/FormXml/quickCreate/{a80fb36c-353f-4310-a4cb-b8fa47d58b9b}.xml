@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}</formid>
+    <IntroducedVersion>9.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab name="PhoneCall_Tab_1" id="{ddbec6c0-c9d7-49b0-b066-37452cc224d0}" showlabel="false" ordinalvalue="0">
+          <columns>
+            <column width="33%" id="0">
+              <sections>
+                <section name="PhoneCall_Description" id="{d31b733c-2d1b-020b-4335-ea510c673378}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{b721cae8-b39c-4bb9-989f-3fd40130a2c0}" visible="false" ordinalvalue="10000" solutionaction="Modified">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" solutionaction="Modified" />
+                          <label description="Owner" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c75d0ed5-b39c-4678-a94b-1382258ea55e}" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Modified">
+                        <labels>
+                          <label description="Sujet" languagecode="1036" solutionaction="Modified" />
+                          <label description="Subject" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{405658c7-633b-44f6-91ba-038b9baf4a41}" colspan="1" rowspan="1" ordinalvalue="10003" solutionaction="Modified">
+                        <labels>
+                          <label description="Appelant" languagecode="1036" solutionaction="Added" />
+                          <label description="Call From" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{efa00b37-8e3e-4229-8331-47dc1f3615be}" colspan="1" rowspan="1" ordinalvalue="10004" solutionaction="Modified">
+                        <labels>
+                          <label description="Destinataire de l'appel" languagecode="1036" solutionaction="Added" />
+                          <label description="To" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0729f3f9-8ce3-43b2-8e3c-067927071477}" colspan="1" rowspan="1" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Direction" languagecode="1036" solutionaction="Modified" />
+                          <label description="Direction" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{218900d1-684b-4a27-94d1-2f263f1fcbc7}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10005" solutionaction="Added">
+                        <labels>
+                          <label description="Message vocal laissé" languagecode="1036" />
+                          <label description="Left Voice Mail" languagecode="1033" />
+                        </labels>
+                        <control id="leftvoicemail" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="leftvoicemail" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="PhoneCall_Description_2" id="{d31b733c-2d1b-020b-4335-ea510c673377}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{6965d7bf-c0ea-4bbb-90ad-7f3415df1bab}" ordinalvalue="10000" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{f481f1a2-6111-40c9-8eca-ff477666b75a}" rowspan="7" ordinalvalue="10002" solutionaction="Modified">
+                        <labels>
+                          <label description="Description de l'échange" languagecode="1036" solutionaction="Added" />
+                          <label description="Description" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7474f28a-c24c-44a6-bd4e-b648d5d1acab}" visible="false" ordinalvalue="10003" solutionaction="Modified">
+                        <labels>
+                          <label description="Durée" languagecode="1036" solutionaction="Modified" />
+                          <label description="Duration" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8655c25f-b145-4bfb-a32e-4be5939a2e80}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10000" solutionaction="Added">
+                        <labels>
+                          <label description="Site/Logement" languagecode="1036" />
+                        </labels>
+                        <control id="new_sitelogement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="new_sitelogement" disabled="false">
+                          <parameters />
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4ce2b7a8-75f3-4382-8b29-292289339d14}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10001" solutionaction="Added">
+                        <labels>
+                          <label description="Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="new_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="new_menage" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="2">
+              <sections>
+                <section name="PhoneCall_Description_3" id="{d31b733c-2d1b-020b-4335-ea510c673376}" columns="1" showlabel="true" showbar="false" IsUserDefined="0" visible="false" ordinalvalue="0" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{a74f621f-b15c-4ffa-890f-6a20e9746998}" ordinalvalue="10000">
+                        <labels>
+                          <label description="Échéance" languagecode="1036" solutionaction="Modified" />
+                          <label description="Due" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{850991fd-30c2-4098-a369-aa6ec7cee7cb}" ordinalvalue="10001">
+                        <labels>
+                          <label description="Priorité" languagecode="1036" solutionaction="Modified" />
+                          <label description="Priority" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{196075AD-03CE-4F20-A982-02C8DB06769B}" ordinalvalue="10002">
+                        <labels>
+                          <label description="Concernant" languagecode="1036" solutionaction="Modified" />
+                          <label description="Regarding" languagecode="1033" solutionaction="Added" />
+                        </labels>
+                        <control id="regardingobjectid" classid="{F3015350-44A2-4aa0-97B5-00166532B5E9}" datafieldname="regardingobjectid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Phone call quick create form." languagecode="1033" />
+      <LocalizedName description="Formulaire de création rapide d'appel téléphonique." languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Phone call quick create form." languagecode="1033" />
+      <Description description="Phone call quick create form." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

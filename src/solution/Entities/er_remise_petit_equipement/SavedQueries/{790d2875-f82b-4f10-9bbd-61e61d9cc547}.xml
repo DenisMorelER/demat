@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{790d2875-f82b-4f10-9bbd-61e61d9cc547}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_remise_petit_equipement" select="1" icon="1" preview="1">
+        <row name="result" id="er_remise_petit_equipementid">
+          <cell name="er_id_remise_petit_equipement" width="300" />
+          <cell name="er_diagnostic_slime" width="147" />
+          <cell name="er_equipement" width="108" />
+          <cell name="er_nombre_equipements_remis" width="294" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_remise_petit_equipement">
+          <attribute name="er_remise_petit_equipementid" />
+          <attribute name="er_id_remise_petit_equipement" />
+          <order attribute="er_id_remise_petit_equipement" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_equipement" />
+          <attribute name="er_nombre_equipements_remis" />
+          <attribute name="er_diagnostic_slime" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Remises de petits équipements actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

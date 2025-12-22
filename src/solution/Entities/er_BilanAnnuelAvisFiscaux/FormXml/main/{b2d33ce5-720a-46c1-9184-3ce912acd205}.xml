@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b2d33ce5-720a-46c1-9184-3ce912acd205}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{3a8a080f-240d-422b-95de-126b22397c87}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{14d76798-afef-4b2d-b035-a3d210a268d1}" columns="11" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{2d550532-ee33-4ad4-99ad-6d0eb27bb7d2}" colspan="1" rowspan="1" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Bilan Annuel des Avis Fiscaux" languagecode="1036" />
+                          <label description="Bilan Annuel des Avis Fiscaux" languagecode="1033" />
+                        </labels>
+                        <control id="er_bilanannueldesavisfiscaux" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_bilanannueldesavisfiscaux" />
+                      </cell>
+                      <cell id="{17e91970-af1e-479f-a6e0-dda3f0fda6da}" locklevel="1" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Catégorie de ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_categoriemenagetotai" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_categoriemenagetotai" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f9964369-ac7e-496e-ac02-be44b6f58c27}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage des Avis Fiscaux" languagecode="1036" />
+                        </labels>
+                        <control id="er_menagedesavisfiscaux" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menagedesavisfiscaux" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{ffd08455-0dc3-46b3-a464-5faa4844de58}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="093664ca-1e1e-4329-9596-403e90ea45a2" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Top" columns="1111" labelwidth="115">
+                  <labels>
+                    <label description="Total sur l'année" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{264f758d-70e4-4e3b-a262-7927249a58d3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{22df6d01-2247-4a8a-a910-eb8e8850fea0}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{4c6fbb4d-0e8a-4c23-83f1-1820d0f37d81}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{c7fdb67c-6777-4bcb-932d-7d10171385d2}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{9a13bd9c-241e-4d11-bbf7-657fa80e58fb}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{2a925704-30d5-4fef-be4c-94ca28ff01a4}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{32fb92e6-2c91-42bb-8e91-970a560cd2a1}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{23f4d86e-b3e8-4dbd-96f3-d1dfa0aa8f39}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{0c07e621-9035-4aea-8dec-01c4dffb6176}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{7a1864f7-5853-42c4-bc14-6ed5698a7e03}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{b1cc95df-4d7b-46c5-87e4-2e6e5d5d9598}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{fa462987-73a2-4cf7-ac99-3d00c5ac7464}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{34496a27-4111-474e-9bc9-5f326a0326a7}" locklevel="1" colspan="1" rowspan="1" showlabel="true">
+                        <labels>
+                          <label description="Année des AI" languagecode="1036" />
+                        </labels>
+                        <control id="er_anneedesai" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_anneedesai" disabled="false">
+                          <parameters>
+                            <DefaultViewId>{FD1693FC-6177-F011-B4CB-7C1E52FC7AAA}</DefaultViewId>
+                            <AvailableViewIds>{FD1693FC-6177-F011-B4CB-7C1E52FC7AAA},{914BC2BD-3A34-4CDF-A4CC-B884D3E0952D},{6A7145BD-7AEE-4DDD-B265-957B2EC0B3C9},{4C1BE11A-92AE-4AC6-945B-93D484601CCF}</AvailableViewIds>
+                            <DisableViewPicker>true</DisableViewPicker>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{a151c7f9-147f-43d9-a49c-b3cc932b5d4d}" locklevel="1" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="TOTAL RFR" languagecode="1036" />
+                        </labels>
+                        <control id="er_totalrevenufiscaldereference" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_totalrevenufiscaldereference" disabled="false" />
+                      </cell>
+                      <cell id="{1c05d5f9-4fa7-4bfc-a0c4-5e55ba4ac1e2}" locklevel="1" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="TOTAL Nbre de personnes" languagecode="1036" />
+                        </labels>
+                        <control id="er_totalnombredepersonnes" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_totalnombredepersonnes" disabled="false" />
+                      </cell>
+                      <cell id="{2ec6b431-4992-4cd2-924a-ad3ac0958068}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="TOTAL Nbre de parts" languagecode="1036" />
+                        </labels>
+                        <control id="er_totalnombredepartsdec" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_totalnombredepartsdec" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{0f794b72-5d4e-49af-a99b-0de3eba7c848}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{722ea2ad-1a3c-498f-8b00-90373f3752a0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{c95b6a97-e6bc-4e44-abc3-b2a642d17eeb}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{671f0426-5947-4232-9a0d-64294e7e9e52}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{ef969da6-e29c-483e-9b1a-8f9851a8324f}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Catégorie de ménage" languagecode="1036" />
+              </labels>
+              <control id="header_er_categoriemenagetotai" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_categoriemenagetotai" disabled="false" />
+            </cell>
+            <cell id="{8a31b728-0ed3-4ef4-ad91-140680246f0e}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+                <label description="Created On" languagecode="1033" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{7aad3e7a-f473-4ce3-ad98-faa66c33114d}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+                <label description="Created By" languagecode="1033" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell id="{dc294fd4-7754-4b67-a0a2-a1faa8046465}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+                <label description="Modified On" languagecode="1033" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{88b890a2-3203-4aa2-bc38-edd15fac2f2d}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+                <label description="Modified By" languagecode="1033" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{bbb5d8ef-4813-4098-a9af-74414563fc9c}" colspan="1" rowspan="1" visible="false">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{c6896972-cad2-4f49-baa7-4504d1c691f1}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{35f6d075-ae8c-420a-9a6e-3aef49c5fd5b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{197b6a7b-4965-4605-801b-12e98bcbc2c5}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{bf44a4ff-2e8d-4825-b71e-02fb2072b970}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{f7b84271-b67f-489e-aa2c-74d9343b91b9}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="er_anneedesai">
+          <Handlers>
+            <Handler functionName="calculerCategorieMenage" libraryName="er_Toolbox_JS" handlerUniqueId="{b28003fa-daad-4d17-ad65-d940296e9460}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="er_totalrevenufiscaldereference">
+          <Handlers>
+            <Handler functionName="calculerCategorieMenage" libraryName="er_Toolbox_JS" handlerUniqueId="{70deb5fc-10ed-4fa8-8b3e-9ba8d2399ccc}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="er_totalnombredepersonnes">
+          <Handlers>
+            <Handler functionName="calculerCategorieMenage" libraryName="er_Toolbox_JS" handlerUniqueId="{61aa8984-2ca4-4828-aec4-d6de9788966e}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Formulaire principal Bilan Avis Fiscaux" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

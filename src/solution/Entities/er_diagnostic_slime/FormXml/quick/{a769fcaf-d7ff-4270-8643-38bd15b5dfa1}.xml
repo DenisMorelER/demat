@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a769fcaf-d7ff-4270-8643-38bd15b5dfa1}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{49967b6b-132f-49f7-a07b-08355105152f}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{65ea567d-cf21-4ec1-bee7-3e4f32b2b77e}">
+                  <labels>
+                    <label description="GÉNÉRAL" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{563de393-aeb5-4897-bfed-24b5c50fac52}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fd0af300-4958-40cf-9364-4e4c3cefd04e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé le" languagecode="1036" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9f2b9c6f-0c3a-42fa-ae76-70d962f155e1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier parent" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossierparent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossierparent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d4e0f5bf-c296-4c39-9f93-9ab316ac2aab}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_visite" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4bc43a5d-abc5-4466-aa13-2051a578be33}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ID du Ménage sur SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagiddumenage" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_solidiagiddumenage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d5428f44-51f3-4beb-9ea8-145ec1c4befd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lien Ménage Solidiag" languagecode="1036" />
+                        </labels>
+                        <control id="er_lienmenagesolidiag" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="er_lienmenagesolidiag" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cbcce223-1e96-4887-b1e1-9b796399264b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de remplissage dans SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_remplissage_solidiag" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_remplissage_solidiag" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{47c5ac3a-5c02-4f55-83ed-21ea1dd2d7ce}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Informations transmises au ménage?" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_informations_transmises_menage" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_informations_transmises_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a5d255b9-456c-4518-9546-264a60405cdd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Informations transmises au donneur d'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_infos_transmises_donneur_alerte" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_infos_transmises_donneur_alerte" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2ef3641f-be5f-4c8e-b78c-d9a837025aa5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de validation du diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdevalidationdudiagnosticslime" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdevalidationdudiagnosticslime" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cfca7702-d2c9-47ad-8696-f12e69fc30bd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de validation du diagnostic" languagecode="1036" />
+                        </labels>
+                        <control id="er_datedevalidationdudiagnostic" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datedevalidationdudiagnostic" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Aperçu Diagnostic SLIME" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

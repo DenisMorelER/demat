@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{69c6fda5-10a8-4dfb-88d8-de67ebf09bce}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{6d4c2409-8549-40d7-9279-07e525cd2112}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{a5d3171f-b2e8-4f71-a892-19450cfd5dfa}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{8f0d1051-0472-40ce-989f-8a32e9b0da73}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_remise_petit_equipement" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_remise_petit_equipement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fb97670d-59c1-41a9-86c5-ed3661b4532f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Equipement" languagecode="1036" />
+                        </labels>
+                        <control id="er_equipement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_equipement" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3a9a77d0-e3b1-46bd-9bed-33677d72161a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nombre d'équipements remis" languagecode="1036" />
+                        </labels>
+                        <control id="er_nombre_equipements_remis" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nombre_equipements_remis" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a7b8822e-4763-4b21-98bb-af5a3ebf573f}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{5f6d6dfd-80e0-4d88-9747-268fdd67b194}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{cc79ccf2-0a6d-4ade-b9f4-af933797136d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{fc26303f-0f56-434c-ac30-a12ac03133b0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{11acc297-bdd8-4a1c-8356-587631466603}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{df1946d5-92c9-4668-aa52-4093266979f2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{a66a265d-17d2-4d36-910b-76659f25d61a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{1c9c46c7-0d6e-4114-bb07-d87ba2679ebf}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{19ff4810-6c57-4bb3-b65c-b3c93be9e5fe}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

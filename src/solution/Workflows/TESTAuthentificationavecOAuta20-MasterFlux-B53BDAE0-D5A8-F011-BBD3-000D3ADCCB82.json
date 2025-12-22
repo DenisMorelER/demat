@@ -1,0 +1,86 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "fc56e16e-707b-4f18-a724-555642154232"
+          },
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      },
+      "actions": {
+        "Exécuter_un_flux_enfant": {
+          "runAfter": {
+            "Message_1": [
+              "Succeeded"
+            ]
+          },
+          "type": "Workflow",
+          "inputs": {
+            "host": {
+              "workflowReferenceName": "3a8d0c1b-cfa8-f011-bbd3-000d3adccb82"
+            },
+            "body": {
+              "x-api-token": "@variables('generatedToken')"
+            }
+          }
+        },
+        "Initialiser_la_variable": {
+          "runAfter": {},
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "generatedToken",
+                "type": "string",
+                "value": "@base64(concat(\r\n  substring(formatDateTime(utcNow(), 'dddd'), 0, 2),\r\n  substring(formatDateTime(utcNow(), 'MMMM'), 0, 3),\r\n  'ER',\r\n  formatDateTime(utcNow(), 'dd/MM/yyyy')\r\n  )\r\n  )"
+              }
+            ]
+          }
+        },
+        "Message": {
+          "runAfter": {
+            "Exécuter_un_flux_enfant": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@concat('Exécution', 'OK')"
+        },
+        "Message_1": {
+          "runAfter": {
+            "Initialiser_la_variable": [
+              "Succeeded"
+            ]
+          },
+          "type": "Compose",
+          "inputs": "@variables('generatedToken')"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

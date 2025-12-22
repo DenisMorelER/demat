@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{5d7df25e-716f-4639-9256-b3be0f5281db}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_colanneeselectionnable" select="1" icon="1" preview="1">
+        <row name="result" id="er_anneeselectionnableid">
+          <cell name="er_colanneeselectionnable" width="97" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_anneeselectionnable">
+          <attribute name="er_anneeselectionnableid" />
+          <attribute name="er_colanneeselectionnable" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="er_colanneeselectionnable" operator="like" value="{0}" />
+          </filter>
+          <order attribute="er_colanneeselectionnable" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Éléments Années sélectionnables actifs Quick Find" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

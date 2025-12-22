@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{a20ddc21-9de5-4cc7-8d08-04385e3ec3c8}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{721c2929-b792-4045-945b-7161f9b7fd9e}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{7d3e6aab-0401-48fd-9ac7-6db257a6dff3}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9c2108e7-e8b2-4cda-940a-5dbcfa34744f}">
+                        <labels>
+                          <label description="Seuil ANAH" languagecode="1036" />
+                        </labels>
+                        <control id="er_annee" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_annee" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{47409c91-1d80-4ffc-b8b7-b6db3c8386fa}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Année" languagecode="1036" />
+                        </labels>
+                        <control id="er_anneeseuilanah" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_anneeseuilanah" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bd1d0b9e-4a40-494f-9590-797b8ae9f67b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de début de validité" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_debut_validite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_debut_validite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f5d5cfc4-8eba-48bc-8137-f5e614e7fc7d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre de personnes" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredepersonnes" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_nbredepersonnes" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{77d113d7-4ee0-4a3d-8c69-f53342d7518b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Début Très modeste" languagecode="1036" />
+                        </labels>
+                        <control id="er_debut_tres_modeste" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_debut_tres_modeste" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b5fe78e1-e273-4531-846d-1db6e8f992e1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Début Modeste" languagecode="1036" />
+                        </labels>
+                        <control id="er_debut_modeste" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_debut_modeste" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b4827cf9-eb01-444b-9e4c-8491e676742e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Début Intermédiaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_debut_intermediaire" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_debut_intermediaire" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e57b7476-1bcc-47ad-8e50-831c0f0f26ab}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Début Aux Revenus Supérieurs" languagecode="1036" />
+                        </labels>
+                        <control id="er_debut_revenus_superieurs" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_debut_revenus_superieurs" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{60bab4f6-3627-4815-8569-3fcc5da8b157}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{caf8c68b-6fa8-420d-b91d-0a29397448e5}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{5f696569-aaf1-4afd-93ce-64ae99e39749}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{34e42f63-1a89-4345-9d6c-f1ec6ceb5efa}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d1df306e-6066-4b6a-8dd7-78150f035d57}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{bff5e89a-d3b4-4ed6-bfe3-45a0b34c400f}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell id="{9115b2ed-3a13-4ae1-976d-30d092923228}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{d601ff7e-6edf-45e7-aa2a-dcff12283dcb}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{7d6ad126-c375-46ba-849b-e9caf5a1e191}" visible="false" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{58c35704-db4e-4a42-a30f-dbc4d07676ea}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4a45f010-1e03-4934-9166-de4d624008ca}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b1c616bf-d073-4b76-a70c-9c78b435a2d9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{27466059-a54a-46a6-b880-3d92035c962b}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

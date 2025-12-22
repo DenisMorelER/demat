@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{afa3313e-95fb-4468-ac6b-5f1a0b13cb2e}</savedqueryid>
+    <layoutxml>
+      <grid name="er_offre_actions" jump="er_id_action" select="1" icon="1" preview="0">
+        <row name="er_offre_action" id="er_offre_actionid">
+          <cell name="er_id_action" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_offre_action">
+          <attribute name="er_offre_actionid" />
+          <attribute name="er_id_action" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche : Offre : Action" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

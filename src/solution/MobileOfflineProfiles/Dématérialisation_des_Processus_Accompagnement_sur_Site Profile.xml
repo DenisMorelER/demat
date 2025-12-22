@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MobileOfflineProfile MobileOfflineProfileId="46eeb1c5-1d03-f011-bae3-7c1e52fc86de" Name="Dématérialisation_des_Processus_Accompagnement_sur_Site Profile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MobileOfflineProfileItems>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="28c18bc4-1d03-f011-bae3-000d3ab70811" Name="Offre : Action">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{28C18BC4-1D03-F011-BAE3-000D3AB70811}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Offre : Action</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_offre_action</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="29c18bc4-1d03-f011-bae3-000d3ab70811" Name="Diagnostic SLIME">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{29C18BC4-1D03-F011-BAE3-000D3AB70811}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Diagnostic SLIME</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_diagnostic_slime</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="ee8ff0c6-1d03-f011-bae3-000d3ab95da3" Name="Site / Logement">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{EE8FF0C6-1D03-F011-BAE3-000D3AB95DA3}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Site / Logement</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_site</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="ef8ff0c6-1d03-f011-bae3-000d3ab95da3" Name="Document Ménage">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{EF8FF0C6-1D03-F011-BAE3-000D3AB95DA3}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Document Ménage</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_document_menage</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="6a35afc4-1d03-f011-bae2-000d3adcb1ab" Name="Ménage">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{6A35AFC4-1D03-F011-BAE2-000D3ADCB1AB}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Ménage</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_menage</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="6b35afc4-1d03-f011-bae2-000d3adcb1ab" Name="Appel téléphonique">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{6B35AFC4-1D03-F011-BAE2-000D3ADCB1AB}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Appel téléphonique</Name>
+      <RecordDistributionCriteria>0</RecordDistributionCriteria>
+      <RecordsOwnedByMe>0</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>PhoneCall</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="6e35afc4-1d03-f011-bae2-000d3adcb1ab" Name="Echanges Ménage">
+      <MobileOfflineProfileItemAssociations>
+        <MobileOfflineProfileItemAssociation MobileOfflineProfileItemAssociationId="b5fe66ca-1d03-f011-bae3-6045bddd5492" Name="er_echange_menage_appels">
+          <MobileOfflineProfileItemAssociationId>{B5FE66CA-1D03-F011-BAE3-6045BDDD5492}</MobileOfflineProfileItemAssociationId>
+          <MobileOfflineProfileItemId>{6E35AFC4-1D03-F011-BAE2-000D3ADCB1AB}</MobileOfflineProfileItemId>
+          <Name>er_echange_menage_appels</Name>
+          <RelationshipDisplayName>er_echange_menage_appels</RelationshipDisplayName>
+          <ProfileItemAssociationEntityFilter></ProfileItemAssociationEntityFilter>
+        </MobileOfflineProfileItemAssociation>
+        <MobileOfflineProfileItemAssociation MobileOfflineProfileItemAssociationId="b6fe66ca-1d03-f011-bae3-6045bddd5492" Name="er_echange_menage_mails">
+          <MobileOfflineProfileItemAssociationId>{B6FE66CA-1D03-F011-BAE3-6045BDDD5492}</MobileOfflineProfileItemAssociationId>
+          <MobileOfflineProfileItemId>{6E35AFC4-1D03-F011-BAE2-000D3ADCB1AB}</MobileOfflineProfileItemId>
+          <Name>er_echange_menage_mails</Name>
+          <RelationshipDisplayName>er_echange_menage_mails</RelationshipDisplayName>
+          <ProfileItemAssociationEntityFilter></ProfileItemAssociationEntityFilter>
+        </MobileOfflineProfileItemAssociation>
+      </MobileOfflineProfileItemAssociations>
+      <MobileOfflineProfileItemId>{6E35AFC4-1D03-F011-BAE2-000D3ADCB1AB}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Echanges Ménage</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_echanges_menage</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="0c5004c9-1d03-f011-bae3-000d3adcbf81" Name="Courrier électronique">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{0C5004C9-1D03-F011-BAE3-000D3ADCBF81}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Courrier électronique</Name>
+      <RecordDistributionCriteria>0</RecordDistributionCriteria>
+      <RecordsOwnedByMe>0</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>Email</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="98fe66ca-1d03-f011-bae3-6045bddd5492" Name="Dossier">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{98FE66CA-1D03-F011-BAE3-6045BDDD5492}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Dossier</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_dossier</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="952d52c5-1d03-f011-bae3-6045bdde3c36" Name="Visite de Ménage">
+      <MobileOfflineProfileItemAssociations>
+        <MobileOfflineProfileItemAssociation MobileOfflineProfileItemAssociationId="b7fe66ca-1d03-f011-bae3-6045bddd5492" Name="er_visite_diagnostics_slime">
+          <MobileOfflineProfileItemAssociationId>{B7FE66CA-1D03-F011-BAE3-6045BDDD5492}</MobileOfflineProfileItemAssociationId>
+          <MobileOfflineProfileItemId>{952D52C5-1D03-F011-BAE3-6045BDDE3C36}</MobileOfflineProfileItemId>
+          <Name>er_visite_diagnostics_slime</Name>
+          <RelationshipDisplayName>er_visite_diagnostics_slime</RelationshipDisplayName>
+          <ProfileItemAssociationEntityFilter></ProfileItemAssociationEntityFilter>
+        </MobileOfflineProfileItemAssociation>
+      </MobileOfflineProfileItemAssociations>
+      <MobileOfflineProfileItemId>{952D52C5-1D03-F011-BAE3-6045BDDE3C36}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Visite de Ménage</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>er_visite</EntitySchemaName>
+    </MobileOfflineProfileItem>
+    <MobileOfflineProfileItem MobileOfflineProfileItemId="adec33c6-1d03-f011-bae2-6045bde00e2f" Name="Contact">
+      <MobileOfflineProfileItemAssociations />
+      <MobileOfflineProfileItemId>{ADEC33C6-1D03-F011-BAE2-6045BDE00E2F}</MobileOfflineProfileItemId>
+      <RegardingObjectId>{46EEB1C5-1D03-F011-BAE3-7C1E52FC86DE}</RegardingObjectId>
+      <Name>Contact</Name>
+      <RecordDistributionCriteria>2</RecordDistributionCriteria>
+      <RecordsOwnedByMe>1</RecordsOwnedByMe>
+      <RecordsOwnedByMyTeam>0</RecordsOwnedByMyTeam>
+      <RecordsOwnedByMyBusinessUnit>0</RecordsOwnedByMyBusinessUnit>
+      <ProfileItemEntityFilter></ProfileItemEntityFilter>
+      <EntitySchemaName>Contact</EntitySchemaName>
+    </MobileOfflineProfileItem>
+  </MobileOfflineProfileItems>
+  <MobileOfflineProfileId>{46eeb1c5-1d03-f011-bae3-7c1e52fc86de}</MobileOfflineProfileId>
+  <Name>Dématérialisation_des_Processus_Accompagnement_sur_Site Profile</Name>
+</MobileOfflineProfile>

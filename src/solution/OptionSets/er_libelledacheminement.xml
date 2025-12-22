@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<optionset Name="er_libelledacheminement" localizedName="Libellé d'acheminement" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <OptionSetType>picklist</OptionSetType>
+  <IsGlobal>1</IsGlobal>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <ExternalTypeName></ExternalTypeName>
+  <displaynames>
+    <displayname description="Libellé d'acheminement" languagecode="1036" />
+  </displaynames>
+  <Descriptions>
+    <Description description="" languagecode="1036" />
+  </Descriptions>
+  <options>
+    <option value="122210000" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="BOIS DE NEFLES SAINT PAUL" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210001" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="BRAS PANON" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210002" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="CILAOS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210003" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="ENTRE DEUX" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210004" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="L ETANG SALE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210005" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA CHALOUPE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210006" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA MONTAGNE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210007" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA PLAINE DES CAFRES" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210008" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA POSSESSION" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210009" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA RIVIERE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210010" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LA SALINE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210011" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LE GUILLAUME" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210012" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LE PITON SAINT LEU" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210013" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LE PORT" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210014" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LE TAMPON" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210015" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LES AVIRONS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210016" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="LES TROIS BASSINS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210017" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="PETITE ILE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210018" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="PLAINE DES PALMISTES" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210019" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="RAVINE DES CABRIS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210020" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT BENOIT" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210021" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT DENIS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210022" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT GILLES LES BAINS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210023" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT GILLES LES HAUTS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210024" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT JOSEPH" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210025" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT LEU" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210026" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT LOUIS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210027" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT PAUL" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210028" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT PHILIPPE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210029" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT PIERRE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210030" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT-BENOIT" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210031" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINTE - ANNE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210032" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINTE CLOTILDE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210033" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINTE MARIE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210034" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINTE ROSE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210035" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT-LEU" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210036" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT-LOUIS" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210037" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SAINT-PAUL" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210038" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="SALAZIE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210039" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="ST ANDRE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+    <option value="122210040" ExternalValue="" IsHidden="0">
+      <labels>
+        <label description="STE SUZANNE" languagecode="1036" />
+      </labels>
+      <Descriptions>
+        <Description description="" languagecode="1036" />
+      </Descriptions>
+    </option>
+  </options>
+</optionset>

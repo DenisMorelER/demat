@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{ab2a124d-e1e3-4a35-be32-3b7c86b3cf6f}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_orientation" select="1" icon="1" preview="1">
+        <row name="result" id="er_orientationid">
+          <cell name="er_id_orientation" width="137" />
+          <cell name="createdon" width="100" />
+          <cell name="er_dossierdetraitement" width="160" />
+          <cell name="er_diagnostic_slime" width="147" />
+          <cell name="er_offre_orientation" width="144" />
+          <cell name="er_statut_orientation" width="147" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_orientation">
+          <attribute name="er_orientationid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_id_orientation" />
+          <attribute name="createdon" />
+          <attribute name="er_dossierdetraitement" />
+          <attribute name="er_diagnostic_slime" />
+          <attribute name="er_offre_orientation" />
+          <attribute name="er_statut_orientation" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Orientations actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

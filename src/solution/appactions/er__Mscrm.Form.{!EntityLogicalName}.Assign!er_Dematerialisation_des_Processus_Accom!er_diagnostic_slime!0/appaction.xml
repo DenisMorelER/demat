@@ -1,0 +1,41 @@
+<appaction uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <buttonaccessibilitytext default="Attribuer">
+    <label description="Attribuer" languagecode="1036" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Attribuer">
+    <label description="Attribuer" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Attribuez la propriété de ces entités {EntityLogicalNameCollectionMarker} à quelqu’un d’autre. &lt;br&gt;&lt;br&gt;Pour conserver la propriété des {EntityLogicalNameCollectionMarker}, tout en permettant à quelqu’un d’autre de les exploiter, sélectionnez plutôt Partager.">
+    <label description="Attribuez la propriété de ces entités {EntityLogicalNameCollectionMarker} à quelqu’un d’autre. &lt;br&gt;&lt;br&gt;Pour conserver la propriété des {EntityLogicalNameCollectionMarker}, tout en permettant à quelqu’un d’autre de les exploiter, sélectionnez plutôt Partager." languagecode="1036" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Attribuer">
+    <label description="Attribuer" languagecode="1036" />
+  </buttontooltiptitle>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>$clientsvg:FollowUser</fonticon>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Mscrm.Form.{!EntityLogicalName}.Assign</name>
+  <onclickeventjavascriptfunctionname>XrmCore.Commands.Assign.assignObject</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":2,"value":null}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>adea1aea-b2aa-e611-80d6-00155d88c343</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>2</origin>
+  <sequence>100400033.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>2</visibilitytype>
+</appaction>

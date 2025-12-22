@@ -1,0 +1,906 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "URL API Adresse Réunion (er_url_api_adresse_reunion)": {
+          "defaultValue": "https://data.regionreunion.com/api/explore/v2.1/catalog/datasets/ban-lareunion/records",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_url_api_adresse_reunion"
+          }
+        }
+      },
+      "staticResults": {
+        "GET_-_Site_Info0": {
+          "status": "Succeeded",
+          "outputs": {
+            "statusCode": "OK",
+            "headers": {}
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "3063ce36-d8e8-4bf1-9af6-202c51873b2c"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "schema": {
+              "siteId": {
+                "type": "string"
+              }
+            },
+            "method": "POST",
+            "triggerAuthenticationType": "All"
+          }
+        }
+      },
+      "actions": {
+        "GET_-_Site_Info": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "a1dfa27a-4c1f-4b69-89d6-d2a7f998b0d4"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_sites",
+              "recordId": "@triggerBody()?['siteId']"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "runtimeConfiguration": {
+            "staticResult": {
+              "staticResultOptions": "Disabled",
+              "name": "GET_-_Site_Info0"
+            }
+          }
+        },
+        "SCOPE_-_Get_Addresses_by_City_and_PC": {
+          "actions": {
+            "HTTP_-_Get_City_Addresses": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "2f81737e-b517-4e5f-806a-500599beb915"
+              },
+              "type": "Http",
+              "inputs": {
+                "method": "GET",
+                "uri": "@parameters('URL API Adresse Réunion (er_url_api_adresse_reunion)')",
+                "queries": {
+                  "where": "nom_commune='@{outputs('GET_-_Site_Info')?['body/er_ville']}' and code_postal=@{outputs('GET_-_Site_Info')?['body/er_code_postal']}",
+                  "limit": "@{variables('RetrievedAddressesLimitCount')}"
+                }
+              }
+            },
+            "IF_-_No_City_Addresses_returned": {
+              "actions": {
+                "RESPONSE_-_No_addresses_retrieved": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+                  },
+                  "type": "Response",
+                  "kind": "Http",
+                  "inputs": {
+                    "statusCode": 200,
+                    "body": {
+                      "ResponseDetails": "Aucune adresse n'a été retournée pour cette ville et ce code postal.",
+                      "AddressesRetrieved": "@variables('ResultAddresses')"
+                    },
+                    "schema": {
+                      "ResponseDetails": {
+                        "type": "string"
+                      },
+                      "AddressesRetrieved": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                },
+                "TERMINATE_-_No_addresses_retrieved": {
+                  "runAfter": {
+                    "RESPONSE_-_No_addresses_retrieved": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+                  },
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  }
+                }
+              },
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@length(body('HTTP_-_Get_City_Addresses')?['results'])",
+                  0
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "62ce9031-d401-4f01-88f2-04d6cc10c0fb"
+              },
+              "type": "If"
+            },
+            "SET_-_ResultAddresses": {
+              "runAfter": {
+                "IF_-_No_City_Addresses_returned": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "92e6459a-1430-4074-b54e-41900197d9db"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ResultAddresses",
+                "value": "@body('HTTP_-_Get_City_Addresses')?['results']"
+              }
+            },
+            "RESPONSE_-_API_Requesting_Failed": {
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses": [
+                  "Failed",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b42e6df6-772f-4be1-a0e2-81c08ba9c3f1"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 500,
+                "body": {
+                  "ResponseDetails": "Une erreur est survenue lors du requêtage API.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_API_Requesting_Failed": {
+              "runAfter": {
+                "RESPONSE_-_API_Requesting_Failed": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fca2a96c-b98f-4b10-9da3-c7facb0e0205"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "500",
+                  "message": "API Requesting failed!"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_No_City_on_the_Site": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3a6ca423-c42c-4621-a70b-5d024c9b6cff"
+          },
+          "type": "Scope"
+        },
+        "INIT_-_ResultAddresses": {
+          "runAfter": {
+            "GET_-_Site_Info": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a86cfb41-9b2d-46ce-b47c-976ec5c17382"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ResultAddresses",
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "SCOPE_-_Get_Addresses_by_City,_PC_and_Street": {
+          "actions": {
+            "HTTP_-_Get_City_Addresses_2": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "2f81737e-b517-4e5f-806a-500599beb915"
+              },
+              "type": "Http",
+              "inputs": {
+                "method": "GET",
+                "uri": "@parameters('URL API Adresse Réunion (er_url_api_adresse_reunion)')",
+                "queries": {
+                  "where": "nom_commune='@{outputs('GET_-_Site_Info')?['body/er_ville']}' and code_postal=@{outputs('GET_-_Site_Info')?['body/er_code_postal']} and nom_voie = '@{outputs('GET_-_Site_Info')?['body/er_nom_voie']}'",
+                  "limit": "@{variables('RetrievedAddressesLimitCount')}"
+                }
+              }
+            },
+            "IF_-_No_City_Addresses_returned_2": {
+              "actions": {
+                "RESPONSE_-_No_addresses_retrieved_2": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+                  },
+                  "type": "Response",
+                  "kind": "Http",
+                  "inputs": {
+                    "statusCode": 200,
+                    "body": {
+                      "ResponseDetails": "Aucune adresse n'a été retournée pour cette ville, ce code postal et ce nom de voie. Merci de choisir parmi les résultats du filtre Ville + CP",
+                      "AddressesRetrieved": "@variables('ResultAddresses')"
+                    },
+                    "schema": {
+                      "ResponseDetails": {
+                        "type": "string"
+                      },
+                      "AddressesRetrieved": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                },
+                "TERMINATE_-_No_addresses_retrieved_2": {
+                  "runAfter": {
+                    "RESPONSE_-_No_addresses_retrieved_2": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+                  },
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  }
+                }
+              },
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_2": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@length(body('HTTP_-_Get_City_Addresses_2')?['results'])",
+                  0
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "62ce9031-d401-4f01-88f2-04d6cc10c0fb"
+              },
+              "type": "If"
+            },
+            "SET_-_ResultAddresses_2": {
+              "runAfter": {
+                "IF_-_No_City_Addresses_returned_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "92e6459a-1430-4074-b54e-41900197d9db"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ResultAddresses",
+                "value": "@body('HTTP_-_Get_City_Addresses_2')?['results']"
+              }
+            },
+            "RESPONSE_-_API_Requesting_Failed_2": {
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_2": [
+                  "Failed",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b42e6df6-772f-4be1-a0e2-81c08ba9c3f1"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 500,
+                "body": {
+                  "ResponseDetails": "Une erreur est survenue lors du requêtage API.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_API_Requesting_Failed_2": {
+              "runAfter": {
+                "RESPONSE_-_API_Requesting_Failed_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fca2a96c-b98f-4b10-9da3-c7facb0e0205"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "500",
+                  "message": "API Requesting failed!"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_No_Street_on_the_Site": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3a6ca423-c42c-4621-a70b-5d024c9b6cff"
+          },
+          "type": "Scope"
+        },
+        "IF_-_No_Street_on_the_Site": {
+          "actions": {
+            "RESPONSE_-_Addresses_Retrieved": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 200,
+                "body": {
+                  "ResponseDetails": "Voici la liste des adresses trouvées pour cette ville et ce code postal.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_Addresses_retrieved": {
+              "runAfter": {
+                "RESPONSE_-_Addresses_Retrieved": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "SCOPE_-_Get_Addresses_by_City_and_PC": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@outputs('GET_-_Site_Info')?['body/er_nom_voie']",
+              "@null"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6bfb61da-415c-4a59-8131-48b3b466963f"
+          },
+          "type": "If"
+        },
+        "IF_-_No_Number_on_the_Site": {
+          "actions": {
+            "RESPONSE_-_Addresses_Retrieved_2": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 200,
+                "body": {
+                  "ResponseDetails": "Aucune adresse trouvée à ce numéro. Voici la liste des adresses trouvées pour cette ville, ce code postal et cette rue.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_Addresses_retrieved_2": {
+              "runAfter": {
+                "RESPONSE_-_Addresses_Retrieved_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "SCOPE_-_Get_Addresses_by_City,_PC_and_Street": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@outputs('GET_-_Site_Info')?['body/er_numero']",
+              "@null"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6bfb61da-415c-4a59-8131-48b3b466963f"
+          },
+          "type": "If"
+        },
+        "SCOPE_-_Get_Addresses_by_City,_PC,_Street_and_Number": {
+          "actions": {
+            "HTTP_-_Get_City_Addresses_3": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "2f81737e-b517-4e5f-806a-500599beb915"
+              },
+              "type": "Http",
+              "inputs": {
+                "method": "GET",
+                "uri": "@parameters('URL API Adresse Réunion (er_url_api_adresse_reunion)')",
+                "queries": {
+                  "where": "nom_commune='@{outputs('GET_-_Site_Info')?['body/er_ville']}' and code_postal=@{outputs('GET_-_Site_Info')?['body/er_code_postal']} and nom_voie = '@{outputs('GET_-_Site_Info')?['body/er_nom_voie']}' and numero=@{outputs('GET_-_Site_Info')?['body/er_numero']}",
+                  "limit": "@{variables('RetrievedAddressesLimitCount')}"
+                }
+              }
+            },
+            "IF_-_No_City_Addresses_returned_3": {
+              "actions": {
+                "RESPONSE_-_No_addresses_retrieved_3": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+                  },
+                  "type": "Response",
+                  "kind": "Http",
+                  "inputs": {
+                    "statusCode": 200,
+                    "body": {
+                      "ResponseDetails": "Aucune adresse n'a été retournée pour cette ville, ce code postal, ce nom de voie et ce numéro. Merci de choisir parmi les résultats du filtre Ville + CP + Nom de voie",
+                      "AddressesRetrieved": "@variables('ResultAddresses')"
+                    },
+                    "schema": {
+                      "ResponseDetails": {
+                        "type": "string"
+                      },
+                      "AddressesRetrieved": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                },
+                "TERMINATE_-_No_addresses_retrieved_3": {
+                  "runAfter": {
+                    "RESPONSE_-_No_addresses_retrieved_3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+                  },
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  }
+                }
+              },
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_3": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@length(body('HTTP_-_Get_City_Addresses_3')?['results'])",
+                  0
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "62ce9031-d401-4f01-88f2-04d6cc10c0fb"
+              },
+              "type": "If"
+            },
+            "SET_-_ResultAddresses_3": {
+              "runAfter": {
+                "IF_-_No_City_Addresses_returned_3": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "92e6459a-1430-4074-b54e-41900197d9db"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ResultAddresses",
+                "value": "@body('HTTP_-_Get_City_Addresses_3')?['results']"
+              }
+            },
+            "RESPONSE_-_API_Requesting_Failed_3": {
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_3": [
+                  "Failed",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b42e6df6-772f-4be1-a0e2-81c08ba9c3f1"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 500,
+                "body": {
+                  "ResponseDetails": "Une erreur est survenue lors du requêtage API.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_API_Requesting_Failed_3": {
+              "runAfter": {
+                "RESPONSE_-_API_Requesting_Failed_3": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fca2a96c-b98f-4b10-9da3-c7facb0e0205"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "500",
+                  "message": "API Requesting failed!"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_No_Number_on_the_Site": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3a6ca423-c42c-4621-a70b-5d024c9b6cff"
+          },
+          "type": "Scope"
+        },
+        "RESPONSE_-_Final_Addresses_Retrieved": {
+          "runAfter": {
+            "SCOPE_-_Get_Addresses_by_City,_PC,_Street_and_Number": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "ResponseDetails": "Voici les adresses correspondantes au filtre Ville + CP + Nom Voie + Numéro",
+              "AddressesRetrieved": "@variables('ResultAddresses')"
+            },
+            "schema": {
+              "ResponseDetails": {
+                "type": "string"
+              },
+              "AddressesRetrieved": {
+                "type": "array"
+              }
+            }
+          }
+        },
+        "INIT_-_RetrievedAddressesLimitCount": {
+          "runAfter": {
+            "INIT_-_ResultAddresses": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "276594a4-5d24-4910-823c-dcca4f806510"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "RetrievedAddressesLimitCount",
+                "type": "integer",
+                "value": 100
+              }
+            ]
+          }
+        },
+        "SCOPE_-_Get_Addresses_by_PC": {
+          "actions": {
+            "HTTP_-_Get_City_Addresses_4": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "2f81737e-b517-4e5f-806a-500599beb915"
+              },
+              "type": "Http",
+              "inputs": {
+                "method": "GET",
+                "uri": "@parameters('URL API Adresse Réunion (er_url_api_adresse_reunion)')",
+                "queries": {
+                  "where": "code_postal=@{outputs('GET_-_Site_Info')?['body/er_code_postal']}",
+                  "limit": "@{variables('RetrievedAddressesLimitCount')}"
+                }
+              }
+            },
+            "IF_-_No_City_Addresses_returned_4": {
+              "actions": {
+                "RESPONSE_-_No_addresses_retrieved_4": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+                  },
+                  "type": "Response",
+                  "kind": "Http",
+                  "inputs": {
+                    "statusCode": 200,
+                    "body": {
+                      "ResponseDetails": "Aucune adresse n'a été retournée pour ce code postal.",
+                      "AddressesRetrieved": "@variables('ResultAddresses')"
+                    },
+                    "schema": {
+                      "ResponseDetails": {
+                        "type": "string"
+                      },
+                      "AddressesRetrieved": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                },
+                "TERMINATE_-_No_addresses_retrieved_4": {
+                  "runAfter": {
+                    "RESPONSE_-_No_addresses_retrieved_4": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+                  },
+                  "type": "Terminate",
+                  "inputs": {
+                    "runStatus": "Succeeded"
+                  }
+                }
+              },
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_4": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "equals": [
+                  "@length(body('HTTP_-_Get_City_Addresses_4')?['results'])",
+                  0
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "62ce9031-d401-4f01-88f2-04d6cc10c0fb"
+              },
+              "type": "If"
+            },
+            "SET_-_ResultAddresses_4": {
+              "runAfter": {
+                "IF_-_No_City_Addresses_returned_4": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "92e6459a-1430-4074-b54e-41900197d9db"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ResultAddresses",
+                "value": "@body('HTTP_-_Get_City_Addresses_4')?['results']"
+              }
+            },
+            "RESPONSE_-_API_Requesting_Failed_4": {
+              "runAfter": {
+                "HTTP_-_Get_City_Addresses_4": [
+                  "Failed",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "b42e6df6-772f-4be1-a0e2-81c08ba9c3f1"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 500,
+                "body": {
+                  "ResponseDetails": "Une erreur est survenue lors du requêtage API.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_API_Requesting_Failed_4": {
+              "runAfter": {
+                "RESPONSE_-_API_Requesting_Failed_4": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "fca2a96c-b98f-4b10-9da3-c7facb0e0205"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "code": "500",
+                  "message": "API Requesting failed!"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "INIT_-_RetrievedAddressesLimitCount": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3a6ca423-c42c-4621-a70b-5d024c9b6cff"
+          },
+          "type": "Scope"
+        },
+        "IF_-_No_City_on_the_Site": {
+          "actions": {
+            "RESPONSE_-_Addresses_Retrieved_3": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "9b5e1550-e840-42f4-b285-5b1f210fcf15"
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 200,
+                "body": {
+                  "ResponseDetails": "Voici la liste des adresses trouvées pour ce code postal.",
+                  "AddressesRetrieved": "@variables('ResultAddresses')"
+                },
+                "schema": {
+                  "ResponseDetails": {
+                    "type": "string"
+                  },
+                  "AddressesRetrieved": {
+                    "type": "array"
+                  }
+                }
+              }
+            },
+            "TERMINATE_-_Addresses_retrieved_3": {
+              "runAfter": {
+                "RESPONSE_-_Addresses_Retrieved_3": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "dd502ab4-d8e2-46e1-984d-41839cf99a39"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "SCOPE_-_Get_Addresses_by_PC": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@outputs('GET_-_Site_Info')?['body/er_ville']",
+              "@null"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6bfb61da-415c-4a59-8131-48b3b466963f"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

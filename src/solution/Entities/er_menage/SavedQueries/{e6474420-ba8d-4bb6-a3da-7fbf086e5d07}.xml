@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e6474420-ba8d-4bb6-a3da-7fbf086e5d07}</savedqueryid>
+    <layoutxml>
+      <grid name="er_menages" jump="er_nom" select="1" icon="1" preview="0">
+        <row name="er_menage" id="er_menageid">
+          <cell name="er_nom" width="192" />
+          <cell name="a_749ce46ca84c40a5afaad7864e7159d5.firstname" width="227" />
+          <cell name="a_749ce46ca84c40a5afaad7864e7159d5.lastname" width="272" />
+          <cell name="a_0da4ef7b1071429495347bfbf596a74b.firstname" width="227" />
+          <cell name="a_0da4ef7b1071429495347bfbf596a74b.lastname" width="272" />
+          <cell name="er_site_residence" width="280" />
+          <cell name="a_55f87bee2b9a4adea96512a9ae2870de.er_nom_voie" width="234" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_menage">
+          <attribute name="er_menageid" />
+          <attribute name="er_nom" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_site_residence" />
+          <order attribute="er_nom" descending="false" />
+          <link-entity alias="a_749ce46ca84c40a5afaad7864e7159d5" name="contact" to="er_personne_referente" from="contactid" link-type="outer" visible="false">
+            <attribute name="firstname" />
+            <attribute name="lastname" />
+          </link-entity>
+          <link-entity alias="a_0da4ef7b1071429495347bfbf596a74b" name="contact" to="er_personnereferente2" from="contactid" link-type="outer" visible="false">
+            <attribute name="firstname" />
+            <attribute name="lastname" />
+          </link-entity>
+          <attribute name="createdon" />
+          <link-entity alias="a_55f87bee2b9a4adea96512a9ae2870de" name="er_site" to="er_site_residence" from="er_siteid" link-type="outer" visible="false">
+            <attribute name="er_nom_voie" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche : Ménage" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

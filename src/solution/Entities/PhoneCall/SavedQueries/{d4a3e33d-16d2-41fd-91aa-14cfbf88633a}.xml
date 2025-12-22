@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{d4a3e33d-16d2-41fd-91aa-14cfbf88633a}</savedqueryid>
+    <queryapi></queryapi>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" preview="0" icon="1">
+        <row name="result" id="activityid">
+          <cell name="subject" width="250" />
+          <cell name="from" width="140" />
+          <cell name="createdon" width="100" />
+          <cell name="directioncode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="phonecall">
+          <attribute name="subject" />
+          <attribute name="activityid" />
+          <attribute name="from" />
+          <attribute name="directioncode" />
+          <attribute name="createdon" />
+          <order attribute="createdon" descending="true" />
+          <order attribute="subject" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>5.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Phone Call Lookup View" languagecode="1033" />
+      <LocalizedName description="Vue Recherche d'appels téléphoniques" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

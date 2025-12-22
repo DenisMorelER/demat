@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0219f55c-c804-f011-bae3-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{138590fd-f8c4-4eb4-b3a0-273305c55c88}" IsUserDefined="1" labelid="{b9c799be-d874-41f8-8610-db4b8b19f25f}">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{8cacde1b-5c07-4bc1-a8d3-003e8abfbc73}" labelid="{228b669a-a6d3-486c-b62c-fd830653c4b6}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{56ed8278-cf67-4701-8da4-34468f78cedc}" labelid="{2bb0ac96-41e4-49be-ab90-58716c41f04c}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_echange" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_echange" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{757f3204-bbe3-4be1-a19b-b2b0debc1ca5}" locklevel="0" colspan="1" rowspan="1" labelid="{786cfdbd-96ac-434d-9be0-305af9077d7f}">
+                        <labels>
+                          <label description="Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ffd55336-d642-4bd7-ab6d-1e40d108a67e}" locklevel="0" colspan="1" rowspan="1" labelid="{313c578f-cbd2-4afb-9643-e2d6ec59fbd5}">
+                        <labels>
+                          <label description="Dossier concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossier_concerne" disabled="false">
+                          <parameters>
+                            <DependentAttributeName>er_echanges_menage.er_menage</DependentAttributeName>
+                            <DependentAttributeType>er_menage</DependentAttributeType>
+                            <FilterRelationshipName>er_menage_beneficiaire_dossiers</FilterRelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{371bd120-ee77-4b05-a4a4-8d2d3f927568}" visible="false" labelid="{dea04684-330a-42e3-b9ed-f62764a301ec}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section rowheight="25" name="ref_pan_d436cfa0-4f2f-4d9a-a585-8775a77ec50f_section_" id="42cd5a16-074c-4d0c-8629-1806cd698b9b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{56656e17-32b0-4950-9de8-eb74a57554a3}">
+                  <labels>
+                    <label description="Echanges" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{be50d6f4-faa2-47f3-aea1-3ce6ea3c6fc6}" rowspan="4" colspan="1" auto="false" labelid="{f0238a81-318f-48fe-8ab2-2101a6190348}">
+                        <labels>
+                          <label description="Appels avec le ménage" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Control_new_1" classid="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_echange_menage_appels</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{F6A2F891-6846-4B21-B922-712695AFD65C}</ViewId>
+                            <ViewIds>{65F927D1-8CF1-4639-97D4-7B6388FB26D2},{F6A2F891-6846-4B21-B922-712695AFD65C}</ViewIds>
+                            <VisualizationId>{399945c7-d07f-444e-9e54-d5fa4042290c}</VisualizationId>
+                            <ReferencePanelSubgridIconUrl>msdyncrm_/libs/ckeditor/plugins/find/icons/find-rtl.png</ReferencePanelSubgridIconUrl>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{e0224296-f2ff-4947-a640-92560d49e3ef}" rowspan="4" colspan="1" auto="false" labelid="{e7465b27-2c04-4f24-9530-cfa4679317a8}">
+                        <labels>
+                          <label description="Emails avec le ménage" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Control_new_2" classid="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_echange_menage_mails</RelationshipName>
+                            <TargetEntityType>email</TargetEntityType>
+                            <ViewId>{CC98CB1F-6552-4FD8-9E2F-39A1CAD2F710}</ViewId>
+                            <ViewIds>{7AFF64B0-5B8C-4AD7-89F8-976777EEE178},{CC98CB1F-6552-4FD8-9E2F-39A1CAD2F710}</ViewIds>
+                            <VisualizationId>{1EC1872A-23DE-4294-9D7F-1B76272A5FD5}</VisualizationId>
+                            <ReferencePanelSubgridIconUrl>msdyncrm_/libs/ckeditor/plugins/smiley/images/envelope.png</ReferencePanelSubgridIconUrl>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{87e3421b-ce5b-4817-8061-e022d8ad36d2}" rowspan="4" colspan="1" auto="false" labelid="{ecf026ba-6994-4405-92e4-469245cd18fc}">
+                        <labels>
+                          <label description="Courrier avec le ménage" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Control_new_3" classid="{02D4264B-47E2-4B4C-AA95-F439F3F4D458}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_echange_menage_courriers</RelationshipName>
+                            <TargetEntityType>letter</TargetEntityType>
+                            <ViewId>{BF36046A-D017-4A5F-927D-086522EC08ED}</ViewId>
+                            <ViewIds>{ED36ABD8-7F54-4077-8B46-D6F9BF8E71DF},{BF36046A-D017-4A5F-927D-086522EC08ED}</ViewIds>
+                            <VisualizationId>{82D85B44-0FA5-4009-B840-B409E784673A}</VisualizationId>
+                            <ReferencePanelSubgridIconUrl>adx_icon_invitation_small</ReferencePanelSubgridIconUrl>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{48f12e63-3071-47d6-a2cd-3fbaecfdd7a0}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{63a6909e-8387-45bb-a9e0-ceb60ca50ca3}" showlabel="false" labelid="{b408cfc7-954e-44b7-8016-f0bee70cfeb3}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{51994048-1662-4941-a0cc-b84a77fb03bd}" showlabel="false" labelid="{7ad50be6-a130-4e87-b715-58b05528f20c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{8868500c-c30a-43f2-9425-f57836664d37}" showlabel="false" labelid="{8513ef1a-9a8a-4d1f-ad2b-53b704bce34b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{56f935c1-ff32-4e5d-8f68-7f5647936dac}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{6152f503-7373-4f84-8d14-1e925d378096}" showlabel="false" labelid="{10063a43-b1c9-485c-8ea6-b5e77bd49d68}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{066cc865-8a5d-4481-b8b6-016f6dc157a9}" showlabel="false" labelid="{bc3cd89b-c69b-42e8-82c6-c50932e70074}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e905cec8-f7ff-403d-93ee-004da0dab4b0}" showlabel="false" labelid="{3d044daa-e0e5-4566-9854-520523c64cb0}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations - Offline" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

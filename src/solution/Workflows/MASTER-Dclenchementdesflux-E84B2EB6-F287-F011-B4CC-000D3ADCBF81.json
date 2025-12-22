@@ -1,0 +1,402 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Lorsqu’une_ligne_est_ajoutée,_modifiée_ou_supprimée_-_Demande_d'automatisation": {
+          "metadata": {
+            "operationMetadataId": "30dc922e-2070-4e0c-8bee-21e8ed0017d3"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "er_suiviautomatisations",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/runas": 1
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "actions": {
+        "Mettre_à_jour_une_ligne_-_Demande_d'automatisation": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_suiviautomatisationses",
+              "recordId": "@triggerOutputs()?['body/er_suiviautomatisationsid']",
+              "item/er_datededebutdexecution": "@utcNow()",
+              "item/er_statutdexecution": 122210001
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        },
+        "Mettre_à_jour_une_ligne_-_Demande_d'automatisation_-_OK": {
+          "runAfter": {
+            "Basculer_-_Flux_à_exécuter": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_suiviautomatisationses",
+              "recordId": "@triggerOutputs()?['body/er_suiviautomatisationsid']",
+              "item/er_datedefindexecution": "@utcNow()",
+              "item/er_detailssurletraitement": "@variables('Résultat d''exécution')",
+              "item/er_resultatdutraitement": "@variables('Statut du résultat')",
+              "item/er_statutdexecution": 122210002
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        },
+        "Mettre_à_jour_une_ligne_-_Demande_d'automatisation_-_Erreur": {
+          "runAfter": {
+            "Basculer_-_Flux_à_exécuter": [
+              "Failed",
+              "TimedOut",
+              "Skipped"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_suiviautomatisationses",
+              "recordId": "@triggerOutputs()?['body/er_suiviautomatisationsid']",
+              "item/er_datedefindexecution": "@utcNow()",
+              "item/er_detailssurletraitement": "@variables('Résultat d''exécution')",
+              "item/er_resultatdutraitement": "@variables('Statut du résultat')",
+              "item/er_statutdexecution": 122210003
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        },
+        "Initialiser_la_variable_-_Détails_du_résultat_d'exécution": {
+          "runAfter": {
+            "Initialiser_la_variable_-_Statut_du_résultat_d'execution": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Résultat d'exécution",
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "Initialiser_la_variable_-_Statut_du_résultat_d'execution": {
+          "runAfter": {
+            "Mettre_à_jour_une_ligne_-_Demande_d'automatisation": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Statut du résultat",
+                "type": "integer",
+                "value": 122210000
+              }
+            ]
+          }
+        },
+        "Basculer_-_Flux_à_exécuter": {
+          "runAfter": {
+            "Initialiser_la_variable-_API_Token": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Case_-_Diagnostic_SLIME_-_Génération_du_formulaire_SLIME": {
+              "case": "Diagnostic SLIME - Génération du formulaire SLIME",
+              "actions": {
+                "Exécuter_un_flux_enfant_-_Diagnostic_SLIME_-_Génération_du_formulaire_SLIME": {
+                  "type": "Workflow",
+                  "inputs": {
+                    "host": {
+                      "workflowReferenceName": "52ab9ab3-eb87-f011-b4cc-000d3adcbf81"
+                    },
+                    "body": {
+                      "REFDemande": "@triggerOutputs()?['body/er_automatisation']",
+                      "Utilisateur": "@triggerOutputs()?['body/_createdby_value']",
+                      "IDEnregistrementConcerne": "@triggerOutputs()?['body/er_contexteiddelenregistrement']",
+                      "x-api-token": "@variables('generatedToken')"
+                    },
+                    "retryPolicy": {
+                      "type": "none"
+                    }
+                  }
+                },
+                "Définir_une_variable_-_Formulaire_SLIME_-_Statut_Succès": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Diagnostic_SLIME_-_Génération_du_formulaire_SLIME": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Statut du résultat",
+                    "value": 122210001
+                  }
+                },
+                "Définir_une_variable_-_Formulaire_SLIME_-_Détails_du_résultat_d'exécution_1": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Diagnostic_SLIME_-_Génération_du_formulaire_SLIME": [
+                      "Failed",
+                      "Skipped",
+                      "TimedOut",
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Résultat d'exécution",
+                    "value": "@body('Exécuter_un_flux_enfant_-_Diagnostic_SLIME_-_Génération_du_formulaire_SLIME')"
+                  }
+                }
+              }
+            },
+            "Case_-_Diagnostic_SLIME_-_Génération_fichier_DEP_V3": {
+              "case": "Diagnostic SLIME - Génération fichier DEP V3",
+              "actions": {
+                "Exécuter_un_flux_enfant_-_Génération_fichier_DEP_V3": {
+                  "type": "Workflow",
+                  "inputs": {
+                    "host": {
+                      "workflowReferenceName": "0b40bd1e-ab8c-f011-b4cc-6045bdde3c36"
+                    },
+                    "body": {
+                      "REFDemande": "@triggerOutputs()?['body/er_automatisation']",
+                      "Utilisateur": "@triggerOutputs()?['body/_createdby_value']",
+                      "IDEnregistrementConcerne": "@triggerOutputs()?['body/er_contexteiddelenregistrement']",
+                      "x-api-token": "@variables('generatedToken')"
+                    },
+                    "retryPolicy": {
+                      "type": "none"
+                    }
+                  }
+                },
+                "Définir_une_variable_-_Création_DEP_-_Statut_Succès": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Génération_fichier_DEP_V3": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Statut du résultat",
+                    "value": 122210001
+                  }
+                },
+                "Définir_une_variable_-_Création_DEP_-_Détails_du_résultat_d'exécution": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Génération_fichier_DEP_V3": [
+                      "Succeeded",
+                      "Failed",
+                      "Skipped",
+                      "TimedOut"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Résultat d'exécution",
+                    "value": "@body('Exécuter_un_flux_enfant_-_Génération_fichier_DEP_V3')"
+                  }
+                }
+              }
+            },
+            "Case_-_Diagnostic_SLIME_-_Diagnostic_SLIME_-_Importation_des_données_du_DEP_V2": {
+              "case": "Diagnostic SLIME - Importation des données du DEP V2 - Commande",
+              "actions": {
+                "Exécuter_un_flux_enfant_-_Importation_des_données_du_DEP": {
+                  "type": "Workflow",
+                  "inputs": {
+                    "host": {
+                      "workflowReferenceName": "b0f35b65-318e-f011-b4cc-6045bdde3c36"
+                    },
+                    "body": {
+                      "REFDemande": "@triggerOutputs()?['body/er_automatisation']",
+                      "Utilisateur": "@triggerOutputs()?['body/_createdby_value']",
+                      "IDEnregistrementConcerne": "@triggerOutputs()?['body/er_contexteiddelenregistrement']",
+                      "x-api-token": "@variables('generatedToken')"
+                    },
+                    "retryPolicy": {
+                      "type": "none"
+                    }
+                  }
+                },
+                "Définir_une_variable_-_Import_DEP_-_Statut_Succès": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Importation_des_données_du_DEP": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Statut du résultat",
+                    "value": 122210001
+                  }
+                },
+                "Définir_une_variable_-_Import_DEP_-_Détails_du_résultat_d'exécution": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_Importation_des_données_du_DEP": [
+                      "Succeeded",
+                      "Failed",
+                      "Skipped",
+                      "TimedOut"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Résultat d'exécution",
+                    "value": "@body('Exécuter_un_flux_enfant_-_Importation_des_données_du_DEP')"
+                  }
+                }
+              }
+            },
+            "Case_-_RPA_SOLIDIAG_Lancement_flux_de_bureau_V2_-_Commande": {
+              "case": "RPA SOLIDIAG Lancement flux de bureau V2 - Commande",
+              "actions": {
+                "Exécuter_un_flux_enfant_-_RPA_SOLIDIAG_Lancement_flux_de_bureau_V2_-_Commande": {
+                  "type": "Workflow",
+                  "inputs": {
+                    "host": {
+                      "workflowReferenceName": "5b92b26a-c88f-f011-b4cc-6045bdde3c36"
+                    },
+                    "body": {
+                      "REFDemande": "@triggerOutputs()?['body/er_automatisation']",
+                      "Utilisateur": "@triggerOutputs()?['body/_createdby_value']",
+                      "IDEnregistrementConcerne": "@triggerOutputs()?['body/er_contexteiddelenregistrement']",
+                      "x-api-token": "@variables('generatedToken')"
+                    },
+                    "retryPolicy": {
+                      "type": "none"
+                    }
+                  }
+                },
+                "Définir_une_variable_-_Saisie_RPA_-_Statut_Succès": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_RPA_SOLIDIAG_Lancement_flux_de_bureau_V2_-_Commande": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Statut du résultat",
+                    "value": 122210001
+                  }
+                },
+                "Définir_une_variable_-_Saisie_RPA_-_Détails_du_résultat_d'exécution_1": {
+                  "runAfter": {
+                    "Exécuter_un_flux_enfant_-_RPA_SOLIDIAG_Lancement_flux_de_bureau_V2_-_Commande": [
+                      "Succeeded",
+                      "Failed",
+                      "Skipped",
+                      "TimedOut"
+                    ]
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Résultat d'exécution",
+                    "value": "@body('Exécuter_un_flux_enfant_-_RPA_SOLIDIAG_Lancement_flux_de_bureau_V2_-_Commande')"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {
+              "Définir_une_variable_-_Flux_non_identifié-_Statut_Succès": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Statut du résultat",
+                  "value": 122210000
+                }
+              },
+              "Définir_une_variable_-_Flux_non_identifié_-_Détails_du_résultat_d'exécution_1": {
+                "runAfter": {
+                  "Définir_une_variable_-_Flux_non_identifié-_Statut_Succès": [
+                    "Succeeded"
+                  ]
+                },
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Résultat d'exécution",
+                  "value": {
+                    "Statut": "Erreur",
+                    "Message": " Le flux demandé n'est pas reconnu."
+                  }
+                }
+              }
+            }
+          },
+          "expression": "@triggerOutputs()?['body/er_fluxaexecuter']",
+          "type": "Switch"
+        },
+        "Initialiser_la_variable-_API_Token": {
+          "runAfter": {
+            "Initialiser_la_variable_-_Détails_du_résultat_d'exécution": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "generatedToken",
+                "type": "string",
+                "value": "@base64(concat(\r\n  substring(formatDateTime(utcNow(), 'dddd'), 0, 2),\r\n  substring(formatDateTime(utcNow(), 'MMMM'), 0, 3),\r\n  'ER',\r\n  formatDateTime(utcNow(), 'dd/MM/yyyy')\r\n  )\r\n  )"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cab71cb2-fda7-f011-bbd3-000d3adccbc3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{9f9080d1-3391-473a-9fb5-bd8e0f0f5aa8}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{7b79c679-1a3f-42d6-a4f2-8e51d4faccda}">
+                  <labels>
+                    <label description="Détails de l'utilisateur" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{eaac5056-3fd9-4e06-9945-2b3972bf712f}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{06962355-387d-4314-9693-85cec857285d}" locklevel="0" colspan="1" rowspan="1" labelid="{374767d5-6de4-4134-a7ab-2874856d36c2}">
+                        <labels>
+                          <label description="Nom de famille" languagecode="1036" />
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="lastname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e61942e0-d52d-4e52-82bf-a83739c5b4be}" locklevel="0" colspan="1" rowspan="1" labelid="{b10196bf-12f6-42c4-a7d6-5c1dfec3dce9}">
+                        <labels>
+                          <label description="Prénom" languagecode="1036" />
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="firstname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="firstname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0991a762-3418-4c16-9478-495111bf68be}" locklevel="0" colspan="1" rowspan="1" labelid="{5ddb4ef4-9ebc-4266-8d70-c632fd4902d0}">
+                        <labels>
+                          <label description="Titre" languagecode="1036" />
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="title" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="title" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8e6d6448-132c-451e-8eae-213d1400831a}" locklevel="0" colspan="1" rowspan="1" labelid="{8057e8b4-2e2f-43f7-8b8e-56e865e8361d}">
+                        <labels>
+                          <label description="Adresse de messagerie principale" languagecode="1036" />
+                          <label description="Primary Email" languagecode="1033" />
+                        </labels>
+                        <control id="internalemailaddress" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="internalemailaddress" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a5de75a-d1b6-4888-a7b7-cf6693f3f46b}" locklevel="0" colspan="1" rowspan="1" labelid="{d4330d39-a184-4385-8935-a7ebc165b536}">
+                        <labels>
+                          <label description="Téléphone mobile" languagecode="1036" />
+                          <label description="Mobile Phone" languagecode="1033" />
+                        </labels>
+                        <control id="mobilephone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="mobilephone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb9ec172-8647-4af1-84cf-dd3377d7dd05}" locklevel="0" colspan="1" rowspan="1" labelid="{c4002a6b-3c23-4888-b620-99b594fcfa2e}">
+                        <labels>
+                          <label description="Téléphone principal" languagecode="1036" />
+                          <label description="Main Phone" languagecode="1033" />
+                        </labels>
+                        <control id="address1_telephone1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="address1_telephone1" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Utilisateur - Formulaire d'aperçu" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

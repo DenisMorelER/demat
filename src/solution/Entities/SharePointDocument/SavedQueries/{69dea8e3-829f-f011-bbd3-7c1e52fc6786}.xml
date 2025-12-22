@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{69dea8e3-829f-f011-bbd3-7c1e52fc6786}</savedqueryid>
+    <layoutxml>
+      <grid name="sharepointdocument" jump="fullname" select="1" icon="0" preview="1">
+        <row name="sharepointdocument" id="sharepointdocumentid">
+          <cell name="fullname" width="300" imageproviderfunctionname="DocumentManagement.FileTypeIcon.loadSharePointFileTypeIcon" imageproviderwebresource="$webresource:SharePoint_main_system_library.js" />
+          <cell name="er_version" width="70" />
+          <cell name="filesize" width="118" />
+          <cell name="er_id" width="54" />
+          <cell name="sharepointcreatedon" width="140" />
+          <cell name="modified" width="140" />
+          <cell name="sharepointmodifiedby" width="128" />
+          <cell name="documentid" ishidden="1" width="144" />
+          <cell name="editurl" ishidden="1" />
+          <cell name="author" ishidden="1" />
+          <cell name="sharepointdocumentid" ishidden="1" />
+          <cell name="filetype" ishidden="1" width="200" />
+          <cell name="ischeckedout" ishidden="1" />
+          <cell name="locationid" ishidden="1" />
+          <cell name="iconclassname" ishidden="1" />
+          <cell name="filetype" width="100" />
+          <cell name="relativelocation" width="234" />
+          <cell name="absoluteurl" width="115" />
+          <cell name="documentid" />
+          <cell name="readurl" width="217" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch distinct="false" mapping="logical">
+        <entity name="sharepointdocument">
+          <attribute name="documentid" />
+          <attribute name="fullname" />
+          <attribute name="relativelocation" />
+          <attribute name="filetype" />
+          <attribute name="modified" />
+          <attribute name="sharepointmodifiedby" />
+          <attribute name="editurl" />
+          <attribute name="author" />
+          <attribute name="sharepointdocumentid" />
+          <attribute name="ischeckedout" />
+          <attribute name="locationid" />
+          <attribute name="iconclassname" />
+          <filter>
+            <condition attribute="isrecursivefetch" operator="eq" value="1" />
+          </filter>
+          <attribute name="filetype" />
+          <attribute name="filesize" />
+          <attribute name="sharepointcreatedon" />
+          <attribute name="absoluteurl" />
+          <attribute name="documentid" />
+          <attribute name="readurl" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="er_version" />
+          <attribute name="er_id" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue simple documents SharePoint" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Tous les documents SharePoint" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

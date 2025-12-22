@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{6059facd-a255-f011-877b-6045bdde3c36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_slime" select="1" icon="1" preview="1">
+        <row name="result" id="er_diagnostic_slimeid">
+          <cell name="er_id_slime" width="120" />
+          <cell name="er_dossierparent" width="109" />
+          <cell name="createdon" width="140" />
+          <cell name="a_42a2e5efdcd2401a80db26e9503b26c1.er_menage_beneficiaire" width="261" />
+          <cell name="a_42a2e5efdcd2401a80db26e9503b26c1.er_site_concerne" width="213" />
+          <cell name="a_42a2e5efdcd2401a80db26e9503b26c1.er_collaborateur_referent" width="150" />
+          <cell name="er_statut_remplissage_solidiag" width="259" />
+          <cell name="er_remarques" width="103" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_diagnostic_slime">
+          <attribute name="er_id_slime" />
+          <attribute name="er_diagnostic_slimeid" />
+          <attribute name="createdon" />
+          <attribute name="er_dossierparent" />
+          <attribute name="er_remarques" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="a_42a2e5efdcd2401a80db26e9503b26c1" name="er_dossier" to="er_dossierparent" from="er_dossierid" link-type="outer" visible="false">
+            <attribute name="er_menage_beneficiaire" />
+            <attribute name="er_site_concerne" />
+            <attribute name="er_collaborateur_referent" />
+          </link-entity>
+          <attribute name="er_statut_remplissage_solidiag" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Tous les diagnostics SLIME" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,29 @@
+<appaction uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.SaveFiltersToCurrentSystemView!1">
+  <buttonaccessibilitytext default="Enregistrer les filtres dans la vue système active">
+    <label description="Enregistrer les filtres dans la vue système active" languagecode="1036" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Enregistrer les filtres dans la vue système active">
+    <label description="Enregistrer les filtres dans la vue système active" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Enregistrer les filtres pour la vue système active.">
+    <label description="Enregistrer les filtres pour la vue système active." languagecode="1036" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Enregistrer les filtres dans la vue système active">
+    <label description="Enregistrer les filtres dans la vue système active" languagecode="1036" />
+  </buttontooltiptitle>
+  <context>0</context>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>1</location>
+  <name>Mscrm.HomepageGrid.{!EntityLogicalName}.SaveFiltersToCurrentSystemView</name>
+  <onclickeventjavascriptparameters>[{"type":12,"value":null}]</onclickeventjavascriptparameters>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>1</origin>
+  <sequence>1300300030.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>2</visibilitytype>
+</appaction>

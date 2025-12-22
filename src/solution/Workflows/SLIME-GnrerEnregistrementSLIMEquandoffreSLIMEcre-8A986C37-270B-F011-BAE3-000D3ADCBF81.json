@@ -1,0 +1,186 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "staticResults": {
+        "CREATE_-_Diagnostic_SLIME0": {
+          "status": "Succeeded",
+          "outputs": {
+            "statusCode": "OK",
+            "headers": {}
+          }
+        }
+      },
+      "triggers": {
+        "WHEN_-_Offre_SLIME_créée": {
+          "metadata": {
+            "operationMetadataId": "99844c9d-ad36-4fa5-8c89-ca86275d7ade"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "er_offre_action",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "conditions": []
+        }
+      },
+      "actions": {
+        "GET_-_Dossier": {
+          "runAfter": {
+            "Compose": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1e62052e-42ad-43e3-aa23-3aa06f57d98a"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_dossiers",
+              "recordId": "@triggerOutputs()?['body/_er_dossier_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "GET_-_Ménage": {
+          "runAfter": {
+            "GET_-_Dossier": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4d0b8de9-2210-47d7-bb4d-add861f30b0e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_menages",
+              "recordId": "@outputs('GET_-_Dossier')?['body/_er_menage_beneficiaire_value']"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "GET_-_Existing_Diag_SLIME": {
+          "runAfter": {
+            "GET_-_Ménage": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "43e7f7b6-12c5-4a3c-b3d8-03a66981bdb0"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "$filter": "_er_menage_concerne_value eq '@{outputs('GET_-_Ménage')?['body/er_menageid']}' and _er_site_concerne_value eq '@{outputs('GET_-_Dossier')?['body/_er_site_concerne_value']}'"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "IF_-_No_Diag_Existing": {
+          "actions": {
+            "CREATE_-_Diagnostic_SLIME": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "bdbf8440-f0db-4cf4-a8d0-8278a43a18e5"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "item/er_menage_concerne@odata.bind": "/er_menages('@{outputs('GET_-_Ménage')?['body/er_menageid']}')",
+                  "item/er_site_concerne@odata.bind": "/er_sites('@{outputs('GET_-_Dossier')?['body/_er_site_concerne_value']}'"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "runtimeConfiguration": {
+                "staticResult": {
+                  "staticResultOptions": "Disabled",
+                  "name": "CREATE_-_Diagnostic_SLIME0"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "GET_-_Existing_Diag_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@length(outputs('GET_-_Existing_Diag_SLIME')?['body/value'])",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b8e49df9-e918-4785-840b-80840c8d62db"
+          },
+          "type": "If"
+        },
+        "Compose": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "fd36068a-3d0e-455e-be59-6bdb6ba28d0d"
+          },
+          "type": "Compose",
+          "inputs": "@triggerOutputs()?['body']"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

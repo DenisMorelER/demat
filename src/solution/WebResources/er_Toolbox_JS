@@ -1,0 +1,1400 @@
+// -------------------------------- ECHANGES --------------------------------
+
+// == Appels téléphoniques ==
+
+//  Variable globale pour sauvegarder To
+var lastTo = null;
+
+//  Fonction OnLoad du formulaire
+function onLoad(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Initialisation de lastTo si direction est sortante
+    var direction = formContext.getAttribute("directioncode").getValue();
+    if (direction === true) {
+        lastTo = formContext.getAttribute("to").getValue();
+    }
+
+    toggleFromVisibility(formContext, direction);   // Permet de gérer la visibilité du champ Origine de l'appel
+    
+    // Enregistrement des événements
+    formContext.getAttribute("directioncode").addOnChange(onDirectionChange);
+    formContext.getAttribute("to").addOnChange(onToChange);
+    formContext.getAttribute("er_appelant").addOnChange(onAppelantChange);
+}
+
+//  Si changement de direction. Entrant : From = appelant et Appelant = LastTo, Sortant : Sauvegarde de To dans LastTo et vide le champ Appelant
+function onDirectionChange(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var direction = formContext.getAttribute("directioncode").getValue();
+    var appelantAttr = formContext.getAttribute("er_appelant");
+    var fromAttr = formContext.getAttribute("from");
+    var toAttr = formContext.getAttribute("to");
+
+    toggleFromVisibility(formContext, direction);   // Permet de gérer la visibilité du champ Origine de l'appel
+    
+
+    if (direction === false) { // fasle = entrant, true = sortant
+        // Direction = Entrant
+        var appelant = appelantAttr.getValue();
+        if (appelant) {
+            fromAttr.setValue(appelant);
+        }
+
+        // Récupérer lastTo dans Appelant si disponible
+        if (lastTo) {
+            appelantAttr.setValue(lastTo);
+        }
+    } else {
+        // Direction = Sortant
+        lastTo = toAttr.getValue(); // Sauvegarde de to
+        appelantAttr.setValue(null); // Effacer Appelant
+    }
+}
+
+//  Si changment de direction: Sauvegarde To dans LastTo
+function onToChange(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var direction = formContext.getAttribute("directioncode").getValue();
+
+    if (direction === true) {
+        // Direction = Sortant → mise à jour de lastTo
+        lastTo = formContext.getAttribute("to").getValue();
+    }
+}
+
+//  Si changement de l'appelant, From = Appelant
+function onAppelantChange(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var direction = formContext.getAttribute("directioncode").getValue();
+
+    if (direction === false) {
+        var appelant = formContext.getAttribute("er_appelant").getValue();
+        formContext.getAttribute("from").setValue(appelant);
+    }
+}
+
+// 🔧 Fonction utilitaire pour afficher/masquer le champ "from"
+function toggleFromVisibility(formContext, direction) {
+    var fromControl = formContext.getControl("from");
+    if (fromControl) {
+        fromControl.setVisible(direction === true); // Affiche si sortant
+    }
+}
+
+//  À l’enregistrement du formulaire → "Concernant" (regardingobjectid) = Ménage (new_menage)
+function setRegardingOnSave(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var Menage = formContext.getAttribute("new_menage").getValue();
+
+    if (Menage && Menage.length > 0) {
+        formContext.getAttribute("regardingobjectid").setValue([Menage[0]]);
+    }
+}
+
+//  Mettre en lecture seule si statut de l'appel est "Résolu" + Mettre la date de résolution et Nom de la personne qui a résolu l'appel
+function ModeLectureSeuleChampAppels(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var statut = formContext.getAttribute("er_statutdelappel").getValue();  // Récupère le statut de l'appel
+
+    var isReadOnly = (statut === 122210001);                                // 122 210 001 = Résolu
+
+    var attributes = formContext.data.entity.attributes.get();
+
+    attributes.forEach(function (attribute) {
+        var name = attribute.getName();
+        var control = formContext.getControl(name);
+
+        // Ne pas désactiver le champ Statut
+        if (control && name !== "er_statutdelappel") {                      // Pour ne pas verrouiller le champ "statut de l'appel"
+            control.setDisabled(isReadOnly);
+        }
+    });
+
+    // Si le statut est "Résolu", mettre à jour les champs associés
+    if (isReadOnly) {
+        // Mettre à jour la date de résolution
+        var dateResolutionAttr = formContext.getAttribute("er_dateheurederesolution");
+        if (dateResolutionAttr) {
+            dateResolutionAttr.setValue(new Date());
+        }
+
+        // Mettre à jour le champ "Résolu par" avec l'utilisateur actuel
+        var userId = Xrm.Utility.getGlobalContext().userSettings.userId;
+        var resolvedByAttr = formContext.getAttribute("er_resolupar");
+        if (resolvedByAttr) {
+            resolvedByAttr.setValue([
+                {
+                    id: userId,
+                    entityType: "systemuser"
+                }
+            ]);
+        }
+    } else {
+        // Si le statut n'est plus "Résolu", effacer les champs :
+        formContext.getAttribute("er_dateheurederesolution").setValue(null);
+        formContext.getAttribute("er_resolupar").setValue(null);
+    }
+}
+
+// Création d'un enregistrement dans la table de jonction ContactMénage(N:N) : Permet d'enregistrer un contact pour un ménage
+function CreationContactMenageOnFieldChangeOrSave(executionContext) {
+    try {
+        var formContext = executionContext.getFormContext();
+        //console.log("✅ Script démarré");                          // A utiliser pour debogage
+
+        var direction = formContext.getAttribute("directioncode");  // true = sortant, false = entrant
+        var menageField = formContext.getAttribute("new_menage");   // Récupère le champ de type Lookup vers la table Ménage
+
+        if (!direction || !menageField) {
+            //console.log("❌ direction ou ménage non trouvé");
+            return;
+        }
+
+        var isSortant = direction.getValue();                       // true = sortant, false = entrant
+        //console.log("📞 Type d'appel : " + (isSortant ? "Sortant" : "Entrant"));
+
+        var contactField = isSortant
+            ? formContext.getAttribute("to")                        // Si sortant, le champ "to" (destination)
+            : formContext.getAttribute("from");                     // Si entrant, le champ "from" (origine)
+
+        if (!contactField || !contactField.getValue()) {
+            //console.log("❌ Champ contact vide");
+            return;
+        }
+
+        if (!menageField.getValue()) {
+            //console.log("❌ Champ ménage vide");
+            return;
+        }
+
+        var contact = contactField.getValue()[0];
+        var menage = menageField.getValue()[0];
+
+        //console.log("👤 Entité contact : " + contact.entityType);
+        if (contact.entityType !== "contact") {
+            //console.log("❌ L'entité n'est pas un contact");
+            return;
+        }
+
+        var contactId = contact.id.replace(/[{}]/g, "");
+        var menageId = menage.id.replace(/[{}]/g, "");
+
+        //console.log("🔍 Contact ID : " + contactId);
+        //console.log("🏠 Ménage ID : " + menageId);
+
+        // Vérifier si la relation existe déjà
+        
+        var filter = `?$filter=_er_contact_value eq ${contactId} and _er_menage_value eq ${menageId}`;
+        //console.log("🔎 Requête OData corrigée : " + filter);
+        Xrm.WebApi.retrieveMultipleRecords("er_contactmenage", filter).then(
+
+            function success(result) {
+                //console.log("📊 Résultat de la requête : " + result.entities.length);
+
+                if (result.entities.length === 0) {
+                    //console.log("➕ Aucune relation trouvée, création en cours...");
+
+                    var data = {
+                        "er_Contact@odata.bind": `/contacts(${contactId})`,
+                        "er_Menage@odata.bind": `/er_menages(${menageId})`
+                    };
+
+                    Xrm.WebApi.createRecord("er_contactmenage", data).then(
+                        function success(createResult) {
+                            console.log("✅ Relation créée : " + createResult.id);
+                        },
+                        function (error) {
+                            console.error("❌ Erreur lors de la création : " + error.message);
+                        }
+                    );
+                } else {
+                    console.log("ℹ️ Relation déjà existante, aucune action nécessaire.");
+                }
+            },
+            function (error) {
+                console.error("❌ Erreur lors de la vérification de la relation : " + error.message);
+            }
+        );
+    } catch (e) {
+        console.error("❌ Erreur générale dans le script : " + e.message);
+    }
+}
+
+
+
+// == EMAIL ==
+
+function setEmailFromOrTo(executionContext) {
+    var formContext = executionContext.getFormContext();
+    var direction = formContext.getAttribute("directioncode");
+    if (!direction) {
+        console.error("L'attribut 'directioncode' est introuvable.");
+        return;
+    }
+    
+    var directionValue = direction.getValue(); // 1 = Sortant, 0 = Entrant
+    var lookupField = directionValue === true ? "from" : "to";
+    console.log(directionValue);
+
+    var mailboxLookup = [{
+        id: "ce42d101-4eff-ef11-bae3-000d3adcbf81" , // Remplace par le GUID réel de la boîte aux lettres
+        name: "Boite Standard DEV",
+        entityType: lookupField === "from" ? "queue" : "systemuser" // Pour une boîte aux lettres partagée, essaye "systemuser" au lieu de "queue"
+    }];
+    
+    var mail = "standard.dev@energies-reunion.com"
+    
+    try {
+        formContext.getAttribute(lookupField).setValue(mailboxLookup);
+    } catch (error) {
+        console.error("Erreur lors de la définition du champ '" + lookupField + "':", error);
+    }
+}
+
+
+
+
+// -------------------------------- VISITES --------------------------------
+
+//  DEPRECATED! Replaced by an n:n relationship and a flow to calculate each hour the number of visit per dispositive
+function setConcatenatedChoices(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Replace with your actual field names
+    var multiSelectField = "er_objet_visite"; 
+    var textField = "er_objet_visite_string"; 
+
+    var choiceValues = formContext.getAttribute(multiSelectField).getValue();
+    
+    if (choiceValues !== null && choiceValues.length > 0) {
+        // Retrieve all available options for the field
+        var options = formContext.getAttribute(multiSelectField).getOptions();
+        
+        // Convert numeric values to corresponding labels
+        var selectedLabels = choiceValues.map(value => {
+            var option = options.find(opt => opt.value === value);
+            return option ? option.text : value; // Use value as fallback
+        });
+
+        // Join values and set them in the text field
+        var concatenatedValues = selectedLabels.join(", ");
+        formContext.getAttribute(textField).setValue(concatenatedValues);
+    } else {
+        formContext.getAttribute(textField).setValue(""); // Clear if empty
+    }
+    formContext.data.refresh(true);
+}
+
+
+async function updateFieldsFromDossier(executionContext) {
+    
+    var formContext = executionContext.getFormContext();
+    
+    
+    // Get the selected 'er_dossier' lookup value
+    var dossierLookup = formContext.getAttribute("er_dossier").getValue();
+    if (!dossierLookup) {
+        console.log("No dossier selected, clearing fields.");
+        formContext.getAttribute("er_menage").setValue(null);
+        formContext.getAttribute("er_site").setValue(null);
+        
+        formContext.data.refresh(true);
+        return;
+    }
+    
+    //saving in case the user didn't already create the record (to avoid missing updates)
+    formContext.data.refresh(true);
+
+    var dossierId = dossierLookup[0].id.replace("{", "").replace("}", ""); // Get the GUID
+    var dossierEntityName = dossierLookup[0].entityType; // Entity name (should be 'er_dossiers')
+
+    // Use Xrm.WebApi to fetch the related data
+    Xrm.WebApi.retrieveRecord(dossierEntityName, dossierId, "?$select=_er_menage_beneficiaire_value,_er_site_concerne_value").then(
+        function (result) {
+            console.log("Visit data retrieved:", result);
+            
+            var updateObject = {};
+            
+            if (result._er_menage_beneficiaire_value) {
+                updateObject["er_menage@odata.bind"] = "/er_menages(" + result._er_menage_beneficiaire_value + ")";
+            }
+            if (result._er_site_concerne_value) {
+                updateObject["er_site@odata.bind"] = "/er_sites(" + result._er_site_concerne_value + ")";
+            }
+            
+            updateXrmRecord(formContext, updateObject);
+        },
+        function (error) {
+            console.error("Error retrieving dossier data:", error.message);
+        }
+    );
+}
+
+// -------------------------------- DIAGNOSTICS SLIME --------------------------------
+
+//  DIAGNOSTICS SLIME (QWERIO)
+async function updateFieldsFromVisit(executionContext) {
+    
+    var formContext = executionContext.getFormContext();
+    
+    
+    // Get the selected 'er_visite' lookup value
+    var visiteLookup = formContext.getAttribute("er_visite").getValue();
+    if (!visiteLookup) {
+        console.log("No visit selected, clearing fields.");
+        formContext.getAttribute("er_menage_concerne").setValue(null);
+        formContext.getAttribute("er_site_concerne").setValue(null);
+        formContext.getAttribute("er_releve_index").setValue(null);
+        formContext.getAttribute("er_titulaire_contrat_edf").setValue(null);
+        
+        formContext.data.refresh(true);
+        return;
+    }
+    
+    //saving in case the user didn't already create the record (to avoid missing updates)
+    formContext.data.refresh(true);
+
+    var visiteId = visiteLookup[0].id.replace("{", "").replace("}", ""); // Get the GUID
+    var visiteEntityName = visiteLookup[0].entityType; // Entity name (should be 'er_visites')
+
+    // Use Xrm.WebApi to fetch the related data
+    Xrm.WebApi.retrieveRecord(visiteEntityName, visiteId, "?$select=_er_menage_value,_er_site_value,_er_releve_index_value&$expand=er_menage($select=_er_personne_referente_value)").then(
+        function (result) {
+            console.log("Visit data retrieved:", result);
+            
+            var updateObject = {};
+            
+            if (result._er_menage_value) {
+                updateObject["er_menage_concerne@odata.bind"] = "/er_menages(" + result._er_menage_value + ")";
+                if (result.er_menage._er_personne_referente_value) updateObject["er_titulaire_contrat_edf@odata.bind"] = "/contacts(" + result.er_menage._er_personne_referente_value + ")";
+            }
+            if (result._er_site_value) {
+                updateObject["er_site_concerne@odata.bind"] = "/er_sites(" + result._er_site_value + ")";
+            }
+            if (result._er_releve_index_value) {
+                updateObject["er_releve_index@odata.bind"] = "/er_releve_indexes(" + result._er_releve_index_value + ")";
+            }
+            
+            updateXrmRecord(formContext, updateObject);
+        },
+        function (error) {
+            console.error("Error retrieving visit data:", error.message);
+        }
+    );
+}
+
+//  DIAG SLIME Appel Flux génération DEP
+async function generateDEPFile(formContext){
+    "use strict";
+    // Force save in case of dirty changes
+    formContext.data.refresh(true);
+    
+	Xrm.Utility.showProgressIndicator("Génération du fichier DEP...");
+    //Récupération de l'ID du besoin à dupliquer
+	var ItemId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    //Récupération de l'URL du flux
+    getEnvironmentVariable("er_Flux_Generation_Fichier_DEP",
+        function(url){
+            var data = {
+                "diagId": ItemId
+            };
+            callHTTPFlowInternal(url, data, formContext); 
+        },
+        function(error){
+            handleError(error);
+        }
+    );
+}
+
+//  DIAG SLIME Appel Flux génération DEP V2
+async function generateDEPFileV2(formContext){
+    "use strict";
+    // Force save in case of dirty changes
+    formContext.data.refresh(true);
+    
+	Xrm.Utility.showProgressIndicator("Génération du fichier DEP...");
+    //Récupération de l'ID du besoin à dupliquer
+	var ItemId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    //Récupération de l'URL du flux
+    getEnvironmentVariable("er_FluxGenerationFichierDEPV2",
+        function(url){
+            var data = {
+                "diagId": ItemId
+            };
+            callHTTPFlowInternal(url, data, formContext); 
+        },
+        function(error){
+            handleError(error);
+        }
+    );
+}
+
+//  DIAG SLIME Appel Flux Importation des données du DEP V0
+async function ImportDataFromDEPFile(formContext){
+    "use strict";
+    // Force save in case of dirty changes
+    formContext.data.refresh(true);
+    
+	Xrm.Utility.showProgressIndicator("Importation des données du fichier DEP...");
+    //Récupération de l'ID du besoin à dupliquer
+	var ItemId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    //Récupération de l'URL du flux
+    getEnvironmentVariable("er_FluxImportationDonneesDEP",
+        function(url){
+            var data = {
+                "diagId": ItemId
+            };
+            callHTTPFlowInternal(url, data, formContext); 
+        },
+        function(error){
+            handleError(error);
+        }
+    );
+}
+
+//  DIAG SLIME-RPA Appel Flux RPA de bureau remplissage SOLIDIAG V0
+async function FluxRPARemplissageSOLIDIAG(formContext){
+    "use strict";
+    // Force save in case of dirty changes
+    formContext.data.refresh(true);
+    
+	Xrm.Utility.showProgressIndicator("La création du ménage et le remplissage des informations existantes sur v2.solidiag.fr ont été lancés en arrière-plan.");
+    setTimeout(() => {
+        Xrm.Utility.closeProgressIndicator();
+    }, 1000); // 1000 ms = 1 seconde
+
+    //Récupération de l'ID du besoin à dupliquer
+	var ItemId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    //Récupération de l'URL du flux
+    getEnvironmentVariable("er_FluxRPARemplissageSOLIDIAG",
+        function(url){
+            var data = {
+                "diagId": ItemId
+            };
+            callHTTPFlowInternal(url, data, formContext); 
+        },
+        function(error){
+            handleError(error);
+        }
+    );
+}
+
+//  DIAG SLIME-RPA Rajout d'une demande d'execution du flux RPA de bureau remplissage SOLIDIAG dans la liste d'attente
+async function ListeAttenteCreerDemandeRPA(formContext) {
+    "use strict";
+
+    // Récupère l'ID de l'enregistrement actuel
+    const diagnosticId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    // Récupère l'ID de l'utilisateur actuel
+    const userId = Xrm.Utility.getGlobalContext().userSettings.userId.replace("{", "").replace("}", "");
+
+    // Prépare les données à envoyer
+    const demande = {
+        //"er_diagnosticslime@odata.bind": "/er_diagnostic_slimeid(848242e0-4b5d-f011-bec2-6045bdde3c36)",
+        //"er_diagnosticslimeid@odata.bind": `/er_diagnostic_slimes(${diagnosticId})`,
+        "er_statutdetraitement": 122210000, // En attente (valeur du jeu de choix)
+        //"er_utilisateurdemandeur@odata.bind": `/systemusers(${userId})`  // Tu peux ajouter "er_utilisateur@odata.bind": "/systemusers(GUID)" si tu veux lier un utilisateur
+    };
+
+    // Appelle l’API Web pour créer l’enregistrement
+    try {
+        await Xrm.WebApi.createRecord("er_listedattentedemanderpasolidiag", demande);
+        Xrm.App.addGlobalNotification({
+            type: 1,
+            level: 1,
+            message: "Votre demande a été ajoutée à la file d’attente.",
+            showCloseButton: true
+        });
+    } catch (error) {
+        console.error("Erreur lors de la création de la demande RPA :", error);
+        Xrm.App.addGlobalNotification({
+            type: 2,
+            level: 3,
+            message: `Erreur : ${error.message || JSON.stringify(error)}`, //"Erreur lors de la création de la demande RPA.",
+            showCloseButton: true
+        });
+    }
+}
+
+//  Récupération du site du dossier parent
+function setSiteFromDossierParent(executionContext) {
+    var formContext = executionContext.getFormContext();
+
+    // Récupère la valeur du champ Dossier parent
+    var dossierRef = formContext.getAttribute("er_dossierparent").getValue(); // Récupère la ref du dossier parent
+    if (dossierRef && dossierRef[0]) {
+        var dossierId = dossierRef[0].id.replace("{", "").replace("}", "");
+
+        // Appel à l'API Web pour récupérer le Site du Dossier
+        Xrm.WebApi.retrieveRecord("er_dossier", dossierId, "?$select=_er_site_concerne_value").then(
+            function success(result) {
+                if (result._er_site_concerne_value) {
+                    // Prépare la référence du Site
+                    var siteRef = [{
+                        id: result._er_site_concerne_value,
+                        entityType: "er_site", // Nom logique de la table Site
+                        name: result["_er_site_concerne_value@OData.Community.Display.V1.FormattedValue"]
+                    }];
+
+                    // Affecte la valeur au champ Lookup Site dans Diagnostic
+                    formContext.getAttribute("er_site_concerne").setValue(siteRef); // Nom logique du champ Lookup Site dans la table diag SLIME
+                } else {
+                    formContext.getAttribute("er_site_concerne").setValue(null);                   
+                }
+            },
+            function error(error) {
+                console.error("Erreur lors de la récupération du Site :", error.message);
+            }
+        );
+    } else {
+        // Si pas de dossier, on vide le champ
+        formContext.getAttribute("er_site_concerne").setValue(null);
+
+    }
+}
+
+
+// -------------------------------- SITES -------------------------------- 
+
+// Nom complet de l'adresse + suppression Proposition et recherce
+async function updateFullAddress(executionContext) {
+
+    var formContext = executionContext.getFormContext();
+    
+    let fullAddress = "";
+        
+    let numero = formContext.getAttribute("er_numero").getValue();
+    if (numero) {
+        fullAddress += numero;
+    }
+    
+    let indiceRepetition = formContext.getAttribute("er_indice_repetition").getSelectedOption();
+    if (indiceRepetition) {
+        fullAddress += " " + indiceRepetition.text;
+    }
+    
+    let nomVoie = formContext.getAttribute("er_nom_voie").getValue();
+    if (nomVoie) {
+        fullAddress += " " + nomVoie + ",";
+    }
+    
+    let codePostal = formContext.getAttribute("er_codepostal").getSelectedOption();
+    if (codePostal) {
+        fullAddress += " " + codePostal.text;
+    }
+    
+    let libelle = formContext.getAttribute("er_libelleacheminement").getSelectedOption();
+    if (libelle) {
+        fullAddress += " " + libelle.text;
+    }
+    
+    let commune = formContext.getAttribute("er_commune").getSelectedOption();
+    if (commune) {
+        fullAddress += ", " + commune.text;
+    }
+    
+    if(fullAddress !== formContext.getAttribute("er_adresse").getValue()) { 
+        formContext.getAttribute("er_adresse").setValue(fullAddress);
+        //formContext.data.refresh(true);
+    }
+    
+    // Enregistrer l'adresse sélectionnée
+    let AdresseSelectionnee = formContext.getAttribute("er_adresseselectionnee").getValue();
+    formContext.getAttribute("er_propositionsadresses").setValue(AdresseSelectionnee);
+    
+    // Effacer les champs de recherche et de propositions
+    formContext.getAttribute("er_recherchedadresse").setValue(null);    
+
+}
+
+//Requêtage API pour complétion d'adresse (via bouton API gouvernementale) - QWERIO
+async function retrieveGouvAPIAddress(formContext){
+    "use strict";
+    // Force save in case of dirty changes
+    formContext.data.refresh(true);
+    
+	Xrm.Utility.showProgressIndicator("Récupération de l'adresse via API gouvernementale...");
+    //Récupération de l'ID du besoin à dupliquer
+	var ItemId = formContext.data.entity.getId().replace("{", "").replace("}", "");
+    
+    //Récupération de l'URL du flux
+    getEnvironmentVariable("er_Flux_Recuperation_Adresse_Reunion",
+        function(url){
+            var data = {
+                "siteId": ItemId
+            };
+            callHTTPFlowInternal(url, data, formContext); 
+        },
+        function(error){
+            handleError(error);
+        }
+    );
+}
+
+// Autocompletion de l'adresse avec l'API des adresses normalisées (BAN) de La Réunion (source: Open data de la Région Réunion)
+var AutocompletionAdresseReunion = (function () {
+    // URL de l'API BAN La Réunion
+    const apiUrl = "https://data.regionreunion.com/api/records/1.0/search/?dataset=ban-lareunion&q=";
+
+    // Timer pour la fonction de debounce (évite les appels trop fréquents)
+    let debounceTimer = null;
+
+    // Cache des suggestions d'adresses
+    let suggestionsCache = [];
+
+    // Cache des correspondances de choix (Dataverse)
+    let choixCache = {};
+
+    // Champs logiques utilisés dans le formulaire
+    const idAttribute = "er_banidentifiant";
+    const rechercheAttribute = "er_recherchedadresse";
+    const propositionsAttribute = "er_propositionsadresses";
+    const selectionAttribute = "er_adresseselectionnee";
+    const numeroAttribute = "er_numero";
+    const repAttribute = "er_indice_repetition";
+    const nomVoieAttribute = "er_nom_voie";
+    const codePostalAttribute = "er_codepostal";
+    const communeAttribute = "er_commune";
+    const longitudeAttribute = "er_longitude";
+    const latitudeAttribute = "er_latitude";
+    const acheminementAttribute = "er_libelleacheminement";
+    const nomAfnorAttribute = "er_nomdelavoieafnor";
+    const parcelleAttribute = "er_parcellecadastrale";
+
+    // Liste des champs de type choix à interroger dans Dataverse
+    const choixChamps = [
+        "Indice de répétition",
+        "Code Postal",
+        "Commune",
+        "Libellé d'acheminement"
+    ];
+
+    const nomEntite = "Site / Logement"; // Nom de l'entité dans Dataverse
+
+    // Fonction principale appelée au chargement du formulaire
+    async function onLoad(executionContext) {
+        const formContext = executionContext.getFormContext();
+
+        // Chargement des correspondances de choix depuis Dataverse
+        await chargerCorrespondancesChoix();
+
+        // Gestion du champ de recherche d'adresse
+        const rechercheField = formContext.getAttribute(rechercheAttribute);
+        if (rechercheField) {
+            rechercheField.addOnChange(() => {
+                const value = rechercheField.getValue();
+                if (value && value.length >= 4) {
+                    if (debounceTimer) clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => {
+                        fetchSuggestions(value, formContext);
+                    }, 200);
+                }
+            });
+        }
+
+        // Gestion du champ de sélection d'adresse
+        const selectionField = formContext.getAttribute(selectionAttribute);
+        if (selectionField) {
+            selectionField.addOnChange(() => {
+                const selected = selectionField.getValue();
+
+                // Liste des champs remplis automatiquement
+                const champsAuto = [
+                    latitudeAttribute, longitudeAttribute, parcelleAttribute,
+                    idAttribute, numeroAttribute, repAttribute, nomVoieAttribute,
+                    codePostalAttribute, communeAttribute, acheminementAttribute, nomAfnorAttribute
+                ];
+
+                if (!selected) {
+                    // Si aucune adresse sélectionnée : réinitialiser et déverrouiller les champs
+                    champsAuto.forEach(attr => {
+                        const field = formContext.getAttribute(attr);
+                        field?.setValue(null);
+                        field?.controls?.forEach(c => c.setDisabled(false));
+                    });
+                    return;
+                }
+
+                // Si une adresse est sélectionnée : remplir et verrouiller les champs
+                const match = suggestionsCache.find(s => s.label === selected);
+                if (match) {
+                    formContext.getAttribute(latitudeAttribute)?.setValue(match.lat);
+                    formContext.getAttribute(longitudeAttribute)?.setValue(match.lon);
+                    formContext.getAttribute(parcelleAttribute)?.setValue(String(match.parcelle || ""));
+                    formContext.getAttribute(idAttribute)?.setValue(String(match.id || ""));
+                    formContext.getAttribute(numeroAttribute)?.setValue(match.numero);
+                    formContext.getAttribute(nomVoieAttribute)?.setValue(String(match.nom_voie || ""));
+                    formContext.getAttribute(nomAfnorAttribute)?.setValue(String(match.nom_afnor || ""));
+
+                    // Remplissage des champs de type choix via cache
+                    setValeurChampDepuisCache(formContext, repAttribute, match.indice_repetition, "Indice de répétition");
+                    setValeurChampDepuisCache(formContext, codePostalAttribute, match.code_postal, "Code Postal");
+                    setValeurChampDepuisCache(formContext, communeAttribute, match.ville, "Commune");
+                    setValeurChampDepuisCache(formContext, acheminementAttribute, match.libelledacheminement, "Libellé d'acheminement");
+
+                    // Verrouillage des champs remplis automatiquement
+                    champsAuto.forEach(attr => {
+                        const field = formContext.getAttribute(attr);
+                        field?.controls?.forEach(c => c.setDisabled(true));
+                    });
+                }
+            });
+        }
+    }
+
+    // Fonction pour charger toutes les correspondances de choix en une seule requête
+        function escapeODataValue(value) {
+        return value.replace(/'/g, "''");
+    }
+
+    async function chargerCorrespondancesChoix() {
+        const filters = "(" + choixChamps
+            .map(champ => `crfc6_nomchamp eq '${escapeODataValue(champ)}'`)
+            .join(" or ") + ")";
+        const entite = escapeODataValue(nomEntite);
+        const query = `crfc6_correspondancechoixes?$filter=${filters} and crfc6_nomentite eq '${entite}'&$select=crfc6_libelle,crfc6_nomchamp,crfc6_valeur`;
+
+        const url = `${Xrm.Utility.getGlobalContext().getClientUrl()}/api/data/v9.2/${query}`;
+        console.log("🔗 URL Dataverse générée :", url);
+
+        const response = await fetch(url, {
+            headers: {
+                "OData-MaxVersion": "4.0",
+                "OData-Version": "4.0",
+                "Accept": "application/json",
+                "Content-Type": "application/json; charset=utf-8",
+                "Prefer": "odata.include-annotations=*"
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("✅ Réponse reçue :", data);
+            data.value.forEach(item => {
+                const champ = item.crfc6_nomchamp;
+                const libelle = item.crfc6_libelle;
+                const valeur = item.crfc6_valeur;
+                if (!choixCache[champ]) choixCache[champ] = {};
+                choixCache[champ][libelle] = valeur;
+            });
+        } else {
+            const errorText = await response.text();
+            console.error("❌ Erreur API Dataverse :", response.status, response.statusText, errorText);
+        }
+    }
+
+
+    // Fonction utilitaire pour renseigner un champ de type choix à partir du cache
+    function setValeurChampDepuisCache(formContext, champLogique, libelle, nomChamp) {
+        const valeur = choixCache[nomChamp]?.[libelle] ?? null;
+        formContext.getAttribute(champLogique)?.setValue(valeur);
+    }
+
+    // Appel à l'API BAN pour récupérer les suggestions d'adresses
+    function fetchSuggestions(query, formContext) {
+        const url = apiUrl + encodeURIComponent(query) + "&rows=12";
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                suggestionsCache = [];
+                if (data.records?.length > 0) {
+                    data.records.forEach(record => {
+                        const f = record.fields;
+                        const label = `${f.numero || ""} ${f.rep || ""} ${f.nom_voie || ""}, ${f.code_postal || ""} ${f.libelle_acheminement || ""}, ${f.nom_commune || ""}`;
+                        suggestionsCache.push({
+                            label: label.trim(),
+                            lat: f.lat ?? null,
+                            lon: f.lon ?? null,
+                            parcelle: f.cad_parcelles ?? "",
+                            id: f.id ?? "",
+                            numero: f.numero ?? "",
+                            indice_repetition: f.rep ?? "",
+                            nom_voie: f.nom_voie ?? "",
+                            code_postal: f.code_postal ?? "",
+                            ville: f.nom_commune ?? "",
+                            libelledacheminement: f.libelle_acheminement ?? "",
+                            nom_afnor: f.nom_afnor ?? ""
+                        });
+                    });
+                }
+                updateDropdown(formContext);
+            });
+    }
+
+    // Mise à jour du champ de propositions avec les libellés des suggestions
+    function updateDropdown(formContext) {
+        const propositionsField = formContext.getAttribute(propositionsAttribute);
+        if (propositionsField?.setValue) {
+            const values = suggestionsCache.map(s => s.label);
+            propositionsField.setValue("");
+            propositionsField.setValue(values.join(";"));
+        }
+    }
+
+    // Export de la fonction onLoad
+    return {
+        onLoad: onLoad
+    };
+})();
+
+
+
+
+// -------------------------------- MENAGES -------------------------------- 
+
+// Liste des années possibles pour le revenu fiscal (Table/Formulaire Ménage)
+function provisionYears(executionContext){
+    var formContext = executionContext.getFormContext(); 
+    var possible_years = formContext.getAttribute('er_annees_possibles_infos_revenu_fiscal').getValue();
+    if(!possible_years){
+        const currentYear = new Date().getFullYear();
+        const nMin1Year = currentYear - 1;
+        const nMin2Year = currentYear - 2;
+        const yearsString =  currentYear + ";" + nMin1Year + ";" + nMin2Year;
+        formContext.getAttribute('er_annees_possibles_infos_revenu_fiscal').setValue(yearsString);
+        //saveOnLoad(executionContext, true);
+    }
+}
+
+// Nom du ménage
+async function putMenageName(executionContext) {
+    var formContext = executionContext.getFormContext();
+    
+    // Récupération des deux personnes référentes
+    var personne1 = formContext.getAttribute("er_personne_referente").getValue();
+    var personne2 = formContext.getAttribute("er_personnereferente2").getValue();
+
+    if (!personne1) {
+        console.log("Le représentant 1 du ménage est manquant.");
+        return;
+    }
+
+    // Fonction utilitaire pour récupérer les données d'une personne
+    async function getPersonData(lookup) {
+        if (!lookup || lookup.length === 0) return null;
+        let id = lookup[0].id.replace("{", "").replace("}", "");
+        let entity = lookup[0].entityType;
+        try {
+            return await Xrm.WebApi.retrieveRecord(entity, id, "?$select=firstname,lastname");
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données :", error.message);
+            return null;
+        }
+    }
+
+    let data1 = await getPersonData(personne1);
+    let data2 = await getPersonData(personne2);
+
+    if (!data1) return;
+
+    let nom1 = data1.lastname;
+    let prenom1 = data1.firstname;
+
+    let nomFinal = "";
+    if (data2) {
+        let nom2 = data2.lastname;
+        let prenom2 = data2.firstname;
+
+        if (nom1 === nom2) {
+            nomFinal = `Ménage ${nom1} ${prenom1} et ${prenom2}`;
+        } else {
+            nomFinal = `Ménage ${nom1} ${prenom1} et ${nom2} ${prenom2}`;
+        }
+    } else {
+        nomFinal = `Ménage ${nom1} ${prenom1}`;
+    }
+
+    // Mise à jour du champ si nécessaire
+    if (formContext.getAttribute('er_nom').getValue() !== nomFinal) {
+        formContext.getAttribute('er_nom').setValue(nomFinal);
+        formContext.data.refresh(true);
+    }
+}
+
+// Nom du ménage No Refresh
+async function putMenageNameNoRefresh(executionContext) {
+    var formContext = executionContext.getFormContext();
+    
+    // Récupération des deux personnes référentes
+    var personne1 = formContext.getAttribute("er_personne_referente").getValue();
+    var personne2 = formContext.getAttribute("er_personnereferente2").getValue();
+
+    if (!personne1) {
+        console.log("Le représentant 1 du ménage est manquant.");
+        return;
+    }
+
+    // Fonction utilitaire pour récupérer les données d'une personne
+    async function getPersonData(lookup) {
+        if (!lookup || lookup.length === 0) return null;
+        let id = lookup[0].id.replace("{", "").replace("}", "");
+        let entity = lookup[0].entityType;
+        try {
+            return await Xrm.WebApi.retrieveRecord(entity, id, "?$select=firstname,lastname");
+        } catch (error) {
+            console.error("Erreur lors de la récupération des données :", error.message);
+            return null;
+        }
+    }
+
+    let data1 = await getPersonData(personne1);
+    let data2 = await getPersonData(personne2);
+
+    if (!data1) return;
+
+    let nom1 = data1.lastname;
+    let prenom1 = data1.firstname;
+
+    let nomFinal = "";
+    if (data2) {
+        let nom2 = data2.lastname;
+        let prenom2 = data2.firstname;
+
+        if (nom1 === nom2) {
+            nomFinal = `Ménage ${nom1} ${prenom1} et ${prenom2}`;
+        } else {
+            nomFinal = `Ménage ${nom1} ${prenom1} et ${nom2} ${prenom2}`;
+        }
+    } else {
+        nomFinal = `Ménage ${nom1} ${prenom1}`;
+    }
+
+    // Mise à jour du champ si nécessaire
+    if (formContext.getAttribute('er_nom').getValue() !== nomFinal) {
+        formContext.getAttribute('er_nom').setValue(nomFinal);
+        //formContext.data.refresh(true);
+    }
+}
+
+
+// -------------------------------- SEUILS ANAHs --------------------------------
+//  Bouton pour lancer manuellement le calcul de catégorie de ménage
+function boutonCalculerCategorieMenage(formContext) {
+    // Simule un executionContext pour compatibilité
+    const fakeExecutionContext = {
+        getFormContext: () => formContext
+    };
+
+    calculerCategorieMenage(fakeExecutionContext);
+}
+
+//  Calcul de la catégorie de ménage auto dans le formulaire
+async function calculerCategorieMenage(executionContext) {
+    const formContext = executionContext.getFormContext();
+
+    const anneeLookup = formContext.getAttribute("er_anneedesai")?.getValue();
+    const nbPersonnes = formContext.getAttribute("er_totalnombredepersonnes")?.getValue();
+    const revenu = formContext.getAttribute("er_totalrevenufiscaldereference")?.getValue();
+    const champCategorie = formContext.getAttribute("er_categoriemenagetotai");
+
+
+    console.log("Valeurs du formulaire :", {
+        anneeLookup,
+        nbPersonnes,
+        revenu
+    });
+
+
+    // Si une info est manquante, on efface la catégorie
+    if (!anneeLookup || nbPersonnes == null || revenu == null) {
+        champCategorie.setValue(null);
+        return;
+    }
+
+    const anneeNom = anneeLookup[0].name;
+    const anneeNumerique = parseInt(anneeNom);
+    if (isNaN(anneeNumerique)) {
+        champCategorie.setValue(null);
+        return;
+    }
+
+    try {
+        // Requête vers la table des seuils
+        const seuilsQuery = `?$filter=_er_anneeseuilanah_value eq '${anneeLookup[0].id.replace(/[{}]/g, "")}'`;
+        const seuilsResult = await Xrm.WebApi.retrieveMultipleRecords("er_seuils_anah", seuilsQuery);
+        const seuils = seuilsResult.entities;
+
+        console.log("Seuils récupérés :", seuils);
+        
+        // Si aucun seuil n'est trouvé pour l'année, on efface la catégorie et affiche une alerte
+        if (seuils.length === 0) {
+            console.warn("Aucun seuil trouvé pour l'année sélectionnée :", anneeNom);
+            champCategorie.setValue(null);
+
+            Xrm.Navigation.openAlertDialog({
+                text: "Aucun seuil n’a été trouvé pour l’année sélectionnée. Veuillez contacter votre responsable.",
+                confirmButtonLabel: "OK"
+            });
+
+            return;
+        }
+
+        // Recherche des seuils normaux et supplémentaires
+        const seuilNormal = seuils.find(s =>
+            s["er_nbredepersonnes@OData.Community.Display.V1.FormattedValue"] === nbPersonnes.toString()
+        );
+
+        const seuilSup = seuils.find(s =>
+            s["er_nbredepersonnes@OData.Community.Display.V1.FormattedValue"]?.toLowerCase().includes("suppl")
+        );
+
+        console.log("Seuil normal trouvé :", seuilNormal);
+        console.log("Seuil supplémentaire trouvé :", seuilSup);
+
+        let tresModeste = seuilNormal?.er_debut_tres_modeste ?? 0;
+        let modeste = seuilNormal?.er_debut_modeste ?? 0;
+        let intermediaire = seuilNormal?.er_debut_intermediaire ?? 0;
+        let superieur = seuilNormal?.er_debut_revenus_superieurs ?? Number.MAX_SAFE_INTEGER;
+
+        // Si le nombre dépasse les seuils définis, extrapolation
+        if (!seuilNormal && seuilSup) {
+            const base = seuils.find(s =>
+                s["er_nbredepersonnes@OData.Community.Display.V1.FormattedValue"] === "5"
+            );
+            const extra = nbPersonnes - 5;
+
+            console.log("Base extrapolation :", base);
+            console.log("Nombre de personnes supplémentaires :", extra);
+
+            tresModeste = base.er_debut_tres_modeste + extra * seuilSup.er_debut_tres_modeste;
+            modeste = base.er_debut_modeste + extra * seuilSup.er_debut_modeste;
+            intermediaire = base.er_debut_intermediaire + extra * seuilSup.er_debut_intermediaire;
+            superieur = base.er_debut_revenus_superieurs + extra * seuilSup.er_debut_revenus_superieurs;
+        }
+
+        console.log("Seuils utilisés pour le calcul :", {
+            tresModeste,
+            modeste,
+            intermediaire,
+            superieur
+        });
+
+        // Détermination de la catégorie par tranche
+        let valeurChoix = 122210000; // Aux revenus supérieurs
+        if (revenu <= modeste) valeurChoix = 122210003; // Très Modeste
+        else if (revenu <= intermediaire) valeurChoix = 122210002; // Modeste
+        else if (revenu <= superieur) valeurChoix = 122210001; // Intermédiaire
+
+        console.log("Catégorie déterminée :", valeurChoix);
+
+        champCategorie.setValue(valeurChoix);
+    } catch (error) {
+        console.error("Erreur lors du calcul de la catégorie de ménage :", error);
+        champCategorie.setValue(null);
+    }
+}
+
+
+// -------------------------------- GENERAL --------------------------------
+
+async function updateXrmRecord(formContext, updateObject) {
+    if (Object.keys(updateObject).length === 0) {
+        console.log("No fields to update.");
+        return;
+    }
+
+    try {
+        await Xrm.WebApi.updateRecord(formContext.data.entity.getEntityName(), formContext.data.entity.getId(), updateObject);
+        console.log("Fields updated successfully.");
+        formContext.data.refresh(true);
+    } catch (error) {
+        console.error("Error updating fields:", error.message);
+    }
+}
+
+
+
+async function handleSuccess(success, formContext)
+{
+	Xrm.Utility.closeProgressIndicator();
+    if(success.AddressesRetrieved) { //Si on est dans le cas de la fonction retrieveGouvAPIAddress
+        showAddressSelectionDialog(
+            "Liste des sites correspondants", 
+            success.ResponseDetails, 
+            success.AddressesRetrieved,
+            formContext
+        );
+    }
+	else {
+        showMessageDialog("Succès : ", success.ResponseDetails);
+        formContext.data.refresh(true);
+    }
+}
+
+function handleError(error)
+{
+	Xrm.Utility.closeProgressIndicator();
+	showMessageDialog("Error: ", error);
+}
+
+function callHTTPFlowInternal(url, data, formContext) {
+	"use strict";
+
+	fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	})
+	.then(response => {
+		Xrm.Utility.closeProgressIndicator();
+        //formContext.refresh();
+		if (response.status == 200) {
+			response.json().then(body => {
+				handleSuccess(body, formContext);
+			});
+		} 
+		else {
+			response.text().then(body => {
+				handleError(body);
+			});
+		}
+	})
+	.catch(function(error) {
+		handleError(error);
+	});
+}
+
+function showMessageDialog(messageTitle, message) {
+	var alertStrings = {
+		confirmButtonLabel: "OK",
+		text: message,
+		title: messageTitle
+	};
+	var alertOptions = {
+		height: 120,
+		width: 260
+	};
+	Xrm.Navigation.openAlertDialog(alertStrings, alertOptions);
+}
+
+async function showAddressSelectionDialog(title, message, addresses, formContext) {
+    //let encodedGridData = encodeURIComponent(JSON.stringify(addresses));
+    
+    // Store the data globally on the parent window
+    window.addressesData = addresses;
+
+    let url = `/WebResources/er_AddressSelectionDialog?title=${encodeURIComponent(title)}&message=${encodeURIComponent(message)}`;
+
+    // Define window features to make it a true popup
+    let popupFeatures = "width=600,height=400,left=200,top=200,resizable=yes,scrollbars=yes";
+
+
+    console.log("🔹 Opening Address Selection Dialog...");
+
+    // Open the web resource
+    let newWindow = window.open(url, popupFeatures);
+
+    // Set the callback function that will be executed when the child window is closed
+    newWindow.onbeforeunload = async () => {
+        try {
+            let selectedAddress = newWindow.returnValue;  // Get the selected address from the child window
+            console.log("🔹 Message received in parent:", selectedAddress); // Debugging log
+
+            if (selectedAddress) {
+                // Once the address is selected, set the values on the form
+                formContext.getAttribute('er_numero').setValue(parseInt(selectedAddress.numero));
+                //formContext.getAttribute('er_indice_repetition').setValue(selectedAddress.rep);
+                formContext.getAttribute('er_nom_voie').setValue(selectedAddress.nom_voie);
+                formContext.getAttribute('er_codepostal').setValue(selectedAddress.code_postal);
+                formContext.getAttribute('er_commune').setValue(selectedAddress.nom_commune);
+                formContext.data.refresh(true);
+            }
+        } catch (error) {
+            console.error("❌ Error while setting address values:", error);
+        }
+    };
+}
+
+function getEnvironmentVariable(varName, onSuccess, onError){
+  "use strict";
+   Xrm.WebApi.retrieveMultipleRecords("environmentvariabledefinition", "?$select=defaultvalue,displayname&$expand=environmentvariabledefinition_environmentvariablevalue($select=value)&$filter=schemaname eq '"+varName+"'").then(
+		function success(result) {
+			var varValue = null;
+			for (var i = 0; i < result.entities.length; i++) {
+			    
+				if(typeof(result.entities[i]["environmentvariabledefinition_environmentvariablevalue"]) != "undefined"
+				   && result.entities[i]["environmentvariabledefinition_environmentvariablevalue"].length > 0)
+				{
+				   varValue = result.entities[i]["environmentvariabledefinition_environmentvariablevalue"][0].value;
+				}
+				else if(typeof(result.entities[i].defaultvalue) != "undefined")
+				{
+				   varValue = result.entities[i].defaultvalue;
+				}
+				else{
+				   varValue = null;
+				}
+			}    
+			onSuccess(varValue);	
+		},
+		function (error) {
+			console.log(error.message);
+			onError(error);			
+		}
+	);
+}
+
+// -------------------------------- OUTILS ADMIN --------------------------------
+
+// Code pour MAJ de la table de correspondance (Version modifiée)   
+
+    // ===============================
+    // MODULE: fetchJson
+    // ===============================
+    async function fetchJson(url) {
+        console.log("🔍 Requête GET :", url);
+        const response = await fetch(url, {
+            headers: {
+                "OData-MaxVersion": "4.0",
+                "OData-Version": "4.0",
+                "Accept": "application/json",
+                "Content-Type": "application/json; charset=utf-8",
+                "Prefer": "odata.include-annotations=*"
+            }
+        });
+        return await response.json();
+    }
+
+    // ===============================
+    // MODULE: sendBatchRequest
+    // ===============================
+    async function sendBatchRequest(operations, clientUrl) {
+        const batchId = `batch_${Date.now()}`;
+        const changesetId = `changeset_${Date.now()}`;
+        const boundary = `batch_${batchId}`;
+        const changesetBoundary = `changeset_${changesetId}`;
+
+        let body = `--${boundary}\r\n`;
+        body += `Content-Type: multipart/mixed; boundary=${changesetBoundary}\r\n\r\n`;
+
+        operations.forEach((op, index) => {
+            body += `--${changesetBoundary}\r\n`;
+            body += `Content-Type: application/http\r\n`;
+            body += `Content-Transfer-Encoding: binary\r\n`;
+            body += `Content-ID: ${index + 1}\r\n\r\n`;
+            body += `${op.method} ${op.url} HTTP/1.1\r\n`;
+            body += `Content-Type: application/json\r\n\r\n`;
+            body += `${JSON.stringify(op.payload)}\r\n`;
+        });
+
+        body += `--${changesetBoundary}--\r\n`;
+        body += `--${boundary}--`;
+
+        console.log("📤 Envoi du batch...");
+        const response = await fetch(`${clientUrl}/api/data/v9.2/$batch`, {
+            method: "POST",
+            headers: {
+                "Content-Type": `multipart/mixed; boundary=${boundary}`,
+                "OData-MaxVersion": "4.0",
+                "OData-Version": "4.0",
+                "Accept": "application/json"
+            },
+            body: body
+        });
+
+        const result = await response.text();
+        console.log("📥 Réponse du batch :", result);
+    }
+
+    // ===============================
+    // MAIN FUNCTION
+    // ===============================
+    async function syncChoiceMetadataToCorrespondanceTable() {
+        console.time("⏱️ Total");
+        console.log("▶️ Début de la synchronisation des choix...");
+
+        const clientUrl = Xrm.Utility.getGlobalContext().getClientUrl();
+
+        // Étape 0 : Réinitialiser tous les enregistrements à false
+        console.time("⏱️ Réinitialisation");
+        const allRecordsUrl = `${clientUrl}/api/data/v9.2/crfc6_correspondancechoixes?$select=crfc6_correspondancechoixid`;
+        const allRecordsResponse = await fetchJson(allRecordsUrl);
+        const allRecords = allRecordsResponse?.value ?? [];
+
+        await Promise.all(allRecords.map(record => {
+            const patchUrl = `${clientUrl}/api/data/v9.2/crfc6_correspondancechoixes(${record.crfc6_correspondancechoixid})`;
+            return fetch(patchUrl, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "OData-MaxVersion": "4.0",
+                    "OData-Version": "4.0",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({ er_choixtoujouractif: false })
+            });
+        }));
+        console.timeEnd("⏱️ Réinitialisation");
+
+        // Étape 1 : Récupération des entités personnalisées
+        console.time("⏱️ Entités");
+        const entitiesUrl = `${clientUrl}/api/data/v9.2/EntityDefinitions?$filter=IsCustomizable/Value eq true and IsCustomEntity eq true&$select=LogicalName,DisplayName`;
+        const entities = (await fetchJson(entitiesUrl)).value;
+        console.timeEnd("⏱️ Entités");
+
+        const batchOperations = [];
+
+        for (const entity of entities) {
+            const entityName = entity.LogicalName;
+            const entityDisplayName = entity.DisplayName?.UserLocalizedLabel?.Label ?? entityName;
+            console.log(`➡️ Entité : ${entityDisplayName} (${entityName})`);
+
+            const attributesUrl = `${clientUrl}/api/data/v9.2/EntityDefinitions(LogicalName='${entityName}')/Attributes?$filter=AttributeType eq Microsoft.Dynamics.CRM.AttributeTypeCode'Picklist'&$select=LogicalName,DisplayName`;
+            const attributes = (await fetchJson(attributesUrl)).value.filter(attr => attr.LogicalName.startsWith("er_"));
+
+            for (const attribute of attributes) {
+                const attributeName = attribute.LogicalName;
+                const attributeDisplayName = attribute.DisplayName?.UserLocalizedLabel?.Label ?? attributeName;
+                console.log(`   🔸 Champ choix : ${attributeDisplayName} (${attributeName})`);
+
+                const optionsUrl = `${clientUrl}/api/data/v9.2/EntityDefinitions(LogicalName='${entityName}')/Attributes(LogicalName='${attributeName}')/Microsoft.Dynamics.CRM.PicklistAttributeMetadata?$select=LogicalName&$expand=OptionSet`;
+                const metadata = await fetchJson(optionsUrl);
+                const options = metadata.OptionSet.Options;
+
+                for (const option of options) {
+                    const label = option.Label?.UserLocalizedLabel?.Label ?? "(Sans étiquette)";
+                    const value = option.Value;
+                    console.log(`      🏷️ Option : ${label} (${value})`);
+
+                    const checkUrl = `${clientUrl}/api/data/v9.2/crfc6_correspondancechoixes?$filter=er_nomlogiquechamp eq '${attributeName}' and crfc6_valeur eq ${value}`;
+                    const existing = (await fetchJson(checkUrl)).value;
+
+                    const payload = {
+                        crfc6_nomchamp: attributeDisplayName,
+                        er_nomlogiquechamp: attributeName,
+                        crfc6_nomentite: entityDisplayName,
+                        er_nomlogiqueentite: entityName,
+                        crfc6_valeur: value,
+                        crfc6_libelle: label,
+                        er_choixtoujouractif: true
+                    };
+
+                    if (existing.length > 0) {
+                        const record = existing[0];
+                        const patchUrl = `/api/data/v9.2/crfc6_correspondancechoixes(${record.crfc6_correspondancechoixid})`;
+                        batchOperations.push({ method: "PATCH", url: patchUrl, payload });
+                    } else {
+                        const postUrl = `/api/data/v9.2/crfc6_correspondancechoixes`;
+                        batchOperations.push({ method: "POST", url: postUrl, payload });
+                    }
+                }
+            }
+        }
+
+        // Étape 3 : Envoi du batch
+        console.time("⏱️ Batch");
+        await sendBatchRequest(batchOperations, clientUrl);
+        console.timeEnd("⏱️ Batch");
+
+        console.log("✅ Synchronisation terminée !");
+        console.timeEnd("⏱️ Total");
+    }
+

@@ -1,0 +1,110 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "WHEN_-_Menage_created": {
+          "metadata": {
+            "operationMetadataId": "44a7d43f-c7d5-4568-86bc-c1aac0e2aa1c"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "er_menage",
+              "subscriptionRequest/scope": 4
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "INIT_-_RequiredFilesTypes": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "83d788e3-7dd9-4e51-ab98-ba63eb3ed7bc"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "RequiredFilesTypes",
+                "type": "array",
+                "value": [
+                  122210000,
+                  122210001,
+                  122210002,
+                  122210006
+                ]
+              }
+            ]
+          },
+          "description": "Passeport, CNI, Permis, Facture EDF"
+        },
+        "FOREACH_-_RequiredFilesTypes": {
+          "foreach": "@variables('RequiredFilesTypes')",
+          "actions": {
+            "CREATE_-_Related_Document_Ménage": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "661da950-d0b7-414e-a29b-df773ac67387"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_document_menages",
+                  "item/er_menage@odata.bind": "er_menages(@{triggerOutputs()?['body/er_menageid']})",
+                  "item/er_type_document": "@items('FOREACH_-_RequiredFilesTypes')"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "INIT_-_RequiredFilesTypes": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e6203b93-f83a-40b2-a8e7-7c69a96c41a5"
+          },
+          "type": "Foreach"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

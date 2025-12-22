@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2bf2b302-d958-434b-87b5-9b49f9091953}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_automatisation" select="1" icon="1" preview="1">
+        <row name="result" id="er_suiviautomatisationsid">
+          <cell name="er_automatisation" width="136" />
+          <cell name="createdby" width="100" />
+          <cell name="createdon" width="125" />
+          <cell name="er_fluxaexecuter" width="127" />
+          <cell name="er_contexteentite" width="136" />
+          <cell name="er_contexteiddelenregistrement" width="227" />
+          <cell name="er_contextediagnosticslime" width="219" />
+          <cell name="er_statutdexecution" width="141" />
+          <cell name="er_resultatdutraitement" width="164" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_suiviautomatisations">
+          <attribute name="er_suiviautomatisationsid" />
+          <attribute name="er_automatisation" />
+          <attribute name="createdon" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="createdby" />
+          <attribute name="er_contexteentite" />
+          <attribute name="er_contexteiddelenregistrement" />
+          <attribute name="er_contextediagnosticslime" />
+          <attribute name="er_fluxaexecuter" />
+          <attribute name="er_statutdexecution" />
+          <attribute name="er_resultatdutraitement" />
+          <order attribute="createdon" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Toutes les automatisations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Toutes les automatisations actives" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

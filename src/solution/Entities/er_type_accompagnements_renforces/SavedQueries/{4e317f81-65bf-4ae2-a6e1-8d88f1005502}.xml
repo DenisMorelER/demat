@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{4e317f81-65bf-4ae2-a6e1-8d88f1005502}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_libelle" select="1" icon="1" preview="1">
+        <row name="result" id="er_type_accompagnements_renforcesid">
+          <cell name="er_libelle" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_type_accompagnements_renforces">
+          <attribute name="er_type_accompagnements_renforcesid" />
+          <attribute name="er_libelle" />
+          <attribute name="createdon" />
+          <order attribute="er_libelle" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Types d'Accompagnements Renforcés inactifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

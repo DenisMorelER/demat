@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9d54679e-bcfd-ef11-bae3-7c1e523442f3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_dossier" select="1" icon="1" preview="1">
+        <row name="result" id="er_dossierid">
+          <cell name="er_id_dossier" width="300" />
+          <cell name="er_nom_dossier" width="129" />
+          <cell name="er_menage_beneficiaire" width="167" />
+          <cell name="er_site_concerne" width="119" />
+          <cell name="er_collaborateur_referent" width="169" />
+          <cell name="er_date_ouverture_dossier" width="234" />
+          <cell name="er_date_derniere_relance" width="191" />
+        </row>
+        <controlDescriptions>
+          <controlDescription>
+            <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+              <parameters />
+            </customControl>
+            <customControl formFactor="0" name="MscrmControls.Grid.GridControl">
+              <parameters>
+                <data-set name="Grid">
+                  <ViewId>00000000-0000-0000-0000-000000000000</ViewId>
+                </data-set>
+                <data-set name="SubGrid">
+                  <TargetEntityType>er_dossier</TargetEntityType>
+                  <ViewId>9d54679e-bcfd-ef11-bae3-7c1e523442f3</ViewId>
+                  <SubGridParentId>er_collaborateur_referent</SubGridParentId>
+                </data-set>
+                <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+                <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+                <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+                <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+                <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+              </parameters>
+            </customControl>
+            <customControl formFactor="1" name="MscrmControls.Grid.GridControl">
+              <parameters>
+                <data-set name="Grid">
+                  <ViewId>00000000-0000-0000-0000-000000000000</ViewId>
+                </data-set>
+                <data-set name="SubGrid">
+                  <TargetEntityType>er_dossier</TargetEntityType>
+                  <ViewId>9d54679e-bcfd-ef11-bae3-7c1e523442f3</ViewId>
+                  <SubGridParentId>er_collaborateur_referent</SubGridParentId>
+                </data-set>
+                <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+                <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+                <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+                <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+                <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+              </parameters>
+            </customControl>
+            <customControl formFactor="2" name="MscrmControls.Grid.GridControl">
+              <parameters>
+                <data-set name="Grid">
+                  <ViewId>00000000-0000-0000-0000-000000000000</ViewId>
+                </data-set>
+                <data-set name="SubGrid">
+                  <TargetEntityType>er_dossier</TargetEntityType>
+                  <ViewId>9d54679e-bcfd-ef11-bae3-7c1e523442f3</ViewId>
+                  <SubGridParentId>er_collaborateur_referent</SubGridParentId>
+                </data-set>
+                <EnableGroupBy static="true" type="Enum">yes</EnableGroupBy>
+                <ListLayoutDirection static="true" type="Enum">Vertical</ListLayoutDirection>
+                <EnableFiltering static="true" type="Enum">yes</EnableFiltering>
+                <HideNestedGridColumnHeader static="true" type="Enum">no</HideNestedGridColumnHeader>
+                <EnableJumpBar static="true" type="Enum">yes</EnableJumpBar>
+              </parameters>
+            </customControl>
+          </controlDescription>
+        </controlDescriptions>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" distinct="true">
+        <entity name="er_dossier">
+          <attribute name="er_dossierid" />
+          <attribute name="er_id_dossier" />
+          <attribute name="er_menage_beneficiaire" />
+          <attribute name="er_collaborateur_referent" />
+          <attribute name="er_date_ouverture_dossier" />
+          <attribute name="er_date_derniere_relance" />
+          <attribute name="er_nom_dossier" />
+          <attribute name="er_site_concerne" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="er_statut_dossier" operator="eq" value="122210002" />
+          </filter>
+          <order attribute="er_id_dossier" descending="false" />
+          <order attribute="er_collaborateur_referent" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Dossiers affectés" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{aa799ef1-bd4d-f011-877a-6045bdde3c36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="subject" select="1" icon="1" preview="1">
+        <row name="result" id="activityid">
+          <cell name="createdon" width="140" />
+          <cell name="directioncode" width="100" />
+          <cell name="er_statutdelappel" width="130" />
+          <cell name="from" width="140" />
+          <cell name="to" width="162" />
+          <cell name="er_type_echange_entrant" width="170" />
+          <cell name="er_type_echange_sortant" width="169" />
+          <cell name="subject" width="200" />
+          <cell name="description" width="231" />
+          <cell name="new_menage" width="143" />
+          <cell name="new_sitelogement" width="123" />
+          <cell name="er_dossierdetraitementconcerne" width="214" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="phonecall">
+          <attribute name="subject" />
+          <attribute name="activityid" />
+          <attribute name="createdon" />
+          <attribute name="directioncode" />
+          <attribute name="to" />
+          <attribute name="er_type_echange_entrant" />
+          <attribute name="er_type_echange_sortant" />
+          <attribute name="description" />
+          <attribute name="new_menage" />
+          <attribute name="new_sitelogement" />
+          <attribute name="from" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="activityparty" alias="aa" link-type="inner" from="activityid" to="activityid">
+            <filter type="and">
+              <condition attribute="participationtypemask" operator="in">
+                <value>2</value>
+                <value>1</value>
+                <value>9</value>
+              </condition>
+              <condition attribute="partyid" operator="eq-userid" />
+            </filter>
+          </link-entity>
+          <order attribute="createdon" descending="true" />
+          <attribute name="er_dossierdetraitementconcerne" />
+          <attribute name="er_statutdelappel" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Mes appels téléphoniques" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Er Mes appels téléphoniques" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

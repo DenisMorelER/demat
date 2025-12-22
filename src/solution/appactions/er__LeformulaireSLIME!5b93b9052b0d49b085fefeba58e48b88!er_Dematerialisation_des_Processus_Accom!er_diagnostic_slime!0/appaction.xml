@@ -1,0 +1,28 @@
+<appaction uniquename="er__LeformulaireSLIME!5b93b9052b0d49b085fefeba58e48b88!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <grouptitle default="Le formulaire SLIME">
+    <label description="Le formulaire SLIME" languagecode="1036" />
+  </grouptitle>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>LeformulaireSLIME!5b93b9052b0d49b085fefeba58e48b88</name>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__Avantlavisite!d982c24b9f7f429bb346f3d68e941f42!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>10000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>3</type>
+</appaction>

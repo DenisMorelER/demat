@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{adcb7851-1fd6-41e4-a690-c450044ba227}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{99b3de87-3c1e-47b6-bea2-4bd917b821a5}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{c955d631-bd84-4906-aa0a-e6bff24f3176}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3d5b4a6d-9048-451a-9441-594e1d718579}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_visite" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_visite" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{75f62a8a-f4f5-4c8a-9110-5be03423b2fd}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a81163ee-4d8d-4da2-bc55-38f46586f2f4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Collaborateur SPLER" languagecode="1036" />
+                        </labels>
+                        <control id="er_collaborateur_spler" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_spler" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6d3e0e45-65cd-41e4-8dc0-bea9605d1513}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_visite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d8bc84c9-ed96-47d4-b247-0ccc278798c5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site" languagecode="1036" />
+                        </labels>
+                        <control id="er_site" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e240033e-d82f-464d-8493-75fbbad103a8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1e2e8f78-b088-49a3-9876-8210b7068ea9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossier" disabled="false">
+                          <parameters>
+                            <DependentAttributeName>er_visite.er_menage</DependentAttributeName>
+                            <DependentAttributeType>er_menage</DependentAttributeType>
+                            <FilterRelationshipName>er_menage_beneficiaire_dossiers</FilterRelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{13232225-cb3f-4061-a835-4b7c05c84b7d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date prévisionnelle" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_previsionnelle" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_previsionnelle" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{d1078768-496a-4e07-9323-fa3208110f07}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="New SG control 1742569663146" languagecode="1036" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" uniqueid="{a2d23a91-c340-4e2e-aa8e-03b2a435d13c}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_visites_offres_orientations</RelationshipName>
+                            <TargetEntityType>er_offre_orientation</TargetEntityType>
+                            <ViewId>{D2994212-1B45-44CA-89E7-89D132036173}</ViewId>
+                            <ViewIds>{D2994212-1B45-44CA-89E7-89D132036173}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{11722863-dfe0-407d-887d-8b6a7e1dc56c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Première ou seconde visite?" languagecode="1036" />
+                        </labels>
+                        <control id="er_iteration_visite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_iteration_visite" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="3a64cf22-7909-4513-8a65-4e5327e4e618" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="8ec5ddc9-d802-4e87-b25e-ec27354a57bf" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Déroulé de la visite" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="41e781d9-b92e-4f47-8a79-8b874a72d3ab" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Déroulé de la visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{9b92960e-e5a8-44c0-bddb-e7fe1e721765}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de début de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_debut_visite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_debut_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{dce1c06d-71ef-4441-8d3d-e4a59a553221}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de fin de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_fin_visite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_fin_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a24565dc-2447-4955-af48-67bd4db2f9f8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Détails de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_visite" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{98e5fdf4-7b13-42a4-844c-9f2cf3ff7274}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Relevé d'index" languagecode="1036" />
+                        </labels>
+                        <control id="er_releve_index" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_releve_index" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5291b83d-4b7c-47fd-8071-bad9e4a5d3fb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Rapport de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_rapport_visite" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_rapport_visite" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{56f60985-f080-420a-804c-1166a20231b7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d71493e4-ee57-472e-b57c-2c6f1abd08a7}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{cdd9915a-5640-45bf-8401-d2cea176a7da}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{0df23f54-ece3-46be-a2a9-46922f492d54}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{14273fe4-bb3c-408d-8c29-69a55b225e16}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{314f0ad1-1154-47c2-bd16-10112ada4e6c}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e73c082b-0cfb-4dff-ae52-d7c4602c9e58}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f49af704-27df-4b9a-9377-702e7f671d74}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="4" FallbackForm="false">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{58397b64-f95a-49fe-8b6d-b2999f125d23}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="er_dossier">
+          <Handlers>
+            <Handler functionName="updateFieldsFromDossier" libraryName="er_Toolbox_JS" handlerUniqueId="{44212cbb-7e85-41c4-b39f-15018fbee2f3}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions>
+        <controlDescription forControl="{a2d23a91-c340-4e2e-aa8e-03b2a435d13c}">
+          <customControl id="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+            <parameters />
+          </customControl>
+          <customControl formFactor="0" name="ktcs_ktcs.MultiSelectLookup">
+            <parameters>
+              <data-set name="dataset">
+                <ViewId>{d2994212-1b45-44ca-89e7-89d132036173}</ViewId>
+                <TargetEntityType>er_offre_orientation</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>er_visites_offres_orientations</RelationshipName>
+                <FilteredViewIds>{D2994212-1B45-44CA-89E7-89D132036173}</FilteredViewIds>
+              </data-set>
+              <relationship type="SingleLine.Text" static="true">er_visites_offres_orientations</relationship>
+              <allowAddNew type="TwoOptions" static="true">false</allowAddNew>
+              <label type="SingleLine.Text" static="true">Objet de la visite </label>
+              <labelLocation type="Enum" static="true">1</labelLocation>
+              <labelWidth type="SingleLine.Text" static="true">4000</labelWidth>
+              <bestEffort type="TwoOptions" static="true">false</bestEffort>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="ktcs_ktcs.MultiSelectLookup">
+            <parameters>
+              <data-set name="dataset">
+                <ViewId>{d2994212-1b45-44ca-89e7-89d132036173}</ViewId>
+                <TargetEntityType>er_offre_orientation</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>er_visites_offres_orientations</RelationshipName>
+                <FilteredViewIds>{D2994212-1B45-44CA-89E7-89D132036173}</FilteredViewIds>
+              </data-set>
+              <relationship type="SingleLine.Text" static="true">er_visites_offres_orientations</relationship>
+              <allowAddNew type="TwoOptions" static="true">false</allowAddNew>
+              <label type="SingleLine.Text" static="true">Objet de la visite </label>
+              <labelLocation type="Enum" static="true">1</labelLocation>
+              <labelWidth type="SingleLine.Text" static="true">4000</labelWidth>
+              <bestEffort type="TwoOptions" static="true">false</bestEffort>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="ktcs_ktcs.MultiSelectLookup">
+            <parameters>
+              <data-set name="dataset">
+                <ViewId>{d2994212-1b45-44ca-89e7-89d132036173}</ViewId>
+                <TargetEntityType>er_offre_orientation</TargetEntityType>
+                <IsUserView>false</IsUserView>
+                <EnableViewPicker>false</EnableViewPicker>
+                <RelationshipName>er_visites_offres_orientations</RelationshipName>
+                <FilteredViewIds>{D2994212-1B45-44CA-89E7-89D132036173}</FilteredViewIds>
+              </data-set>
+              <relationship type="SingleLine.Text" static="true">er_visites_offres_orientations</relationship>
+              <allowAddNew type="TwoOptions" static="true">false</allowAddNew>
+              <label type="SingleLine.Text" static="true">Objet de la visite </label>
+              <labelLocation type="Enum" static="true">1</labelLocation>
+              <labelWidth type="SingleLine.Text" static="true">4000</labelWidth>
+              <bestEffort type="TwoOptions" static="true">false</bestEffort>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Main Form Visite Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

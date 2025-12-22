@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{30bee9b2-a5fa-ef11-bae1-6045bd1acdd0}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{a0f0af57-04e2-4ff9-aec4-3a2a55c05a0e}" showlabel="false" name="New Tab" labelid="{c65aa151-1cfd-467a-8802-b3f5bd1e7614}">
+          <labels>
+            <label description="New Tab" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section showlabel="false" columns="1" showbar="false" IsUserDefined="false" labelwidth="130" id="{f0617967-63b1-4724-aaab-29331f55517e}" name="tab_1_column_1_section_1" labelid="{10cc500b-d035-4b0e-af6a-58f9028fec37}">
+                  <labels>
+                    <label description="New Section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{5dc59d5f-20ba-4662-b42c-2573d036e278}" locklevel="0" colspan="1" rowspan="1" labelid="{8dee3192-0b03-40d0-9587-9ed91b6795f8}">
+                        <labels>
+                          <label description="Equipement" languagecode="1036" />
+                        </labels>
+                        <control id="er_equipement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_equipement" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{33165376-2190-4f1a-9dbb-f5b528a1d31c}" locklevel="0" colspan="1" rowspan="1" labelid="{c518ccc6-ff3f-4b9c-9c00-5a91b40d7879}">
+                        <labels>
+                          <label description="Nombre d'équipements remis" languagecode="1036" />
+                        </labels>
+                        <control id="er_nombre_equipements_remis" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nombre_equipements_remis" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="{e4d45e75-6350-4c36-935b-7ca6e477ac88}" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{3b84e1b9-82eb-4395-8405-cbb98659460e}" visible="false">
+                  <labels>
+                    <label description="New Section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{742ab6d9-0217-4cb0-ad94-8aaef8c0e923}" labelid="{ae9443fe-4570-477e-8735-dabe848db512}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="{83a98c8e-3330-4ba6-8196-c514d78977ba}" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{f720425c-a55c-45d3-b348-54e7f175be69}" visible="false">
+                  <labels>
+                    <label description="New Section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d6d7c833-947a-413b-b1d7-a0cef01b3188}" labelid="{5b5483e4-3088-4661-b1e7-f04a693412cc}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Remise Petit Equipement - Quick Create" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

@@ -1,0 +1,997 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedsharepointonline_95609"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_excelonlinebusiness": {
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedexcelonlinebusiness_5da5c"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Site Sharepoint (er_Site_Sharepoint)": {
+          "defaultValue": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_Site_Sharepoint"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "triggerAuthenticationType": "All",
+            "schema": {
+              "diagId": {
+                "type": "string"
+              }
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "2bbde4bc-a31c-451e-b158-43e3fd1acb35"
+          }
+        }
+      },
+      "actions": {
+        "GET_-_Needed_rows": {
+          "type": "Scope",
+          "actions": {
+            "GET_-_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@outputs('GET_-_Visite')?['body/_er_menage_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Visite": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e92b3c6c-bfbc-4eef-ad9b-7787369d1d89"
+              }
+            },
+            "GET_-_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('GET_-_Ménage')?['body/_er_personne_referente_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7d1eca1f-0aec-408d-a1c7-3bf3993352b7"
+              }
+            },
+            "GET_-_Dossier": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_dossiers",
+                  "recordId": "@outputs('GET_-_Visite')?['body/_er_dossier_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3651ffbb-7785-4960-b8e0-c0ffabf3aba1"
+              }
+            },
+            "LIST_-_Related_Alertes": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_alertes",
+                  "$filter": "_er_dossier_value eq '@{outputs('GET_-_Visite')?['body/_er_dossier_value']}'"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Dossier": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c223eff9-1aea-4949-8781-2eceea65fd54"
+              }
+            },
+            "GET_-_Site": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_sites",
+                  "recordId": "@outputs('GET_-_Visite')?['body/_er_site_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e73780e0-05a0-4b7a-9ed5-1474b07ccdce"
+              }
+            },
+            "IF_-_Related_Alertes": {
+              "type": "If",
+              "expression": {
+                "greater": [
+                  "@length(outputs('LIST_-_Related_Alertes')?['body/value'])",
+                  0
+                ]
+              },
+              "actions": {
+                "GET_-_First_Alerte": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_alertes",
+                      "recordId": "@first(outputs('LIST_-_Related_Alertes')?['body/value'])?['er_alerteid']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  },
+                  "metadata": {
+                    "operationMetadataId": "aefd487d-0c8e-4a49-bf13-16c3294ed65c"
+                  }
+                }
+              },
+              "else": {
+                "actions": {}
+              },
+              "runAfter": {
+                "LIST_-_Related_Alertes": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "67895ac3-df9c-4ca5-8a71-0306948dd80f"
+              }
+            },
+            "GET_-_Diag": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "recordId": "@triggerBody()?['diagId']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "54ba7514-983b-4f0b-a1d2-c5d530440019"
+              }
+            },
+            "GET_-_Visite": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_visites",
+                  "recordId": "@outputs('GET_-_Diag')?['body/_er_visite_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "GET_-_Diag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e09cecb7-26db-4e53-a94c-ed17c6ca352f"
+              }
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f18422e3-6a50-46b8-a474-541d78ca14bf"
+          }
+        },
+        "GET_-_DEP_File_Content": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "path": "/Documents partages/00 Modèles de fichiers/DEP Template.xlsx",
+              "inferContentType": true
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileContentByPath",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "UPDATE_-_Link_Doc_SPLER_to_Diag": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bc1416be-fe8f-4030-bad2-6b040ca68617"
+          }
+        },
+        "CREATE_-_Generated_DEP_File": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "folderPath": "/er_document_spler/@{outputs('CREATE_-_Doc_SPLER_Row')?['body/er_id_document_spler']}_@{replace(toUpper(outputs('CREATE_-_Doc_SPLER_Row')?['body/er_document_splerid']),'-','')}",
+              "name": "DEP @{outputs('GET_-_Ménage')?['body/er_nom']}.xlsx",
+              "body": "@body('GET_-_DEP_File_Content')"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateFile",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "GET_-_DEP_File_Content": [
+              "Succeeded"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "edb52c54-a064-40a0-997d-b901aa73f046"
+          }
+        },
+        "UPDATE_-_Generated_DEP_File_info": {
+          "type": "Scope",
+          "actions": {
+            "UPDATE_-_Creation_Date": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Créé le (Date)",
+                  "item": {
+                    "Valeur": "@{formatDateTime(utcNow(),'dd/MM/yyyy')}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Creation_Hour": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Créé le (Heure)",
+                  "item": {
+                    "Valeur": "@{formatDateTime(utcNow(), 'HH:mm')}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Creation_Date": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Chargé_de_visite": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Chargé de visite (Visite)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Visite')?['body/_er_collaborateur_spler_value@OData.Community.Display.V1.FormattedValue']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Creation_Hour": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Motif_Alerte": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Motif de l'alerte (Alerte)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_First_Alerte')?['body/er_motif_alerte@OData.Community.Display.V1.FormattedValue']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Chargé_de_visite": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Civilité_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Civilité (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/er_civilite@OData.Community.Display.V1.FormattedValue']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Donneur_Alerte": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Donneur_Alerte": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Donneur d'alerte (Alerte)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_First_Alerte')?['body/_er_entite_donneur_alerte_value@OData.Community.Display.V1.FormattedValue']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Motif_Alerte": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Nom_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Nom (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/lastname']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Civilité_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Prénom_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Prénom (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/firstname']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Nom_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Anniversaire_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Date de naissance (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/birthdate']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Prénom_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Tel_Portable_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Tél Portable (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/mobilephone']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Anniversaire_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Tel_Fixe_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Tél Fixe (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/telephone2']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Tel_Portable_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_E-Mail_Référent": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "E-Mail (Référent)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Référent')?['body/emailaddress1']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Tel_Fixe_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Adresse_Site": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Adresse (Site)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Site')?['body/er_numero']} @{outputs('GET_-_Site')?['body/er_indice_repetition@OData.Community.Display.V1.FormattedValue']} @{outputs('GET_-_Site')?['body/er_nom_voie']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_E-Mail_Référent": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Code_Postal_Site": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Code Postal (Site)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Site')?['body/er_code_postal']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Adresse_Site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Commune_Site": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Commune (Site)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Site')?['body/er_ville']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Code_Postal_Site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Nombre_Occupants_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Nombre total d'occupants (Ménage)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Ménage')?['body/er_total_nombre_personnes']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Commune_Site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Activité_Référent_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Activité du référent (Ménage)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Ménage')?['body/er_activite_referent']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Nombre_Occupants_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Total_Revenu_Fiscal_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "TOTAL Revenu Fiscal (Ménage)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Ménage')?['body/er_total_revenu_fiscal']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Activité_Référent_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Total_Nbr_Parts_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "TOTAL Nombre de parts (Ménage)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Ménage')?['body/er_total_nombre_parts']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Total_Revenu_Fiscal_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            },
+            "UPDATE_-_Type_de_logement_Site": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                  "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                  "file": "@outputs('CREATE_-_Generated_DEP_File')?['body/Path']",
+                  "table": "PAUTO_Insertion",
+                  "idColumn": "Champ",
+                  "id": "Type de logement (Site)",
+                  "item": {
+                    "Valeur": "@{outputs('GET_-_Site')?['body/er_type_logement@OData.Community.Display.V1.FormattedValue']}"
+                  }
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "PatchItem",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "UPDATE_-_Total_Nbr_Parts_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "442bcb7f-4029-4ce4-abe8-29f52a38c89a",
+                "tableId": "PAUTO_Insertion"
+              }
+            }
+          },
+          "runAfter": {
+            "CREATE_-_Generated_DEP_File": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8948cc63-db19-4ec4-86e3-1e1874ebf323"
+          }
+        },
+        "Response": {
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "ResponseDetails": "Votre fichier DEP a bien été généré"
+            }
+          },
+          "runAfter": {
+            "UPDATE_-_Generated_DEP_File_info": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6cf9aae0-1c31-40c4-be5c-d8953fbc8405"
+          }
+        },
+        "CREATE_-_Doc_SPLER_Row": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_document_splers",
+              "item/er_menage_concerne@odata.bind": "/er_menages(@{outputs('GET_-_Ménage')?['body/er_menageid']})",
+              "item/er_nom_document": "Fichier DEP du @{formatDateTime(utcNow(),'dd/MM/yyyy')}",
+              "item/er_nomdufichierstockedanssharepoint": "DEP @{outputs('GET_-_Ménage')?['body/er_nom']}.xlsx"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "GET_-_Needed_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ec4154ac-68ff-46a2-a399-8c1afb530e38"
+          }
+        },
+        "UPDATE_-_Link_Doc_SPLER_to_Diag": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "recordId": "@outputs('GET_-_Diag')?['body/er_diagnostic_slimeid']",
+              "item/er_doc_fichier_dep@odata.bind": "/er_document_splers(@{outputs('CREATE_-_Doc_SPLER_Row')?['body/er_document_splerid']})"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "CREATE_-_Doc_SPLER_Row": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "61e5c880-df2c-49ed-82a6-997262cb57c7"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

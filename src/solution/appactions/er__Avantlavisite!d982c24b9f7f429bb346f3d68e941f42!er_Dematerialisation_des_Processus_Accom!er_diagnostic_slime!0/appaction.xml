@@ -1,0 +1,32 @@
+<appaction uniquename="er__Avantlavisite!d982c24b9f7f429bb346f3d68e941f42!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Avant la visite">
+    <label description="Avant la visite" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>LeftArrowHead</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Avantlavisite!d982c24b9f7f429bb346f3d68e941f42</name>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100025.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>1</type>
+  <visibilityformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+  </visibilityformulacomponentlibraryid>
+  <visibilityformulacomponentname>934a7469b8c14f498f2701086e2c0982</visibilityformulacomponentname>
+  <visibilityformulafunctionname>Visible</visibilityformulafunctionname>
+  <visibilitytype>1</visibilitytype>
+</appaction>

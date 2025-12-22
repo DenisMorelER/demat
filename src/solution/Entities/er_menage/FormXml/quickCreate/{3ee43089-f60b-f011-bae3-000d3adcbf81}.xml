@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{3ee43089-f60b-f011-bae3-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{90d72e87-add9-453d-b48e-1bd2079703e7}">
+          <labels>
+            <label description="New Tab" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{8dcf355e-9306-418a-b5f9-aadfdd615d0f}">
+                  <labels>
+                    <label description="Le ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{219876e0-bb16-43ec-9fd6-cb302bb2d2e8}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Nom du ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_nom" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2fccd940-3472-4666-bdc3-0124a5788f42}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Représentant ménage 1" languagecode="1036" />
+                        </labels>
+                        <control id="er_personne_referente" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personne_referente" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e42c229d-c69b-4f58-bef6-a62fa368c7db}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Représentant ménage 2" languagecode="1036" />
+                        </labels>
+                        <control id="er_personnereferente2" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personnereferente2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e3fee88d-656f-47ed-9ac8-cdbbf44b9e1e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site de résidence" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_residence" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_residence" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="true" labelid="{9aed4411-b269-4ca1-8482-0a6e408c206c}">
+                  <labels>
+                    <label description="Le contact" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{a3e8b1bb-18bc-4034-945a-29d0a1cbee52}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8c0c0807-a3af-4397-9b56-06a96e83cce9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Personne à contacter en priorité" languagecode="1036" />
+                        </labels>
+                        <control id="er_personneacontacter" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personneacontacter" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="true" labelid="{99523a4f-fe9c-40fe-90ee-9a56f5a58e97}">
+                  <labels>
+                    <label description="Eligibilités" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{c800eb24-7fac-4d9b-a982-94a945f2cff1}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{97ffbf81-bc2c-4bbc-9a22-b15c2a2560df}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité au chèque énergie" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibiliteauchequeenergie" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_eligibiliteauchequeenergie" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{942423e2-1ed7-4bae-9b5e-09a18e369643}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité à la CSS" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibilitealacss" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_eligibilitealacss" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{64ef6255-f8aa-4cfa-8df2-15b57861ab19}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="er_personne_referente">
+          <Handlers>
+            <Handler functionName="putMenageNameNoRefresh" libraryName="er_Toolbox_JS" handlerUniqueId="{bd1d9aa1-942a-4394-96ca-85fba2b256f7}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="provisionYears" libraryName="er_Toolbox_JS" handlerUniqueId="{f5b116f7-2ee1-47a2-9194-7dd25c079dfc}" enabled="false" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="er_personnereferente2">
+          <Handlers>
+            <Handler functionName="putMenageNameNoRefresh" libraryName="er_Toolbox_JS" handlerUniqueId="{d7d02ad3-bf34-4e1b-9953-1f031b268743}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="MENAGE - Quick Create" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

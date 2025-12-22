@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{00be86a0-8efd-ef11-bae3-000d3adcbf81}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="fullname" select="1" icon="1" preview="1">
+        <row name="result" id="contactid">
+          <cell name="fullname" width="300" />
+          <cell name="emailaddress1" width="200" />
+          <cell name="telephone1" width="191" />
+          <cell name="telephone2" width="158" />
+          <cell name="parentcustomerid" width="209" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="contact">
+          <attribute name="fullname" />
+          <order attribute="fullname" descending="false" />
+          <attribute name="parentcustomerid" />
+          <attribute name="telephone1" />
+          <attribute name="emailaddress1" />
+          <attribute name="contactid" />
+          <attribute name="telephone2" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="account" alias="aa" link-type="inner" from="accountid" to="parentcustomerid">
+            <filter type="and">
+              <condition attribute="er_bool_donneur_alerte" operator="eq" value="1" />
+            </filter>
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Contacts - Donneurs d'alertes" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

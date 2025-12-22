@@ -1,0 +1,35 @@
+<appaction uniquename="er__SaisieautoSOLIDIA!1c87e629d6b849bda05ebdbf725e7de8!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Saisie auto SOLIDIAG">
+    <label description="Saisie auto SOLIDIAG" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>AutomaticSuggestions</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>SaisieautoSOLIDIA!1c87e629d6b849bda05ebdbf725e7de8</name>
+  <onclickeventformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+  </onclickeventformulacomponentlibraryid>
+  <onclickeventformulacomponentname>10b1c3778c2746099127865cc8e97f89</onclickeventformulacomponentname>
+  <onclickeventformulafunctionname>OnSelect</onclickeventformulafunctionname>
+  <onclickeventtype>1</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__SolidiagV2!434c349891c7456593ca29ad7f1bc375!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>10000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

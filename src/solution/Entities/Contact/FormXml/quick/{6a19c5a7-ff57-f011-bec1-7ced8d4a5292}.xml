@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{6a19c5a7-ff57-f011-bec1-7ced8d4a5292}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{3a49e5a9-c453-4dd9-90c9-946806638da8}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{60bbb3ad-da64-46bd-a08a-9135f294af4e}">
+                  <labels>
+                    <label description="Détails du contact" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fe95fa91-9101-42b4-897c-059ec4a8a4f6}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Prénom" languagecode="1036" />
+                          <label description="First Name" languagecode="1033" />
+                        </labels>
+                        <control id="firstname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="firstname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6277f865-6974-46e4-ab33-ef682f95db43}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Nom de famille" languagecode="1036" />
+                          <label description="Last Name" languagecode="1033" />
+                        </labels>
+                        <control id="lastname" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="lastname" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{825e1fc7-190c-465f-ab76-9e2f9ff12157}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Téléphone mobile" languagecode="1036" />
+                          <label description="Mobile Phone" languagecode="1033" />
+                        </labels>
+                        <control id="mobilephone" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="mobilephone" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e9767040-60b5-4b2c-8739-c03a7a327c68}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Téléphone fixe" languagecode="1036" />
+                          <label description="Home Phone" languagecode="1033" />
+                        </labels>
+                        <control id="telephone2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="telephone2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9ae504a0-e013-460d-9ad5-7fd761325079}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Courrier électronique" languagecode="1036" />
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="emailaddress1" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="emailaddress1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1f4091d5-f9a2-43ef-974c-ee9c6752be9a}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="? Ménage de rattachement" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{bfbc615d-05a0-4161-9a2c-b14a6730d64e}" rowspan="4" colspan="1" auto="true" showlabel="true">
+                        <labels>
+                          <label description="Ménages liés au contact" languagecode="1036" />
+                          <label description="ContactsMénages" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RelationshipName>er_contactmenage_Contact_contact</RelationshipName>
+                            <TargetEntityType>er_contactmenage</TargetEntityType>
+                            <ViewId>{C4449520-F471-F011-B4CB-7CED8D2C1A22}</ViewId>
+                            <ViewIds>{9720C2F6-314E-4C16-84C8-96DC3EC6A80D},{CB9C853D-9F58-F011-877B-000D3ADCBF81},{C4449520-F471-F011-B4CB-7CED8D2C1A22}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Aperçu Contact Ménage" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

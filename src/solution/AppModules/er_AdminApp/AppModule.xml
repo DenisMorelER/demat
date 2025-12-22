@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>er_AdminApp</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="account" />
+    <AppModuleComponent type="1" schemaName="activitypointer" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="crfc6_correspondancechoix" />
+    <AppModuleComponent type="1" schemaName="customeraddress" />
+    <AppModuleComponent type="1" schemaName="documenttemplate" />
+    <AppModuleComponent type="1" schemaName="email" />
+    <AppModuleComponent type="1" schemaName="er_accompagnement_renforce" />
+    <AppModuleComponent type="1" schemaName="er_alerte" />
+    <AppModuleComponent type="1" schemaName="er_anneeselectionnable" />
+    <AppModuleComponent type="1" schemaName="er_bilanannuelavisfiscaux" />
+    <AppModuleComponent type="1" schemaName="er_collaborateur_spler" />
+    <AppModuleComponent type="1" schemaName="er_contactmenage" />
+    <AppModuleComponent type="1" schemaName="er_diagnostic_slime" />
+    <AppModuleComponent type="1" schemaName="er_document_menage" />
+    <AppModuleComponent type="1" schemaName="er_document_spler" />
+    <AppModuleComponent type="1" schemaName="er_dossier" />
+    <AppModuleComponent type="1" schemaName="er_echanges_menage" />
+    <AppModuleComponent type="1" schemaName="er_menage" />
+    <AppModuleComponent type="1" schemaName="er_offre_action" />
+    <AppModuleComponent type="1" schemaName="er_offre_orientation" />
+    <AppModuleComponent type="1" schemaName="er_orientation" />
+    <AppModuleComponent type="1" schemaName="er_petit_equipement" />
+    <AppModuleComponent type="1" schemaName="er_releve_index" />
+    <AppModuleComponent type="1" schemaName="er_remise_petit_equipement" />
+    <AppModuleComponent type="1" schemaName="er_sous_type_accompagnements_renforces" />
+    <AppModuleComponent type="1" schemaName="er_type_accompagnements_renforces" />
+    <AppModuleComponent type="1" schemaName="er_visite" />
+    <AppModuleComponent type="1" schemaName="letter" />
+    <AppModuleComponent type="1" schemaName="msdyn_pmbusinessruleautomationconfig" />
+    <AppModuleComponent type="1" schemaName="phonecall" />
+    <AppModuleComponent type="1" schemaName="template" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001003}" />
+    <AppModuleComponent type="29" id="{e3b1e366-10f8-ef11-bae1-0022483a781c}" />
+    <AppModuleComponent type="60" id="{ee50a18b-3f88-df11-8d93-00155db1891a}" />
+    <AppModuleComponent type="60" id="{c466c56a-ab9d-41a3-ac68-008a60bfe67e}" />
+    <AppModuleComponent type="60" id="{8e0b7c1e-f5a0-4e7d-b04d-4ca8d5c5ca80}" />
+    <AppModuleComponent type="60" id="{becc153e-9858-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}" />
+    <AppModuleComponent type="60" id="{5d431800-1270-40e9-a90a-c970556cf0fe}" />
+    <AppModuleComponent type="62" schemaName="er_AdminApp" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="Admin App" languagecode="1036" />
+  </LocalizedNames>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

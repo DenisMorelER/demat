@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{9ce3469d-6349-448b-9dec-be7273b67105}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom" select="1" icon="1" preview="1">
+        <row name="result" id="er_menageid">
+          <cell name="er_nom" width="300" />
+          <cell name="er_personne_referente" width="171" />
+          <cell name="a_718e2a3773c34fcf83896dbcf7659ad7.firstname" width="227" />
+          <cell name="a_718e2a3773c34fcf83896dbcf7659ad7.lastname" width="272" />
+          <cell name="er_personnereferente2" width="171" />
+          <cell name="a_e556bbd02f22477c93a9b0b1936d8c32.firstname" width="227" />
+          <cell name="a_e556bbd02f22477c93a9b0b1936d8c32.lastname" width="225" />
+          <cell name="er_site_residence" width="135" />
+          <cell name="a_77313805ccb6452fb0171a36cbd1f511.er_nom_voie" width="234" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_menage">
+          <attribute name="er_menageid" />
+          <attribute name="er_nom" />
+          <order attribute="er_nom" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="er_personne_referente" operator="like" value="{0}" />
+            <condition attribute="er_site_residence" operator="like" value="{0}" />
+            <condition attribute="er_personnereferente2" operator="like" value="{0}" />
+            <condition attribute="er_nom" operator="like" value="{0}" />
+            <condition attribute="er_nomdefamilledurepresentant1" operator="like" value="{0}" />
+            <condition attribute="er_nomdefamilledurepresentant2" operator="like" value="{0}" />
+          </filter>
+          <link-entity alias="a_718e2a3773c34fcf83896dbcf7659ad7" name="contact" to="er_personne_referente" from="contactid" link-type="outer" visible="false">
+            <attribute name="firstname" />
+            <attribute name="lastname" />
+          </link-entity>
+          <link-entity alias="a_e556bbd02f22477c93a9b0b1936d8c32" name="contact" to="er_personnereferente2" from="contactid" link-type="outer" visible="false">
+            <attribute name="firstname" />
+            <attribute name="lastname" />
+          </link-entity>
+          <attribute name="er_site_residence" />
+          <attribute name="createdon" />
+          <link-entity alias="a_77313805ccb6452fb0171a36cbd1f511" name="er_site" to="er_site_residence" from="er_siteid" link-type="outer" visible="false">
+            <attribute name="er_nom_voie" />
+          </link-entity>
+          <attribute name="er_personne_referente" />
+          <attribute name="er_personnereferente2" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Éléments Ménages actifs Quick Find" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

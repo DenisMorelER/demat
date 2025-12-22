@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{15c60785-7352-f011-877a-7ced8d405a30}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_dossier" select="1" icon="1" preview="1">
+        <row name="result" id="er_dossierid">
+          <cell name="er_id_dossier" width="130" />
+          <cell name="createdon" width="140" />
+          <cell name="er_dossier_urgent" width="130" />
+          <cell name="er_statutdeverificationdeseligibilites" width="130" />
+          <cell name="er_statut_dossier" width="130" />
+          <cell name="er_menage_beneficiaire" width="238" />
+          <cell name="er_site_concerne" width="300" />
+          <cell name="er_date_resolution" width="143" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_dossier">
+          <attribute name="er_id_dossier" />
+          <attribute name="er_dossierid" />
+          <attribute name="er_menage_beneficiaire" />
+          <attribute name="createdon" />
+          <attribute name="er_dossier_urgent" />
+          <attribute name="er_site_concerne" />
+          <attribute name="er_statut_dossier" />
+          <order attribute="er_dossier_urgent" descending="true" />
+          <order attribute="createdon" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="er_collaborateur_spler" alias="aa" link-type="outer" from="er_collaborateur_splerid" to="er_collaborateur_referent" />
+          <filter type="and">
+            <condition attribute="er_collaborateur_splerid" operator="null" entityname="aa" />
+          </filter>
+          <attribute name="er_statutdeverificationdeseligibilites" />
+          <attribute name="er_date_resolution" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <roledisplayconditionsxml>
+      <DisplayConditions>
+        <Role Id="{269982EF-C404-F011-BAE2-002248A1DE69}" />
+        <Role Id="{B11C5EF2-C504-F011-BAE3-6045BDDE3C36}" />
+        <Role Id="{5D785606-9BFD-EF11-BAE3-6045BDDD5492}" />
+      </DisplayConditions>
+    </roledisplayconditionsxml>
+    <LocalizedNames>
+      <LocalizedName description="Tous les dossiers - Non affectés" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Tous les dossiers non affectés" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

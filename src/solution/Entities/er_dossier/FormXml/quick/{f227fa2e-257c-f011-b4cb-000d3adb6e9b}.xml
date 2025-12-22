@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{f227fa2e-257c-f011-b4cb-000d3adb6e9b}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{a622c1cd-063c-4a40-b436-916971feadc5}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{15b76f78-f64e-421b-9ef1-94e00f949889}">
+                  <labels>
+                    <label description="Résumé du dossier" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{029ca408-3f85-437b-9531-182bf36810d3}" locklevel="0" colspan="1" rowspan="1" labelid="{243782aa-998e-4d63-95cc-d171e6608920}">
+                        <labels>
+                          <label description="Dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_dossier" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_id_dossier" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0b28f666-8d5b-4272-9945-2cd66eadad20}" locklevel="0" colspan="1" rowspan="1" labelid="{db6dfa81-ea57-4060-9e08-47aff11cd133}">
+                        <labels>
+                          <label description="Créé le" languagecode="1036" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{621b4290-7a3e-4f8c-8c06-eeefa3dd724a}" locklevel="0" colspan="1" rowspan="1" labelid="{2fd1b8b9-f67a-4063-8d65-352673421237}">
+                        <labels>
+                          <label description="Dossier urgent?" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier_urgent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_dossier_urgent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb955337-efe7-48ef-9637-d94041c5e225}" locklevel="0" colspan="1" rowspan="1" labelid="{c5a2bd57-0ae6-4bb8-a5b6-1654f0032107}">
+                        <labels>
+                          <label description="Statut de traitement du dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_dossier" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_dossier" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{10392a27-d227-489e-bbd7-f1db46af51da}" locklevel="0" colspan="1" rowspan="1" labelid="{1b093207-9d4b-4595-b14b-2f122e7dc91d}">
+                        <labels>
+                          <label description="Site Concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_concerne" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{beb86060-e6af-4e4b-af77-9668fcfea110}" locklevel="0" colspan="1" rowspan="1" labelid="{5c72dba2-6b34-4f0e-bfd5-94c2b7172242}">
+                        <labels>
+                          <label description="Ménage bénéficiaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_beneficiaire" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_beneficiaire" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a4f95076-94c6-4b90-ae1b-a9ae3c73d08d}" locklevel="0" colspan="1" rowspan="1" labelid="{a0504a6e-6bad-49da-898b-3bc268eef7d9}">
+                        <labels>
+                          <label description="Détails sur les projets" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_projets" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_projets" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{fa1ff06c-660f-4385-9f5d-9a84cb25c7eb}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Appels téléphoniques concernant le dossier" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>7</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_phonecall_Dossierdetraitementconcerne_er_dossier</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewId>
+                            <ViewIds>{AA799EF1-BD4D-F011-877A-6045BDDE3C36},{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{C95F3EEA-5BFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="3" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Aperçu Dossier + Appels (SLIME)" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="+ Appels" languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{ddada160-e485-4464-9c2c-afbc06790eeb}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom_complet" select="1" icon="1" preview="1">
+        <row name="result" id="er_collaborateur_splerid">
+          <cell name="er_nom_complet" width="300" />
+          <cell name="er_chef_equipe" width="118" />
+          <cell name="er_role_collaborateur" width="100" />
+          <cell name="er_secteurdactivite" width="137" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_collaborateur_spler">
+          <attribute name="er_collaborateur_splerid" />
+          <attribute name="er_nom_complet" />
+          <order attribute="er_nom_complet" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_chef_equipe" />
+          <attribute name="er_role_collaborateur" />
+          <attribute name="er_secteurdactivite" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <roledisplayconditionsxml>
+      <DisplayConditions>
+        <Role Id="{B11C5EF2-C504-F011-BAE3-6045BDDE3C36}" />
+      </DisplayConditions>
+    </roledisplayconditionsxml>
+    <LocalizedNames>
+      <LocalizedName description="Collaborateurs SPLER" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Collaborateurs SPLER actifs" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

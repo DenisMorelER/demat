@@ -1,0 +1,35 @@
+<appaction uniquename="er__Importerlesdonnes!3c59717e94d542949c9b2280e2f6961d!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Accom</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Importer les données du DEP">
+    <label description="Importer les données du DEP" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>CloudUpload</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Importerlesdonnes!3c59717e94d542949c9b2280e2f6961d</name>
+  <onclickeventformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+  </onclickeventformulacomponentlibraryid>
+  <onclickeventformulacomponentname>5557e02d0d30407b846726f2327f1e3d</onclickeventformulacomponentname>
+  <onclickeventformulafunctionname>OnSelect</onclickeventformulafunctionname>
+  <onclickeventtype>1</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__LefichierDEP!f91f2ab614d84212afe3250f092664e1!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>10000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

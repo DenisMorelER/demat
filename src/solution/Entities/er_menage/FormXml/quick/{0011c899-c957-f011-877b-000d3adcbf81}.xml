@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0011c899-c957-f011-877b-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{27ee4db2-0064-4066-8438-4407fc0db3ce}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{0d3f36ef-ea60-4934-a6c3-4ac225a3211d}">
+                  <labels>
+                    <label description="Détail du ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{34e0a0ab-d42b-41d3-9c0c-b5c597adedbb}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6f9c8579-e8bd-46e9-83e8-615d5d6c1fa3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Représentant ménage 1" languagecode="1036" />
+                        </labels>
+                        <control id="er_personne_referente" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personne_referente" disabled="false">
+                          <parameters>
+                            <useMainFormDialogForEdit>true</useMainFormDialogForEdit>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e21e57cc-abf3-4c60-ae68-09161f5ac414}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Représentant ménage 2" languagecode="1036" />
+                        </labels>
+                        <control id="er_personnereferente2" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personnereferente2" disabled="false">
+                          <parameters>
+                            <useMainFormDialogForEdit>true</useMainFormDialogForEdit>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f090c7bb-52a9-4db6-8e8d-386349d2614e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site de résidence" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_residence" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_residence" disabled="false">
+                          <parameters>
+                            <useMainFormDialogForEdit>true</useMainFormDialogForEdit>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{845debdd-a13d-4c94-b1db-374cc4d4f373}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Personne à contacter en priorité" languagecode="1036" />
+                        </labels>
+                        <control id="er_personneacontacter" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personneacontacter" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a85fada7-d3ed-4311-afc0-b4f68d2ec33d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité au chèque énergie" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibiliteauchequeenergie" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_eligibiliteauchequeenergie" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f2b1a3d7-f596-4eee-913e-80e308544df2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité à la CSS" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibilitealacss" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_eligibilitealacss" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{851cf7ae-10b3-4de1-b29d-3fae82e44a5e}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="TOTAUX ANNUELS des avis fiscaux connus" languagecode="1036" />
+                          <label description="Bilans annuels des avis fiscaux" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_3" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>2</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RelationshipName>er_bilanannuelavisfiscaux_MenagedesAvisFiscaux_er_menage</RelationshipName>
+                            <TargetEntityType>er_bilanannuelavisfiscaux</TargetEntityType>
+                            <ViewId>{FE1FC169-078F-F011-B4CB-000D3ADCBF81}</ViewId>
+                            <ViewIds>{F238835E-76A1-4920-96F0-CD7DBA1BAF9B},{2CB10C2F-CB5A-4DF3-86D7-1E802B9D4DF7},{FE1FC169-078F-F011-B4CB-000D3ADCBF81}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{e133f68c-78ed-44fd-9f65-566b85327e8f}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Propriétés du ménage" languagecode="1036" />
+                          <label description="Bilans annuels des avis fiscaux" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_2" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_proprietaire_sites</RelationshipName>
+                            <TargetEntityType>er_site</TargetEntityType>
+                            <ViewId>{665791BB-2A53-F011-877B-000D3AB95DA3}</ViewId>
+                            <ViewIds>{527355A1-EE92-45B4-8735-30CAA016F5BA},{665791BB-2A53-F011-877B-000D3AB95DA3}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Aperçu simple Ménage" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

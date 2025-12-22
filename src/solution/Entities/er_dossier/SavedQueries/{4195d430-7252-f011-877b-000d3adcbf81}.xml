@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{4195d430-7252-f011-877b-000d3adcbf81}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_dossier" select="1" icon="1" preview="1">
+        <row name="result" id="er_dossierid">
+          <cell name="er_id_dossier" width="130" />
+          <cell name="createdon" width="140" />
+          <cell name="er_dossier_urgent" width="130" />
+          <cell name="er_statutdeverificationdeseligibilites" width="130" />
+          <cell name="er_statut_dossier" width="130" />
+          <cell name="er_menage_beneficiaire" width="187" />
+          <cell name="er_site_concerne" width="300" />
+          <cell name="er_collaborateur_referent" width="169" />
+          <cell name="er_date_resolution" width="151" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_dossier">
+          <attribute name="er_id_dossier" />
+          <attribute name="er_dossierid" />
+          <attribute name="er_menage_beneficiaire" />
+          <attribute name="createdon" />
+          <attribute name="er_dossier_urgent" />
+          <attribute name="er_site_concerne" />
+          <attribute name="er_statut_dossier" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="er_collaborateur_spler" alias="aa" link-type="inner" from="er_collaborateur_splerid" to="er_collaborateur_referent">
+            <filter type="and">
+              <condition attribute="er_utilisateur_correspondant" operator="eq-userid" />
+            </filter>
+          </link-entity>
+          <attribute name="er_date_resolution" />
+          <attribute name="er_statutdeverificationdeseligibilites" />
+          <attribute name="er_collaborateur_referent" />
+          <order attribute="er_dossier_urgent" descending="true" />
+          <order attribute="createdon" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <roledisplayconditionsxml>
+      <DisplayConditions>
+        <Role Id="{269982EF-C404-F011-BAE2-002248A1DE69}" />
+        <Role Id="{B11C5EF2-C504-F011-BAE3-6045BDDE3C36}" />
+        <Role Id="{BA326B27-C304-F011-BAE3-000D3ADCBF81}" />
+      </DisplayConditions>
+    </roledisplayconditionsxml>
+    <LocalizedNames>
+      <LocalizedName description="Mes dossiers - Tous mes dossiers" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Tous mes dossiers" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

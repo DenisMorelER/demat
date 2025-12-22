@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>er_dmtestautomatisations_c2d79</Name>
+  <AppVersion>2025-07-08T12:40:01Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.25064.3.0</CreatedByClientVersion>
+  <MinClientVersion>3.25064.3.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"false","publisherVersion":"3.25064.3","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20250708T123204Z-3.25064.3.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>DM TEST Automatisations</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"3e3ae19d-c93e-4057-b2f4-46fc60881389":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Flux logiques","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1752/1.0.1752.4216/logicflows/icon.png","dataSources":["DiagnosticSLIME-GénérationfichierDEPV2DM"],"dependencies":["271c6950-f2bc-4496-96da-ca7aa5e1633b"],"dependents":[],"parameterHints":{"workflowName":{"value":"a0caafe9-f56a-4372-82d2-e404ec7bdd64"},"workflowEntityId":{"value":"36fdcee6-c545-f011-877a-000d3adcbf81"},"workflowDisplayName":{"value":"Diagnostic SLIME - Génération fichier DEP V2 DM"},"271c6950-f2bc-4496-96da-ca7aa5e1633b":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"a0caafe9-f56a-4372-82d2-e404ec7bdd64"},"workflowEntityId":{"value":"36fdcee6-c545-f011-877a-000d3adcbf81"},"workflowDisplayName":{"value":"Diagnostic SLIME - Génération fichier DEP V2 DM"},"shared_commondataserviceforapps":{"value":"271c6950-f2bc-4496-96da-ca7aa5e1633b"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"271c6950-f2bc-4496-96da-ca7aa5e1633b":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1757/1.0.1757.4258/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["3e3ae19d-c93e-4057-b2f4-46fc60881389"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"dependencyid":"36fdcee6-c545-f011-877a-000d3adcbf81","componenttype":29,"componenttypeplatformname":"Workflow"}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/er_dmtestautomatisations_c2d79_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/er_dmtestautomatisations_c2d79_DocumentUri.msapp</DocumentUri>
+  <AdditionalUris>
+    <AdditionalUri>/CanvasApps/er_dmtestautomatisations_c2d79_AdditionalUris0_identity.json</AdditionalUri>
+  </AdditionalUris>
+</CanvasApp>

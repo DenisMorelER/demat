@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1487be62-22ab-f011-bbd2-7ced8d4676dc}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab name="fax" verticallayout="true" id="{e2cadff0-2b21-4241-9812-7fc16a742719}" IsUserDefined="0" labelid="{6bd3aea4-5488-480e-831b-a78ad670ba82}">
+          <labels>
+            <label description="Télécopie" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="fax_section_5" id="8fa82ef0-b663-4bec-9ecf-8dc45c13d8e3" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{e5002405-8c2d-4dac-99ea-1f699526607d}">
+                  <labels>
+                    <label description="/!\ Non utilisable pour le moment : Ne pas enregistrer /!\" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell rowspan="6" id="{0bb83f2c-151f-4caf-a675-3cb559bcf51b}" showlabel="false" auto="false" colspan="1" labelid="{b5fd9834-7842-468c-bc7a-bbd4f3eba151}">
+                        <labels>
+                          <label description="work-in-progress (1)" languagecode="1036" />
+                        </labels>
+                        <control id="WebResource_new_1" classid="{587CDF98-C1D5-4BDE-8473-14A0BC7644A7}">
+                          <parameters>
+                            <WebResourceId>{8ca569c9-1bab-f011-bbd2-7ced8d4676dc}</WebResourceId>
+                            <Url>er_workinprogress1</Url>
+                            <ShowOnMobileClient>true</ShowOnMobileClient>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                            <VerticalAlignment>Middle</VerticalAlignment>
+                            <SizeType>StretchMaintainAspectRatio</SizeType>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="false" active="false" />
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="fax description" showlabel="true" showbar="false" locklevel="0" id="{6B755775-B63F-465D-B7CA-56667398B982}" IsUserDefined="0" layout="varwidth" columns="11" height="auto" visible="false" labelid="{d87b6d54-d128-4c5a-a0c4-3ac297a9ca38}">
+                  <labels>
+                    <label description="Description" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="false" locklevel="0" rowspan="1" colspan="2" id="{41908831-7551-4311-8b08-27e83e7d426b}" labelid="{f7340fd1-de14-46da-b101-345e6d8b8c95}" visible="false">
+                        <labels>
+                          <label description="Objet" languagecode="1036" />
+                          <label description="Subject" languagecode="1033" />
+                        </labels>
+                        <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{b5a07112-8b3c-4df1-824b-b79b883e8897}" labelid="{0b1dc378-85f5-447e-9002-d6fab56cedb3}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="Activities.Fax.Form_onload" libraryName="Activities/SystemLibraries/Fax_main_system_library.js" handlerUniqueId="4a112ad4-99f1-467d-91cb-cf47f4fb5aea" enabled="true" parameters="" passExecutionContext="true" />
+          </InternalHandlers>
+        </event>
+      </events>
+      <clientresources>
+        <internalresources>
+          <clientincludes>
+            <internaljscriptfile src="$webresource:Activities/SystemLibraries/Fax_main_system_library.js" />
+          </clientincludes>
+        </internalresources>
+      </clientresources>
+      <header id="{4393a270-f62b-4c4b-abf3-55b9b49e49c4}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{545f7e83-5302-40a2-b8fe-35ecedfa8e5c}" showlabel="false" labelid="{682fb0bb-945c-4e67-bde2-ae1e44e6f9f4}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{680ccf64-03c7-4999-9158-0d0076f0f6be}" showlabel="false" labelid="{86fd6265-f88c-4e45-a978-3218ff2dbe8b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d6c8d0ed-bdde-4f08-bc77-e00b0f18a7ee}" showlabel="false" labelid="{17c5af1b-b279-4922-b646-00bb93bd0296}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{97cf1d2f-e30f-4b85-b298-bd5ed6084c16}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{6d00a3cc-87f1-4e54-b9e9-15ca72d51567}" showlabel="false" labelid="{bbe7e548-59bf-40c5-822a-b6788f084193}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{8e0276a7-d6b6-441f-81b0-c538a8e5307c}" showlabel="false" labelid="{3afc0839-d757-4122-97ba-dda272a1a86e}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f6c7f148-6f50-4a20-8174-1afe95dd41d5}" showlabel="false" labelid="{0fff38ac-918f-4abb-829c-889e1776efbf}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Télécopie formulaire principal NON UTILISABLE" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{239f9ffc-f09a-4048-b532-ed822ffd8145}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_alerte" select="1" icon="1" preview="1">
+        <row name="result" id="er_alerteid">
+          <cell name="er_id_alerte" width="300" />
+          <cell name="er_contact_entite_donneur_alerte" width="245" />
+          <cell name="er_date_alerte" width="125" />
+          <cell name="er_dossier" width="100" />
+          <cell name="er_date_resolution" width="143" />
+          <cell name="er_motif_alerte" width="100" />
+          <cell name="er_motif_autre" width="104" />
+          <cell name="er_statut_alerte" width="131" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_alerte">
+          <attribute name="er_alerteid" />
+          <attribute name="er_id_alerte" />
+          <order attribute="er_id_alerte" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_contact_entite_donneur_alerte" />
+          <attribute name="er_date_alerte" />
+          <attribute name="er_dossier" />
+          <attribute name="er_date_resolution" />
+          <attribute name="er_motif_alerte" />
+          <attribute name="er_motif_autre" />
+          <attribute name="er_statut_alerte" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Alertes actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

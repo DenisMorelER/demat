@@ -1,0 +1,32 @@
+<appaction uniquename="er__Aprslavisite!7bb7f3573c3a43488b4ec09209e0de9d!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Après la visite">
+    <label description="Après la visite" languagecode="1036" />
+  </buttonlabeltext>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>Arrow</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Aprslavisite!7bb7f3573c3a43488b4ec09209e0de9d</name>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100013.1250000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>1</type>
+  <visibilityformulacomponentlibraryid>
+    <name>er_dematerialisationdesprocessusgestidefaultcommandlibrary_e7ef3</name>
+  </visibilityformulacomponentlibraryid>
+  <visibilityformulacomponentname>4bbcd833275e4bbe8acf6c08b09779db</visibilityformulacomponentname>
+  <visibilityformulafunctionname>Visible</visibilityformulafunctionname>
+  <visibilitytype>1</visibilitytype>
+</appaction>

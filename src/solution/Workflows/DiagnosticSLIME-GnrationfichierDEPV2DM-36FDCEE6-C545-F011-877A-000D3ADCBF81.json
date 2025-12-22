@@ -1,0 +1,723 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedsharepointonline_06f8c"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedexcelonlinebusiness_c12ab"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "Site Sharepoint (er_Site_Sharepoint)": {
+          "defaultValue": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_Site_Sharepoint"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "dcb076e7-5398-4fbf-85f3-afc0b98ef156"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "REFDemande": {
+                  "type": "string"
+                },
+                "Utilisateur": {
+                  "type": "string"
+                },
+                "IDEnregistrementConcerne": {
+                  "type": "string"
+                }
+              }
+            },
+            "triggerAuthenticationType": "Tenant"
+          }
+        }
+      },
+      "actions": {
+        "GET_-_Obtenir_les_lignes_avec_les_informations": {
+          "actions": {
+            "LIST_-_Related_Alertes": {
+              "runAfter": {
+                "GET_-_Visite": [
+                  "Succeeded",
+                  "Failed",
+                  "Skipped",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c223eff9-1aea-4949-8781-2eceea65fd54"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_alertes",
+                  "$filter": "_er_dossier_value eq '@{outputs('GET_-_Visite')?['body/_er_dossier_value']}'"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "ListRecords",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              },
+              "description": "Alertes non prises en charge pour le moment"
+            },
+            "IF_-_Related_Alertes": {
+              "actions": {
+                "GET_-_First_Alerte": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "aefd487d-0c8e-4a49-bf13-16c3294ed65c"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "er_alertes",
+                      "recordId": "@first(outputs('LIST_-_Related_Alertes')?['body/value'])?['er_alerteid']"
+                    },
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {
+                "LIST_-_Related_Alertes": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "greater": [
+                  "@length(outputs('LIST_-_Related_Alertes')?['body/value'])",
+                  0
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "67895ac3-df9c-4ca5-8a71-0306948dd80f"
+              },
+              "type": "If"
+            },
+            "GET_-_Diag": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "54ba7514-983b-4f0b-a1d2-c5d530440019"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "recordId": "@triggerBody()?['IDEnregistrementConcerne']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "GET_-_Visite": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF": [
+                  "Succeeded",
+                  "Failed",
+                  "Skipped",
+                  "TimedOut"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e09cecb7-26db-4e53-a94c-ed17c6ca352f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_visites",
+                  "recordId": "@outputs('GET_-_Diag')?['body/_er_visite_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "GET_-_Dossier": {
+              "runAfter": {
+                "GET_-_Diag": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "3651ffbb-7785-4960-b8e0-c0ffabf3aba1"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_dossiers",
+                  "recordId": "@outputs('GET_-_Diag')?['body/_er_dossierparent_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "GET_-_Ménage": {
+              "runAfter": {
+                "GET_-_Dossier": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e92b3c6c-bfbc-4eef-ad9b-7787369d1d89"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@outputs('GET_-_Dossier')?['body/_er_menage_beneficiaire_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "GET_-_Site": {
+              "runAfter": {
+                "GET_-_Référent_1": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e73780e0-05a0-4b7a-9ed5-1474b07ccdce"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_sites",
+                  "recordId": "@outputs('GET_-_Dossier')?['body/_er_site_concerne_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "GET_-_Référent_1": {
+              "runAfter": {
+                "GET_-_Ménage": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "7d1eca1f-0aec-408d-a1c7-3bf3993352b7"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('GET_-_Ménage')?['body/_er_personne_referente_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Titulaire_du_contrat_EDF": {
+              "runAfter": {
+                "GET_-_Site": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "80b23d25-2d87-48dc-b4d3-b4cbe8aae266"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('GET_-_Site')?['body/_er_sitetitulaireducontratedf_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f18422e3-6a50-46b8-a474-541d78ca14bf"
+          },
+          "type": "Scope"
+        },
+        "Condition_-_Si_un_Doc_SLER_existe_déjà_pour_le_diagnostic_SLIME": {
+          "actions": {
+            "Définir_une_variable_-_Doc_SPLER_si_Oui": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "880303c8-1fc7-4dc2-8159-6d7721e2abcc"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "Document SPLER",
+                "value": "@outputs('GET_-_Diag')?['body/_er_doc_fichier_dep_value']"
+              }
+            },
+            "Définir_une_variable_-_ID_Doc_SPLER_si_oui": {
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Doc_SPLER_si_oui": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "c99b336d-f6ad-4996-81bd-d4e47d88a67c"
+              },
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ID Doc SPLER",
+                "value": "@outputs('Obtenir_une_ligne_par_ID_-_Doc_SPLER_si_oui')?['body/er_id_document_spler']"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Doc_SPLER_si_oui": {
+              "runAfter": {
+                "Définir_une_variable_-_Doc_SPLER_si_Oui": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "d4d53d99-6ed4-43ed-aa8b-f8c84d001724"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_document_splers",
+                  "recordId": "@outputs('GET_-_Diag')?['body/_er_doc_fichier_dep_value']"
+                },
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Message_1_-_Doc_SPLER_si_Oui": {
+              "runAfter": {
+                "Définir_une_variable_-_ID_Doc_SPLER_si_oui": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "1f5a3731-8bb3-470e-b2e5-3f23a93e26a1"
+              },
+              "type": "Compose",
+              "inputs": "Un document SPLER a déjà été créé pour ce diagnostic.\n"
+            }
+          },
+          "runAfter": {
+            "Initialiser_la_variable_-_ID_Doc_SPLER": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "CREATE_-_Doc_SPLER_Row_si_non": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "ec4154ac-68ff-46a2-a399-8c1afb530e38"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "entityName": "er_document_splers",
+                    "item/er_menage_concerne@odata.bind": "/er_menages(@{outputs('GET_-_Ménage')?['body/er_menageid']})",
+                    "item/er_nom_document": "DEP du @{outputs('GET_-_Diag')?['body/er_id_slime']}.xlsx"
+                  },
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "UPDATE_-_Link_Doc_SPLER_to_Diag_si_non": {
+                "runAfter": {
+                  "CREATE_-_Doc_SPLER_Row_si_non": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "61e5c880-df2c-49ed-82a6-997262cb57c7"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "entityName": "er_diagnostic_slimes",
+                    "recordId": "@outputs('GET_-_Diag')?['body/er_diagnostic_slimeid']",
+                    "item/er_doc_fichier_dep@odata.bind": "/er_document_splers(@{outputs('CREATE_-_Doc_SPLER_Row_si_non')?['body/er_document_splerid']})"
+                  },
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "UpdateOnlyRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Définir_une_variable_-_Doc_SPLER_si_Non": {
+                "runAfter": {
+                  "UPDATE_-_Link_Doc_SPLER_to_Diag_si_non": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "374f2ef8-0470-4b9d-bf9d-e518b5092d5b"
+                },
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "Document SPLER",
+                  "value": "@outputs('CREATE_-_Doc_SPLER_Row_si_non')?['body/er_document_splerid']"
+                }
+              },
+              "Définir_une_variable_-_ID_Doc_SPLER_si_non": {
+                "runAfter": {
+                  "Définir_une_variable_-_Doc_SPLER_si_Non": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "b8be40d2-a489-4f84-907f-5a0795299556"
+                },
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "ID Doc SPLER",
+                  "value": "@outputs('CREATE_-_Doc_SPLER_Row_si_non')?['body/er_id_document_spler']"
+                }
+              }
+            }
+          },
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@outputs('GET_-_Diag')?['body/_er_doc_fichier_dep_value']",
+                    "@null"
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e3e930e3-9e0f-4d03-a560-2e78311dd5ab"
+          },
+          "type": "If"
+        },
+        "Initialiser_la_variable_-_Doc_SPLER": {
+          "runAfter": {
+            "GET_-_Obtenir_les_lignes_avec_les_informations": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "2101a1b5-1dd7-45d0-bb20-83516f9aec1a"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Document SPLER",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialiser_la_variable_-_ID_Doc_SPLER": {
+          "runAfter": {
+            "Initialiser_la_variable_-_Doc_SPLER": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4f12a50b-b2fa-44fc-950f-f750c0bf4d05"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ID Doc SPLER",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Condition-_Si_un_fichier_DEP_existe_déjà": {
+          "actions": {
+            "Message_2_-_DEP_existant": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c7411418-a6c2-41d7-8ca4-969f23305b67"
+              },
+              "type": "Compose",
+              "inputs": "ATTENTION : Un fichier DEP existe déjà à l'emplacement dédié. Veuillez le supprimer avant d'en générer un nouveau.\n"
+            }
+          },
+          "runAfter": {
+            "Obtenir_les_métadonnées_du_fichier_à_l'aide_du_chemin_d'accès": [
+              "Succeeded",
+              "Failed"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Obtenir_le_contenu_du_fichier_-_Modèle_DEP": {
+                "runAfter": {},
+                "metadata": {
+                  "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsx": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsx",
+                  "operationMetadataId": "910ee7f5-2b37-4820-8559-8cf52cc477ee",
+                  "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsm"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "GetFileContent",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                    "id": "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm",
+                    "inferContentType": true
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Créer_un_fichier_-_DEP_pour_le_diagnostic_cible": {
+                "runAfter": {
+                  "Obtenir_le_contenu_du_fichier_-_Modèle_DEP": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "f053a9d1-6641-4861-9ac8-d736bb18df3a"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "CreateFile",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                    "folderPath": "/er_document_spler/@{variables('ID Doc SPLER')}_@{replace(toUpper(variables('Document SPLER')),'-','')}",
+                    "name": "DEP du @{outputs('GET_-_Diag')?['body/er_id_slime']}.xlsm",
+                    "body": "@body('Obtenir_le_contenu_du_fichier_-_Modèle_DEP')"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                },
+                "runtimeConfiguration": {
+                  "contentTransfer": {
+                    "transferMode": "Chunked"
+                  }
+                }
+              },
+              "Exécuter_le_script_-_Importer_les_informations_du_Dataverse": {
+                "runAfter": {
+                  "Créer_un_fichier_-_DEP_pour_le_diagnostic_cible": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "38360315-fd9d-4808-8c05-721e0ecf9a41",
+                  "tableId": null
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+                    "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+                    "file": "@outputs('Créer_un_fichier_-_DEP_pour_le_diagnostic_cible')?['body/Path']",
+                    "scriptId": "ms-officescript%3A%2F%2Fonedrive_business_itemlink%2F01IW7G4GVMWEAO5X7YMBE3GD25NPQX4A7K",
+                    "ScriptParameters/newData": [
+                      "@formatDateTime(convertFromUtc(outputs('GET_-_Visite')?['body/er_date_previsionnelle'],'Mauritius Standard Time'),'dd/MM/yyyy')",
+                      "@formatDateTime(convertFromUtc(outputs('GET_-_Visite')?['body/er_date_previsionnelle'],'Mauritius Standard Time'),'HH:mm')",
+                      "@outputs('GET_-_Diag')?['body/_er_collab_charge_visite_value@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Diag')?['body/er_solidiagmotifdelalerte@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Diag')?['body/er_solidiagmethodedereperage@OData.Community.Display.V1.FormattedValue']",
+                      "",
+                      "@outputs('GET_-_Référent_1')?['body/er_civilite@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Référent_1')?['body/lastname']",
+                      "@outputs('GET_-_Référent_1')?['body/firstname']",
+                      "@outputs('GET_-_Référent_1')?['body/birthdate']",
+                      "@outputs('GET_-_Référent_1')?['body/mobilephone']",
+                      "@outputs('GET_-_Référent_1')?['body/telephone2']",
+                      "@outputs('GET_-_Référent_1')?['body/emailaddress1']",
+                      "@outputs('GET_-_Site')?['body/er_numero']",
+                      "@outputs('GET_-_Site')?['body/er_indice_repetition@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Site')?['body/er_nom_voie']",
+                      "@outputs('GET_-_Site')?['body/er_complementdadresse']",
+                      "@outputs('GET_-_Site')?['body/er_codepostal@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Site')?['body/er_libelleacheminement@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Site')?['body/er_commune@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Site')?['body/er_lieudit']",
+                      "@outputs('GET_-_Diag')?['body/er_remarques']",
+                      "@outputs('GET_-_Ménage')?['body/er_total_nombre_personnes']",
+                      "@outputs('GET_-_Référent_1')?['body/er_typedactivite@OData.Community.Display.V1.FormattedValue']",
+                      "@outputs('GET_-_Ménage')?['body/er_total_revenu_fiscal']",
+                      "@outputs('GET_-_Ménage')?['body/er_totalnombredepartsdec']",
+                      "@outputs('GET_-_Site')?['body/er_type_logement@OData.Community.Display.V1.FormattedValue']"
+                    ]
+                  },
+                  "host": {
+                    "connectionName": "shared_excelonlinebusiness",
+                    "operationId": "RunScriptProd",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              },
+              "Message_3_-_DEP_créé": {
+                "runAfter": {
+                  "Exécuter_le_script_-_Importer_les_informations_du_Dataverse": [
+                    "Succeeded"
+                  ]
+                },
+                "metadata": {
+                  "operationMetadataId": "512d1abf-a34a-42f2-b107-87ec8fc3194f"
+                },
+                "type": "Compose",
+                "inputs": "Un fichier DEP a été créé à l'emplacement dédié avec succès.\n"
+              }
+            }
+          },
+          "expression": {
+            "and": [
+              {
+                "not": {
+                  "equals": [
+                    "@outputs('Obtenir_les_métadonnées_du_fichier_à_l''aide_du_chemin_d''accès')?['body/Name']",
+                    "@null"
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "471df9e7-e4d4-402f-8222-d998f0dbc42d"
+          },
+          "type": "If"
+        },
+        "Obtenir_les_métadonnées_du_fichier_à_l'aide_du_chemin_d'accès": {
+          "runAfter": {
+            "Condition_-_Si_un_Doc_SLER_existe_déjà_pour_le_diagnostic_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f65782f7-f307-495f-af22-26803e7cc2fc"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetFileMetadataByPath",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "path": "/er_document_spler/@{variables('ID Doc SPLER')}_@{replace(toUpper(variables('Document SPLER')),'-','')}/DEP du @{outputs('GET_-_Diag')?['body/er_id_slime']}.xlsm"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Réponse_-_Fichier_créé_avec_succès": {
+          "runAfter": {
+            "Condition-_Si_un_fichier_DEP_existe_déjà": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6a9f9b0e-e557-4cff-b442-14b65899cfad"
+          },
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "Statut": "Succès",
+              "REFDemande": "@triggerBody()?['REFDemande']",
+              "Utilisateur": "@triggerBody()?['Utilisateur']",
+              "Enregistrement": "@triggerBody()?['IDEnregistrementConcerne']",
+              "Message": "Traitement terminé avec succès",
+              "ResponseDetails": "@{outputs('Message_1_-_Doc_SPLER_si_Oui')}@{outputs('Message_2_-_DEP_existant')}@{outputs('Message_3_-_DEP_créé')}"
+            }
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

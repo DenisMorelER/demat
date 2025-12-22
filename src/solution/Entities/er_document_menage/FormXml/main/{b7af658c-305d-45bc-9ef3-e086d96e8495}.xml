@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b7af658c-305d-45bc-9ef3-e086d96e8495}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{750ac74d-8d6f-4371-91d7-8042532481e8}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{14f74c1b-82f9-4f3b-9ec6-d40eedaa38ca}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fbd0a2a6-b75a-428e-b144-d712aa8b8118}">
+                        <labels>
+                          <label description="ID" languagecode="1036" />
+                        </labels>
+                        <control id="er_id_document" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_document" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2bf7496e-867c-4089-9715-591dfe6ee269}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{aa373df0-0781-46f3-a705-a040220b2e29}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5d5932be-35ba-4c58-b927-f958768bf6fc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Type de document" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_document" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_type_document" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bbeff880-68a2-422c-9b3d-02158e83b0a3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Version du document" languagecode="1036" />
+                        </labels>
+                        <control id="er_version_document" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_version_document" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7148275a-e48f-4af4-9bd7-dfe18c74ee97}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de fin de validité" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_fin_validite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_fin_validite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{36a7c312-3bcb-4814-8924-0e0e1bfc69d6}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Documents SharePoint" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_document_menage_SharePointDocuments</RelationshipName>
+                            <TargetEntityType>sharepointdocument</TargetEntityType>
+                            <ViewId>{A5B008AC-07D9-4554-8509-2C05767BFF51}</ViewId>
+                            <ViewIds>{A5B008AC-07D9-4554-8509-2C05767BFF51}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{e939aaa8-ed8e-4728-9df5-bb116f4fcc7a}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7cbe16b6-b3af-4eed-90cf-85b156ff9ed0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f2ce6a4d-eda5-43f0-9d01-ed4cafc442a8}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{93a7d18f-02c8-4040-a0d5-bff79d5c2e99}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{4ae102ac-7766-44fe-b8e9-7e41f98045ee}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{91518e44-c08c-4543-92b0-b7aeb191fcda}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e5aef7aa-5e56-4d7e-9a8b-479fec175ee1}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b384d0f4-9c49-4ccc-8bcb-cdcc066e9e75}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

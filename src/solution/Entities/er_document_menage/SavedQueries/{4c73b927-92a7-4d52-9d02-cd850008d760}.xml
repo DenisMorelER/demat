@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{4c73b927-92a7-4d52-9d02-cd850008d760}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_document" select="1" icon="1" preview="1">
+        <row name="result" id="er_document_menageid">
+          <cell name="er_id_document" width="300" />
+          <cell name="er_menage" width="100" />
+          <cell name="er_type_document" width="144" />
+          <cell name="er_version_document" width="159" />
+          <cell name="er_date_fin_validite" width="165" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_document_menage">
+          <attribute name="er_document_menageid" />
+          <attribute name="er_id_document" />
+          <order attribute="er_id_document" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_menage" />
+          <attribute name="er_date_fin_validite" />
+          <attribute name="er_type_document" />
+          <attribute name="er_version_document" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Documents Ménages actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

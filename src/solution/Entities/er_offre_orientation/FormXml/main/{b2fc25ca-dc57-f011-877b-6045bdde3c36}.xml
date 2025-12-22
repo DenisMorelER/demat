@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b2fc25ca-dc57-f011-877b-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{80f3181e-b92c-43f2-9076-80da8c0d0c4f}" IsUserDefined="1" labelid="{4cbfda14-b76e-40d3-9ebb-067740ea6c6e}">
+          <labels>
+            <label description="Description" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{fe64fcb4-104e-4c21-9548-d1471ecad739}" labelid="{177e6381-7967-4a9c-bfab-6e2f3bfc25b5}" columns="11">
+                  <labels>
+                    <label description="L'orientation / Le dispositif" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c769513d-f7ed-4691-a516-2d26b6e7c3c6}" labelid="{ba0215fd-5c1a-4ac6-b5fd-4f0f12605db7}">
+                        <labels>
+                          <label description="Nom de l'orientation" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_nom" />
+                      </cell>
+                      <cell id="{9fa867e2-d646-4655-9d9b-ba10d9bb7029}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Acteur" languagecode="1036" />
+                        </labels>
+                        <control id="er_acteur" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_acteur" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{be7d071c-fc0e-41c4-96f0-6e86fe7f4aaa}" locklevel="0" colspan="2" rowspan="7">
+                        <labels>
+                          <label description="Description" languagecode="1036" />
+                        </labels>
+                        <control id="er_description" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_description" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{ed5a1670-a6f1-438f-9afb-6dea1bd7a604}" visible="false" labelid="{7fe4015d-3ed6-4a98-bdb5-c0e32f447d02}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell locklevel="0" id="{7db06572-1f7d-4cce-a08c-23c904f530ed}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="b6f2d9f1-859e-41d7-9730-48b6194e6d22" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Détails de l'offre / du dispositif" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{310da81b-8427-4aa0-9bbf-42eaff1cdedd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Temps d'attente moyen (en semaines)" languagecode="1036" />
+                        </labels>
+                        <control id="er_temps_attente_moyen" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_temps_attente_moyen" disabled="true" />
+                      </cell>
+                      <cell id="{1e311c98-9c6d-4e27-a322-dcd150bbb2dd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Délais de traitement" languagecode="1036" />
+                        </labels>
+                        <control id="er_delais_traitement" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_delais_traitement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a493bfff-efd5-47e2-8311-954913631db1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Temps de traitement (en semaines)" languagecode="1036" />
+                        </labels>
+                        <control id="er_temps_traitement" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_temps_traitement" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{f2678df4-47ab-42d2-873c-4aeb82b6f827}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_4" id="e9bc9f07-ce6b-4a44-95b0-66f9f7dfa2f6" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Documents du dispositif" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{9a5f75f6-c876-426a-a9d8-8c0319b19268}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="📂Documents du dispositif" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_2" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_offre_orientation_SharePointDocuments</RelationshipName>
+                            <TargetEntityType>sharepointdocument</TargetEntityType>
+                            <ViewId>{69DEA8E3-829F-F011-BBD3-7C1E52FC6786}</ViewId>
+                            <ViewIds>{A5B008AC-07D9-4554-8509-2C05767BFF51},{69DEA8E3-829F-F011-BBD3-7C1E52FC6786}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="422ba779-3086-4a82-82b3-2367ac617628" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Orientations réalisées" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="a1bd4f70-fdef-4bf3-a217-c08aca6292e6" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Bilan" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{aba3922e-64b3-423e-9e8e-32aa6e3ca0a3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{b1eecc08-8ed1-48ed-9724-ebd77b6f70d4}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1c5452da-b634-4adc-9a39-9aaa093ca06a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nombre d'orientations" languagecode="1036" />
+                        </labels>
+                        <control id="er_nombre_visites" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nombre_visites" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{442a3376-882a-48df-9179-264c8708e88d}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_5" id="72185a19-d84b-4a93-9c16-4df5a415cf19" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Orientations réalisées" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{a24122a8-fa74-4d2a-ac6d-1d5c182a4669}" rowspan="4" colspan="1" auto="true" labelid="{fc28ef07-226a-4701-98c4-420ab1ffb527}">
+                        <labels>
+                          <label description="Orientations réalisées" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>14</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_offre_orientation_orientations</RelationshipName>
+                            <TargetEntityType>er_orientation</TargetEntityType>
+                            <ViewId>{E3525881-919E-F011-BBD3-7C1E52FC6786}</ViewId>
+                            <ViewIds>{47719C49-F457-F011-877B-000D3ADCBF81},{E3525881-919E-F011-BBD3-7C1E52FC6786}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{fed83d2d-642c-40a4-a3a7-fd8713b7cf04}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{59972950-fb95-4c81-93d5-bcbea961bc47}" showlabel="false" labelid="{c14685dc-1ad4-4ac5-bc86-39985400436c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b059ebba-9cd9-426f-b813-b1d3397b10dd}" showlabel="false" labelid="{f185f015-76a0-446d-98d8-555f36574e80}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{9b057ebf-8ccd-4b2b-8d5a-c14f1e91e506}" showlabel="false" labelid="{c9477acd-e6e9-4dcf-87b1-3a7c2d341667}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{570d4e90-6aca-491b-aff4-02f230568552}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{c23b2091-25d7-4b88-80e6-ca2c8e15fc29}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell id="{a847378d-76ed-4d9d-9697-a3b43b96a7f7}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{3bc2c23f-10c1-4cfb-96a7-e34fb3500a9a}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{2049ee35-589b-4985-bb91-ce1f5923d040}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4c298264-0c78-46c8-ad91-da9183406273}" showlabel="false" labelid="{703943aa-eab5-4627-aeea-ab9b0a25932d}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{5553c97a-1ad6-4ae1-bc88-da7ea4d02b4e}" showlabel="false" labelid="{00f0fa25-09b0-476d-9dac-3569e07ee787}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{a10447ee-61bf-4927-a56e-f08912a9bc9d}" showlabel="false" labelid="{718569e8-9e35-44ef-8fc7-e90449c4dbb6}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Main form Offre d'orientation / Dispositif" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard unmodified="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <LocalizedNames>
+    <LocalizedName description="Microsoft Dynamics 365 Social Overview" languagecode="1033" />
+    <LocalizedName description="Vue d'ensemble de la dimension sociale de Microsoft Dynamics 365" languagecode="1036" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description description="Shows an overview of your data in Microsoft Dynamics 365." languagecode="1033" />
+    <Description description="Affiche une vue d’ensemble de vos données dans Microsoft Dynamics 365." languagecode="1036" />
+  </Descriptions>
+  <FormId>{5d431800-1270-40e9-a90a-c970556cf0fe}</FormId>
+</Dashboard>

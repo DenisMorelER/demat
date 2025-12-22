@@ -1,0 +1,12 @@
+<desktopflowbinary desktopflowbinaryid="f51d5a69-d841-f011-8779-000d3adcbf81">
+  <data mimetype="application/json">ConnectorDefinition_3c2b90d0-6210-4beb-b449-9ff3d98ec23c.json</data>
+  <iscustomizable>1</iscustomizable>
+  <name>Desktop flow connector definition</name>
+  <process>
+    <workflowid>de254c63-d841-f011-8779-000d3adcbf81</workflowid>
+  </process>
+  <reference>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</reference>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>ConnectorDefinition</type>
+</desktopflowbinary>

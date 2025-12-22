@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{d2994212-1b45-44ca-89e7-89d132036173}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom" select="1" icon="1" preview="1">
+        <row name="result" id="er_offre_orientationid">
+          <cell name="er_nom" width="300" />
+          <cell name="er_fiche_synthetique" width="140" />
+          <cell name="er_delais_traitement" width="153" />
+          <cell name="er_lien_fiche_synthetique" width="198" />
+          <cell name="er_lien_liste_entreprise" width="206" />
+          <cell name="er_liste_entreprises" width="142" />
+          <cell name="er_montant_aide" width="124" />
+          <cell name="er_temps_attente_moyen" width="250" />
+          <cell name="er_temps_traitement" width="235" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_offre_orientation">
+          <attribute name="er_offre_orientationid" />
+          <attribute name="er_nom" />
+          <order attribute="er_nom" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_fiche_synthetique" />
+          <attribute name="er_delais_traitement" />
+          <attribute name="er_lien_fiche_synthetique" />
+          <attribute name="er_lien_liste_entreprise" />
+          <attribute name="er_liste_entreprises" />
+          <attribute name="er_montant_aide" />
+          <attribute name="er_temps_attente_moyen" />
+          <attribute name="er_temps_traitement" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Offres d'orientations actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

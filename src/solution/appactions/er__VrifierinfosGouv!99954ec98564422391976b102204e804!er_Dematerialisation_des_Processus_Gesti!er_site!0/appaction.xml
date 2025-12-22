@@ -1,0 +1,35 @@
+<appaction uniquename="er__VrifierinfosGouv!99954ec98564422391976b102204e804!er_Dematerialisation_des_Processus_Gesti!er_site!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <buttonlabeltext default="Vérifier infos Gouv">
+    <label description="Vérifier infos Gouv" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Ancienne commande (QWERIO)">
+    <label description="Ancienne commande (QWERIO)" languagecode="1036" />
+  </buttontooltipdescription>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_site</logicalname>
+  </contextentity>
+  <contextvalue>er_site</contextvalue>
+  <fonticon>Article</fonticon>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>VrifierinfosGouv!99954ec98564422391976b102204e804</name>
+  <onclickeventjavascriptfunctionname>retrieveGouvAPIAddress</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":5}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>49134023-dc00-f011-bae3-6045bdde3c36</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100025.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

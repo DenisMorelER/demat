@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{af883ddd-57ae-f011-bbd2-7ced8d4676dc}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{99b3de87-3c1e-47b6-bea2-4bd917b821a5}" IsUserDefined="1" labelid="{9adf4831-d232-4cd4-a31b-8bf73e48de2f}">
+          <labels>
+            <label description="Déroulé" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="41e781d9-b92e-4f47-8a79-8b874a72d3ab" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115" labelid="{2c4ad0cf-5a16-4e6b-afe2-d010ee075a66}">
+                  <labels>
+                    <label description="Déroulé de la visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{13232225-cb3f-4061-a835-4b7c05c84b7d}" locklevel="0" colspan="1" rowspan="1" labelid="{8a0db64b-dc80-4d79-bbc6-f2234120e81c}">
+                        <labels>
+                          <label description="Date prévisionnelle" languagecode="1036" />
+                        </labels>
+                        <control id="header_er_date_previsionnelle" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_previsionnelle" disabled="false" />
+                      </cell>
+                      <cell id="{6d3e0e45-65cd-41e4-8dc0-bea9605d1513}" locklevel="0" colspan="1" rowspan="1" labelid="{36bc16d8-c1b3-4c47-9f5d-bbbbb91e181c}">
+                        <labels>
+                          <label description="Statut de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_visite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cb4aa532-8092-4c1b-a5d2-617813fac9c3}" locklevel="0" colspan="1" rowspan="1" labelid="{0ba54f20-e342-4e28-b4b5-73cb828a6773}">
+                        <labels>
+                          <label description="Objet de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_objet_visite" classid="{4AA28AB7-9C13-4F57-A73D-AD894D048B5F}" datafieldname="er_objet_visite" disabled="false" />
+                      </cell>
+                      <cell id="{c798f340-fa0a-4b6d-9530-89095b8fd284}" userspacer="true" showlabel="false" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9b92960e-e5a8-44c0-bddb-e7fe1e721765}" locklevel="0" colspan="1" rowspan="1" labelid="{1e2f66f2-ba49-4fe4-bc65-4822d75e018b}">
+                        <labels>
+                          <label description="Date de début de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_debut_visite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_debut_visite" disabled="false" />
+                      </cell>
+                      <cell id="{dce1c06d-71ef-4441-8d3d-e4a59a553221}" locklevel="0" colspan="1" rowspan="1" labelid="{51dc5572-5089-485e-bed4-5c8330deb268}">
+                        <labels>
+                          <label description="Date de fin de visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_fin_visite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_fin_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a24565dc-2447-4955-af48-67bd4db2f9f8}" locklevel="0" colspan="2" rowspan="7" labelid="{0bb3103b-af87-41a3-876d-36bbc631ebdf}">
+                        <labels>
+                          <label description="Détails de la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_visite" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_visite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{795fc1c6-ad0e-4a82-afde-8038b95dd35a}" rowspan="4" colspan="2" auto="false" labelid="{83fa6846-bc19-439c-82c4-5982687b16a0}">
+                        <labels>
+                          <label description="Relevés d'index" languagecode="1036" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_releve_index_Visitedureleve_er_visite</RelationshipName>
+                            <TargetEntityType>er_releve_index</TargetEntityType>
+                            <ViewId>{CB0029B8-65A3-F011-BBD2-7CED8D4676DC}</ViewId>
+                            <ViewIds>{7816D680-901C-4893-8AF8-9C8F431D9B3D},{CB0029B8-65A3-F011-BBD2-7CED8D4676DC}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="9104f078-8711-4d0d-ad17-7804c582b18d" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Détails" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="88b5943a-f242-42a3-8c8b-4a3c13824529" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Liaisons internes" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{9c6deb8a-a8d2-4ded-83ad-60a3b98793bb}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{c21ab6a7-adf6-4977-954f-809229041f79}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{91dfa5f8-8bdd-4a2f-bf16-ccb9fe655f2b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossier" disabled="false" />
+                      </cell>
+                      <cell id="{2a2a8d27-bbc2-4610-8a8d-a98aff394eea}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnosticslime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnosticslime" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_2_section_3" id="dc00d43f-99f8-41df-b897-3f466ac919b8" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Site, ménage et chargé de visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{21dc8498-ed87-461e-9ba7-1ba0a28dfc50}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site" languagecode="1036" />
+                        </labels>
+                        <control id="er_site" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site" disabled="false" />
+                      </cell>
+                      <cell id="{233d4505-25de-4669-ab19-d6e47254b40a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bab5895f-ed74-4a6f-b276-28eeb7c3dc9e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Collaborateur SPLER" languagecode="1036" />
+                        </labels>
+                        <control id="er_collaborateur_spler" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_spler" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{44942fce-a597-4f25-b616-f472b2a8c899}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{56f60985-f080-420a-804c-1166a20231b7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d71493e4-ee57-472e-b57c-2c6f1abd08a7}" showlabel="false" labelid="{b2d379b4-d578-4cfb-98f0-9b9257b8261c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{cdd9915a-5640-45bf-8401-d2cea176a7da}" showlabel="false" labelid="{b84758d1-eb43-4791-92f3-e207c4419003}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{0df23f54-ece3-46be-a2a9-46922f492d54}" showlabel="false" labelid="{aa0b1c0f-4cec-48a4-8485-9bad75038e36}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{1e2e8f78-b088-49a3-9876-8210b7068ea9}" locklevel="0" colspan="1" rowspan="1" labelid="{cf99e040-5057-40ea-9d13-25d68f920423}">
+              <labels>
+                <label description="Dossier" languagecode="1036" />
+              </labels>
+              <control id="header_er_dossier" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossier" disabled="true">
+                <parameters>
+                  <DependentAttributeName>er_visite.er_menage</DependentAttributeName>
+                  <DependentAttributeType>er_menage</DependentAttributeType>
+                  <FilterRelationshipName>er_menage_beneficiaire_dossiers</FilterRelationshipName>
+                </parameters>
+              </control>
+            </cell>
+            <cell locklevel="0" id="{ba875087-52e7-40be-a0ee-93860bc82934}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d8bc84c9-ed96-47d4-b247-0ccc278798c5}" locklevel="0" colspan="1" rowspan="1" labelid="{cfe0fbb1-1220-4787-ad7d-3bbfa41a24a4}">
+              <labels>
+                <label description="Site" languagecode="1036" />
+              </labels>
+              <control id="header_er_site" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site" disabled="true" />
+            </cell>
+            <cell id="{e240033e-d82f-464d-8493-75fbbad103a8}" locklevel="0" colspan="1" rowspan="1" labelid="{3b5fa90b-2f4c-43f3-a3c6-66f30f671f41}">
+              <labels>
+                <label description="Ménage" languagecode="1036" />
+              </labels>
+              <control id="header_er_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage" disabled="true" />
+            </cell>
+            <cell id="{a81163ee-4d8d-4da2-bc55-38f46586f2f4}" locklevel="0" colspan="1" rowspan="1" labelid="{c9f5a696-5607-48ba-9ed6-fdbdf8ebfae3}">
+              <labels>
+                <label description="Collaborateur SPLER" languagecode="1036" />
+              </labels>
+              <control id="header_er_collaborateur_spler" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_spler" disabled="true" />
+            </cell>
+            <cell id="{9b019ef8-f3be-419f-9e5e-0aab889e981e}" locklevel="0" colspan="1" rowspan="1" labelid="{d2a71a1f-570c-4613-a27d-1f35700e060d}">
+              <labels>
+                <label description="Diagnostic SLIME" languagecode="1036" />
+              </labels>
+              <control id="header_er_diagnosticslime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnosticslime" disabled="true" />
+            </cell>
+            <cell locklevel="0" id="{9de48364-808e-426a-9e79-e01392b03829}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{9a103fb4-85f4-443d-8b19-a26a0508980c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{5ce496fb-88a3-4df4-9f0e-79279cfa57a2}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{a9d86ee9-8abb-44b5-b0d3-2b9ad0d94168}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{6894fc3a-4f02-49dd-b935-545b020f7af3}" labelid="{36e76a6e-5ad5-45b0-b2dd-18accdc6a4c4}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{75f62a8a-f4f5-4c8a-9110-5be03423b2fd}" visible="false" labelid="{5afbc761-3be2-4b0e-bbdc-a5c15744bd22}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{14273fe4-bb3c-408d-8c29-69a55b225e16}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{314f0ad1-1154-47c2-bd16-10112ada4e6c}" showlabel="false" labelid="{f3badaff-3853-447c-a50f-51b9a6cb3762}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e73c082b-0cfb-4dff-ae52-d7c4602c9e58}" showlabel="false" labelid="{8a2a3235-b677-438e-9c3a-cdccd1168630}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f49af704-27df-4b9a-9377-702e7f671d74}" showlabel="false" labelid="{061d40cc-fa76-42f8-b1ef-20f2187bf26a}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{58397b64-f95a-49fe-8b6d-b2999f125d23}" />
+      </formLibraries>
+      <events>
+        <event name="onchange" application="false" active="false" attribute="er_dossier">
+          <Handlers>
+            <Handler functionName="updateFieldsFromDossier" libraryName="er_Toolbox_JS" handlerUniqueId="{44212cbb-7e85-41c4-b39f-15018fbee2f3}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Formulaire principal Visite V2" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

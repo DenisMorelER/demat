@@ -1,0 +1,41 @@
+<appaction uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <buttonaccessibilitytext default="Marquer comme terminé">
+    <label description="Marquer comme terminé" languagecode="1036" />
+  </buttonaccessibilitytext>
+  <buttonlabeltext default="Marquer comme terminé">
+    <label description="Marquer comme terminé" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Enregistre l’entité {EntityLogicalNameMarker} et remplace le statut par Terminé.">
+    <label description="Enregistre l’entité {EntityLogicalNameMarker} et remplace le statut par Terminé." languagecode="1036" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Marquer comme terminé">
+    <label description="Marquer comme terminé" languagecode="1036" />
+  </buttontooltiptitle>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <fonticon>$clientsvg:Accept</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>Mscrm.Form.{!EntityLogicalName}.SaveAsComplete</name>
+  <onclickeventjavascriptfunctionname>XrmCore.Commands.Save.saveAsCompleted</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>adea1aea-b2aa-e611-80d6-00155d88c343</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>2</origin>
+  <sequence>100100037.5000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>2</visibilitytype>
+</appaction>

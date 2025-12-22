@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{fd877e16-3057-f011-bec1-7ced8d4780ab}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_alerte" select="1" icon="1" preview="1">
+        <row name="result" id="er_alerteid">
+          <cell name="er_id_alerte" width="140" />
+          <cell name="createdon" width="140" />
+          <cell name="a_b86cb309c93d4d0bae72604c6ec02d18.parentcustomerid" width="158" />
+          <cell name="er_contact_entite_donneur_alerte" width="245" />
+          <cell name="er_motif_alerte" width="100" />
+          <cell name="er_dossier" width="100" />
+          <cell name="er_statut_alerte" width="131" />
+          <cell name="er_date_resolution" width="143" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_alerte">
+          <attribute name="er_id_alerte" />
+          <attribute name="er_alerteid" />
+          <attribute name="createdon" />
+          <attribute name="er_contact_entite_donneur_alerte" />
+          <attribute name="er_statut_alerte" />
+          <attribute name="er_date_resolution" />
+          <attribute name="er_dossier" />
+          <attribute name="er_motif_alerte" />
+          <order attribute="createdon" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity alias="a_b86cb309c93d4d0bae72604c6ec02d18" name="contact" to="er_contact_entite_donneur_alerte" from="contactid" link-type="outer" visible="false">
+            <attribute name="parentcustomerid" />
+          </link-entity>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Toutes les alertes" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Toutes les alertes actives" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>er_Dematerialisation_des_Processus_Accom</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>953b9fac-1e5e-e611-80d6-00155ded156f</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="er_diagnostic_slime" />
+    <AppModuleComponent type="1" schemaName="er_dossier" />
+    <AppModuleComponent type="1" schemaName="er_menage" />
+    <AppModuleComponent type="1" schemaName="er_offre_orientation" />
+    <AppModuleComponent type="1" schemaName="er_orientation" />
+    <AppModuleComponent type="1" schemaName="er_seuils_anah" />
+    <AppModuleComponent type="1" schemaName="er_site" />
+    <AppModuleComponent type="1" schemaName="er_visite" />
+    <AppModuleComponent type="1" schemaName="phonecall" />
+    <AppModuleComponent type="161" id="{f5b2a52d-1e03-f011-bae2-6045bde00e2f}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000000666400}" />
+    <AppModuleComponent type="26" id="{00000000-0000-0000-00aa-000010001210}" />
+    <AppModuleComponent type="26" id="{087a951e-1203-f011-bae3-000d3ab95da3}" />
+    <AppModuleComponent type="26" id="{9ccb6f4e-1203-f011-bae3-000d3ab95da3}" />
+    <AppModuleComponent type="26" id="{2c5c8fa2-c04d-f011-877a-000d3adcbf81}" />
+    <AppModuleComponent type="26" id="{955c06bf-6552-f011-877b-000d3adcbf81}" />
+    <AppModuleComponent type="26" id="{4195d430-7252-f011-877b-000d3adcbf81}" />
+    <AppModuleComponent type="26" id="{7640b774-3c56-f011-877b-000d3adcbf81}" />
+    <AppModuleComponent type="26" id="{3e271221-8efd-ef11-bae3-000d3adcbf81}" />
+    <AppModuleComponent type="26" id="{4d482d7f-4eae-f011-bbd3-000d3adccbc3}" />
+    <AppModuleComponent type="26" id="{91145d55-faaf-f011-bbd3-000d3adccbc3}" />
+    <AppModuleComponent type="26" id="{527355a1-ee92-45b4-8735-30caa016f5ba}" />
+    <AppModuleComponent type="26" id="{249873c8-0658-4795-965b-31352ae30c6b}" />
+    <AppModuleComponent type="26" id="{7a904563-7eec-42d4-b383-3c6bfb0e4223}" />
+    <AppModuleComponent type="26" id="{4247a6fa-a45c-41ce-88f3-3e086bca8c93}" />
+    <AppModuleComponent type="26" id="{aa799ef1-bd4d-f011-877a-6045bdde3c36}" />
+    <AppModuleComponent type="26" id="{d359f676-db57-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="26" id="{14ea1914-0e2c-4918-8eca-60930324f18f}" />
+    <AppModuleComponent type="26" id="{2c796c85-2ebb-49c3-9988-62abd189bb63}" />
+    <AppModuleComponent type="26" id="{52d92d69-69e6-44cc-9424-65c2dc73f6b1}" />
+    <AppModuleComponent type="26" id="{86e311cc-63e5-49d4-a138-77968defe4b0}" />
+    <AppModuleComponent type="26" id="{eb1852ac-e379-42f2-9907-7bc2be69d5a0}" />
+    <AppModuleComponent type="26" id="{580c4b6a-50ae-f011-bbd2-7ced8d4676dc}" />
+    <AppModuleComponent type="26" id="{f3c3380b-54ae-f011-bbd2-7ced8d4676dc}" />
+    <AppModuleComponent type="26" id="{a2d479c5-53e3-4c69-addd-802327e67a0d}" />
+    <AppModuleComponent type="26" id="{595ad9d0-7a9f-4d69-adb9-869d7ea68168}" />
+    <AppModuleComponent type="26" id="{dd98dfbf-8991-4195-81b6-8c0f308b987a}" />
+    <AppModuleComponent type="26" id="{8db4224f-f4a7-4555-bb7b-959422163eda}" />
+    <AppModuleComponent type="26" id="{95b996d7-2521-4d25-a93f-a842ef6a9e63}" />
+    <AppModuleComponent type="26" id="{75492e2b-72a2-491b-a8e7-ae65ca498107}" />
+    <AppModuleComponent type="26" id="{15a9d87a-001e-4054-85e7-af86ab2cce6e}" />
+    <AppModuleComponent type="26" id="{d02d9aac-8f9c-43b3-befd-b0e8743f4399}" />
+    <AppModuleComponent type="26" id="{f2ca00e9-b684-433f-9a49-b2b8490eac49}" />
+    <AppModuleComponent type="26" id="{62f90976-1a9e-4fe5-89d8-c71d09104442}" />
+    <AppModuleComponent type="26" id="{58fb20ff-d5be-406f-908e-c777e9dedf5f}" />
+    <AppModuleComponent type="26" id="{28a9e049-a78d-4e0f-90a2-c89324673904}" />
+    <AppModuleComponent type="26" id="{8df19b44-a073-40c3-9d6d-ee1355d8c4ba}" />
+    <AppModuleComponent type="26" id="{dc097b34-d3a2-4db2-9240-f84591b2338b}" />
+    <AppModuleComponent type="26" id="{eda26f1e-dbcc-40ad-91f2-ff2878d1d8d8}" />
+    <AppModuleComponent type="59" id="{e8e9fda7-8dd6-f011-8544-000d3adccbc3}" />
+    <AppModuleComponent type="59" id="{24160896-8fd6-f011-8544-000d3adccbc3}" />
+    <AppModuleComponent type="59" id="{def2b041-e09d-f011-bbd3-6045bddce696}" />
+    <AppModuleComponent type="59" id="{98713cab-5afe-ef11-bae3-6045bdde3c36}" />
+    <AppModuleComponent type="59" id="{65c57ab8-aa04-f011-bae3-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{f227fa2e-257c-f011-b4cb-000d3adb6e9b}" />
+    <AppModuleComponent type="60" id="{4d03159e-365b-f011-bec2-000d3adcbf81}" />
+    <AppModuleComponent type="60" id="{a20ddc21-9de5-4cc7-8d08-04385e3ec3c8}" />
+    <AppModuleComponent type="60" id="{a769fcaf-d7ff-4270-8643-38bd15b5dfa1}" />
+    <AppModuleComponent type="60" id="{cad4df50-9c55-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{b2fc25ca-dc57-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{becc153e-9858-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{70ca2a19-ac58-f011-877b-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{ad678342-ab04-f011-bae3-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{75d7cf1f-315b-f011-bec2-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{33af8a1d-e066-f011-bec3-6045bdde3c36}" />
+    <AppModuleComponent type="60" id="{b88434d8-7752-f011-877a-7ced8d405a30}" />
+    <AppModuleComponent type="60" id="{94f99c70-fb57-f011-bec1-7ced8d4a5292}" />
+    <AppModuleComponent type="60" id="{1a4f10f9-f57c-f011-b4cb-7ced8d73e67a}" />
+    <AppModuleComponent type="62" schemaName="er_Dematerialisation_des_Processus_Accom" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{269982ef-c404-f011-bae2-002248a1de69}" />
+    <Role id="{b11c5ef2-c504-f011-bae3-6045bdde3c36}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+    <Role id="{ba326b27-c304-f011-bae3-000d3adcbf81}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="App 2 - Techniciens" languagecode="1036" />
+  </LocalizedNames>
+  <appelements>
+    <appelement uniquename="er_er_Dematerialisation_des_Processus_Accom_canvasappid_er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c">
+      <canvasappid>
+        <name>er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>er_er_Dematerialisation_des_Processus_Accom_canvasappid_er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c</name>
+    </appelement>
+  </appelements>
+  <appsettings>
+    <appsetting settingdefinitionid.uniquename="AppChannel">
+      <iscustomizable>1</iscustomizable>
+      <value>1</value>
+    </appsetting>
+    <appsetting settingdefinitionid.uniquename="ServerMode">
+      <iscustomizable>1</iscustomizable>
+      <value>true</value>
+    </appsetting>
+  </appsettings>
+</AppModule>

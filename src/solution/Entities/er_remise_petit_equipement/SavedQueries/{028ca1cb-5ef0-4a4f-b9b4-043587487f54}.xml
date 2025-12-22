@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{028ca1cb-5ef0-4a4f-b9b4-043587487f54}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_remise_petit_equipement" select="1" icon="1" preview="1">
+        <row name="result" id="er_remise_petit_equipementid">
+          <cell name="er_id_remise_petit_equipement" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_remise_petit_equipement">
+          <attribute name="er_remise_petit_equipementid" />
+          <attribute name="er_id_remise_petit_equipement" />
+          <attribute name="createdon" />
+          <order attribute="er_id_remise_petit_equipement" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche avancée : Remise de petit équipement" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

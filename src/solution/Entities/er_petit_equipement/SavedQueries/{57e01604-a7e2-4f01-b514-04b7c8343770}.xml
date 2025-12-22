@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{57e01604-a7e2-4f01-b514-04b7c8343770}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_designation" select="1" icon="1" preview="1">
+        <row name="result" id="er_petit_equipementid">
+          <cell name="er_designation" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_petit_equipement">
+          <attribute name="er_petit_equipementid" />
+          <attribute name="er_designation" />
+          <attribute name="createdon" />
+          <order attribute="er_designation" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="er_designation" operator="like" value="{0}" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Éléments Petits Equipements actifs Quick Find" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

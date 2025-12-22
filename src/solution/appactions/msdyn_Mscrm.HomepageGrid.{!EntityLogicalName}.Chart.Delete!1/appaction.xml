@@ -1,0 +1,26 @@
+<appaction uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Delete!1">
+  <buttonlabeltext default="Supprimer le graphique">
+    <label description="Supprimer le graphique" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Supprimer ce graphique. Vous ne pourrez pas annuler cette action.">
+    <label description="Supprimer ce graphique. Vous ne pourrez pas annuler cette action." languagecode="1036" />
+  </buttontooltipdescription>
+  <buttontooltiptitle default="Supprimer le graphique">
+    <label description="Supprimer le graphique" languagecode="1036" />
+  </buttontooltiptitle>
+  <context>0</context>
+  <hidden>1</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>1</location>
+  <name>Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Delete</name>
+  <onclickeventjavascriptparameters>[{"type":12,"value":null}]</onclickeventjavascriptparameters>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>1</origin>
+  <sequence>1150200060.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>2</visibilitytype>
+</appaction>

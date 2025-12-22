@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{500e232b-d0f3-4a57-9fd3-444706eaaff6}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_visite" select="1" icon="1" preview="1">
+        <row name="result" id="er_visiteid">
+          <cell name="er_id_visite" width="100" />
+          <cell name="er_date_previsionnelle" width="113" />
+          <cell name="er_site" width="283" />
+          <cell name="er_menage" width="180" />
+          <cell name="er_objet_visite" width="259" />
+          <cell name="er_collaborateur_spler" width="163" />
+          <cell name="er_statut_visite" width="137" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_visite">
+          <attribute name="er_visiteid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_collaborateur_spler" />
+          <attribute name="er_date_previsionnelle" />
+          <attribute name="er_menage" />
+          <attribute name="er_objet_visite" />
+          <attribute name="er_statut_visite" />
+          <attribute name="er_site" />
+          <order attribute="er_date_previsionnelle" descending="true" />
+          <order attribute="er_collaborateur_spler" descending="false" />
+          <attribute name="er_id_visite" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Toutes les visites actives" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

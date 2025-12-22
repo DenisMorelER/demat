@@ -1,0 +1,160 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_uiflow_1": {
+        "api": {
+          "name": "shared_uiflow"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_shareduiflow_3e2b1"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Button",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "a6c397ea-d75f-4525-abf2-333a06e9b29d"
+          }
+        }
+      },
+      "actions": {
+        "Message": {
+          "type": "Compose",
+          "inputs": "@outputs('Obtenir_une_ligne_par_ID_1')?['body/er_nom_complet']",
+          "runAfter": {
+            "Obtenir_une_ligne_par_ID_1": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d20b5737-90f3-4f72-aac9-cb00925422b0"
+          }
+        },
+        "Exécuter_un_flux_généré_à_l’aide_de_Power_Automate_pour_le_bureau": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "uiFlowId": "a332de41-388e-49a9-8095-c9e94f52ab98",
+              "runMode": "attended",
+              "runSession": "desktop",
+              "runPriority": "normal",
+              "item/varEntree_EtapeOuvertureNav": true,
+              "item/varEntree_URLSolidiag": "https://v2.solidiag.fr"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_uiflow",
+              "operationId": "RunUIFlow_V2",
+              "connectionName": "shared_uiflow_1"
+            }
+          },
+          "runAfter": {
+            "Terminer": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a36a31fb-edd3-48f8-9553-c7f961ab7788"
+          }
+        },
+        "Terminer": {
+          "type": "Terminate",
+          "inputs": {
+            "runStatus": "Succeeded"
+          },
+          "runAfter": {
+            "Réponse": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "32951da1-7f4d-4e01-af32-58c38105ace2"
+          }
+        },
+        "Obtenir_une_ligne_par_ID": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "recordId": "883758cd-1d11-f011-998a-6045bdde3c36"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "8ccc005a-8b8d-4ac0-a544-8ce1b1413aab"
+          }
+        },
+        "Réponse": {
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": "Un rapport a été importé. Cependant, celui-ci n'inclut pas :\n- Les soutiens renforcés\n- Les suivis N+1\nSi ces éléments existent, veuillez les saisir manuellement dans sur le site de SOLIDIAG et remplacer le rapport présent dans Power Apps pour ce ménage."
+          },
+          "runAfter": {
+            "Message": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Obtenir_une_ligne_par_ID_1": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_collaborateur_splers",
+              "recordId": "@outputs('Obtenir_une_ligne_par_ID')?['body/_er_collab_charge_visite_value']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "Obtenir_une_ligne_par_ID": [
+              "Succeeded"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

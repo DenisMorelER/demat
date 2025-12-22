@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{fa0d31a8-2b31-411d-9b52-06795e16ef68}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="crfc6_nom" select="1" icon="1" preview="1">
+        <row name="result" id="crfc6_correspondancechoixid">
+          <cell name="crfc6_nomentite" width="202" />
+          <cell name="er_nomlogiqueentite" width="139" />
+          <cell name="crfc6_nomchamp" width="196" />
+          <cell name="er_nomlogiquechamp" width="210" />
+          <cell name="crfc6_libelle" width="221" />
+          <cell name="crfc6_valeur" width="96" />
+          <cell name="er_choixtoujouractif" width="50" />
+          <cell name="crfc6_nom" width="92" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="crfc6_correspondancechoix">
+          <attribute name="crfc6_correspondancechoixid" />
+          <attribute name="crfc6_nom" />
+          <attribute name="createdon" />
+          <order attribute="crfc6_nom" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_choixtoujouractif" />
+          <attribute name="crfc6_libelle" />
+          <attribute name="crfc6_nomchamp" />
+          <attribute name="crfc6_nomentite" />
+          <attribute name="er_nomlogiquechamp" />
+          <attribute name="er_nomlogiqueentite" />
+          <attribute name="crfc6_valeur" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Table de correspondance des Choixs actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

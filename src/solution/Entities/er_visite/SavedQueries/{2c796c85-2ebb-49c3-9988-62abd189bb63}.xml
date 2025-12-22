@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{2c796c85-2ebb-49c3-9988-62abd189bb63}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_visite" select="1" icon="1" preview="1">
+        <row name="result" id="er_visiteid">
+          <cell name="er_id_visite" width="166" />
+          <cell name="er_date_previsionnelle" width="99" />
+          <cell name="er_menage" width="121" />
+          <cell name="er_dossier" width="100" />
+          <cell name="er_site" width="220" />
+          <cell name="er_collaborateur_spler" width="163" />
+          <cell name="er_objet_visite" width="136" />
+          <cell name="er_iteration_visite" width="197" />
+          <cell name="er_statut_visite" width="137" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>1</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_visite">
+          <attribute name="er_visiteid" />
+          <attribute name="er_id_visite" />
+          <attribute name="createdon" />
+          <attribute name="er_collaborateur_spler" />
+          <attribute name="er_date_previsionnelle" />
+          <attribute name="er_menage" />
+          <attribute name="er_dossier" />
+          <attribute name="er_site" />
+          <attribute name="er_objet_visite" />
+          <attribute name="er_statut_visite" />
+          <attribute name="er_iteration_visite" />
+          <order attribute="createdon" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche avancée : Visite" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

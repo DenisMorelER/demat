@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{9720c2f6-314e-4c16-84c8-96dc3ec6a80d}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_name" select="1" icon="1" preview="1">
+        <row name="result" id="er_contactmenageid">
+          <cell name="er_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_contactmenage">
+          <attribute name="er_contactmenageid" />
+          <attribute name="er_name" />
+          <attribute name="createdon" />
+          <order attribute="er_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="ContactsMénages actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

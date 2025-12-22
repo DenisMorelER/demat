@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModuleSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SiteMapUniqueName>er_Dematerialisation_des_Processus_Gesti</SiteMapUniqueName>
+  <EnableCollapsibleGroups>True</EnableCollapsibleGroups>
+  <ShowHome>True</ShowHome>
+  <ShowPinned>True</ShowPinned>
+  <ShowRecents>True</ShowRecents>
+  <SiteMap IntroducedVersion="7.0.0.0">
+    <Area Id="area_defce71d" ResourceId="SitemapDesigner.NewTitle" DescriptionResourceId="SitemapDesigner.NewTitle" ShowGroups="true" IntroducedVersion="7.0.0.0">
+      <Titles>
+        <Title LCID="1036" Title="Area1" />
+      </Titles>
+      <Group Id="group_9bb402bb" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Tableaux de bords" />
+        </Titles>
+        <SubArea Id="subarea_7649e94d" DescriptionResourceId="Dashboards_Description" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="/workplace/home_dashboards.aspx" DefaultDashboard="c90c5450-5cfe-ef11-bae3-6045bdde3c36" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" ToolTipResourseId="DashboardTooltip">
+          <Titles>
+            <Title LCID="1036" Title="Tableaux de bord" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_4450461f" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Echanges" />
+        </Titles>
+        <SubArea Id="subarea_17eaf686" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="phonecall" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+      <Group Id="group_9f870ded" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Alertes" />
+        </Titles>
+        <SubArea Id="subarea_19d62542" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_alerte" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_a9b1f123" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="account" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="Donneurs d'alertes" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_d52cdaca" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Traitements" />
+        </Titles>
+        <SubArea Id="subarea_fa56413e" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_dossier" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_2f586060" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_diagnostic_slime" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_0bec1e15" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_orientation" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="Autres orientations" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_85848d10" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_visite" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="Visites" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_274a6e32" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Fiches clients" />
+        </Titles>
+        <SubArea Id="subarea_2d869a8b" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="contact" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_6d5e50ec" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_menage" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_b8ed2758" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_site" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+      <Group Id="group_efa03c2a" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Liens utiles" />
+        </Titles>
+        <SubArea Id="subarea_73e05ef5" ResourceId="SitemapDesigner.NewSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="https://v2.solidiag.fr/" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="Site SOLIDIAG" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_2623dc2a" ResourceId="SitemapDesigner.NewSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="https://reunion.edf.fr/particulier/realiser-des-economies-d-energie/decouvrir-les-offres-edf-0" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="Les offres Agir+ d'EDF" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_99f0910f" ResourceId="SitemapDesigner.NewSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="https://pass-collectivites.edf.com/login?ru=%2F" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="PASS d'EDF" />
+          </Titles>
+        </SubArea>
+        <SubArea Id="subarea_21e55597" ResourceId="SitemapDesigner.NewSubArea" Icon="/_imgs/imagestrips/transparent_spacer.gif" Url="https://effikaz.batipei.tech/" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Titles>
+            <Title LCID="1036" Title="EFFI'KAZ" />
+          </Titles>
+        </SubArea>
+      </Group>
+      <Group Id="group_c3a5ce50" ResourceId="SitemapDesigner.NewGroup" DescriptionResourceId="SitemapDesigner.NewGroup" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="SitemapDesigner.Unknown">
+        <Titles>
+          <Title LCID="1036" Title="Administration diverse" />
+        </Titles>
+        <SubArea Id="subarea_dd8fed3f" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_seuils_anah" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_e80ca50f" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_offre_orientation" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+        <SubArea Id="subarea_3d58d026" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_collaborateur_spler" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA">
+          <Privilege Entity="er_collaborateur_spler" Privilege="Create" />
+        </SubArea>
+        <SubArea Id="subarea_70e38e44" Icon="/_imgs/imagestrips/transparent_spacer.gif" Entity="er_suiviautomatisations" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="true" PassParams="false" Sku="All,OnPremise,Live,SPLA" />
+      </Group>
+    </Area>
+  </SiteMap>
+  <LocalizedNames>
+    <LocalizedName description="Dématérialisation_des_Processus_Gestion_des_Demandes" languagecode="1036" />
+  </LocalizedNames>
+</AppModuleSiteMap>

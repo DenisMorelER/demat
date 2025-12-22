@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d44a632c-7f67-f011-bec3-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{84ca23c0-0539-4104-97bc-68c236edaa26}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{5e0c77cf-a341-4a68-bdd4-de9d2baa0d8a}">
+                  <labels>
+                    <label description="Détails du référent (A renseigner dans la fiche du contact)" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="C0550AC7-0F44-45A4-8EF5-D2911C0689D9" labelid="{ed535ae4-aa3f-4f81-bb96-ea32a504d10f}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d37ea4b0-8d44-43d1-a9e1-5afdbf5f9e04}" locklevel="0" colspan="1" rowspan="1" labelid="{81055211-ee45-4088-882a-8af40e3a2c6f}">
+                        <labels>
+                          <label description="Type d'activité" languagecode="1036" />
+                        </labels>
+                        <control id="er_typedactivite" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_typedactivite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8035a7b3-b0f6-4c48-8665-89ab0bbc12ae}" locklevel="0" colspan="1" rowspan="1" labelid="{8793269f-76a7-4f3d-884d-af1f0f94a8f7}">
+                        <labels>
+                          <label description="Date de naissance" languagecode="1036" />
+                          <label description="Birthday" languagecode="1033" />
+                        </labels>
+                        <control id="birthdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="birthdate" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="4" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Contact formulaire d'aperçu Spé Référent Ménage" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>2</FormPresentation>
+    <FormActivationState>0</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab id="{7f28a051-25e7-4dc5-80b3-fa1583a1e81b}" name="tab_1" locklevel="0" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="34%" id="0">
+              <sections>
+                <section id="{d7fad09e-b4f8-4cb9-b87c-29c2469030ed}" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{783e5193-ccb4-1672-d95b-c88184b85bee}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%" id="1">
+              <sections>
+                <section name="tab_1_section_2" showlabel="true" showbar="false" locklevel="0" id="{9c6db6e9-6636-d75e-41c1-bae74ec817ad}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{1c8668e0-d059-6e46-1693-ad5ab2008386}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{29827b56-0bca-9ed3-8163-c55a05617b52}" showlabel="true" locklevel="0" ordinalvalue="10001">
+                        <labels />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6ac3de28-da71-0acc-2749-47cee829807d}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_1_section_3" showlabel="true" showbar="false" locklevel="0" id="{95D60AB5-30DF-4E7E-8DEC-2DC66838BA70}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="1">
+                  <rows>
+                    <row>
+                      <cell id="{1c8668e0-d059-6e46-1693-ad5ab2008386}" auto="true" showlabel="false" locklevel="0" rowspan="3" colspan="2" ordinalvalue="10000">
+                        <labels />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{ab05eb1d-0680-45e6-9b88-45b16970b9ff}" columns="1111" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+        <rows>
+          <row>
+            <cell id="{d5dd93e3-a153-8a61-0339-ad5ca459ea10}" showlabel="true" locklevel="0" ordinalvalue="10000">
+              <labels />
+            </cell>
+            <cell id="{7da8049b-3929-2248-dd46-0a9c0e5b305a}" showlabel="true" locklevel="0" ordinalvalue="20001">
+              <labels />
+            </cell>
+            <cell id="{5438194e-4e60-d6c2-a8b7-18257ce84242}" showlabel="true" locklevel="0" ordinalvalue="30002">
+              <labels />
+            </cell>
+            <cell id="{a3d97780-45b7-a337-d988-4d05c8104e40}" showlabel="true" locklevel="0" ordinalvalue="40003">
+              <labels />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <DisplayConditions Order="4" FallbackForm="false" solutionaction="Modified" />
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Portal Comment for interactive experiance" languagecode="1033" />
+      <LocalizedName description="Portal Comment for interactive experiance" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Default interactive experience portal comment form." languagecode="1033" />
+      <Description description="Formulaire de commentaire sur le portail pour l’expérience interactive par défaut." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

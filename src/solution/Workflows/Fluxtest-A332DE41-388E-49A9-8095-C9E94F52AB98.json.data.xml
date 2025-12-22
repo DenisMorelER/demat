@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{a332de41-388e-49a9-8095-c9e94f52ab98}" Name="Flux test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/Fluxtest-A332DE41-388E-49A9-8095-C9E94F52AB98.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>6</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <UIFlowType>2</UIFlowType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <Metadata>{"clientversion":"2.56.239.25132","isvalid":true,"$schema":"https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#","schemaVersion":"ROBIN_20211012","containsActiveConnections":false,"containsGptPredictActions":false,"containsActiveCopilotActions":false,"containsActiveWorkQueuesActions":false,"containsActiveLogMessageActions":false,"containsActiveCredentialsActions":false,"multipleRequestsState":0,"scriptType":0,"disableScreenshotCaptureOnError":false,"missingUiElementRepairType":null,"flowTimeout":null,"screenResolution":null,"flowLogsVerbosity":null}</Metadata>
+  <Inputs>{"schema":{"required":[],"properties":{"varEntree_EtapeOuvertureNav":{"isOptional":true,"default":"","description":"","format":null,"title":"varEntree_EtapeOuvertureNav","type":"boolean","value":"True"},"varEntree_URLSolidiag":{"isOptional":true,"default":"","description":"","format":null,"title":"varEntree_URLSolidiag","type":"string","value":"https://v2.solidiag.fr"}},"type":"object"}}</Inputs>
+  <Outputs>{"schema":null}</Outputs>
+  <Dependencies>{"childFlows":[],"workQueues":[],"environmentVariables":[],"requiredBinaries":["fc186db7-e27e-4735-bb5b-3df2b6573e35","537fa275-aa82-49b7-8f64-7119d30e5507","50018880-510f-40b5-845c-06ca2a298635","75fed7e4-14d6-4324-b807-d06cd7150b90"]}</Dependencies>
+  <ConnectionReferences>[]</ConnectionReferences>
+  <Definition>"@@ConnectionString: ''\r\n@@Type: 'Local'\r\n@@DesktopType: 'local'\r\n@@DisplayName: 'Ordinateur local'\r\nIMPORT 'controlRepo.appmask' AS appmask\r\nIMPORT 'imageRepo.imgrepo' AS imgrepo\r\n@SENSITIVE: []\r\n@INPUT varEntree_EtapeOuvertureNav : { 'Description': '', 'FriendlyName': 'varEntree_EtapeOuvertureNav', 'Type': 'Bool', 'IsOptional': True, 'DefaultValue': True } \r\n@INPUT varEntree_URLSolidiag : { 'Description': '', 'FriendlyName': 'varEntree_URLSolidiag', 'Type': 'String', 'IsOptional': True, 'DefaultValue': 'https://v2.solidiag.fr' } \r\nDISABLE Word.LaunchWord.Launch Visible: True Instance=&gt; WordInstance\r\nDISABLE Word.WriteToWord.WriteStartOfDocument Instance: WordInstance Text: $'''Coucou !''' AppendNewLine: False\r\nDISABLE WebAutomation.LaunchChrome.LaunchChrome Url: $'''https://v2.solidiag.fr''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 PiPUserDataFolderMode: WebAutomation.PiPUserDataFolderModeEnum.AutomaticProfile TargetDesktop: $'''{\\\"DisplayName\\\":\\\"Ordinateur local\\\",\\\"Route\\\":{\\\"ServerType\\\":\\\"Local\\\",\\\"ServerAddress\\\":\\\"\\\"},\\\"DesktopType\\\":\\\"local\\\"}''' BrowserInstance=&gt; Browser\r\nWebAutomation.LaunchEdge.LaunchEdge Url: $'''https://v2.solidiag.fr''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 PiPUserDataFolderMode: WebAutomation.PiPUserDataFolderModeEnum.AutomaticProfile TargetDesktop: $'''{\\\"DisplayName\\\":\\\"Ordinateur local\\\",\\\"Route\\\":{\\\"ServerType\\\":\\\"Local\\\",\\\"ServerAddress\\\":\\\"\\\"},\\\"DesktopType\\\":\\\"local\\\"}''' BrowserInstance=&gt; Browser\r\nWebAutomation.GoToWebPage.GoToWebPage BrowserInstance: Browser Url: $'''https://v2.solidiag.fr/menage/detail/68449/obligatoire/edit''' WaitForPageToLoadTimeout: 60\r\nIF varEntree_EtapeOuvertureNav = $'''true''' THEN\r\n    # Impossible de contrôler les instances des navigateurs déjà présents\r\n    DISABLE Text.Replace Text: varEntree_Prénom TextToFind: `` IsRegEx: True IgnoreCase: True ReplaceWith: $'''\\'-\\'''' ActivateEscapeSequences: True Result=&gt; PrenomSansEspace\r\n    DISABLE WebAutomation.LaunchEdge.LaunchEdge Url: $'''%varEntree_URLSolidiag%/menage/''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 PiPUserDataFolderMode: WebAutomation.PiPUserDataFolderModeEnum.AutomaticProfile TargetDesktop: $'''{\\\"DisplayName\\\":\\\"Ordinateur local\\\",\\\"Route\\\":{\\\"ServerType\\\":\\\"Local\\\",\\\"ServerAddress\\\":\\\"\\\"},\\\"DesktopType\\\":\\\"local\\\"}''' BrowserInstance=&gt; Browser\r\n    WebAutomation.LaunchChrome.LaunchChrome Url: $'''%varEntree_URLSolidiag%/menage/''' WindowState: WebAutomation.BrowserWindowState.Normal ClearCache: False ClearCookies: False WaitForPageToLoadTimeout: 60 Timeout: 60 PiPUserDataFolderMode: WebAutomation.PiPUserDataFolderModeEnum.AutomaticProfile TargetDesktop: $'''{\\\"DisplayName\\\":\\\"Ordinateur local\\\",\\\"Route\\\":{\\\"ServerType\\\":\\\"Local\\\",\\\"ServerAddress\\\":\\\"\\\"},\\\"DesktopType\\\":\\\"local\\\"}''' BrowserInstance=&gt; Browser\r\nEND\r\n"</Definition>
+  <SchemaVersion>2022.07</SchemaVersion>
+  <Claims>[{"name":"selfheal"}]</Claims>
+  <DesktopFlowModules>[]</DesktopFlowModules>
+  <Credentials>[]</Credentials>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1036" description="Flux test" />
+  </LocalizedNames>
+</Workflow>

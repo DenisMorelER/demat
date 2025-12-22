@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{b88434d8-7752-f011-877a-7ced8d405a30}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{d1e4532f-1aa0-422b-a37d-c860d4d4e90b}" IsUserDefined="1" labelid="{b805d397-294a-4800-a894-61414c3760ea}" name="aaaa">
+          <labels>
+            <label description="Le dossier" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="aaaa_section_7" id="947819b5-dbcc-469f-a7d1-75c29f7184d2" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Alertes" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{33822405-21e6-487e-815a-02f537fb4066}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1760688001824" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1760688001824" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_site_concerne">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_site"&gt;878cd812-2fab-f011-bbd2-7ced8d4676dc&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_6" id="65271077-a1a2-41c5-82af-ed12355148c8" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Site et ménage concernés" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{d50825dc-04f4-4d36-84c9-88496cd5a5ab}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site Concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_concerne" disabled="false" />
+                      </cell>
+                      <cell id="{ec4d5e47-1ea6-46bd-a478-e9d893c6a026}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage bénéficiaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_beneficiaire" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_beneficiaire" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{cbb7eb92-1ae0-4473-b1a0-873311e36ee6}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1751455528693" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1751455528693" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_site_concerne">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_site"&gt;6663808c-3557-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell locklevel="0" id="{14218fcc-4a9c-49e9-8285-0c3b14bef085}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1753254105286" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1753254105286" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_menage_beneficiaire">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_menage"&gt;0011c899-c957-f011-877b-000d3adcbf81&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="aaaa_section_8" id="2e5d9dc5-e4eb-4dde-ba69-084f5ffc9083" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="111" labelwidth="115">
+                  <labels>
+                    <label description="Vérification des éligibilités" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{82ca81d7-b110-429c-95fb-e4e6415dfe40}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité SLIME ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligible_slime" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligible_slime" disabled="false" />
+                      </cell>
+                      <cell id="{4880e15d-1600-44c9-8b05-693c520c2631}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité KAP ECO-SOLIDAIRE ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligible_ecosol" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligible_ecosol" disabled="false" />
+                      </cell>
+                      <cell id="{b2480153-09cc-4835-bb08-ba5f2c651d95}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité aides CTC ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibiliteaidesctc" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligibiliteaidesctc" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{070c9ebc-05c0-459a-aaaf-90273148496c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité KAP EFFI'KAZ ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligible_effikaz" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligible_effikaz" disabled="false" />
+                      </cell>
+                      <cell id="{0a652006-317e-41f7-83e4-e36a80ad3368}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité KAP PV ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligible_kpv" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligible_kpv" disabled="false" />
+                      </cell>
+                      <cell id="{d7ee6a6c-3649-4cd0-a1fb-7b1e5a3c0003}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Eligibilité Ma PrimeRénov’ ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibilitemaprimerenov" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_eligibilitemaprimerenov" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7c510d23-e12a-4fec-a92a-5dd054b7fddd}" locklevel="0" colspan="3" rowspan="3">
+                        <labels>
+                          <label description="Commentaires sur les éligibilités" languagecode="1036" />
+                        </labels>
+                        <control id="er_commentaireseligibilites" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_commentaireseligibilites" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{5c6bacad-2e00-4542-8d85-2b65c4e49cf3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de la vérification des éligibilités" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdeverificationdeseligibilites" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_statutdeverificationdeseligibilites" disabled="false" />
+                      </cell>
+                      <cell id="{c4acb1b8-3d93-4fc3-b92c-46db8f20c468}" userspacer="true" showlabel="false" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{e3bd057a-d802-45c6-8014-9784b716b2f4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier urgent?" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier_urgent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_dossier_urgent" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fe1ef251-5b63-4514-9af7-fdf57faa7f5e}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Eligibilités vérifiées par" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibiliteverifieepar" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_eligibiliteverifieepar" disabled="true" />
+                      </cell>
+                      <cell id="{1b04ba58-b6e8-47c9-9212-cfc4643659c1}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Eligibilités vérifiées le" languagecode="1036" />
+                        </labels>
+                        <control id="er_eligibiliteverifieele" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_eligibiliteverifieele" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{66de35d7-b8fb-4804-8722-867b3d551551}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_5" id="6c2e238a-01ec-426f-ba51-7c34dfc47668" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="111" labelwidth="115">
+                  <labels>
+                    <label description="Dispositifs à mettre en place et attribution" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a20a63ab-a7b1-43b4-aa33-d1cfefa3e704}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SLIME à réaliser ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_slimeactive" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_slimeactive" disabled="false" />
+                      </cell>
+                      <cell id="{dc04aa6f-7f9c-46d8-9bee-9a3d39fa9252}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="KAP ECO-SOLIDAIRE à réaliser ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_ecosolactive" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_ecosolactive" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{116f7168-251a-4e01-be06-ec14c5c20983}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="KAP EFFI'KAZ à réaliser ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_effikazactive" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_effikazactive" disabled="false" />
+                      </cell>
+                      <cell id="{3c4d2233-34f0-47c2-b970-9796d1f732c1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="KAP PV à réaliser ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_kpvactive" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_kpvactive" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{1997506a-49ce-4e91-9ef9-e4062d08a9a3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c2a5307b-4db0-4980-ac22-c579daadf123}" locklevel="0" colspan="3" rowspan="5">
+                        <labels>
+                          <label description="Détails sur le projet" languagecode="1036" />
+                        </labels>
+                        <control id="er_details_projets" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_details_projets" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="aaaa_section_7" id="14f58592-f1a5-47ce-a098-91407433df3f" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Traitement" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{26d39265-3e3d-4a62-aac9-54e0c806dcb2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier attribué à" languagecode="1036" />
+                        </labels>
+                        <control id="er_collaborateur_referent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_referent" disabled="false" />
+                      </cell>
+                      <cell id="{d689a803-70b0-4ced-95b9-8e4f96999d70}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de traitement du dossier" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_dossier" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_dossier" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{22a73f76-f069-41af-b0e8-6c2acc9b312d}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{79075c57-e9bb-4842-9909-f6864ec206e8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de résolution" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_resolution" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_resolution" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{473dce18-68ee-4a2c-9582-293655ba824a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{d6704b26-da45-4613-b435-13a297752ad4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Résolu par" languagecode="1036" />
+                        </labels>
+                        <control id="er_resolupar" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_resolupar" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_5" id="2052c830-040d-47d1-bd35-8a981ef88f9d" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Activités et échanges" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="tab_5_section_1" id="de51ff13-d05c-4d33-96c4-b33af8dafa6d" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" visible="true">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{3850ed89-ad15-4f62-babb-863f2fd65720}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Appels téléphoniques liés au dossier UNIQUEMENT" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_8" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_phonecall_Dossierdetraitementconcerne_er_dossier</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewId>
+                            <ViewIds>{AA799EF1-BD4D-F011-877A-6045BDDE3C36},{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{C95F3EEA-5BFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_4_section_4" id="87406641-b434-4a85-a275-7b73f219fa88" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="TOUTES les activités liées au site" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{a0fba8d2-2e57-4281-abb6-fd64a4a15ee8}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1755666688415" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1755666688415" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_site_concerne">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_site"&gt;b98b51b5-837d-f011-b4cc-000d3adcbf81&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="tab_4_section_6" id="e966a968-1e85-428d-afb0-b365d8aeece8" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="TOUTES les activités liées au ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{5f08e288-71a4-41d1-9ad0-e8d6cad6208a}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1755664880155" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1755664880155" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_menage_beneficiaire">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_menage"&gt;bf9354ab-7f7d-f011-b4cc-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_4" id="c0635a6c-0505-4719-9766-164fff157756" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Traitements" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section name="tab_4_section_1" id="09847054-7a6d-4364-83d1-fecd79dbc01c" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Dispositifs portés par Energies Réunion" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{23d96eed-e8b0-4517-b347-47063b41c33b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f42c1241-5e0f-4080-8e1c-c6c4279cfb9e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnosticslime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnosticslime" disabled="false">
+                          <parameters>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{87ab0f05-7a72-4fc5-aba6-bd2331185bc6}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1755603950774" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1755603950774" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_diagnosticslime">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_diagnostic_slime"&gt;a769fcaf-d7ff-4270-8643-38bd15b5dfa1&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="tab_4_section_4" id="175daa6f-32ef-4e03-b567-47429ac1163f" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Autres orientations" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{d950dcaf-4d26-4d9f-b988-f6ccdc9376d0}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Autres orientations" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_10" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>7</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_orientation_Dossierdetraitement_er_dossier</RelationshipName>
+                            <TargetEntityType>er_orientation</TargetEntityType>
+                            <ViewId>{E3525881-919E-F011-BBD3-7C1E52FC6786}</ViewId>
+                            <ViewIds>{47719C49-F457-F011-877B-000D3ADCBF81},{E3525881-919E-F011-BBD3-7C1E52FC6786}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_3" id="8660a94c-e2ee-4233-9d33-abd30f1369da" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{fd904b02-ad8f-48ab-8781-a5a91096b9d8}" visible="false">
+          <labels>
+            <label description="DEPRECATED Actions" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_3" id="dfd53f83-71f4-47a0-a3c0-e1479953460a" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Dispositifs portés par Energies Réunion" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{f024fa9c-0945-4f4e-86bc-f8bbcd0bc832}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_7" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_diagnostic_slime_Dossierparent_er_dossier</RelationshipName>
+                            <TargetEntityType>er_diagnostic_slime</TargetEntityType>
+                            <ViewId>{6059FACD-A255-F011-877B-6045BDDE3C36}</ViewId>
+                            <ViewIds>{7640B774-3C56-F011-877B-000D3ADCBF81},{6059FACD-A255-F011-877B-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{98713CAB-5AFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{e88cc341-3b11-43f9-9c28-1b7e40d406cb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{c284a45c-8265-44a6-ae71-82ad485e3cec}" showlabel="false" labelid="{b5622ba5-90e4-448f-8f9d-3c59a6b56bd2}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{7436e6c0-d02b-4679-bd14-5503fdf7b80c}" showlabel="false" labelid="{30d67fd1-7f5b-41d7-bbed-b3ea62ab6de1}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{7a45ff24-8078-4120-997d-078c7e0e3597}" showlabel="false" labelid="{acae31a1-310e-4cbb-ba7e-eff5cca72ad3}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{1b11bb90-1f63-47b5-820a-831bc53a7938}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{c368aab1-f0b3-4caa-aa33-fb80062e30b0}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Site Concerné" languagecode="1036" />
+              </labels>
+              <control id="header_er_site_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_concerne" disabled="false" />
+            </cell>
+            <cell id="{bec78501-7cc2-4439-bda7-56aba8907238}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Ménage bénéficiaire" languagecode="1036" />
+              </labels>
+              <control id="header_er_menage_beneficiaire" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_beneficiaire" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{f1a6c221-9f7f-4aae-863b-71b8320d4675}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{9b2a0993-54bb-4455-8ee2-c5f822dc347a}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Dossier urgent?" languagecode="1036" />
+              </labels>
+              <control id="header_er_dossier_urgent" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_dossier_urgent" disabled="false" />
+            </cell>
+            <cell id="{87dadba7-3c44-452c-ac50-2a8ad28ae865}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Statut de traitement du dossier" languagecode="1036" />
+              </labels>
+              <control id="header_er_statut_dossier" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_dossier" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{5fd7f838-d7ef-4cef-860b-97eca1913406}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{5b379f59-ac4c-4747-b89f-633fe4b47cdc}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Collaborateur Référent" languagecode="1036" />
+              </labels>
+              <control id="header_er_collaborateur_referent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_collaborateur_referent" disabled="false" />
+            </cell>
+            <cell id="{d0cade27-09bc-4694-b77b-f1fdd6fcc262}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{111a22a2-b177-4caa-b982-bd3f0507372d}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{4cec18c4-a87c-43e3-a317-5e4280630293}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{85abcc34-8b9e-4c20-ace1-2adffe496050}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d9bb726d-986c-483b-9e3a-74dde5d9301b}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{fef9a00e-8b98-413a-b851-9159b04f72e6}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{ed836731-805b-4045-ae93-a14c2b36cf17}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{d4d56ace-f351-490c-acb6-c19101868e65}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{0ebaccb5-3a58-4406-8c7a-21b8ebeb6c6e}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{b3132be1-3f66-4b61-9833-9625ae908dda}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{472bf2e7-812b-4750-acfd-e91e352fc96f}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{3c13b82f-fd72-44fb-8021-b48fd8e997f2}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e138b87b-fe91-47c5-bc25-2cedf94c3236}" visible="false" labelid="{59b8976f-7027-4c90-a03d-62449c1d462e}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{026d144c-ed24-44c5-89da-b98050bac7fb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3e75f24f-cca6-4f1e-b614-78bb76613576}" showlabel="false" labelid="{c732aeea-7b18-4428-b216-62f7bce7de8a}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{961307ae-6ba2-4a00-9fe3-8b03d6363a4d}" showlabel="false" labelid="{87ad69ee-364f-4bb3-95e5-bab72e8c9d3e}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{0a741cfb-a771-45c6-85f0-3f32b3c6c171}" showlabel="false" labelid="{25d74df1-069a-4765-ac4b-64ef46888c2e}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Formulaire Principal Dossier" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

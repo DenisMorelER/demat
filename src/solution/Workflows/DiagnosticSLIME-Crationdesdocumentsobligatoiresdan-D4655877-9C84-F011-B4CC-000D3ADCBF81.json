@@ -1,0 +1,489 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedsharepointonline_06f8c"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Site Sharepoint (er_Site_Sharepoint)": {
+          "defaultValue": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_Site_Sharepoint"
+          }
+        }
+      },
+      "triggers": {
+        "Lorsqu’une_ligne_est_ajoutée,_modifiée_ou_supprimée": {
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "subscriptionRequest/message": 1,
+              "subscriptionRequest/entityname": "er_diagnostic_slime",
+              "subscriptionRequest/scope": 4
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "actions": {
+        "Créer_un_fichier_-_1_Formulaire_SLIME": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}",
+              "name": "@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Formulaire SLIME - @{outputs('Obtenir_une_ligne_par_ID_-_Dossiers')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.docx",
+              "body": "@body('Obtenir_le_contenu_du_fichier_-_1_Formulaire_SLIME')"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateFile",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Obtenir_le_contenu_du_fichier_-_1_Formulaire_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "c95e51cd-fed2-4bf2-9bc3-cddcefcff16f"
+          }
+        },
+        "Obtenir_le_contenu_du_fichier_-_1_Formulaire_SLIME": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "id": "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fSLIME%2b-%2bFormulaire%2bcomplet%2b-%2bLight.docx",
+              "inferContentType": true
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileContent",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Obtenir_une_ligne_par_ID_-_Dossiers": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDocument%2bvide.docx": "/Documents partages/00 Modeles de fichiers/Document vide.docx",
+            "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fSLIME%2b-%2bFormulaire%2bcomplet%2b-%2bLight.docx": "/Documents partages/00 Modeles de fichiers/SLIME - Formulaire complet - Light.docx",
+            "operationMetadataId": "a37d42fa-5157-47b4-8cb8-127f0dbb0212"
+          }
+        },
+        "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "recordId": "@triggerOutputs()?['body/er_diagnostic_slimeid']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "1a7ea585-fed7-4165-b57b-49b445ec5efe"
+          }
+        },
+        "Obtenir_une_ligne_par_ID_-_Dossiers": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_dossiers",
+              "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_dossierparent_value']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "347d5185-54e1-44c7-85f7-642666b7a66b"
+          }
+        },
+        "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "er_diagnostic_slimes",
+              "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']",
+              "item/er_urlfichierdep": "@concat(parameters('Site Sharepoint (er_Site_Sharepoint)'), '/_layouts/15/Doc.aspx?sourcedoc=', split(replace(outputs('Créer_un_fichier_-_2_Fichier_DEP')?['body/ETag'], '\"', ''), ',')[0], '&action=default')",
+              "item/er_urlformulaireslime": "@concat(parameters('Site Sharepoint (er_Site_Sharepoint)'), '/_layouts/15/Doc.aspx?sourcedoc=', split(replace(outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/ETag'], '\"', ''), ',')[0], '&action=default')",
+              "item/er_urlrapportdep": "@outputs('Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_3_Rapport_DEP')?['body/link/webUrl']",
+              "item/er_urlrapportmenagesolidiag": "@outputs('Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_4_Rapport_Ménage')?['body/link/webUrl']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "UpdateOnlyRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_4_Rapport_Ménage": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3c1d05b0-3afe-439e-9d8a-a2bd0f36f7a5"
+          }
+        },
+        "Mettre_à_jour_les_propriétés_du_fichier_-_1_Formulaire_SLIME": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/ItemId']",
+              "item/TypededocumentSLIME/Value": "Formulaire SLIME",
+              "item/LiaisonavecDataVerse/Value": "Lié à Dataverse"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "PatchFileItem",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6b91c357-6ec7-4938-8f97-768c717facfa"
+          }
+        },
+        "Terminer": {
+          "type": "Terminate",
+          "inputs": {
+            "runStatus": "Succeeded"
+          },
+          "runAfter": {
+            "Mettre_à_jour_les_propriétés_du_fichier_-_4_Rapport_Ménage": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "Message": {
+          "type": "Compose",
+          "inputs": "Créer:\nBody ID: @{outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/Id']} ;\nBody ItemID : @{outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/ItemId']};\nETAG: @{outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/ETag']}.\n\nDétails:\nID:  ; \nIdentificateur : \n;\n\nSplit:\n@{split(replace(outputs('Créer_un_fichier_-_1_Formulaire_SLIME')?['body/ETag'], '\"', ''), ',')[0]}",
+          "runAfter": {
+            "Terminer": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "172d6097-4dc9-49c5-89b4-a9ccdc79700b"
+          }
+        },
+        "Obtenir_le_contenu_du_fichier_-_2_Fichier_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "id": "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm",
+              "inferContentType": true
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileContent",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Créer_un_fichier_-_1_Formulaire_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsm",
+            "operationMetadataId": "971c40f5-e169-4fd7-80fb-9fcd03bda96a"
+          }
+        },
+        "Créer_un_fichier_-_2_Fichier_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}",
+              "name": "@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Fichier DEP - @{outputs('Obtenir_une_ligne_par_ID_-_Dossiers')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.xlsm",
+              "body": "@body('Obtenir_le_contenu_du_fichier_-_2_Fichier_DEP')"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateFile",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Obtenir_le_contenu_du_fichier_-_2_Fichier_DEP": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "c8ac4143-0c2a-4ec4-a0d6-a3e7d9645af3"
+          }
+        },
+        "Obtenir_le_contenu_du_fichier_-_3_et_4_Rapport_DEP_et_Rapport_Ménage": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "id": "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fVide.pdf",
+              "inferContentType": true
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "GetFileContent",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Créer_un_fichier_-_2_Fichier_DEP": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fDEP%2bTemplate.xlsm": "/Documents partages/00 Modeles de fichiers/DEP Template.xlsm",
+            "operationMetadataId": "971c40f5-e169-4fd7-80fb-9fcd03bda96a",
+            "%252fDocuments%2bpartages%252f00%2bModeles%2bde%2bfichiers%252fVide.pdf": "/Documents partages/00 Modeles de fichiers/Vide.pdf"
+          }
+        },
+        "Créer_un_fichier_-_3_Rapport_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}",
+              "name": "@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Rapport DEP - @{outputs('Obtenir_une_ligne_par_ID_-_Dossiers')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.pdf",
+              "body": "@body('Obtenir_le_contenu_du_fichier_-_3_et_4_Rapport_DEP_et_Rapport_Ménage')"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateFile",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Obtenir_le_contenu_du_fichier_-_3_et_4_Rapport_DEP_et_Rapport_Ménage": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "c8ac4143-0c2a-4ec4-a0d6-a3e7d9645af3"
+          }
+        },
+        "Créer_un_fichier_-_4_Rapport_Ménage": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "folderPath": "/er_diagnostic_slime/@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_diagnostic_slimeid']),'-','')}",
+              "name": "@{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']} - Rapport ménage SOLIDIAG - @{outputs('Obtenir_une_ligne_par_ID_-_Dossiers')?['body/_er_menage_beneficiaire_value@OData.Community.Display.V1.FormattedValue']}.pdf",
+              "body": "@body('Obtenir_le_contenu_du_fichier_-_3_et_4_Rapport_DEP_et_Rapport_Ménage')"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateFile",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_3_Rapport_DEP": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "c8ac4143-0c2a-4ec4-a0d6-a3e7d9645af3"
+          }
+        },
+        "Mettre_à_jour_les_propriétés_du_fichier_-_2_Fichier_DEP_1": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_2_Fichier_DEP')?['body/ItemId']",
+              "item/TypededocumentSLIME/Value": "Fichier DEP (Excel)",
+              "item/LiaisonavecDataVerse/Value": "Lié à Dataverse"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "PatchFileItem",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Mettre_à_jour_les_propriétés_du_fichier_-_1_Formulaire_SLIME": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5975f2ff-c0dc-4be2-af5c-7a977a5b52e7"
+          }
+        },
+        "Mettre_à_jour_les_propriétés_du_fichier_-_3_Rapport_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_3_Rapport_DEP')?['body/ItemId']",
+              "item/TypededocumentSLIME/Value": "Rapport de visite DEP (PDF)",
+              "item/LiaisonavecDataVerse/Value": "Lié à Dataverse"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "PatchFileItem",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Mettre_à_jour_les_propriétés_du_fichier_-_2_Fichier_DEP_1": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5975f2ff-c0dc-4be2-af5c-7a977a5b52e7"
+          }
+        },
+        "Mettre_à_jour_les_propriétés_du_fichier_-_4_Rapport_Ménage": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_4_Rapport_Ménage')?['body/ItemId']",
+              "item/TypededocumentSLIME/Value": "Rapport ménage de SOLIDIAG",
+              "item/LiaisonavecDataVerse/Value": "Lié à Dataverse"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "PatchFileItem",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Mettre_à_jour_les_propriétés_du_fichier_-_3_Rapport_DEP": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5975f2ff-c0dc-4be2-af5c-7a977a5b52e7"
+          }
+        },
+        "Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_3_Rapport_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_3_Rapport_DEP')?['body/ItemId']",
+              "permission/type": "edit",
+              "permission/scope": "organization"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateSharingLink",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Créer_un_fichier_-_3_Rapport_DEP": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "Créer_un_lien_de_partage_pour_un_fichier_ou_dossier_-_4_Rapport_Ménage": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "table": "585bdf4a-3951-43d9-968d-b041ea19f25e",
+              "id": "@outputs('Créer_un_fichier_-_4_Rapport_Ménage')?['body/ItemId']",
+              "permission/type": "edit",
+              "permission/scope": "organization"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "operationId": "CreateSharingLink",
+              "connectionName": "shared_sharepointonline"
+            }
+          },
+          "runAfter": {
+            "Créer_un_fichier_-_4_Rapport_Ménage": [
+              "SUCCEEDED"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{22d8241c-2da3-45ee-a23f-2e82428f51c4}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_dossier" select="1" icon="1" preview="1">
+        <row name="result" id="er_dossierid">
+          <cell name="er_id_dossier" width="300" />
+          <cell name="er_nom_dossier" width="129" />
+          <cell name="er_menage_beneficiaire" width="167" />
+          <cell name="er_site_concerne" width="119" />
+          <cell name="er_collaborateur_referent" width="169" />
+          <cell name="er_date_ouverture_dossier" width="234" />
+          <cell name="er_date_derniere_relance" width="191" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_dossier">
+          <attribute name="er_dossierid" />
+          <attribute name="er_id_dossier" />
+          <order attribute="er_id_dossier" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_menage_beneficiaire" />
+          <attribute name="er_collaborateur_referent" />
+          <attribute name="er_date_ouverture_dossier" />
+          <attribute name="er_date_derniere_relance" />
+          <attribute name="er_nom_dossier" />
+          <attribute name="er_site_concerne" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Dossiers actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

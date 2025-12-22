@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ac51a304-3bfb-ef11-bae1-6045bd6c2dc5}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab name="letter" verticallayout="true" id="{cfb95798-9911-4e92-8ab9-e975ffc11a22}" IsUserDefined="0" labelid="{303e9927-5189-44d1-922e-daef6480e4d8}">
+          <labels>
+            <label description="Lettre" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="general information" showlabel="false" showbar="false" locklevel="0" id="{2d2cef37-cb6c-4f10-8f42-03f1ebb5b887}" IsUserDefined="0" layout="varwidth" columns="11" labelid="{5bbe1716-55df-4c0e-9a42-18ba66059ef9}">
+                  <labels>
+                    <label description="Informations générales" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{7c3374d5-fdcb-403c-8ca6-4e1a6ec6f9a2}" labelid="{07483099-1c5e-46bd-9b58-559fde490c5a}">
+                        <labels>
+                          <label description="De" languagecode="1036" />
+                          <label description="From" languagecode="1033" />
+                        </labels>
+                        <control id="from" classid="{CBFB742C-14E7-4a17-96BB-1A13F7F64AA2}" datafieldname="from" disabled="false" />
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{78864178-18ad-4ec4-ba6e-7851c619c784}" labelid="{e5b66282-5739-4453-858f-86f742581fae}">
+                        <labels>
+                          <label description="Adresse" languagecode="1036" />
+                          <label description="Address" languagecode="1033" />
+                        </labels>
+                        <control id="address" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="address" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{d9de78cc-dd12-44a3-b5aa-db1e28018ccc}" labelid="{92b02ab8-67cd-4166-930f-c77a0a366174}">
+                        <labels>
+                          <label description="À" languagecode="1036" />
+                          <label description="To" languagecode="1033" />
+                        </labels>
+                        <control id="to" classid="{CBFB742C-14E7-4a17-96BB-1A13F7F64AA2}" datafieldname="to" disabled="false" />
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{fe7a6d5f-0cef-4aa7-89eb-19a18f8292b2}" labelid="{e58b0681-579f-4d27-a5fa-6ff613ff8365}">
+                        <labels>
+                          <label description="Direction" languagecode="1036" />
+                          <label description="Direction" languagecode="1033" />
+                        </labels>
+                        <control id="directioncode" classid="{67FAC785-CD58-4f9f-ABB3-4B7DDC6ED5ED}" datafieldname="directioncode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ea5b71b1-7ad7-4e68-94ef-a98fceab30c8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Echange Ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_echange_menage" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_echange_menage" disabled="false" />
+                      </cell>
+                      <cell id="{78e9d9da-e8c7-4338-bc37-d7cdf0f9a031}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Statut d'échange entrant" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_echange_entrant" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_echange_entrant" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{3d474d49-334a-443d-9ce4-3b3d8b99e17d}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{ddc69f98-9731-477d-be13-9d1cdc4cc82c}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Statut d'échange sortant" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_echange_sortant" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_echange_sortant" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{8aba5787-cd72-45da-804b-fdb35b5b7d7a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{b98b3490-0927-4458-a044-a8660e159be7}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Type d'échange entrant" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_echange_entrant" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_type_echange_entrant" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{05f369a9-20f3-454c-8759-93be736dff87}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{ccc54d12-f594-46a8-bcea-b0470099e32b}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Type d'échange sortant" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_echange_sortant" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_type_echange_sortant" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{2cc72a56-e646-49cb-b751-9df27f4e8347}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{fce3e503-4e25-4d2a-ae1e-8cdd7144a713}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Origine de la demande" languagecode="1036" />
+                        </labels>
+                        <control id="er_origine_demande" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_origine_demande" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{a6e473d4-3717-47a0-8db2-0ba36f725f7e}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{1c7955d1-4337-4849-a86e-7641aaafffa6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de résolution" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_resolution" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_resolution" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="letter description" showlabel="false" showbar="false" locklevel="0" id="{55C553DB-50D8-43c9-A2DD-8628A2CF8D96}" IsUserDefined="0" layout="varwidth" columns="11" height="auto" labelid="{19935ec5-40f4-4823-ae87-a6831cc05d49}">
+                  <labels>
+                    <label description="Description de la lettre" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{696d5890-8b6f-4bea-9e1a-90f345e7f5a5}" labelid="{9aaf8330-5caf-4004-957e-a86e90138889}">
+                        <labels>
+                          <label description="Objet" languagecode="1036" />
+                          <label description="Subject" languagecode="1033" />
+                        </labels>
+                        <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell colspan="2" showlabel="false" rowspan="5" auto="true" id="{0076e743-a664-4add-a5a9-a878eba44e00}" labelid="{6ac9e539-6af5-4066-957c-d69a5e5e45eb}">
+                        <labels>
+                          <label description="Description" languagecode="1036" />
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control id="description" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="description" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row height="auto" />
+                  </rows>
+                </section>
+                <section name="letter details" showlabel="false" showbar="false" locklevel="0" id="{9121EBAC-74E0-44cb-8FCA-1312FC80A787}" IsUserDefined="0" layout="varwidth" columns="11" labelid="{15439e0e-5477-4309-92c8-36883c9a6508}">
+                  <labels>
+                    <label description="Détails de la lettre" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{04d4e5a7-b7df-4468-be3e-d0a740bd4bfc}" labelid="{dde995db-ef2a-45bc-b688-626fd275f776}">
+                        <labels>
+                          <label description="Concernant" languagecode="1036" />
+                          <label description="Regarding" languagecode="1033" />
+                        </labels>
+                        <control id="regardingobjectid" classid="{F3015350-44A2-4aa0-97B5-00166532B5E9}" datafieldname="regardingobjectid" disabled="false">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="2" id="{8fd83762-12a3-45e0-a34e-80a48e62a288}" labelid="{366385b4-f3c9-4df2-9729-979e519bed53}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{92601d44-d0b8-42ae-b0ee-1415128e84f1}" labelid="{761fb991-91b8-4a19-b7b1-29d4016e0544}">
+                        <labels>
+                          <label description="Durée" languagecode="1036" />
+                          <label description="Duration" languagecode="1033" />
+                        </labels>
+                        <control id="actualdurationminutes" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="actualdurationminutes" disabled="false" />
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{0d4d130c-8e1f-4501-b632-b779be7fd077}" labelid="{0e8ff67b-2d6a-49d6-9003-3c76a7c445fa}">
+                        <labels>
+                          <label description="Priorité" languagecode="1036" />
+                          <label description="Priority" languagecode="1033" />
+                        </labels>
+                        <control id="prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{0e488a45-cef1-48b4-a509-85cf580cc089}" labelid="{12026d37-9ced-4a25-897e-9bbf1b25cc45}">
+                        <labels>
+                          <label description="Échéance" languagecode="1036" />
+                          <label description="Due Date" languagecode="1033" />
+                        </labels>
+                        <control id="scheduledend" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="scheduledend" disabled="false" />
+                      </cell>
+                      <cell id="{d09d022e-a146-4a8b-98a0-32379c273eec}" userspacer="true" labelid="{42188a62-54b2-4835-8774-3dc3b208b740}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{94adf1df-4b9f-4bdb-9994-136ee5480fa2}" labelid="{9a0db467-3eda-4b0c-8646-c7aa9c5e06ad}">
+                        <labels>
+                          <label description="Catégorie" languagecode="1036" />
+                          <label description="Category" languagecode="1033" />
+                        </labels>
+                        <control id="category" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="category" disabled="false" />
+                      </cell>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{106a310a-d83f-4200-84f6-77ff9313c147}" labelid="{ac9d7964-0d92-4631-ad5a-f30f6e3464e3}">
+                        <labels>
+                          <label description="Sous-catégorie" languagecode="1036" />
+                          <label description="Sub-Category" languagecode="1033" />
+                        </labels>
+                        <control id="subcategory" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subcategory" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="notes" id="{A38A6589-695E-490a-BF0A-57284FFCDD4A}" IsUserDefined="0" expanded="false" labelid="{1dea270b-2887-4528-b7b2-52877f334044}">
+          <labels>
+            <label description="Notes" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="notes" showlabel="false" showbar="false" id="{47D2E256-15F8-4c3b-8261-255342DA18FA}" IsUserDefined="0" height="auto" labelid="{b2d4ba19-a066-4e39-b4d4-70a811cd090e}">
+                  <labels>
+                    <label description="Notes" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell colspan="2" showlabel="false" rowspan="5" auto="true" id="{335b7030-a8b0-44b5-b499-7432da07c70a}" labelid="{7a7b1289-a951-423f-8090-709300053356}">
+                        <labels>
+                          <label description="Texte de la note" languagecode="1036" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-C143-495E-A496-C962E5B4488E}" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row height="auto" />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="Activities.Letter.Form_onload" libraryName="Activities/SystemLibraries/Letter_main_system_library.js" handlerUniqueId="06e19257-ff10-40fa-95d1-522475371db3" enabled="true" parameters="" passExecutionContext="true" />
+          </InternalHandlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="directioncode">
+          <InternalHandlers>
+            <Handler functionName="Activities.Letter.directionCodeOnChange" libraryName="Activities/SystemLibraries/Letter_main_system_library.js" handlerUniqueId="3b001a4b-f13b-4b86-9ef8-b8ff2bf5ab68" enabled="true" parameters="" passExecutionContext="true">
+              <dependencies>
+                <dependency id="to" />
+                <dependency id="from" />
+              </dependencies>
+            </Handler>
+          </InternalHandlers>
+        </event>
+      </events>
+      <clientresources>
+        <internalresources>
+          <clientincludes>
+            <internaljscriptfile src="$webresource:Activities/SystemLibraries/Letter_main_system_library.js" />
+          </clientincludes>
+        </internalresources>
+      </clientresources>
+      <header id="{d06000a1-e51d-4b5c-8fd7-e0e7d7cfe390}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{35b30d4a-debc-4957-a03b-58e0122ec638}" showlabel="false" labelid="{f98d837c-f11d-4cff-b24f-e958d9b83f33}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{351b383f-8167-4ee5-b1b8-85fb750d8394}" showlabel="false" labelid="{6d83183f-50c3-4757-8da7-b606f7ac871b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{333a7e44-dc0e-42fc-8c88-94b6fb6a9c0e}" showlabel="false" labelid="{83680175-73e2-4138-bb06-b05dfb99726c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{759f5b79-1190-4426-9bd3-0016c8d86a6c}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0f8b0f92-182b-4131-bdb3-8febc9214bfe}" showlabel="false" labelid="{23fcb1d9-3369-4fac-a9dc-4f5755dd2ffd}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{16babe2c-e235-4e4c-9992-76af6a225a30}" showlabel="false" labelid="{3ad7782e-48a1-4c02-8fd1-8135dd57a838}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{c2356f11-dd93-4a06-ae2b-4466a435eb14}" showlabel="false" labelid="{343fc883-bec7-494c-a3a3-80c74f6b9c03}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="3" FallbackForm="false" />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations - ER" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

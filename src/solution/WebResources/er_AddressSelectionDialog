@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Address Selection</title>
+    <script>
+        // Retrieve the stored addresses from the parent window
+        let addresses = window.opener?.addressesData || [];
+        
+        function loadData() {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById("title").innerText = params.get("title") || "Select an Address";
+            document.getElementById("message").innerText = params.get("message") || "Please select an address from the list.";
+
+            let tableBody = document.getElementById("gridBody");
+            tableBody.innerHTML = ""; // Clear table before adding new rows
+            
+             // Sort addresses first by 'nom_voie' (alphabetically) then by 'numero' (numerically)
+            addresses.sort((a, b) => {
+                let voieComparison = a.nom_voie.localeCompare(b.nom_voie, "fr", { sensitivity: "base" });
+                if (voieComparison !== 0) return voieComparison;
+                return (parseInt(a.numero) || 0) - (parseInt(b.numero) || 0);
+            });
+            
+            addresses.forEach((item, index) => {
+                let row = tableBody.insertRow();
+                
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                let cell4 = row.insertCell(3);
+                let cell5 = row.insertCell(4);
+                let cell6 = row.insertCell(5);
+
+                cell1.innerHTML = 
+                    `<input type="radio" name="addressSelection" value="${item.id}" 
+                    data-numero="${item.numero}"
+                    data-rep="${item.rep}" 
+                    data-nom_voie="${item.nom_voie}" 
+                    data-nom_commune="${item.nom_commune}" 
+                    data-code_postal="${item.code_postal}"
+                    >`;
+                cell2.innerText = item.numero;
+                cell3.innerText = item.rep;
+                cell4.innerText = item.nom_voie;
+                cell5.innerText = item.nom_commune;
+                cell6.innerText = item.code_postal;
+            });
+        }
+        
+        // Call this function when the page loads
+        window.onload = loadData;
+        
+        function submitSelection() {
+            let selectedRadio = document.querySelector("input[name='addressSelection']:checked");
+            if (!selectedRadio) {
+                alert("Please select an address.");
+                return;
+            }
+
+            let selectedAddress = {
+                id: selectedRadio.value,
+                numero: selectedRadio.getAttribute("data-numero"),
+                rep: selectedRadio.getAttribute("data-rep"),
+                nom_voie: selectedRadio.getAttribute("data-nom_voie"),
+                nom_commune: selectedRadio.getAttribute("data-nom_commune"),
+                code_postal: selectedRadio.getAttribute("data-code_postal")
+            };
+
+            console.log("📤 Sending selected address:", selectedAddress);
+            
+            // Close the selection window
+            window.returnValue = selectedAddress;
+            window.close();
+        }
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h2 { color: #333; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        button { margin-top: 10px; padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body onload="loadData()">
+    <h2 id="title"></h2>
+    <p id="message"></p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Sélection</th>
+                <th>Numéro</th>
+                <th>Indice Répétition</th>
+                <th>Nom Voie</th>
+                <th>Nom Commune</th>
+                <th>Code Postal</th>
+            </tr>
+        </thead>
+        <tbody id="gridBody"></tbody>
+    </table>
+
+    <button onclick="submitSelection()">Confirm Selection</button>
+</body>
+</html>

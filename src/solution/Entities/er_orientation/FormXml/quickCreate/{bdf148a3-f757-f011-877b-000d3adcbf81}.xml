@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{bdf148a3-f757-f011-877b-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{c51e0313-fb60-4f51-930a-83623a4be720}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{8c273334-b65b-490f-b7a6-a69eae49e518}" visible="false">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="542FBFBE-0E4C-496C-8012-555DE6581923" labelid="{6a7ab7fd-c39e-4e7c-8000-f41962cdec08}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{1c67aa77-8478-4c30-9ae1-85eed3419540}">
+                  <labels>
+                    <label description="L'orientation" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{2b15f950-d0ca-4804-8e0c-ffeb7204ecfe}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b25238f7-1770-41e3-88f7-3958f4e8c1c8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Offre d'orientation" languagecode="1036" />
+                        </labels>
+                        <control id="er_offre_orientation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_offre_orientation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2cdd48f6-13fc-4dba-9554-6f11b49f0c8c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut d'orientation" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_orientation" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_orientation" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{60bb8e78-3c52-4b62-9584-1ebf9ed102e6}">
+                  <labels>
+                    <label description="Rattachement" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{e56b5fa4-ca2e-416d-af5b-29dc5f1363f2}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1e35e064-780a-499a-a1ae-969412cee78d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Dossier de traitement" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossierdetraitement" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossierdetraitement" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8a0f25b9-9e77-4301-8396-128ddb728d7c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnostic_slime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnostic_slime" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Quick create Orientation" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

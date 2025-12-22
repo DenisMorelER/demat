@@ -1,0 +1,19 @@
+<svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, for visibility) -->
+  <rect width="100" height="100" fill="white"/>
+
+  <!-- Green squares (stylized SLIME dots) -->
+  <rect x="15" y="15" width="10" height="10" fill="#88B04B"/>
+  <rect x="30" y="15" width="7" height="7" fill="#88B04B"/>
+  <rect x="40" y="15" width="5" height="5" fill="#88B04B"/>
+
+  <!-- SLIME Text -->
+  <text x="10" y="50" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#666">
+    SLIME
+  </text>
+
+  <!-- Réunion text -->
+  <text x="12" y="70" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#88B04B">
+    Réunion
+  </text>
+</svg>

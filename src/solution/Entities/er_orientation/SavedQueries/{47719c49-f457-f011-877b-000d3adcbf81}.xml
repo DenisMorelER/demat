@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{47719c49-f457-f011-877b-000d3adcbf81}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_orientation" select="1" icon="1" preview="1">
+        <row name="result" id="er_orientationid">
+          <cell name="er_id_orientation" width="137" />
+          <cell name="er_dossierdetraitement" width="160" />
+          <cell name="er_diagnostic_slime" width="147" />
+          <cell name="createdon" width="100" />
+          <cell name="er_offre_orientation" width="208" />
+          <cell name="er_statut_orientation" width="147" />
+          <cell name="a_f2cd31d950de40c4b6b67b3627ff0353.er_menage_beneficiaire" width="288" />
+          <cell name="a_f2cd31d950de40c4b6b67b3627ff0353.er_site_concerne" width="252" />
+          <cell name="createdby" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_orientation">
+          <attribute name="er_orientationid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="createdon" />
+          <attribute name="er_dossierdetraitement" />
+          <attribute name="er_diagnostic_slime" />
+          <attribute name="er_offre_orientation" />
+          <attribute name="er_id_orientation" />
+          <attribute name="er_statut_orientation" />
+          <link-entity alias="a_f2cd31d950de40c4b6b67b3627ff0353" name="er_dossier" to="er_dossierdetraitement" from="er_dossierid" link-type="outer" visible="false">
+            <attribute name="er_menage_beneficiaire" />
+            <attribute name="er_site_concerne" />
+          </link-entity>
+          <attribute name="createdby" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Orientations réalisées" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

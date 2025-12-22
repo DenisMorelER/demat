@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cb274493-3e72-4937-b54f-ddee4b9ce082}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" solutionaction="Modified">
+      <tabs>
+        <tab verticallayout="true" id="{ba71fd37-5df2-4665-ae0c-1f0f30db19a6}" IsUserDefined="1" name="{ba71fd37-5df2-4665-ae0c-1f0f30db19a6}" locklevel="0" expanded="true" showlabel="true" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{171a0adc-6b27-41fb-b31f-2d6c193677f1}" name="{171a0adc-6b27-41fb-b31f-2d6c193677f1}" columns="11" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left" visible="false" ordinalvalue="1" solutionaction="Modified">
+                  <rows>
+                    <row>
+                      <cell id="{73c0abb6-d309-6098-10c5-51889d8ecaa9}" showlabel="true" locklevel="0" ordinalvalue="10000">
+                        <labels />
+                      </cell>
+                      <cell id="{f3492389-e021-411b-b9f1-b406fb2cbe99}" showlabel="true" locklevel="0" ordinalvalue="20001">
+                        <labels />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17071955-d20e-45d7-a9bb-97ec351f4351}" showlabel="true" locklevel="0" ordinalvalue="10002">
+                        <labels />
+                      </cell>
+                      <cell id="{9a1987c3-ba73-e9c5-4005-6a305707e9a2}" showlabel="true" locklevel="0" ordinalvalue="20003">
+                        <labels />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e555d90d-ac2e-40a4-776c-1c396c424821}" showlabel="true" locklevel="0" ordinalvalue="10004">
+                        <labels />
+                      </cell>
+                      <cell id="{f977b412-ed87-4609-8495-fc2ee659056e}" showlabel="true" locklevel="1" visible="false" ordinalvalue="20005">
+                        <labels />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section showlabel="false" showbar="false" id="{a01f7f5e-b343-4249-99e0-febe2feb98c0}" IsUserDefined="0" height="auto" visible="false" ordinalvalue="2" solutionaction="Modified" />
+                <section name="{ba71fd37-5df2-4665-ae0c-1f0f30db19a6}_section_4" id="adc78ee7-cfd5-4b7f-a371-82f361000992" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" ordinalvalue="0" solutionaction="Added">
+                  <labels>
+                    <label description="/!\ Non utilisable pour le moment : Ne pas enregistrer /!\" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell rowspan="6" id="{4bc6086b-daed-42cd-aba1-0b2cf9bfe754}" showlabel="false" auto="false" colspan="1" ordinalvalue="10000">
+                        <labels>
+                          <label description="work-in-progress (1)" languagecode="1036" />
+                        </labels>
+                        <control id="WebResource_new_1" classid="{587CDF98-C1D5-4BDE-8473-14A0BC7644A7}">
+                          <parameters>
+                            <WebResourceId>{8ca569c9-1bab-f011-bbd2-7ced8d4676dc}</WebResourceId>
+                            <Url>er_workinprogress1</Url>
+                            <ShowOnMobileClient>true</ShowOnMobileClient>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                            <VerticalAlignment>Middle</VerticalAlignment>
+                            <SizeType>StretchMaintainAspectRatio</SizeType>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="false" active="false" />
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{866acf82-f896-4ebf-9f3b-1d9c249cbba8}" celllabelposition="Top" columns="1111" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{30341263-5144-9ced-eb14-39958d9dcc22}" showlabel="true" locklevel="0" ordinalvalue="40003">
+              <labels />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{1cec94f5-a16c-449a-ba43-cefe1b155e58}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left" solutionaction="Added">
+        <rows>
+          <row>
+            <cell id="{929d6192-cf7d-4ed6-9775-3ec689d65a50}" showlabel="false" ordinalvalue="10000">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{a4faf2c1-02b5-4f7e-8924-950c7fdce773}" showlabel="false" ordinalvalue="20001">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{3c4173c2-ed43-44eb-8d55-3c2ade41068b}" showlabel="false" ordinalvalue="30002">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true" solutionaction="Added">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Information" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

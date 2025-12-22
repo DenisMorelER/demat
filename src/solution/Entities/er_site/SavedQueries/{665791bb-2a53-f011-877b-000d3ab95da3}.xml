@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{665791bb-2a53-f011-877b-000d3ab95da3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_adresse" select="1" icon="1" preview="1">
+        <row name="result" id="er_siteid">
+          <cell name="er_adresse" width="300" />
+          <cell name="er_pleineproprieteouusufruit" width="197" />
+          <cell name="er_complementdadresse" width="167" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="er_site">
+          <attribute name="er_adresse" />
+          <attribute name="er_siteid" />
+          <attribute name="er_pleineproprieteouusufruit" />
+          <attribute name="er_complementdadresse" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue SIMPLE Propriétés" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

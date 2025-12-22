@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{527355a1-ee92-45b4-8735-30caa016f5ba}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_adresse" select="1" icon="1" preview="1">
+        <row name="result" id="er_siteid">
+          <cell name="er_adresse" width="300" />
+          <cell name="createdon" width="140" />
+          <cell name="er_complementdadresse" width="119" />
+          <cell name="er_menage_occupant" width="143" />
+          <cell name="er_menage_proprietaire" width="155" />
+          <cell name="er_type_logement" width="141" />
+          <cell name="er_bailleursocial" width="122" />
+          <cell name="er_typologiedelogement" width="169" />
+          <cell name="er_sitetitulaireducontratedf" width="178" />
+          <cell name="er_zone_reunion" width="173" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_site">
+          <attribute name="er_siteid" />
+          <attribute name="er_adresse" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_menage_occupant" />
+          <attribute name="er_zone_reunion" />
+          <attribute name="er_complementdadresse" />
+          <attribute name="createdon" />
+          <order attribute="createdon" descending="true" />
+          <attribute name="er_bailleursocial" />
+          <attribute name="er_menage_proprietaire" />
+          <attribute name="er_sitetitulaireducontratedf" />
+          <attribute name="er_type_logement" />
+          <attribute name="er_typologiedelogement" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Sites actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

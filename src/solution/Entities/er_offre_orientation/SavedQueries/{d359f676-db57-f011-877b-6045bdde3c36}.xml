@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{d359f676-db57-f011-877b-6045bdde3c36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom" select="1" icon="1" preview="1">
+        <row name="result" id="er_offre_orientationid">
+          <cell name="er_nom" width="300" />
+          <cell name="er_acteur" width="200" />
+          <cell name="er_nombre_visites" width="142" />
+          <cell name="er_temps_attente_moyen" width="250" />
+          <cell name="er_temps_traitement" width="235" />
+          <cell name="er_delais_traitement" width="153" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_offre_orientation">
+          <attribute name="er_offre_orientationid" />
+          <attribute name="er_nom" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_delais_traitement" />
+          <attribute name="er_temps_attente_moyen" />
+          <attribute name="er_temps_traitement" />
+          <attribute name="er_acteur" />
+          <attribute name="er_nombre_visites" />
+          <order attribute="er_acteur" descending="false" />
+          <order attribute="er_nom" descending="false" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Offres d'orientations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Orientations actifs" languagecode="1036" />
+    </Descriptions>
+  </savedquery>
+</savedqueries>

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0ed52309-0e89-4960-a6c4-95239d30e4b7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{a673c4df-d277-4343-98d4-04e70a67afd7}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{57535850-7831-40dd-bb0d-faf5110412ad}" name="adresse" columns="11">
+                  <labels>
+                    <label description="Adresse physique et informations générales" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{51a6288f-7c8d-40bd-b5a2-5764d3e0e1de}">
+                        <labels>
+                          <label description="Adresse" languagecode="1036" />
+                        </labels>
+                        <control id="er_adresse" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_adresse" disabled="true" />
+                      </cell>
+                      <cell id="{cca6ba52-e094-492c-97b5-04e1ff54fc48}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Zone Réunion / Secteur" languagecode="1036" />
+                        </labels>
+                        <control id="er_zone_reunion" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_zone_reunion" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4cb11756-87c4-4ab8-aa4f-74d465c57383}" visible="false">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell id="{072dce1b-69c9-4337-8148-ebd8a07e5382}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Type de logement" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_logement" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_type_logement" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c9dc07ce-a980-4316-aa63-000fbf4c1cde}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Numéro" languagecode="1036" />
+                        </labels>
+                        <control id="er_numero" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_numero" disabled="false" />
+                      </cell>
+                      <cell id="{3b11824e-e630-4572-b64b-9054e14b1e59}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Année de construction" languagecode="1036" />
+                        </labels>
+                        <control id="er_annee_construction" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_annee_construction" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2f1595f9-8a02-480c-9d12-549d2570f411}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Indice de répétition" languagecode="1036" />
+                        </labels>
+                        <control id="er_indice_repetition" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_indice_repetition" disabled="false" />
+                      </cell>
+                      <cell id="{dcf16dcb-1894-47d1-a966-d30dfe2c71a0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Age de la maison" languagecode="1036" />
+                        </labels>
+                        <control id="er_age_maison" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_age_maison" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{011de9b7-1b01-4e28-bc25-1663f606f526}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nom de la voie" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom_voie" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_nom_voie" disabled="false" />
+                      </cell>
+                      <cell id="{1ca6a1e9-2f08-4f70-8603-526f6ee8a8e8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Raccordement au réseau national d'électricité" languagecode="1036" />
+                        </labels>
+                        <control id="er_raccordement_reseau_national_electricite" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_raccordement_reseau_national_electricite" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{70689685-2d53-4a17-8896-a42475652358}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{e80d3699-82d0-421c-8d37-e19b190f18b6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="EDF : Référence pour tout contact" languagecode="1036" />
+                        </labels>
+                        <control id="er_reference_edf" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_reference_edf" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8240932d-b2ec-4653-9d32-d061c2e74f64}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Code Postal" languagecode="1036" />
+                        </labels>
+                        <control id="er_codepostal" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_codepostal" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{9dc2e55c-d553-40e7-b9f6-6a87e089d486}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a7ae71b4-d743-4896-9d73-07f3f657f774}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Libellé d'acheminement" languagecode="1036" />
+                        </labels>
+                        <control id="er_libelleacheminement" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_libelleacheminement" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{9b8ca935-b7ea-40b3-be15-995d3995269a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f248034-ad85-4bdf-bd04-85c483417ccc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Commune" languagecode="1036" />
+                        </labels>
+                        <control id="er_commune" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_commune" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{1a9f6e08-1c95-4181-aaa2-6c960c0e00d6}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="90c38435-754e-45f6-9118-fba8f904d13e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Propriétaire et occupant" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{fc1f5e50-82e2-430b-bca5-313816c09c48}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage Occupant" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_occupant" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_occupant" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{05521e97-d558-46cc-8f05-98f6956ad085}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Ménage Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_proprietaire" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_proprietaire" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="6c9d4370-7ef7-41bf-8bbd-a41234c53284" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Suivi des visites" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="688e1328-56ff-4863-9f32-6241dd6f4956" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Suivi des visites" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{c094a536-9538-4dd2-b865-f18fa582373b}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="New SG control 1741171401381" languagecode="1036" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_1" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_site_visites</RelationshipName>
+                            <TargetEntityType>er_visite</TargetEntityType>
+                            <ViewId>{500E232B-D0F3-4A57-9FD3-444706EAAFF6}</ViewId>
+                            <ViewIds>{500E232B-D0F3-4A57-9FD3-444706EAAFF6}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{9c493a35-c4be-4975-82ac-dc03a8133bcb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{81501d06-7dba-4030-9b33-647f4321df25}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{2aa07cc5-a47d-4ffc-afd1-34103475aea0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{7d41f7fd-f9b2-4e36-a492-7554468f3cc5}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{1be44e0c-68eb-4efe-ace6-d36535cb50c7}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{bdffefdd-0303-46b5-8a36-502c8194f92f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{023243cf-3552-45de-a44a-c6c1362b287a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{447dd72d-58b7-4383-915b-fa663d9056cb}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="2" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{06d98f1a-c15e-4034-a176-a208bb573858}" />
+      </formLibraries>
+      <events>
+        <event name="onsave" application="false" active="false">
+          <Handlers>
+            <Handler functionName="updateFullAddress" libraryName="er_Toolbox_JS" handlerUniqueId="{8b5091a3-5692-4727-9d1b-148bea8bd91d}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Formulaire Principal Site/Logement informations" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

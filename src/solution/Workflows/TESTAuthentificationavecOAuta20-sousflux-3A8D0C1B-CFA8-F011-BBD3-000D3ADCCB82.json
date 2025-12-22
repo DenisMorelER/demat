@@ -1,0 +1,100 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "36df76bf-c5d6-4bd8-9b35-51bf225c5b3b"
+          },
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "triggerAuthenticationType": "Tenant",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "x-api-token": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "actions": {
+        "Message": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "c151d5cf-9ec4-4630-8c13-876c6efd25c7"
+          },
+          "type": "Compose",
+          "inputs": "@{triggerBody()?['x-api-token']} ;\n@{concat(\r\n  substring(formatDateTime(utcNow(), 'dddd'), 0, 2),\r\n  substring(formatDateTime(utcNow(), 'MMMM'), 0, 3),\r\n  'ER',\r\n  formatDateTime(utcNow(), 'dd/MM/yyyy')\r\n  )\r\n}"
+        },
+        "Condition": {
+          "actions": {
+            "Réponse_1": {
+              "runAfter": {
+                "Message_1": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Response",
+              "kind": "Http",
+              "inputs": {
+                "statusCode": 200,
+                "body": "@outputs('Message')"
+              }
+            },
+            "Message_1": {
+              "type": "Compose",
+              "inputs": "@toUpper('dans la condition OUI')"
+            }
+          },
+          "runAfter": {
+            "Message": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Réponse_2": {
+                "type": "Response",
+                "kind": "Http",
+                "inputs": {
+                  "statusCode": 401,
+                  "body": "@concat('API', 'NOT OK')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "or": [
+              {
+                "equals": [
+                  "@triggerBody()?['x-api-token']",
+                  "@base64(concat(\r\n  substring(formatDateTime(utcNow(), 'dddd'), 0, 2),\r\n  substring(formatDateTime(utcNow(), 'MMMM'), 0, 3),\r\n  'ER',\r\n  formatDateTime(utcNow(), 'dd/MM/yyyy')\r\n  )\r\n  )"
+                ]
+              }
+            ]
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

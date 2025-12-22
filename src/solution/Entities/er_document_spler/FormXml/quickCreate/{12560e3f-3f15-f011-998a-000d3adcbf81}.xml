@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{12560e3f-3f15-f011-998a-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="F931FFE2-B873-473F-8F95-9502F0AA3F5E" name="tab_1" showlabel="false" labelid="{257eb72e-a1d8-4aae-8a44-11fd9863b390}">
+          <labels>
+            <label description="New Tab" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section id="0C655D4E-C6E3-424E-9AF5-71E72D30D12E" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{61ea5324-46f2-4888-bfac-27681ef2e81f}">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{969cb78f-e4ca-4435-a6c8-3f67ff08c9fb}" locklevel="0" colspan="1" rowspan="1" labelid="{f47c04f0-389d-413c-92b7-cf1cc15e6f7d}">
+                        <labels>
+                          <label description="Ménage concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_menage_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_menage_concerne" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6146ee83-ba9d-44dc-ba5b-1d03f7828de0}" locklevel="0" colspan="1" rowspan="1" labelid="{30339dde-7e78-4cdc-b89e-3311fe03037d}">
+                        <labels>
+                          <label description="Offre : Action concernée" languagecode="1036" />
+                        </labels>
+                        <control id="er_offre_action_concernee" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_offre_action_concernee" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b8662367-da81-4bd0-819b-6715c73b7c17}" locklevel="0" colspan="1" rowspan="1" labelid="{0d3d7ee2-e204-47a4-b120-cbd3ae9b0ef0}">
+                        <labels>
+                          <label description="Nom du document" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom_document" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_nom_document" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="02DECBA0-3AE2-484D-A19F-C5353AF4F4F2" name="tab_1_column_2_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{26fe5455-c682-469f-ada5-fcc7fb607551}">
+                  <labels>
+                    <label description="New Section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="266FE48D-4D04-4E9A-8C5A-7DEF9A2F059B" labelid="{65f77bd2-a5a1-47fb-a8bb-fa170319056c}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section id="46FD66EA-B686-41D9-AAE0-C565BD78EC1F" name="tab_1_column_3_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" visible="false" labelid="{1fe80f18-2a4a-4733-9298-1ef94391248d}">
+                  <labels>
+                    <label description="New Section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="07C04A4E-A482-45CC-BAB7-7FCA3CD02938" labelid="{ccfb0d3b-711b-41e1-b048-5c897c47698a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Quick Create Document SPLER" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

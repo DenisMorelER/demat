@@ -1,0 +1,1483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{cad4df50-9c55-f011-877b-6045bdde3c36}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab name="tab_4" id="a5bf5066-f906-4c4c-8db3-09f97c42a142" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Réalisation" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_4_section_1" id="7efe063e-f1c2-47e8-988d-b269db467dfe" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Planification de la visite SLIME" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{57ed47ca-347e-4328-b284-0d827d90038c}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1752207838328" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1752207838328" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_dossierparent">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_dossier"&gt;f227fa2e-257c-f011-b4cb-000d3adb6e9b&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{cbde11d1-e1e1-48a5-824e-dc5da4d81345}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{16bd0c63-7221-4131-8c2b-4c310e6d5774}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site concerné" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_concerne" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_concerne" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{120b07ff-4cc6-4201-9c4b-0dec157e28f5}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{f1dbd7e5-f35a-4b77-b2c3-9958481c8e36}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_visite" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_visite" disabled="false">
+                          <parameters>
+                            <useMainFormDialogForCreate>false</useMainFormDialogForCreate>
+                            <useMainFormDialogForEdit>false</useMainFormDialogForEdit>
+                            <DependentAttributeName>er_diagnostic_slime.er_site_concerne</DependentAttributeName>
+                            <DependentAttributeType>er_site</DependentAttributeType>
+                            <FilterRelationshipName>er_site_visites</FilterRelationshipName>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{3144c326-638f-4c39-b5c2-cbf27b9cc83b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{ec8036df-f517-4579-a014-0da340647d7f}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1755759557579" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1755759557579" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_visite">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_visite"&gt;6bb499c8-5d56-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_4_section_6" id="fefc792e-6f49-4014-a45d-ae1eab730183" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Préparation de la visite (Génération des fichiers)" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{ba7e3a2f-c5be-43de-a36c-e9df2230cdb9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut du formulaire SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutduformulaireslime" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutduformulaireslime" disabled="true" />
+                      </cell>
+                      <cell id="{34cc7fba-7b7c-4836-9b44-fe5fa1130f75}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut du DEP" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdudep" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdudep" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_4_section_4" id="4f8f7f2c-c2d2-4fbd-8a50-024fd9c02c1f" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Après la visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{fd1951c1-9272-4a11-b7a6-d7f3b6753b92}" colspan="2" rowspan="1">
+                        <labels>
+                          <label description="Visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_visite" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="er_visite" uniqueid="{241bee26-8010-4049-b383-020394a00a73}">
+                          <parameters>
+                            <DefaultViewId>{86E311CC-63E5-49D4-A138-77968DEFE4B0}</DefaultViewId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b06ce3a3-aea7-4e44-8109-8d06a0227240}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic DEP Réalisé sur site ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_diagnostic_dep_realise" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_diagnostic_dep_realise" disabled="false" />
+                      </cell>
+                      <cell id="{b1480e54-0755-46d9-a24d-e148bb935eff}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date d'importation des données du DEP dans le Dataverse" languagecode="1036" />
+                        </labels>
+                        <control id="er_datedimportationdesdonneesdudep" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datedimportationdesdonneesdudep" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8b3af7dc-e299-4f0d-aaf2-5c33434e4842}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="??????? Relevé d'index" languagecode="1036" />
+                        </labels>
+                        <control id="er_releve_index" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_releve_index" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{9395af48-ad93-48f1-9e31-4b5adf3d7c24}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2695b75e-b8bc-449b-8cea-ad74996faa87}" locklevel="0" colspan="2" rowspan="3">
+                        <labels>
+                          <label description="Remarques sur la visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_remarques" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_remarques" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_4_section_3" id="57836c22-6233-4705-9ec7-af17aec86736" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Autorisations" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a670ecb3-33e6-4dbb-8e56-1f1ec1f75b1d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Attestation de remise d'équipement signée" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_attestation_remise_equipement_signee" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_attestation_remise_equipement_signee" disabled="false" />
+                      </cell>
+                      <cell id="{83ad178a-c277-48ab-8956-d8720f5d9d31}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Autorisation RGPD" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_autorisation_rgpd" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_autorisation_rgpd" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6156862c-debb-4db3-9b9c-a1e9ea82072c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Autorisation Fourniture Index Signée" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_autorisation_fourniture_index_signee" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_autorisation_fourniture_index_signee" disabled="false" />
+                      </cell>
+                      <cell id="{91c17335-b256-4df1-9a0a-c6b5abd1a638}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Autorisation Témoignage" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_autorisation_temoignage" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_autorisation_temoignage" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_8" id="dbe366a1-3d85-4e4d-b824-9328e1f83168" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="📂Documents &amp; Auto." languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_8_section_1" id="3d513522-9c04-4835-bb6d-97efe2c18468" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{893be5d5-1df7-45ba-9752-29af7010932b}" rowspan="4" colspan="1" auto="true">
+                        <labels>
+                          <label description="Documents du diagnostic SLIME" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Doc_Diag_SLIME" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>7</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RelationshipName>er_diagnostic_slime_SharePointDocuments</RelationshipName>
+                            <TargetEntityType>sharepointdocument</TargetEntityType>
+                            <ViewId>{A2C75C28-889F-F011-BBD3-7C1E52FC6786}</ViewId>
+                            <ViewIds>{A5B008AC-07D9-4554-8509-2C05767BFF51},{A2C75C28-889F-F011-BBD3-7C1E52FC6786},{69DEA8E3-829F-F011-BBD3-7C1E52FC6786}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row>
+                      <cell id="{6b1fa6d1-77c3-4297-8a21-2fc5d610e5a5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lien du dossier SharePoint" languagecode="1036" />
+                        </labels>
+                        <control id="er_liendudossiersharepoint" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="er_liendudossiersharepoint" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_8_section_3" id="1591b9ff-1a47-4b6f-ad0f-7e3c38307973" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Automatisations" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{679fee31-9ba3-40de-bc02-eec4d5c314b3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{5d12ee18-64da-4bf9-a0f1-ed7d30c753b3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e28e2503-1448-411e-ac86-d8350fe9c324}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ID SharePoint du Formulaire SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_sharepointidduformulaireslime" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_sharepointidduformulaireslime" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{2eb08b3d-4cd1-4e63-9b17-206e83effeeb}" rowspan="4" colspan="1" auto="true" showlabel="true">
+                        <labels>
+                          <label description="Suivi des automatisations" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_4" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>7</RecordsPerPage>
+                            <AutoExpand>Auto</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <RelationshipName>er_suiviautomatisations_ContexteDiagnosticSLIME_er_diagnostic_slime</RelationshipName>
+                            <TargetEntityType>er_suiviautomatisations</TargetEntityType>
+                            <ViewId>{53BB8448-A99E-F011-B41B-6045BDDEF208}</ViewId>
+                            <ViewIds>{5C523F19-D8E6-48A9-B7EF-714F9FD79CB3},{2BF2B302-D958-434B-87B5-9B49F9091953},{53BB8448-A99E-F011-B41B-6045BDDEF208}</ViewIds>
+                            <VisualizationId>{FB80496B-EE99-F011-B4CC-7C1E52FC6786}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{0e697605-0c31-43ab-9c2d-0b3afeb13ba8}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{4c9ada0f-4bc2-4648-83d0-59fb73ef6e31}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f353485f-7d97-4f57-838c-5cffab2441f9}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{aecef3a6-5561-4e32-9d4d-a373a580b5a9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ID SharePoint du fichier DEP" languagecode="1036" />
+                        </labels>
+                        <control id="er_sharepointiddufichierdep" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_sharepointiddufichierdep" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{ef86edfe-fef9-480f-bc2d-aa42331d78d3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_6" id="3498eb5f-f0f0-43cc-bda5-cc353b330adb" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Résultats" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section name="tab_6_section_3" id="e0387442-773b-416f-8a57-543e2a0d48e2" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Données globales" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{19e08758-284b-471c-aa1d-e19bea9b0b6c}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ef3cff4-a9e4-4ca1-b731-96043b1a120f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée du logement" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeedulogement" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeedulogement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{351d5f90-c7e0-4b20-9912-60ab7d45b95b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Puissance totale installée des équipements" languagecode="1036" />
+                        </labels>
+                        <control id="er_puissancetotaleinstalleedesequipements" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_puissancetotaleinstalleedesequipements" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="tab_6_section_1" id="348beb15-8e30-42b2-a73d-85d3b8eae41e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Consommation estimée par poste" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{389149c5-9566-46b3-b4d8-6e8de3adee48}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Eau chaude sanitaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeeposteeauchaudesanitaire" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeeposteeauchaudesanitaire" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b46b679f-fea0-483d-9f60-af376776fb6f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Froid alimentaire" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeepostefroidalimentaire" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeepostefroidalimentaire" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cf79e600-2dc5-48a1-a569-ebdb16c820e6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Electroménager" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeeposteelectromenager" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeeposteelectromenager" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1f839bd0-3005-42c8-a5e5-e927b443d906}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Cuisson" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeepostecuisson" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeepostecuisson" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b984d7e1-8650-4437-9863-deaf22956783}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Confort thermique" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeeposteconfortthermique" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeeposteconfortthermique" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7d4b18d0-60fe-4114-a323-8bdcaccc2bc8}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Matériel médical" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeepostematerielmedical" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeepostematerielmedical" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9550b018-b8d6-4ec9-8c2b-839668c5c34e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Elcairage" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeeposteelcairage" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeeposteelcairage" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{754aaa61-c4c7-484a-913e-6223385485cb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Multimédia" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeepostemultimedia" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeepostemultimedia" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a84307b4-ad73-4650-b671-32acb5ea3f6d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Conso estimée - Poste Autres" languagecode="1036" />
+                        </labels>
+                        <control id="er_consoestimeeposteautres" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_consoestimeeposteautres" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="tab_4_section_5" id="0e491a2a-5367-4f16-b886-8f8fbbf28b21" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Equipements remis" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{03f01d8e-882f-4f82-8b38-36950e56fc72}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de remise d'équipements" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_remise_equipement" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_remise_equipement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1db4a169-6f41-4024-9cfc-50b24aa04689}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – LED a vis" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremisledavis" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremisledavis" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{983fea9c-fda0-41fd-8ee0-292d9524d628}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – LED à baïonnette" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremisledabaionnette" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremisledabaionnette" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5ec293b2-7398-4374-8c16-95ae3a6adc53}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – Mousseurs économes" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremismousseurseconomes" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremismousseurseconomes" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c589c041-a71b-4397-b5cb-91e7196b5308}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – Douchette économe" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremisdouchetteeconome" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremisdouchetteeconome" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7699dea5-f0e8-4d8e-b464-28b55b5d7c08}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – Programmateur" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremisprogrammateur" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremisprogrammateur" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{16d0ca8a-57fc-47fe-9b6e-a3a839320301}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Nbre d’équipements remis – Thermomètre de réfrigér" languagecode="1036" />
+                        </labels>
+                        <control id="er_nbredequipementsremisthermometrefrigo" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_nbredequipementsremisthermometrefrigo" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_2" id="16c90ee7-26c8-4abb-82d8-e68e55fe06c3" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{e85a8bc1-b4d0-4bac-9248-563423ed0255}">
+          <labels>
+            <label description="Orientations" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="42a786bd-65a9-4b78-abf0-9d361eb47d0c" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{7aacb819-edea-44aa-a54e-eae7f7f62dfc}">
+                  <labels>
+                    <label description="Détails des orientations au ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{43a68a81-ea99-4478-b167-70b4ea8e0aa4}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="New SG control 1757922224581" languagecode="1036" />
+                          <label description="Documents" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_3" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_diagnostic_slime_orientations</RelationshipName>
+                            <TargetEntityType>er_orientation</TargetEntityType>
+                            <ViewId>{47719C49-F457-F011-877B-000D3ADCBF81}</ViewId>
+                            <ViewIds>{47719C49-F457-F011-877B-000D3ADCBF81},{AB2A124D-E1E3-4A35-BE32-3B7C86B3CF6F}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_7" id="0217439a-87f6-4959-85a7-dd8e103674ad" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Saisie SOLIDIAG" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_7_section_10" id="32d18804-56dd-4b7a-b44c-b5cbc101dc62" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description=" Coordonnées" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_7_section_11" id="14ff6e51-81bd-4a61-bdbc-08c6446dffd4" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="--- CHAMPS OBLIGATOIRES - Donneur d'alerte et motif ---" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{54534f0e-b6e1-4b1d-af74-8532898e5efb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Motif de l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagmotifdelalerte" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagmotifdelalerte" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{93d183ef-8b8a-4938-8708-a858604102ac}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b21399d0-46f0-401f-858c-5922b16e92e9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Méthode de repérage" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagmethodedereperage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagmethodedereperage" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{605ccebb-87f7-42d2-a4a5-dce277cf2577}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{be442fc9-a168-4179-8c5e-4c10f96e0246}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Donneur d'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagdonneurdalerte" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_solidiagdonneurdalerte" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{ac269868-977f-431a-a3b0-87a5211b8bc4}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{645efc74-f416-471e-b9af-a95c72c5e06c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Le ménage lui-même" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiaglemenageluimeme" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiaglemenageluimeme" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{46d5323e-2a05-4f29-aef1-44127ebc051c}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9699a608-ab37-4816-9687-d4c029574c0f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Actions de repérage" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagactionsdereperage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagactionsdereperage" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{3f2b3cb8-280e-41c8-b772-43906fe476a0}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_12" id="8079e4bb-e8df-4484-9f4d-a669338c733d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description=" Visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_7_section_4" id="b4691896-9809-48ff-aebf-579eb29b1630" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description=" Ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{def1d8b9-b01e-461b-ad5b-dd37f0427b74}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Composition du ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagcompositiondumenage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagcompositiondumenage" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{5c7ae195-674a-459b-87f2-8f3e1886800a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{19256ab9-53f1-419c-8cad-67c85a2a18e9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Statut d'occupation" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagstatutdoccupation" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagstatutdoccupation" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{93f1b6ea-351c-4ec6-8d7f-4b9f3a068ab2}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{131264ec-3bc0-4bd6-93f1-cb9e4d4e9bff}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="0DEPRECATED SOLIDIAG Éligible au chèque énergie" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiageligibleauchequeenergie" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiageligibleauchequeenergie" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{e7392999-afd0-4bcf-80fd-48b20da3fe5d}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{626d71fb-5c62-41f1-a70e-bebae070eb71}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG A utilisé le chèque énergie ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagautiliselechequeenergie" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiagautiliselechequeenergie" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{9b8063fc-a028-4582-872c-77f57c621b23}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{a7c2c6f9-d37a-4ef9-ba24-c48da68b8906}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Bénéficiaire du RSA" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagbeneficiairedursa" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagbeneficiairedursa" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{49920e82-0def-4063-95bc-7b9089c9bac1}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0d31653f-6d75-4a86-8d0b-d0becdeb4d7d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Éligible CMU/ACS" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiageligiblecmuacs" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiageligiblecmuacs" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{006f9f5a-cd09-4085-935f-c7acc57caece}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2a160155-7d6f-4605-b744-935d4f7c466f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Primodeclarant ou divorce rupture de PACS" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagprimodeclarantoudivorcerupturedepacs" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiagprimodeclarantoudivorcerupturedepacs" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{c4fec885-74c1-4c7e-8e12-5cf5359781e2}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6c4f57c3-21a9-4925-b0ea-f8e5d4c73f20}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Le ménage a eu froid l'hiver dernier ?" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiaglemenageaeufroidlhiverdernier" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiaglemenageaeufroidlhiverdernier" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{48cf0599-c48d-41aa-8207-92447dbc7951}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4f8c0ab9-7449-437f-b237-938d2e0d1ef6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Situation de restriction ou privation NRJ" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagsituationderestrictionouprivationnrj" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiagsituationderestrictionouprivationnrj" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{56dd8f24-feaf-4b21-8c72-f67492f51d64}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_5" id="5853a7e0-844d-4285-b0cc-d1adf96c3bd5" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Bâti" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{01a6a7b3-a52d-4363-9f7f-08822bb7f3ba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Type d'habitat" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagtypedhabitat" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagtypedhabitat" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{d0c46b22-3fc8-430f-afa1-dda22167c528}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_6" id="434802df-45a0-4be4-9f92-5987474ac30d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Energie" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{23e10c95-1f42-47ea-b30c-64f201ce769d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG En situation d'impayé" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagensituationdimpaye" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiagensituationdimpaye" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{40148af3-68ed-490c-9cf8-71ec448a8ec4}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_7" id="63f8f3aa-662b-49cc-bd8d-70bc9ef5ca39" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Chauffage et eau chaude" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{d928816a-ba65-4489-900c-fbdb9d848b66}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Type de chauffage" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagtypedechauffage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagtypedechauffage" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{37f2956b-4d35-4a46-8841-221e82957440}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5e2c0468-79ee-40e8-8d78-a5df5f4fa483}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Type de système de chauffage principal" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagtypedesystemedechauffageprincipal" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagtypedesystemedechauffageprincipal" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{5484683d-579b-4f76-abda-6ae0113b9d7d}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1ad6da66-b96c-4ebe-aeb1-c21e32ece5d9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Energie chauffage principal" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagenergiechauffageprincipal" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagenergiechauffageprincipal" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{1c3de3ad-d744-41d8-8ed4-e3ad8a64b514}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{45f2ce9f-2a59-438f-a14a-d1a14ec8dbba}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Présence chauffage d'appoint mobile" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagpresencechauffagedappointmobile" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_solidiagpresencechauffagedappointmobile" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{c26ea3fc-7b49-4441-b936-c0a6c8529d1c}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f9115555-4a91-4410-8edc-142d4b028233}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Type de chauffage d'appoint" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagtypedechauffagedappoint" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagtypedechauffagedappoint" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{f884f30e-df9b-4d76-8d21-dab44a5239a6}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6873a499-5251-4313-b437-d444ab826533}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Type de production d'eau chaude" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagtypedeproductiondeauchaude" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagtypedeproductiondeauchaude" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{8ffadd69-36e3-4241-98a3-3d1a06f87d6c}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{df696443-23b3-4fb1-a6c5-e919e5012754}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="SOLIDIAG Energie pour l'eau chaude" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagenergiepourleauchaude" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_solidiagenergiepourleauchaude" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{30e2c9d1-34e8-4aeb-b5fa-ee8d7b313c55}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_8" id="44c039dd-8fd7-46b7-9e2c-d1a5a425a942" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Petits matériels" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_7_section_9" id="7f4c041a-15ed-4e91-803d-d5f6171bc2b7" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description=" Autorisations" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab verticallayout="true" id="{c4918bfc-1ee1-4b83-a57b-fe2172530825}" IsUserDefined="1" labelid="{fc682ce2-6506-4230-877f-a1cb5f36b22c}">
+          <labels>
+            <label description="Suivi" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="null_section_5" id="a4fdd82e-0c3f-4dcf-a0cc-1e46f99a06c4" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="La visite" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{dca4910c-93da-4445-920d-3bd0a98c3f8b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{5014f229-4675-498e-a1be-8d1c121f01c0}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{87903a31-49c7-4c0c-8c99-66aa04dbba73}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Visite" languagecode="1036" />
+                        </labels>
+                        <control id="er_visite" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_visite" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{f968bce6-5f7a-4348-b56e-d1fb7f7a288a}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1755769850126" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1755769850126" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_visite">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_visite"&gt;6bb499c8-5d56-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3209fcee-37ad-4090-9521-de296f3a5abf}" locklevel="0" colspan="1" rowspan="7">
+                        <labels>
+                          <label description="Remarques" languagecode="1036" />
+                        </labels>
+                        <control id="er_remarques" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_remarques" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{cb6b2b5d-7792-43aa-898b-381a8a870b21}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_6" id="8e449978-7e9a-4586-bed0-2efac31d461b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Le fichier DEP" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{072f65f7-9ea8-4380-82c5-c8a9f1bbcc58}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{3520404c-0dee-44d5-823d-e54179825bcb}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{8b948fa7-aba5-4d54-a07f-45368cc46ce3}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{b100c83b-bd82-4775-9e3c-cca40b0dab54}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date d'importation des données du DEP" languagecode="1036" />
+                        </labels>
+                        <control id="er_datedimportationdesdonneesdudep" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datedimportationdesdonneesdudep" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1832317c-a635-415b-8459-77c075010de4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut du fichier DEP" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdudep" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdudep" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_7" id="62f8b9e8-98eb-489b-b6f8-8743860cbd30" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Le diagnostic sur SOLIDIAG" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{f0bc7ba8-ea78-4168-b36a-15e7447b640c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de création du ménage sur SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagdatedecreationdumenage" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_solidiagdatedecreationdumenage" disabled="true" />
+                      </cell>
+                      <cell id="{2cdb28d9-8f59-44df-ba92-bbe2612acd8a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ID du Ménage sur SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagiddumenage" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_solidiagiddumenage" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{39c729c0-b16f-491c-996e-9d727ab96fd0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de dernière saisie auto des infos visite SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_solidiagdatededernieresaisiedesinfosvisite" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_solidiagdatededernieresaisiedesinfosvisite" disabled="true" />
+                      </cell>
+                      <cell id="{1bf4449e-031c-485f-ba6d-6fd082265a98}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Lien Ménage Solidiag" languagecode="1036" />
+                        </labels>
+                        <control id="er_lienmenagesolidiag" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="er_lienmenagesolidiag" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8f4067b-8660-452e-aed8-470d3a82334a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de remplissage dans SOLIDIAG" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_remplissage_solidiag" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_remplissage_solidiag" disabled="false" />
+                      </cell>
+                      <cell locklevel="0" id="{d138d46e-75eb-4c1b-ad74-5ce6bda50148}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="tab_7_section_1" id="db196ed7-80c6-4542-8f36-48816c0cd2dd" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Transmissions" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c3f2b658-96aa-4d5d-94f6-9b10fa959230}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut du formulaire SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutduformulaireslime" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutduformulaireslime" disabled="false" />
+                      </cell>
+                      <cell id="{75fa3354-e469-4163-95ab-18d7e774a58f}" userspacer="true" showlabel="false" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{77f0a474-393a-46da-9982-2d51e8e465c7}" locklevel="0" colspan="1" rowspan="1" labelid="{da480b6f-6c27-4f32-a026-19c7fff4d3d0}">
+                        <labels>
+                          <label description="Informations transmises au ménage?" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_informations_transmises_menage" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_informations_transmises_menage" disabled="false" />
+                      </cell>
+                      <cell id="{4e035b6e-4e8f-4d50-88ec-708a2aa87caa}" locklevel="0" colspan="1" rowspan="1" labelid="{b9116c9f-6188-4f82-9b6a-e3a251ddfc27}">
+                        <labels>
+                          <label description="Informations transmises au donneur d'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_infos_transmises_donneur_alerte" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_infos_transmises_donneur_alerte" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_9" id="06f2b228-bb9c-470e-a487-592303aa35fa" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="111" labelwidth="115">
+                  <labels>
+                    <label description="Vérification et validation (Réservé au chef d'équipe)" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{cc9f443d-3702-45fb-84c5-a1cff2b0a077}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{b5c91598-e296-4644-a146-6a10975e0915}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{00583681-4037-4f2a-ac6e-803489092a8b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1473e075-f3b1-4845-b8c8-92e8d1561527}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut de validation du diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdevalidationdudiagnosticslime" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdevalidationdudiagnosticslime" disabled="false" />
+                      </cell>
+                      <cell id="{7a404c9d-c537-408f-86a6-09036bd10687}" locklevel="0" colspan="2" rowspan="7">
+                        <labels>
+                          <label description="Corrections à apporter" languagecode="1036" />
+                        </labels>
+                        <control id="er_correctionsaapporter" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_correctionsaapporter" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9b6b5dd0-7f20-4449-accd-a1efbdcae93d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de validation du diagnostic" languagecode="1036" />
+                        </labels>
+                        <control id="er_datedevalidationdudiagnostic" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datedevalidationdudiagnostic" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3c8ade22-0aed-4120-9c8a-4291cbd231a2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Diagnostic validé par" languagecode="1036" />
+                        </labels>
+                        <control id="er_diagnosticvalidepar" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_diagnosticvalidepar" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{7716e484-bf6e-41c9-8710-dd5215e5e4d9}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f3d89af0-be85-4b30-b35a-115135c7f4c7}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{9b5dc288-925f-431f-a756-027fbc61c5c6}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{27df0ef9-b8de-498c-8e41-44db466fd5f9}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{ccc12590-a721-45ba-98c8-1d951fe596d2}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{7a808deb-c38d-4556-8005-5cdd60f7761e}" showlabel="false" labelid="{81570ac2-c000-4542-9d7a-bbc51daa65c6}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{524db279-2a61-4657-b6b2-87abb92cd0a5}" showlabel="false" labelid="{4a675336-6718-4f64-9676-91441cedce44}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f1de08e0-4b86-4f84-8a57-a3dd8c652def}" showlabel="false" labelid="{d8115003-49cd-4f15-a8d1-963dd25e3626}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{6eb57b2f-ed48-4fa0-8869-c8cd720e17a2}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{c48e2186-05e3-4b27-bf5c-91aa1074ff12}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Dossier" languagecode="1036" />
+              </labels>
+              <control id="header_er_dossierparent" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossierparent" disabled="true" />
+            </cell>
+            <cell locklevel="0" id="{b4a541ab-ae0a-4c35-8fd4-8c05fdcfb66c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{ef9aac01-2077-4ed8-8bbd-9520223779b2}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{22ee6880-69f4-4b74-be4b-2bedb18c4aaa}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{a4e8d549-904a-431f-873c-1e6bc606f7e0}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{64b89881-aa38-4b0d-ab40-67364ec4da2e}" locklevel="1" colspan="1" rowspan="1">
+              <labels>
+                <label description="ID du Ménage sur SOLIDIAG" languagecode="1036" />
+              </labels>
+              <control id="header_er_solidiagiddumenage" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_solidiagiddumenage" disabled="true" />
+            </cell>
+            <cell id="{24d80774-37e5-448f-91ed-f97fd4fb0f85}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Statut de remplissage dans SOLIDIAG" languagecode="1036" />
+              </labels>
+              <control id="header_er_statut_remplissage_solidiag" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_remplissage_solidiag" disabled="true" />
+            </cell>
+            <cell locklevel="0" id="{276c870d-fb83-4715-9fb6-e918d7652a96}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{fbc4f4eb-68b0-4710-8258-ab4bc428178a}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Statut de validation du diagnostic SLIME" languagecode="1036" />
+              </labels>
+              <control id="header_er_statutdevalidationdudiagnosticslime" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdevalidationdudiagnosticslime" disabled="true" />
+            </cell>
+            <cell id="{05ff86c5-f9b1-4488-b5b8-d8b833da6836}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{dbddb4b8-aa21-4ba1-9733-0906724f108a}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{4b9eee21-2c99-41a3-b161-e933a1178760}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{887e3a0d-41e3-4ab7-8480-cc64345be9f3}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e8112eb3-bf0a-43fc-b2bf-d5a1b8b163fe}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{c3704ddf-7c88-4f43-91be-f1bf71eb37c8}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{de470766-e705-4f98-97d8-8107ab4d1470}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{f8f4080d-406d-42c3-ab54-c12a7c24cc0a}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{805edfcf-da5f-4161-b080-be752ae4a256}" visible="false" labelid="{a37282ba-6097-4adf-9cf2-29ef846678df}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{e0b7339c-2506-4f38-a81c-4edf0cab4530}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{dc479c36-d10c-4382-b441-44ac9ab41755}" showlabel="false" labelid="{d766cca6-8043-43fd-af71-a17488b81cfb}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{9e683015-d087-4227-9bc1-6da205da8570}" showlabel="false" labelid="{647d19c4-0770-4122-9bde-1b6bab75a093}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{464d7f70-212a-41bb-93e5-950201c7c415}" showlabel="false" labelid="{2cf15360-2938-4b60-86b1-5d88e707b05b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{0e80cbe4-18df-403f-8819-f2b971f60fae}" />
+        <Library name="er_Toolbox_JS_GED_SharePoint" libraryUniqueId="{93a8ea16-6843-42c5-aef6-5e459324b259}" />
+      </formLibraries>
+      <controlDescriptions>
+        <controlDescription forControl="{241bee26-8010-4049-b383-020394a00a73}">
+          <customControl id="{270BD3DB-D9AF-4782-9025-509E298DEC0A}">
+            <parameters>
+              <datafieldname>er_visite</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{270BD3DB-D9AF-4782-9025-509E298DEC0A}">
+            <parameters>
+              <datafieldname>er_visite</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_visite</BindAttribute>
+                <DefaultViewId>{86E311CC-63E5-49D4-A138-77968DEFE4B0}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_visite"&gt;af883ddd-57ae-f011-bbd2-7ced8d4676dc&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_visite</BindAttribute>
+                <DefaultViewId>{86E311CC-63E5-49D4-A138-77968DEFE4B0}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_visite"&gt;af883ddd-57ae-f011-bbd2-7ced8d4676dc&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_visite</BindAttribute>
+                <DefaultViewId>{86E311CC-63E5-49D4-A138-77968DEFE4B0}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_visite"&gt;af883ddd-57ae-f011-bbd2-7ced8d4676dc&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="setSiteFromDossierParent" libraryName="er_Toolbox_JS" handlerUniqueId="{db27b770-2eee-41e9-9b88-126eadd7cbd0}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Formulaire principal Diagnostic SLIME" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{fd1693fc-6177-f011-b4cb-7c1e52fc7aaa}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_colanneeselectionnable" select="1" icon="1" preview="1">
+        <row name="result" id="er_anneeselectionnableid">
+          <cell name="er_colanneeselectionnable" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_anneeselectionnable">
+          <attribute name="er_anneeselectionnableid" />
+          <filter type="and">
+            <condition attribute="er_selectionnableavisdimpot" operator="eq" value="1" />
+          </filter>
+          <attribute name="er_colanneeselectionnable" />
+          <order attribute="er_colanneeselectionnable" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Années sélectionnables - Avis d'impôt" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

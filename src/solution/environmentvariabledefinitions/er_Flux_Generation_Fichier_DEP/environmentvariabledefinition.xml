@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="er_Flux_Generation_Fichier_DEP">
+  <displayname default="Flux Génération Fichier DEP">
+    <label description="Flux Génération Fichier DEP" languagecode="1036" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

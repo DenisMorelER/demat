@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{5457be3d-e6c3-4319-869e-fa42a691e788}</savedqueryid>
+    <layoutxml>
+      <grid name="er_type_accompagnements_renforceses" jump="er_libelle" select="1" icon="1" preview="1">
+        <row name="er_type_accompagnements_renforces" id="er_type_accompagnements_renforcesid">
+          <cell name="er_libelle" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_type_accompagnements_renforces">
+          <attribute name="er_type_accompagnements_renforcesid" />
+          <attribute name="er_libelle" />
+          <attribute name="createdon" />
+          <order attribute="er_libelle" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue associée : Type d'Accompagnements Renforcés" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

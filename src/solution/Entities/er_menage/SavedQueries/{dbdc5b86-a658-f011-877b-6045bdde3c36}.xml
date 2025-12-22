@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{dbdc5b86-a658-f011-877b-6045bdde3c36}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_nom" select="1" icon="1" preview="1">
+        <row name="result" id="er_menageid">
+          <cell name="er_nom" width="200" />
+          <cell name="er_personne_referente" width="171" />
+          <cell name="er_personnereferente2" width="171" />
+          <cell name="er_site_residence" width="177" />
+          <cell name="createdon" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="er_menage">
+          <attribute name="er_nom" />
+          <attribute name="er_menageid" />
+          <attribute name="er_site_residence" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="createdon" />
+          <order attribute="er_nom" descending="false" />
+          <attribute name="er_personne_referente" />
+          <attribute name="er_personnereferente2" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="DM Vue recherche Ménage" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

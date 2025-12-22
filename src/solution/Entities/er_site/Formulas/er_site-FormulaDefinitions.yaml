@@ -1,0 +1,1 @@
+er_age_maison: =If(Not IsBlank(er_annee_construction),Year(UTCToday()) - er_annee_construction)

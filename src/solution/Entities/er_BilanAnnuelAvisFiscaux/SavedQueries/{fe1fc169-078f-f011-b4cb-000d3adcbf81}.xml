@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{fe1fc169-078f-f011-b4cb-000d3adcbf81}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_bilanannueldesavisfiscaux" select="1" icon="1" preview="1">
+        <row name="result" id="er_bilanannuelavisfiscauxid">
+          <cell name="er_anneedesai" width="71" />
+          <cell name="er_categoriemenagetotai" width="126" />
+          <cell name="er_totalrevenufiscaldereference" width="92" />
+          <cell name="er_totalnombredepersonnes" width="184" />
+          <cell name="er_totalnombredepartsdec" width="171" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_bilanannuelavisfiscaux">
+          <attribute name="er_bilanannuelavisfiscauxid" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_totalrevenufiscaldereference" />
+          <attribute name="er_totalnombredepersonnes" />
+          <attribute name="er_totalnombredepartsdec" />
+          <attribute name="er_categoriemenagetotai" />
+          <attribute name="er_anneedesai" />
+          <order attribute="er_anneedesai" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Totaux annuels des avis fiscaux actifs par ménage" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

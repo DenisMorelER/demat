@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>1</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{63ddc2ed-649e-453d-8d6f-e1cc20a4445a}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_intitule" select="1" icon="1" preview="1">
+        <row name="result" id="er_sous_type_accompagnements_renforcesid">
+          <cell name="er_intitule" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>4</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_sous_type_accompagnements_renforces">
+          <attribute name="er_sous_type_accompagnements_renforcesid" />
+          <attribute name="er_intitule" />
+          <attribute name="createdon" />
+          <order attribute="er_intitule" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <filter type="or" isquickfindfields="1">
+            <condition attribute="er_intitule" operator="like" value="{0}" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Éléments Sous-types d'Accompagnements Renforcés actifs Quick Find" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

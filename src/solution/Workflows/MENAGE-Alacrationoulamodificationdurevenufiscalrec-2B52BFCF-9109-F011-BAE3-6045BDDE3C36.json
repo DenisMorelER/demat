@@ -1,0 +1,429 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "WHEN_-_Ménage_modified,_Revenu_Fiscal_or_Année_infos_revenu": {
+          "metadata": {
+            "operationMetadataId": "eebf5bfc-1f90-4334-aa96-55e5df69777b"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 4,
+              "subscriptionRequest/entityname": "er_menage",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "er_total_revenu_fiscal,er_annee_informations_revenu_fiscal,er_total_nombre_personnes"
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "conditions": []
+        }
+      },
+      "actions": {
+        "GET_-_Seuil_ANAH_for_given_year": {
+          "runAfter": {
+            "IF_-_Missing_info": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "16d371af-0e10-4a1b-97ef-49012108e96e"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_seuils_anahs",
+              "$filter": "er_annee eq '@{triggerOutputs()?['body/er_annee_informations_revenu_fiscal']}' and er_nombre_personnes_menages eq @{triggerOutputs()?['body/er_total_nombre_personnes']}"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "INIT_-_ApplicableSeuilANAH": {
+          "runAfter": {
+            "GET_-_Seuil_ANAH_for_given_year": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "11ab4a00-be23-43bc-8417-1b2e79fec921"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ApplicableSeuilANAH",
+                "type": "object",
+                "value": "@first(outputs('GET_-_Seuil_ANAH_for_given_year')?['body/value'])"
+              }
+            ]
+          }
+        },
+        "IF_-_Seuil_Très_Modeste_and_Category_not_already_Très_modeste": {
+          "actions": {
+            "UPDATE_-_Menage_Category": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c4a5aac1-5c95-4f5c-b197-8ec4391cf35f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@triggerOutputs()?['body/er_menageid']",
+                  "item/er_categorie_menage": 122210003
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Terminate": {
+              "runAfter": {
+                "UPDATE_-_Menage_Category": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "ad0ed5bb-b49f-4ba0-9c9c-484057bbb3ae"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_No_Seuil_ANAH_Corresponding": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "less": [
+                  "@triggerOutputs()?['body/er_total_revenu_fiscal']",
+                  "@variables('ApplicableSeuilANAH')?['er_debut_modeste']"
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/er_categorie_menage']",
+                    122210003
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "68abbadd-27cc-4bf4-a620-c99d4b066c1b"
+          },
+          "type": "If"
+        },
+        "IF_-_Seuil_Modeste_and_Category_not_already_Modeste": {
+          "actions": {
+            "UPDATE_-_Menage_Category_2": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c4a5aac1-5c95-4f5c-b197-8ec4391cf35f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@triggerOutputs()?['body/er_menageid']",
+                  "item/er_categorie_menage": 122210002
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Terminate_2": {
+              "runAfter": {
+                "UPDATE_-_Menage_Category_2": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "e231d611-2c04-451f-8dfe-8afd1dd58835"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_Seuil_Très_Modeste_and_Category_not_already_Très_modeste": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "less": [
+                  "@triggerOutputs()?['body/er_total_revenu_fiscal']",
+                  "@variables('ApplicableSeuilANAH')?['er_debut_intermediaire']"
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/er_categorie_menage']",
+                    122210002
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "68abbadd-27cc-4bf4-a620-c99d4b066c1b"
+          },
+          "type": "If"
+        },
+        "IF_-_Seuil_Intermédiaire_and_Category_not_already_Intermédiaire": {
+          "actions": {
+            "UPDATE_-_Menage_Category_3": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c4a5aac1-5c95-4f5c-b197-8ec4391cf35f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@triggerOutputs()?['body/er_menageid']",
+                  "item/er_categorie_menage": 122210001
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Terminate_3": {
+              "runAfter": {
+                "UPDATE_-_Menage_Category_3": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "74c6269f-ec11-487d-9135-b86aa26ebbc6"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_Seuil_Modeste_and_Category_not_already_Modeste": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "less": [
+                  "@triggerOutputs()?['body/er_total_revenu_fiscal']",
+                  "@variables('ApplicableSeuilANAH')?['er_debut_revenus_superieurs']"
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/er_categorie_menage']",
+                    122210001
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "68abbadd-27cc-4bf4-a620-c99d4b066c1b"
+          },
+          "type": "If"
+        },
+        "IF_-_Seuil_Revenus_Supérieurs_and_Category_not_already_Revenus_Supérieurs": {
+          "actions": {
+            "UPDATE_-_Menage_Category_4": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c4a5aac1-5c95-4f5c-b197-8ec4391cf35f"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@triggerOutputs()?['body/er_menageid']",
+                  "item/er_categorie_menage": 122210000
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Terminate_4": {
+              "runAfter": {
+                "UPDATE_-_Menage_Category_4": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "58552973-635c-4f05-b244-5cf5bbf187f7"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {
+            "IF_-_Seuil_Intermédiaire_and_Category_not_already_Intermédiaire": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "and": [
+              {
+                "greaterOrEquals": [
+                  "@triggerOutputs()?['body/er_total_revenu_fiscal']",
+                  "@variables('ApplicableSeuilANAH')?['er_debut_revenus_superieurs']"
+                ]
+              },
+              {
+                "not": {
+                  "equals": [
+                    "@triggerOutputs()?['body/er_categorie_menage']",
+                    122210000
+                  ]
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "68abbadd-27cc-4bf4-a620-c99d4b066c1b"
+          },
+          "type": "If"
+        },
+        "IF_-_Missing_info": {
+          "actions": {
+            "Terminate_5": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "450b282e-2af5-4bc9-b425-2b5aed5dd698"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Succeeded"
+              }
+            }
+          },
+          "runAfter": {},
+          "expression": {
+            "or": [
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/er_total_nombre_personnes']",
+                  "@null"
+                ]
+              },
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/er_total_revenu_fiscal']",
+                  "@null"
+                ]
+              },
+              {
+                "equals": [
+                  "@triggerOutputs()?['body/er_annee_informations_revenu_fiscal']",
+                  "@null"
+                ]
+              }
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d3bf7503-ed73-4476-bb1a-26c0296c6414"
+          },
+          "type": "If"
+        },
+        "IF_-_No_Seuil_ANAH_Corresponding": {
+          "actions": {
+            "TERMINATE_-_Cancelled_due_to_no_applicable_Seuil_Anah": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "89795913-a2be-4cc3-a2f3-63a9b056c813"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Cancelled"
+              }
+            }
+          },
+          "runAfter": {
+            "INIT_-_ApplicableSeuilANAH": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@variables('ApplicableSeuilANAH')",
+              "@null"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4f7156c2-1c97-40cd-96e6-1527e9a96430"
+          },
+          "type": "If"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

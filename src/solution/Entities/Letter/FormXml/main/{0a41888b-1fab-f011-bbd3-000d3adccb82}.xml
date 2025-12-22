@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{0a41888b-1fab-f011-bbd3-000d3adccb82}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <ancestor id="{D6784CB8-BC33-4FCC-A9A9-3DC5B46EA9C6}" />
+      <tabs>
+        <tab name="SUMMARY_TAB" id="{0b8ee2e2-8bc5-665a-e80c-2899014de1b6}" IsUserDefined="0" locklevel="0" showlabel="false" expanded="true" labelid="{4ae503d3-5107-4a60-bcb4-1078e8726fc3}">
+          <labels>
+            <label description="Résumé" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="general information" showlabel="true" showbar="false" locklevel="0" id="{AB2B7960-8CDF-465A-977D-26B27B36AE7D}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelposition="Left" labelid="{ce7ff57e-65fc-4338-b1d7-9fb391b8cebc}">
+                  <labels>
+                    <label description="/!\ Non utilisable pour le moment : Ne pas enregistrer /!\" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell auto="false" showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{9F3AC78D-4959-4A1B-9243-057896534DA0}" visible="false" labelid="{9407f3ae-baa0-4c25-bb6d-b3e690f1749e}">
+                        <labels>
+                          <label description="Objet" languagecode="1036" />
+                          <label description="Subject" languagecode="1033" />
+                        </labels>
+                        <control id="subject" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="subject" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell rowspan="6" id="{4795412f-708b-4e68-bef9-1ea86c387c29}" showlabel="false" auto="false" colspan="1" labelid="{b86946ea-8fae-493f-bf5c-c13910e0b7fa}">
+                        <labels>
+                          <label description="work-in-progress (1)" languagecode="1036" />
+                        </labels>
+                        <control id="WebResource_new_1" classid="{587CDF98-C1D5-4BDE-8473-14A0BC7644A7}">
+                          <parameters>
+                            <WebResourceId>{8ca569c9-1bab-f011-bbd2-7ced8d4676dc}</WebResourceId>
+                            <Url>er_workinprogress1</Url>
+                            <ShowOnMobileClient>true</ShowOnMobileClient>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                            <VerticalAlignment>Middle</VerticalAlignment>
+                            <SizeType>StretchMaintainAspectRatio</SizeType>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="false" active="false" />
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{1248FC71-CD48-47C4-8EF5-3BEB11DA88A1}" columns="1111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell locklevel="0" id="{77847ce2-dd52-4ef7-a880-e50ac9ad9e89}" labelid="{5b87e4b9-bf64-47fd-bd50-4cf3c8015099}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{e557add0-7f4e-467b-aa87-c3c2fe2b7a76}" labelid="{ea143135-9640-4925-88c3-1803c0ad0695}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{108F893F-2198-4343-9BEE-F9B2787715AE}" visible="false" labelid="{31892657-ab85-4c0d-89ed-10933ac6a25e}">
+              <labels>
+                <label description="Statut d'activité" languagecode="1036" />
+                <label description="Activity Status" languagecode="1033" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="true" />
+            </cell>
+            <cell id="{AF07FCD7-8384-45B9-A26A-03619C0426E8}" showlabel="true" locklevel="1" visible="false" labelid="{89666d69-53c1-48d1-ae9c-8200f80bbb19}">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="Activities.Letter.Form_onload" libraryName="Activities/SystemLibraries/Letter_main_system_library.js" handlerUniqueId="06e19257-ff10-40fa-95d1-522475371db3" enabled="true" parameters="" passExecutionContext="true" />
+          </InternalHandlers>
+        </event>
+        <event name="onchange" application="true" active="true" attribute="directioncode">
+          <InternalHandlers>
+            <Handler functionName="Activities.Letter.directionCodeOnChange" libraryName="Activities/SystemLibraries/Letter_main_system_library.js" handlerUniqueId="3b001a4b-f13b-4b86-9ef8-b8ff2bf5ab68" enabled="true" parameters="" passExecutionContext="true">
+              <dependencies>
+                <dependency id="to" />
+                <dependency id="from" />
+              </dependencies>
+            </Handler>
+          </InternalHandlers>
+        </event>
+      </events>
+      <clientresources>
+        <internalresources>
+          <clientincludes>
+            <internaljscriptfile src="$webresource:Activities/SystemLibraries/Letter_main_system_library.js" />
+          </clientincludes>
+        </internalresources>
+      </clientresources>
+      <DisplayConditions FallbackForm="true" Order="1">
+        <Everyone />
+      </DisplayConditions>
+      <footer id="{ae724a70-5b8b-45a1-ab53-7440e0a80adb}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{53c80aca-a085-4609-b8eb-6fce6e695b02}" showlabel="false" labelid="{9fc4e4f9-00b0-41db-8fea-d77f11d0a55b}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{5ec9aaee-849f-4246-967b-6b6cfd3047c3}" showlabel="false" labelid="{15884b02-6372-44c9-9ed3-dc3c08581353}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{289efe23-0b0a-4487-879f-1df9311a4a68}" showlabel="false" labelid="{b4572b65-c465-4fd1-9ef9-1f76e9b61bb8}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Lettre formulaire principal NON UTILISABLE" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire de lettre par défaut mis à jour." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

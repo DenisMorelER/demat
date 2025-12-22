@@ -1,0 +1,11 @@
+<environmentvariabledefinition schemaname="er_url_api_adresse_reunion">
+  <defaultvalue>https://data.regionreunion.com/api/explore/v2.1/catalog/datasets/ban-lareunion/records</defaultvalue>
+  <displayname default="URL API Adresse Réunion">
+    <label description="URL API Adresse Réunion" languagecode="1036" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

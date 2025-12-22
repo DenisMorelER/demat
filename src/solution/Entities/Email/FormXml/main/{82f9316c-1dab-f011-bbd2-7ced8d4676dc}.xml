@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{82f9316c-1dab-f011-bbd2-7ced8d4676dc}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <hiddencontrols>
+        <data id="directioncode" datafieldname="directioncode" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="statecode" datafieldname="statecode" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="attachmentopencount" datafieldname="attachmentopencount" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="linksclickedcount" datafieldname="linksclickedcount" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="replycount" datafieldname="replycount" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="opencount" datafieldname="opencount" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="parentactivityid" datafieldname="parentactivityid" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="templateid" datafieldname="templateid" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="isemailfollowed" datafieldname="isemailfollowed" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="followemailuserpreference" datafieldname="followemailuserpreference" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="emailreminderstatus" datafieldname="emailreminderstatus" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="emailremindertype" datafieldname="emailremindertype" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="emailremindertext" datafieldname="emailremindertext" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="emailreminderexpirytime" datafieldname="emailreminderexpirytime" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="delayedemailsendtime" datafieldname="delayedemailsendtime" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="statuscode" datafieldname="statuscode" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+        <data id="notififcations" datafieldname="notifications" classid="{5546E6CD-394C-4bee-94A8-4425E17EF6C6}" />
+      </hiddencontrols>
+      <ancestor id="{0D1E47FF-12B2-4F53-9090-BEE951B98CB4}" />
+      <tabs>
+        <tab name="Email" id="{844b5e32-5b0b-a608-9d14-0191e0ee3898}" IsUserDefined="0" locklevel="0" showlabel="false" expanded="true" labelid="{62d1afd1-f3e8-47d8-8555-9e55f26fb72a}">
+          <labels>
+            <label description="Courrier électronique" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="Email_section_6" id="86dbc906-41b1-4b18-b029-dcf678c76101" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="/!\ Non utilisable pour le moment : Ne pas enregistrer /!\" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell rowspan="6" id="{46840ce5-9514-419e-b477-68c0bf795e56}" showlabel="false" auto="false" colspan="1">
+                        <labels>
+                          <label description="work-in-progress (1)" languagecode="1036" />
+                        </labels>
+                        <control id="WebResource_new_1" classid="{587CDF98-C1D5-4BDE-8473-14A0BC7644A7}">
+                          <parameters>
+                            <WebResourceId>{8ca569c9-1bab-f011-bbd2-7ced8d4676dc}</WebResourceId>
+                            <Url>er_workinprogress1</Url>
+                            <ShowOnMobileClient>true</ShowOnMobileClient>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                            <VerticalAlignment>Middle</VerticalAlignment>
+                            <SizeType>Original</SizeType>
+                          </parameters>
+                        </control>
+                        <events>
+                          <event name="onload" application="false" active="false" />
+                        </events>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{9B740295-1A0A-4F85-B379-F2839E79EDB8}" columns="1111" celllabelposition="Top" labelwidth="115">
+        <rows>
+          <row>
+            <cell showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{D7ED5F96-9521-4216-A7CE-D379AE17D4EB}" labelid="{44efa07b-dfb0-456b-9b74-9fe21969e5ea}" visible="false">
+              <labels>
+                <label description="Priorité" languagecode="1036" />
+                <label description="Priority" languagecode="1033" />
+              </labels>
+              <control id="header_prioritycode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="prioritycode" disabled="false" />
+            </cell>
+            <cell showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{21E90158-C988-4A2B-B2CF-EFFC1B6A39E5}" labelid="{b91372f9-e03f-47bb-9955-75325aac72b9}" visible="false">
+              <labels>
+                <label description="Échéance" languagecode="1036" />
+                <label description="Due" languagecode="1033" />
+              </labels>
+              <control id="header_scheduledend" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="scheduledend" disabled="false" />
+            </cell>
+            <cell locklevel="0" id="{339cd17c-52e4-4295-8d75-80aa509095fe}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell showlabel="true" locklevel="0" rowspan="1" colspan="1" id="{ABED2190-C9EF-461C-892A-A3751F827825}" labelid="{50e84377-8d53-4c13-93ac-bb3d640fc145}" visible="false">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{063E5C3B-ED4E-4DCA-A8B5-520FF0B77781}" columns="1" celllabelposition="Left" celllabelalignment="Left" labelwidth="115">
+        <rows>
+          <row>
+            <cell id="{FB4B455C-DADF-43B6-8B6C-C9C35ABAFEC6}" labelid="{61594003-dfa5-4d6c-9d48-251b17a5b02b}">
+              <labels>
+                <label description="Suivi(e)" languagecode="1036" />
+                <label description="Followed" languagecode="1033" />
+              </labels>
+              <control id="footer_emailfollowed" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="isemailfollowed" disabled="true" />
+            </cell>
+          </row>
+          <row>
+            <cell id="{3F50BEC9-28E0-491D-BDA9-FF9B4D8A2BAD}" labelid="{a5c76ee3-5634-40ba-ba71-37296a620e62}">
+              <labels>
+                <label description="Rappel défini" languagecode="1036" />
+                <label description="Reminder Set" languagecode="1033" />
+              </labels>
+              <control id="footer_emailremainderset" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="isemailreminderset" disabled="true" />
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions FallbackForm="true" Order="1">
+        <Everyone />
+      </DisplayConditions>
+      <events>
+        <event name="onload" application="true" active="true">
+          <InternalHandlers>
+            <Handler functionName="Activities.Email.formOnload" libraryName="Activities/SystemLibraries/Email_main_system_library.js" handlerUniqueId="ecdfe4d8-d6d3-4d21-ab68-8ea75bb30a79" enabled="true" parameters="" passExecutionContext="true" />
+            <Handler functionName="Activities.Email.NotifyPanelSubjectChange" libraryName="Activities/SystemLibraries/Email_main_system_library.js" handlerUniqueId="{706607A8-4424-4C9A-847A-602FC8035B48}" enabled="true" parameters="" passExecutionContext="true" />
+          </InternalHandlers>
+        </event>
+      </events>
+      <clientresources>
+        <internalresources>
+          <clientincludes>
+            <internaljscriptfile src="$webresource:Activities/SystemLibraries/Email_main_system_library.js" />
+          </clientincludes>
+        </internalresources>
+      </clientresources>
+      <controlDescriptions />
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Courrier électronique NON UTILISABLE" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Updated default Email form." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

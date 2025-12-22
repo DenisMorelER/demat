@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{6b7c219f-a97d-f011-b4cc-000d3adcbf81}</WebResourceId>
+  <Name>er_ER_rondvert</Name>
+  <DisplayName>ER_rondvert</DisplayName>
+  <Description>Logo bouton d'Energies Réunion (rondvert)</Description>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/er_ER_rondvert6B7C219F-A97D-F011-B4CC-000D3ADCBF81</FileName>
+</WebResource>

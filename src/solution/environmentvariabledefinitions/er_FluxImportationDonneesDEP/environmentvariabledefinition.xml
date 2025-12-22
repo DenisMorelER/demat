@@ -1,0 +1,10 @@
+<environmentvariabledefinition schemaname="er_FluxImportationDonneesDEP">
+  <displayname default="Flux Importation des données du DEP">
+    <label description="Flux Importation des données du DEP" languagecode="1036" />
+  </displayname>
+  <introducedversion>1.0.0.0</introducedversion>
+  <iscustomizable>1</iscustomizable>
+  <isrequired>0</isrequired>
+  <secretstore>0</secretstore>
+  <type>100000000</type>
+</environmentvariabledefinition>

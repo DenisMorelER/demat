@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{22ce595a-4053-f011-877b-000d3adcbf81}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{2e9a6ae0-8710-460a-8355-d15086dd1e49}" IsUserDefined="1" labelid="{8a1cf2e5-b5cb-4b0c-83c8-eb70c190cd05}">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="null_section_5" id="f16b577e-2b93-4c7e-b8b9-41e814bd4e03" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Détails sur l'enregistrement" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{50a5647c-a5b4-4f50-8a03-37efe8d33ece}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{a5d6d3eb-f1c7-4741-beae-ed10d29e6185}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cfae35e1-61a4-4bd2-a3ea-79db5607cec9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé le" languagecode="1036" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                      <cell id="{22979eb3-af24-4222-a5c0-cd427174f9c1}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modifié le" languagecode="1036" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0ebd6b11-2fc8-45a5-bb5d-57840d893814}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé par" languagecode="1036" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{de14b521-a4b2-468a-94f3-69cb5f2d14cb}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modifié par" languagecode="1036" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{12ececb4-a24b-4509-8129-e82d4fc0c074}" columns="11" labelid="{8810b999-97cb-4c70-a0a8-80d3a4538d58}">
+                  <labels>
+                    <label description="Informations du ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{b68f9f92-eba3-4a91-9ba4-209c1313f897}" labelid="{8ac72bcd-9a05-4045-a17a-57f529496390}">
+                        <labels>
+                          <label description="Nom" languagecode="1036" />
+                        </labels>
+                        <control id="er_nom" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_nom" disabled="true" />
+                      </cell>
+                      <cell id="{fb9ec6d8-8c11-4de0-8528-b13f8bb9a270}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="0 DEPRECATED TOTAL Nombre de parts (Dec)" languagecode="1036" />
+                        </labels>
+                        <control id="er_totalnombredepartsdec" classid="{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}" datafieldname="er_totalnombredepartsdec" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8793af3c-2566-4188-afd7-dffe55f0d514}" locklevel="0" colspan="1" rowspan="1" labelid="{8742ee03-5531-4be4-850a-f5a2323809ff}">
+                        <labels>
+                          <label description="Personne référente" languagecode="1036" />
+                        </labels>
+                        <control id="er_personne_referente" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_personne_referente" disabled="false">
+                          <parameters>
+                            <DefaultViewId>{553B1FD3-7505-F011-BAE3-6045BDDE3C36}</DefaultViewId>
+                            <AvailableViewIds>{0A8FA653-4147-4282-BF6B-168CFA839803},{00000000-0000-0000-00AA-000010001004},{9C241A33-CA0B-4E50-AE92-DB780D5B2A12},{00BE86A0-8EFD-EF11-BAE3-000D3ADCBF81},{00000000-0000-0000-00AA-000010001033},{3E271221-8EFD-EF11-BAE3-000D3ADCBF81},{927E6CD8-B3ED-4C20-A154-B8BD8A86D172},{AB582FB0-A846-453E-AD88-77F75CE91264},{00000000-0000-0000-00AA-000010001003},{0D5D377B-5E7C-47B5-BAB1-A5CB8B4AC105},{A2D479C5-53E3-4C69-ADDD-802327E67A0D},{553B1FD3-7505-F011-BAE3-6045BDDE3C36},{73BC2D9B-4E0E-424C-8839-ED59D6817E3A}</AvailableViewIds>
+                            <DisableViewPicker>true</DisableViewPicker>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{d7c7af80-4f4b-431a-bc85-bdfadc1eadb0}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Représentant ménage 1" languagecode="1036" />
+                        </labels>
+                        <control id="er_personne_referente" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="er_personne_referente" uniqueid="{59ada771-c959-4538-ba64-c17c5ea134f1}">
+                          <parameters>
+                            <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{9f17519a-5819-4622-8c34-6bba4e302080}" locklevel="0" colspan="1" rowspan="1" labelid="{fe934c12-b077-43da-a812-084002945611}">
+                        <labels>
+                          <label description="TOTAL Nombre de personnes" languagecode="1036" />
+                        </labels>
+                        <control id="er_total_nombre_personnes" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_total_nombre_personnes" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{8034e0b7-9e5e-450f-9497-ef23172cca9b}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{169db4c2-402c-45f4-b759-b286995116b4}" locklevel="0" colspan="1" rowspan="1" labelid="{6f46c053-5ce2-4d01-a943-1bd825c5cd1d}">
+                        <labels>
+                          <label description="TOTAL Revenu Fiscal" languagecode="1036" />
+                        </labels>
+                        <control id="er_total_revenu_fiscal" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="er_total_revenu_fiscal" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{5d542bef-b5ec-4c27-97d6-34de56539909}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell id="{d89b5a53-c05f-4a15-ac38-07aaad8db202}" locklevel="0" colspan="1" rowspan="1" labelid="{4237ca38-53c6-468a-9182-85f795ad33b5}">
+                        <labels>
+                          <label description="Année des informations du revenu fiscal" languagecode="1036" />
+                        </labels>
+                        <control id="er_annee_informations_revenu_fiscal" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="er_annee_informations_revenu_fiscal" disabled="false" uniqueid="{b3d6ff6e-cf6f-4e4a-8548-89320e4d1138}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{af65abaa-285d-4128-9304-c849d2dc5c1d}" locklevel="0" colspan="1" rowspan="1" labelid="{323db13c-4454-49f0-8eca-e1999ef9e4b6}">
+                        <labels>
+                          <label description="Site de résidence" languagecode="1036" />
+                        </labels>
+                        <control id="er_site_residence" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_site_residence" disabled="false" />
+                      </cell>
+                      <cell id="{0016b8b5-db40-40e2-ab17-78f4d306c3de}" locklevel="0" colspan="1" rowspan="1" labelid="{80566d87-0df4-4961-ab06-1743442eaa08}" visible="false">
+                        <labels>
+                          <label description="Années possibles - Infos du revenu fiscal" languagecode="1036" />
+                        </labels>
+                        <control id="er_annees_possibles_infos_revenu_fiscal" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_annees_possibles_infos_revenu_fiscal" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{52d03e8b-60aa-4d24-9784-65407adc9fdc}" locklevel="0" colspan="1" rowspan="1" labelid="{4a5cc9c8-1ca7-4f0f-9523-71a1ac1c90a7}">
+                        <labels>
+                          <label description="Type de droit sur le site de résidence" languagecode="1036" />
+                        </labels>
+                        <control id="er_type_droit_site_residence" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_type_droit_site_residence" disabled="false" />
+                      </cell>
+                      <cell id="{6a9c89e1-6030-49bc-962f-321b6a41bb08}" locklevel="0" colspan="1" rowspan="1" labelid="{92296c1b-b6a2-434a-a348-3c9ca2186f31}">
+                        <labels>
+                          <label description="Catégorie de ménage" languagecode="1036" />
+                        </labels>
+                        <control id="er_categorie_menage" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_categorie_menage" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{77bb8566-225f-4a38-b09f-3e7eeae9bd22}" visible="false" labelid="{7435db5d-c49a-482c-af5f-2c67a986dad7}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                      <cell locklevel="0" id="{ca4f413e-46d6-435b-9200-d0aa18aacafe}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="988444eb-c8ec-4e7e-80bc-685824c0d7c4" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Echanges avec le ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{0c102814-a6c0-4b7c-8546-2185382e159d}" rowspan="4" colspan="1" auto="false" showlabel="true">
+                        <labels>
+                          <label description="Echanges avec le ménage (Appel téléphonique)" languagecode="1036" />
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_9" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>new_phonecall_Menage_er_menage</RelationshipName>
+                            <TargetEntityType>phonecall</TargetEntityType>
+                            <ViewId>{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewId>
+                            <ViewIds>{AA799EF1-BD4D-F011-877A-6045BDDE3C36},{6E4F2171-7F10-F011-998A-6045BDDE3C36}</ViewIds>
+                            <VisualizationId>{C95F3EEA-5BFE-EF11-BAE3-6045BDDE3C36}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_6" id="4842cd20-c57d-431f-925f-672ab9b7957b" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Contacts et documents du ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{7abff1bb-9770-4eb1-8b9c-9d9f559f96b8}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{61407598-3af4-4185-9c17-51364f343fbb}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{f4da06bb-2b4a-4dd3-a54d-db48da3e6a2c}" rowspan="4" colspan="1" auto="false" showlabel="true">
+                        <labels>
+                          <label description="Contacts" languagecode="1036" />
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_10" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_contacts</RelationshipName>
+                            <TargetEntityType>contact</TargetEntityType>
+                            <ViewId>{00000000-0000-0000-00AA-000010001004}</ViewId>
+                            <ViewIds>{00000000-0000-0000-00AA-000010001003},{0D5D377B-5E7C-47B5-BAB1-A5CB8B4AC105},{00000000-0000-0000-00AA-000010001004}</ViewIds>
+                            <VisualizationId>{E365462F-1DB9-46A8-928D-BEAB1A7A2375}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell locklevel="0" id="{c6258f58-a942-47c4-b6b1-cba9415c9c6f}" rowspan="4" colspan="1" auto="false" showlabel="true">
+                        <labels>
+                          <label description="Documents du ménage" languagecode="1036" />
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_11" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_documents</RelationshipName>
+                            <TargetEntityType>er_document_menage</TargetEntityType>
+                            <ViewId>{4C73B927-92A7-4D52-9D02-CD850008D760}</ViewId>
+                            <ViewIds>{4C73B927-92A7-4D52-9D02-CD850008D760}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_4" id="72c2b720-66e7-4de3-84f4-ac8af98d391d" IsUserDefined="0" locklevel="0" showlabel="true" labelid="{fc5aa95f-a92f-4549-af17-e42f61ad2a0a}">
+          <labels>
+            <label description="Documents" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_4_section_1" id="21a2b063-dc55-4b06-a8df-cdca697796f8" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{04f2da5f-2722-4b6b-85bb-d8f4e9abd06c}">
+                  <labels>
+                    <label description="Détails des documents Ménage" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{c4389f10-3f74-4640-b486-dc747c9798fb}" rowspan="4" colspan="1" auto="false" showlabel="false" labelid="{f02e875c-a6b8-482a-a67a-8d9c0d4e5d2f}">
+                        <labels>
+                          <label description="New SG control 1741768304396" languagecode="1036" />
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_7" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_documents</RelationshipName>
+                            <TargetEntityType>er_document_menage</TargetEntityType>
+                            <ViewId>{4C73B927-92A7-4D52-9D02-CD850008D760}</ViewId>
+                            <ViewIds>{4C73B927-92A7-4D52-9D02-CD850008D760}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="tab_4_section_3" id="4fd08ce6-04a4-4f92-a6b1-79f54a6aacbc" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115" labelid="{60c0a2d3-a1f2-4eeb-8343-3e17922b5e69}">
+                  <labels>
+                    <label description="Détails des documents SPLER" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{85bd61db-362e-48e6-9b39-f82b6b7d2142}" rowspan="4" colspan="1" auto="false" showlabel="false" labelid="{a0be2592-d889-49cd-b8d2-b93b327406b6}">
+                        <labels>
+                          <label description="New SG control 1741968576081" languagecode="1036" />
+                          <label description="Contacts" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_8" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_menage_concerne_documents_spler</RelationshipName>
+                            <TargetEntityType>er_document_spler</TargetEntityType>
+                            <ViewId>{60F979FC-00A2-47DB-84FE-91592F4140A6}</ViewId>
+                            <ViewIds>{60F979FC-00A2-47DB-84FE-91592F4140A6}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="tab_3" id="affa9bfe-6fed-4156-a2db-fa3444f0cf81" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Test" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_3_section_1" id="22ca2915-747d-4dd8-b6b3-f0a2146ac742" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell locklevel="0" id="{08879311-92c0-484b-b57a-95923ecbe078}" rowspan="4" colspan="1" auto="false">
+                        <labels>
+                          <label description="Contact ménage" languagecode="1036" />
+                          <label description="Phone Calls" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="Subgrid_new_12" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <RelationshipName>er_contactmenage_Menage_er_menage</RelationshipName>
+                            <TargetEntityType>er_contactmenage</TargetEntityType>
+                            <ViewId>{CB9C853D-9F58-F011-877B-000D3ADCBF81}</ViewId>
+                            <ViewIds>{9720C2F6-314E-4C16-84C8-96DC3EC6A80D},{CB9C853D-9F58-F011-877B-000D3ADCBF81}</ViewIds>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{3b21af91-49a6-47c0-95fe-b93eec2dbadf}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{0df8b109-fc10-4dec-981f-728bddd5891d}" showlabel="false" labelid="{f7fa9c65-bd7d-4db5-8f37-d367c1b6de40}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{f746bbd5-6176-4bdc-941c-75b8da99e877}" showlabel="false" labelid="{4422ca5c-1f5d-4683-bf95-19b58fa7438c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b7a90c28-f281-435a-9d0f-15ff0723fe26}" showlabel="false" labelid="{6fb62557-8d4a-4579-82f9-91053fa03a3f}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{72463a5e-0f17-4043-96ec-48f8efc56409}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f31bc585-b775-4ce2-9dc2-d2a7bd4345b3}" showlabel="false" labelid="{83785f6b-c65b-49e1-8c3d-ab4b5335bcfb}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{a8028811-7053-4c69-a4ea-53b5bf049f13}" showlabel="false" labelid="{afb01e06-0871-444f-8709-22f9fdd152d5}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{dfe72917-2203-4c3b-addd-dc322f390aa2}" showlabel="false" labelid="{490678f5-47d4-4425-bef0-0d9cc59c1e8c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1036" Text="Éléments communs" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1036" Text="Ventes" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1036" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1036" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1036" Text="Sessions de traitement" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{b3d6ff6e-cf6f-4e4a-8548-89320e4d1138}">
+          <customControl id="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}">
+            <parameters>
+              <datafieldname>er_annee_informations_revenu_fiscal</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="fic_Fic.CsvDropdownControl">
+            <parameters>
+              <fieldValue type="Currency">er_annee_informations_revenu_fiscal</fieldValue>
+              <csvValues type="SingleLine.Text">er_annees_possibles_infos_revenu_fiscal</csvValues>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="fic_Fic.CsvDropdownControl">
+            <parameters>
+              <fieldValue type="Currency">er_annee_informations_revenu_fiscal</fieldValue>
+              <csvValues type="SingleLine.Text">er_annees_possibles_infos_revenu_fiscal</csvValues>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="fic_Fic.CsvDropdownControl">
+            <parameters>
+              <fieldValue type="Currency">er_annee_informations_revenu_fiscal</fieldValue>
+              <csvValues type="SingleLine.Text">er_annees_possibles_infos_revenu_fiscal</csvValues>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{59ada771-c959-4538-ba64-c17c5ea134f1}">
+          <customControl id="{270BD3DB-D9AF-4782-9025-509E298DEC0A}">
+            <parameters>
+              <datafieldname>er_personne_referente</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{270BD3DB-D9AF-4782-9025-509E298DEC0A}">
+            <parameters>
+              <datafieldname>er_personne_referente</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_personne_referente</BindAttribute>
+                <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="contact"&gt;a26feb82-bd58-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_personne_referente</BindAttribute>
+                <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="contact"&gt;a26feb82-bd58-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.ModelForm.ModelFormControl">
+            <parameters>
+              <value>
+                <BindAttribute>er_personne_referente</BindAttribute>
+                <DefaultViewId>{A2D479C5-53E3-4C69-ADDD-802327E67A0D}</DefaultViewId>
+                <FilterRelationshipName />
+                <DependentAttributeName />
+                <DependentAttributeType />
+                <AvailableViewIds />
+                <AllowFilterOff>false</AllowFilterOff>
+                <DisableQuickFind>false</DisableQuickFind>
+                <DisableViewPicker>false</DisableViewPicker>
+              </value>
+              <QuickForms type="SingleLine.Text" static="true">&lt;QuickForms&gt;&lt;QuickFormIds&gt;&lt;QuickFormId entityname="contact"&gt;a26feb82-bd58-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;&lt;/QuickForms&gt;</QuickForms>
+              <SaveMode type="Enum" static="true">0</SaveMode>
+              <EnableHighDensityPageHeader type="Enum" static="true">false</EnableHighDensityPageHeader>
+              <DisplayFormSelector type="Enum" static="true">false</DisplayFormSelector>
+              <AddToRecentItems type="Enum" static="true">false</AddToRecentItems>
+              <DisplayPopoutCommand type="Enum" static="true">false</DisplayPopoutCommand>
+              <DisplayNavigateBackCommand type="Enum" static="true">false</DisplayNavigateBackCommand>
+              <OverrideXrmPageByFormContext type="Enum" static="true">false</OverrideXrmPageByFormContext>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <DisplayConditions Order="4" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+      <formLibraries>
+        <Library name="er_Toolbox_JS" libraryUniqueId="{3f997d41-06cc-4f22-b9b6-fbde350a6a90}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="provisionYears" libraryName="er_Toolbox_JS" handlerUniqueId="{aef271d8-37e5-4b89-8b8d-0e30bde7c488}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="er_personne_referente">
+          <Handlers>
+            <Handler functionName="putMenageName" libraryName="er_Toolbox_JS" handlerUniqueId="{16e2d31d-576f-4771-879e-3b56d2ada6ea}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+      </events>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DEPRECATED DM Sous-Formulaire Principal Ménage" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

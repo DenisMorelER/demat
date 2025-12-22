@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{6c953b19-1857-f011-bec1-7ced8d4780ab}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{9aa1f304-aa61-4301-ba72-a82eb8a808b1}" IsUserDefined="1" labelid="{4894c7d9-8c73-4c17-8c62-00a716daabea}">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="null_section_4" id="2639f947-4c86-4de6-9cb7-35754f528f4e" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Donneur d'alerte" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{b63bb105-dacd-4bd4-883b-f07bf3bd46ef}" locklevel="0" colspan="1" rowspan="1" labelid="{6caf6a8d-7d3a-4f90-8181-6fe8d79c77bc}">
+                        <labels>
+                          <label description="Contact de l'Entité Donneur d'Alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_contact_entite_donneur_alerte" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_contact_entite_donneur_alerte" disabled="false">
+                          <parameters>
+                            <DependentAttributeName>er_alerte.er_entite_donneur_alerte</DependentAttributeName>
+                            <DependentAttributeType>account</DependentAttributeType>
+                            <FilterRelationshipName>contact_customer_accounts</FilterRelationshipName>
+                            <useMainFormDialogForCreate>true</useMainFormDialogForCreate>
+                            <useMainFormDialogForEdit>true</useMainFormDialogForEdit>
+                            <DefaultViewId>{DA599A2F-2757-F011-877B-000D3ADCBF81}</DefaultViewId>
+                            <AvailableViewIds>{0A8FA653-4147-4282-BF6B-168CFA839803},{00000000-0000-0000-00AA-000010001004},{9C241A33-CA0B-4E50-AE92-DB780D5B2A12},{00BE86A0-8EFD-EF11-BAE3-000D3ADCBF81},{00000000-0000-0000-00AA-000010001033},{3E271221-8EFD-EF11-BAE3-000D3ADCBF81},{927E6CD8-B3ED-4C20-A154-B8BD8A86D172},{DA599A2F-2757-F011-877B-000D3ADCBF81},{AB582FB0-A846-453E-AD88-77F75CE91264},{00000000-0000-0000-00AA-000010001003},{0D5D377B-5E7C-47B5-BAB1-A5CB8B4AC105},{A2D479C5-53E3-4C69-ADDD-802327E67A0D},{553B1FD3-7505-F011-BAE3-6045BDDE3C36},{73BC2D9B-4E0E-424C-8839-ED59D6817E3A}</AvailableViewIds>
+                            <DisableViewPicker>false</DisableViewPicker>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_6" id="e4e3fb8c-0fa4-4236-8295-c5624efbd83d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Site et contact concernés" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{4eb6862e-e5ab-45c7-82e4-3f6bfb921a4a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Site concerné par l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_siteconcerneparlalerte" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_siteconcerneparlalerte" disabled="false">
+                          <parameters>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{b6305f11-6180-4b51-89af-fad0bfe24763}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contact concerné par l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_contactconcerneparlalerte" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_contactconcerneparlalerte" disabled="false">
+                          <parameters>
+                            <AllowFilterOff>true</AllowFilterOff>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{675a57c4-e0ec-4b96-9906-e211f52ae735}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1751447997720" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1751447997720" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_siteconcerneparlalerte">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_site"&gt;6663808c-3557-f011-877b-6045bdde3c36&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell locklevel="0" id="{e90f6e2d-00e9-4836-9a01-22208ab2a9cc}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1751448033202" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1751448033202" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_contactconcerneparlalerte">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="contact"&gt;6a19c5a7-ff57-f011-bec1-7ced8d4a5292&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="aa614866-01fc-4cbc-8085-6a88bd04f274" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Objet de l'alerte" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{ec7eb061-63d0-4272-85c1-7e5f61c8dffd}" locklevel="0" colspan="1" rowspan="1" labelid="{0efb6d13-3bcd-4dcd-b7de-f493328637ca}">
+                        <labels>
+                          <label description="Motif" languagecode="1036" />
+                        </labels>
+                        <control id="er_motif_alerte" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_motif_alerte" disabled="false" />
+                      </cell>
+                      <cell id="{fbbc4e6b-e448-44dc-a698-a73cee6d8ae5}" locklevel="0" colspan="1" rowspan="1" labelid="{f9a6968c-4fb3-4b0e-b25a-570217499883}">
+                        <labels>
+                          <label description="Motif autre" languagecode="1036" />
+                        </labels>
+                        <control id="er_motif_autre" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_motif_autre" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9a63cf86-917f-4cdb-83ae-dbd6f50a5c0c}" locklevel="0" colspan="2" rowspan="4">
+                        <labels>
+                          <label description="Notes sur l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_notessurlalerte" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_notessurlalerte" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="null_section_5" id="2f2a38c0-e807-4dd3-8aa3-2190fd1653ef" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Traitement" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{a1ca6eea-592f-4a99-ade5-e629d277ec46}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{c24cbeb8-afdf-4099-bb32-732e781e7fdd}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b1f69fb8-d559-4879-a0b2-a7fd517f8135}" locklevel="0" colspan="1" rowspan="1" labelid="{72429d47-c9b2-47ce-abc0-e6f43893e112}">
+                        <labels>
+                          <label description="Dossier de traitement de l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_dossier" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_dossier" disabled="false">
+                          <parameters>
+                            <DependentAttributeName>er_alerte.er_siteconcerneparlalerte</DependentAttributeName>
+                            <DependentAttributeType>er_site</DependentAttributeType>
+                            <FilterRelationshipName>er_site_concerne_dossiers</FilterRelationshipName>
+                            <AllowFilterOff>true</AllowFilterOff>
+                            <DisableMru>true</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{37a6b9cd-be6a-47ca-992e-aa9069d177dd}" locklevel="0" colspan="1" rowspan="1" labelid="{0350eb5a-87a5-4db3-8aa2-13933fb0d4bb}">
+                        <labels>
+                          <label description="Statut de l'alerte" languagecode="1036" />
+                        </labels>
+                        <control id="er_statut_alerte" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_alerte" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{84f32076-9399-4066-a012-55472e0c5c8c}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1751449578833" languagecode="1036" />
+                        </labels>
+                        <control id="QuickviewControl1751449578833" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="er_dossier">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="er_dossier"&gt;94f99c70-fb57-f011-bec1-7ced8d4a5292&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                      <cell id="{79c3f220-db74-40bf-a0d4-bdb446a28a78}" locklevel="0" colspan="1" rowspan="1" labelid="{d69f24d6-0813-4c38-b3ff-cf787580957b}">
+                        <labels>
+                          <label description="Date de résolution" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_resolution" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_resolution" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{181221c3-698c-40df-8e2b-4d34732018c1}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{9a1be8ec-1811-4c01-bbf4-7eb8bd3fb13a}" showlabel="false" labelid="{1805e554-a597-4cec-ad23-8e2a194e896a}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b9db0228-5897-4b1f-94ce-d36e8940c61e}" showlabel="false" labelid="{19ce5d5e-9d31-4bf1-a899-23d5383666da}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{e5f6ad3f-1194-47b0-8836-cfb9141df61f}" showlabel="false" labelid="{eccee10b-0b2f-49b9-906f-334b818b8a1c}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{fc428e6e-8c5c-4d7f-9f75-8d6eeb1d1632}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Statut de l'alerte" languagecode="1036" />
+              </labels>
+              <control id="header_er_statut_alerte" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statut_alerte" disabled="false" />
+            </cell>
+            <cell id="{0eeec56c-0316-40a9-829c-36e727bb6ecd}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{c88496a9-2679-4e90-b41b-7895271c9524}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell id="{e639cf7e-b294-4100-8b63-9580b516b9b7}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{ff4d1e2a-88df-477c-bcd3-c67d3abdf329}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{cae6d118-fa9f-422e-9f02-9c97bd17f2bd}" visible="false" labelid="{4e3ddc91-b371-4d2f-8552-8721aa9731d1}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{57b1aef9-8a1b-4253-b345-d8fb1d007e32}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{4a71986a-4efe-4cbb-ace4-8629660a33a5}" showlabel="false" labelid="{b14c5eab-5c2f-46d0-8958-2eac15905fa3}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{626d9149-5a8e-4dfe-9861-eaafc11001cf}" showlabel="false" labelid="{0cd5995f-f03e-4d78-8714-07f63007455e}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{1919052b-cf68-4294-a5d1-50e07031cdcd}" showlabel="false" labelid="{8b0a64b1-8b05-4745-8629-e7d29a66e1a3}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Main Form Alerte" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

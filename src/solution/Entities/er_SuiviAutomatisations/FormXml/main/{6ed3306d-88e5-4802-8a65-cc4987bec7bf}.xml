@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{6ed3306d-88e5-4802-8a65-cc4987bec7bf}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" shownavigationbar="false">
+      <tabs>
+        <tab verticallayout="true" id="{35971c4b-214b-404c-9bfb-fe14f0f25153}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="true" showbar="false" IsUserDefined="0" id="{47e2a789-9689-4e11-b239-b8db0978185e}" columns="11">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                    <label description="La demande" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{67a68ba9-2b1e-4d37-8c35-8d77ba43bc26}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{ed031324-2178-487b-835c-7a3af0aac4ee}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c8fd84fd-e465-4c9e-9dca-a1677876f660}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé par" languagecode="1036" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{a62dfe6c-ca11-4862-91eb-3abb954744ab}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Créé le" languagecode="1036" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_4" id="ccf74c3a-c500-458d-88d7-cb404898b4a6" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Le contexte de la demande " languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{663f9643-50e4-4820-924a-145e226beccc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contexte - Entité" languagecode="1036" />
+                        </labels>
+                        <control id="er_contexteentite" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_contexteentite" disabled="true" />
+                      </cell>
+                      <cell id="{b16d9c0a-f239-43b6-aa66-187e9a063c3e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contexte - ID de l'enregistrement" languagecode="1036" />
+                        </labels>
+                        <control id="er_contexteiddelenregistrement" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_contexteiddelenregistrement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{11da89b5-7d25-41b0-9f00-222f831c5005}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Contexte - Diagnostic SLIME" languagecode="1036" />
+                        </labels>
+                        <control id="er_contextediagnosticslime" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_contextediagnosticslime" disabled="true" />
+                      </cell>
+                      <cell locklevel="0" id="{8f4b28f7-b3b0-4dae-8d4a-cffd93d018fa}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_5" id="0198d644-6869-46c4-a69f-15f05cf7653d" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="Le flux demandé" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{7b683ce4-ffeb-4adf-810a-faf2024a0b0d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Flux à exécuter" languagecode="1036" />
+                        </labels>
+                        <control id="er_fluxaexecuter" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_fluxaexecuter" disabled="true" />
+                      </cell>
+                      <cell id="{46b00c33-e85c-440a-9c2b-5b5e0eeaed17}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Paramètres d'exécution" languagecode="1036" />
+                        </labels>
+                        <control id="er_parametresdexecution" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_parametresdexecution" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="b017f172-a7bd-4a62-a183-cc08154ade61" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="L'exécution de l'automatisation" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row />
+                    <row>
+                      <cell id="{f094aff3-56dd-47e6-bf10-8e1ab0460f20}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de début d'exécution" languagecode="1036" />
+                        </labels>
+                        <control id="er_datededebutdexecution" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datededebutdexecution" disabled="true" />
+                      </cell>
+                      <cell id="{641aa8a4-b9ad-49af-919c-cc5285c0a232}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date de fin d'exécution" languagecode="1036" />
+                        </labels>
+                        <control id="er_datedefindexecution" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_datedefindexecution" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{708246d3-da5b-4f24-850e-e0fc498a48f4}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Statut d'exécution" languagecode="1036" />
+                        </labels>
+                        <control id="er_statutdexecution" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdexecution" disabled="true" />
+                      </cell>
+                      <cell id="{1192b6fc-aa10-4fb9-8638-7518f58db82d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Résultat du traitement" languagecode="1036" />
+                        </labels>
+                        <control id="er_resultatdutraitement" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_resultatdutraitement" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{25ea2797-143f-434f-99ef-8bc30ab14a2e}" locklevel="0" colspan="2" rowspan="1">
+                        <labels>
+                          <label description="Détails sur le traitement" languagecode="1036" />
+                        </labels>
+                        <control id="er_detailssurletraitement" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="er_detailssurletraitement" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{a91ccd1d-ae6d-4c07-9194-2e4d2d28c815}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{5f386acc-aa03-487c-8b9b-53530d333457}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{a3e616e7-3b0d-4f91-aacf-85fae3b408ba}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{8dd87ba8-0b2c-45d1-8e95-791c6496ad45}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{728dd26d-1e1a-4690-bc8a-2541a6c96f36}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Automatisation" languagecode="1036" />
+                <label description="Automatisation" languagecode="1033" />
+              </labels>
+              <control id="header_er_automatisation" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_automatisation" disabled="true" />
+            </cell>
+            <cell id="{df6f9811-9bf8-4fcd-854e-bbc23391316d}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="true" />
+            </cell>
+            <cell id="{9b17c133-34ee-412e-9bf7-c7549e4f0974}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Statut d'exécution" languagecode="1036" />
+              </labels>
+              <control id="header_er_statutdexecution" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_statutdexecution" disabled="true" />
+            </cell>
+            <cell id="{d5ab88ec-7ba1-40ff-9adf-a81678ec066f}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Résultat du traitement" languagecode="1036" />
+              </labels>
+              <control id="header_er_resultatdutraitement" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_resultatdutraitement" disabled="true" />
+            </cell>
+            <cell id="{f854906f-6cfa-4319-8c69-3bb907df4cd8}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="true" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{f58650e6-8d3b-4c12-9f6b-2d8b1ac02292}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d7a7ac17-2d58-4a42-8e5d-0025eca16816}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{1db0d69c-d4b2-4a11-8153-cee70a3d5bf3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{08e4e690-fa8d-4ec1-8094-eb312616a648}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Formulaire principal Demande d'automatisation" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{d6a02317-bb0a-47ce-8d21-6c48856c54c2}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{5395d3f0-5b57-435b-92f9-666dc017779d}" IsUserDefined="1">
+          <labels>
+            <label description="Général" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{cd326d57-a6b4-479a-904b-d5976366b774}" columns="11">
+                  <labels>
+                    <label description="Général" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4995888f-7802-4b1b-b8e9-cbc6f80b23fb}" locklevel="0" colspan="2" rowspan="1">
+                        <labels>
+                          <label description="Site du relevé" languagecode="1036" />
+                        </labels>
+                        <control id="er_sitedureleve" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_sitedureleve" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{7c02a193-cd23-4ba9-ae3d-e33e97a49428}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Heure et date du relevé" languagecode="1036" />
+                        </labels>
+                        <control id="er_date_heure_releve" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="er_date_heure_releve" disabled="false" />
+                      </cell>
+                      <cell id="{49f8aae2-5cbe-4494-8cdf-191cb22d78ad}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Relevé Impossible?" languagecode="1036" />
+                        </labels>
+                        <control id="er_bool_releve_impossible" classid="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}" datafieldname="er_bool_releve_impossible" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b42630b6-d366-4143-a72b-efeba91fa909}" locklevel="0" colspan="2" rowspan="1" visible="true">
+                        <labels>
+                          <label description="Motif Relevé Impossible" languagecode="1036" />
+                        </labels>
+                        <control id="er_motif_releve_impossible" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="er_motif_releve_impossible" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{37f76c06-ac67-4490-b200-c63f5cb09a1a}" locklevel="0" colspan="2" rowspan="1" visible="true">
+                        <labels>
+                          <label description="Motif Relevé Impossible Autre" languagecode="1036" />
+                        </labels>
+                        <control id="er_motif_releve_impossible_autre" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="er_motif_releve_impossible_autre" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="null_section_3" id="667decf7-0f85-494f-90db-27af87e13cf4" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Top" columns="1111" labelwidth="115">
+                  <labels>
+                    <label description="Index" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{ea4d140c-adb7-413f-8466-3822bb933c3f}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{d8946bf8-3485-4a69-a944-2c12a7b2631a}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{2800e248-926d-4f21-bb2c-e109828a6b30}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                      <cell locklevel="0" id="{ca5ef7cf-e530-4351-a54b-7d305caeafe0}">
+                        <labels>
+                          <label description="" languagecode="1036" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{816b0416-cb2a-4c5b-b0fd-7eb95103c5e2}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Index base" languagecode="1036" />
+                        </labels>
+                        <control id="er_index_base" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_index_base" disabled="false" />
+                      </cell>
+                      <cell id="{070a8cd2-19ac-43d7-9547-50b407d6e0d6}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Index Heure Pleine" languagecode="1036" />
+                        </labels>
+                        <control id="er_index_heure_pleine" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_index_heure_pleine" disabled="false" />
+                      </cell>
+                      <cell id="{3c67c71d-33b0-47b8-9faa-d93649a64e7c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Index Heure Creuse" languagecode="1036" />
+                        </labels>
+                        <control id="er_index_heure_creuse" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_index_heure_creuse" disabled="false" />
+                      </cell>
+                      <cell id="{84ecdb5c-04e4-4d38-8a05-89ac1f7ae3f9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Index Injection" languagecode="1036" />
+                        </labels>
+                        <control id="er_index_injection" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="er_index_injection" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{6eeafef7-a386-4bfd-a2ba-ae60ee00b357}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{3eb60d69-e778-403b-9118-0403142e250a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{32e60e7d-c0f0-47c8-97be-1a3908df6d44}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{6f011fed-9d19-4e04-9842-f95dd8328987}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{0ab33a98-7871-4436-9c1f-9522a5a4eadf}" visible="true" colspan="1" rowspan="1">
+              <labels>
+                <label description="ID" languagecode="1036" />
+              </labels>
+              <control id="header_er_id_releve_index" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_id_releve_index" disabled="true" />
+            </cell>
+            <cell id="{778b8a4b-a8e8-4779-bd27-c0b9b2e4d49b}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Visite du relevé" languagecode="1036" />
+              </labels>
+              <control id="header_er_visitedureleve" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="er_visitedureleve" disabled="false" />
+            </cell>
+            <cell id="{182cf3e4-2500-4b2e-9b76-4340a5a8a1be}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié le" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+            </cell>
+            <cell id="{b3bf2508-d342-48a7-9a81-1827f7c0803f}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Modifié par" languagecode="1036" />
+              </labels>
+              <control id="header_modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+            </cell>
+            <cell id="{9f5dc050-185b-4568-94ed-42fccb541e91}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé le" languagecode="1036" />
+              </labels>
+              <control id="header_createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+            </cell>
+            <cell id="{4ca56940-7feb-4bc0-85cc-a7404f34de8f}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Créé par" languagecode="1036" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+            <cell id="{16244f7e-7f1d-429a-b1c7-0f8fc3750999}" visible="false" colspan="1" rowspan="1">
+              <labels>
+                <label description="Propriétaire" languagecode="1036" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+            <cell locklevel="0" id="{f57425d1-b73c-4c11-af4e-dab7c0fab647}">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{796e9a95-0441-4d7b-92ee-3aaa31130032}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{16122e29-b994-4748-8d8a-703b154025dc}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{d7757932-0f4e-408a-84c3-4622c670a3f7}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+            <cell id="{b40a4622-e0d8-4558-8672-ff2d4121afbe}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1036" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Relevé d'index Formulaire Principal" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Formulaire pour cette entité." languagecode="1036" />
+    </Descriptions>
+  </systemform>
+</forms>

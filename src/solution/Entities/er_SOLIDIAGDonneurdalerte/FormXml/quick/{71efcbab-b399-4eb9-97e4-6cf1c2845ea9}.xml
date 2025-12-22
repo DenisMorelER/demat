@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{71efcbab-b399-4eb9-97e4-6cf1c2845ea9}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{b4cbdc0e-d55f-48c5-9da0-b6983b109e63}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{c5e48dda-825a-4b65-a154-77cf1c7e455a}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                    <label description="GÉNÉRAL" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a50a34c7-90e3-4597-a71b-6631c4b69320}">
+                        <labels>
+                          <label description="Nom - Structure" languagecode="1036" />
+                          <label description="PrimIDSolidiag" languagecode="1033" />
+                        </labels>
+                        <control id="er_primidsolidiag" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_primidsolidiag" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{d86f6f5f-72c7-494f-b867-86309db8d32c}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

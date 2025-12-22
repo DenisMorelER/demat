@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{84c79cb6-7681-f011-b4cc-000d3ab95da3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab id="ACBA75B7-97B6-4116-AA55-51312992B721" name="tab_1" showlabel="false" labelid="{7bbfb7fd-15be-4c47-bb2a-6c57cb1189a0}">
+          <labels>
+            <label description="Nouvel onglet" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="AD49B5BF-256F-46A8-9C75-947146172EB9" name="tab_1_column_1_section_1" columns="1" showlabel="true" showbar="false" IsUserDefined="0" labelwidth="130" labelid="{22630973-79ef-47ce-9556-d2e1dd57cae8}">
+                  <labels>
+                    <label description="Nouvelle section" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{44c296a4-ffe8-4577-bbaa-98000ad00825}" locklevel="0" colspan="1" rowspan="1" labelid="{64dfff51-2a92-4f63-8e1f-01df4ff61efd}">
+                        <labels>
+                          <label description="Nom" languagecode="1036" />
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="name" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="name" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6a44665f-5e4e-448f-8e65-0f6d88c0a9ba}" locklevel="0" colspan="1" rowspan="1" labelid="{bdb68f32-d7da-46bd-88d3-46b84e4a469b}">
+                        <labels>
+                          <label description="Concernant" languagecode="1036" />
+                          <label description="Regarding" languagecode="1033" />
+                        </labels>
+                        <control id="regardingobjectid" classid="{F3015350-44A2-4AA0-97B5-00166532B5E9}" datafieldname="regardingobjectid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b4d39af2-52a1-47b9-98d7-b5d927560541}" locklevel="0" colspan="1" rowspan="1" labelid="{2be3669c-cbda-4098-b61d-96faac4baca9}">
+                        <labels>
+                          <label description="Site ou emplacement parent" languagecode="1036" />
+                          <label description="Parent Site or Location" languagecode="1033" />
+                        </labels>
+                        <control id="parentsiteorlocation" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="parentsiteorlocation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4c5fe8c7-80db-4481-b3b4-374ce11148a3}" locklevel="0" colspan="1" rowspan="1" labelid="{308cf136-4275-49fb-a241-b9aa10d96ffb}">
+                        <labels>
+                          <label description="URL absolue" languagecode="1036" />
+                          <label description="Absolute URL" languagecode="1033" />
+                        </labels>
+                        <control id="absoluteurl" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="absoluteurl" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f678797f-7ae1-4ed3-b85e-46b8a11d2ddf}" locklevel="0" colspan="1" rowspan="1" labelid="{dff55c60-68b3-477a-88db-65849fb27e85}">
+                        <labels>
+                          <label description="URL relative" languagecode="1036" />
+                          <label description="Relative URL" languagecode="1033" />
+                        </labels>
+                        <control id="relativeurl" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="relativeurl" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="DM Emplacement du document formulaire d'aperçu" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

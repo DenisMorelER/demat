@@ -1,0 +1,520 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_excelonlinebusiness": {
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedexcelonlinebusiness_c12ab"
+        },
+        "runtimeSource": "embedded"
+      },
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_a98a8"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "Site Sharepoint (er_Site_Sharepoint)": {
+          "defaultValue": "https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV",
+          "type": "String",
+          "metadata": {
+            "schemaName": "er_Site_Sharepoint"
+          }
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Http",
+          "inputs": {
+            "triggerAuthenticationType": "Tenant",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "REFDemande": {
+                  "type": "string"
+                },
+                "Utilisateur": {
+                  "type": "string"
+                },
+                "IDEnregistrementConcerne": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "actions": {
+        "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+              "file": "/@{outputs('Obtenir_une_ligne_par_ID_-_Fichier_SPLER')?['body/er_id_document_spler']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Fichier_SPLER')?['body/er_document_splerid']),'-','')}/DEP du @{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}.xlsm",
+              "table": "DEP_Sorties",
+              "idColumn": "Champ",
+              "id": "Sortie"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+              "operationId": "GetItem",
+              "connectionName": "shared_excelonlinebusiness"
+            }
+          },
+          "runAfter": {
+            "Portée_-_Obtenir_les_informations_existantes": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b276a777-e805-4205-9da0-12cda2596335",
+            "tableId": "DEP_Sorties"
+          }
+        },
+        "Portée_-_Obtenir_les_informations_existantes": {
+          "type": "Scope",
+          "actions": {
+            "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "recordId": "@triggerBody()?['diagId']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "6407dd31-450d-4cf8-b1b5-a49ed516d3ae"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Fichier_SPLER": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_document_splers",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_doc_fichier_dep_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "53513d84-0761-4f27-b78c-eca0386ea095"
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Site_Logement": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_sites",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Dossier_de_traitement')?['body/_er_site_concerne_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Dossier_de_traitement": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Obtenir_une_ligne_par_ID_-_Dossier_de_traitement": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_dossiers",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_dossierparent_value']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "GetItem",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Obtenir_une_ligne_par_ID_-_Fichier_SPLER": [
+                  "Succeeded"
+                ]
+              }
+            }
+          },
+          "runAfter": {}
+        },
+        "Portée_-_Mettre_à_jour_les_informations_dans_le_dataverse": {
+          "type": "Scope",
+          "actions": {
+            "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_diagnostic_slimes",
+                  "recordId": "@triggerBody()?['diagId']",
+                  "item/er_solidiageligibleauchequeenergie": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Chèque énergie']",
+                  "item/er_consoestimeeposteautres": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Autres']",
+                  "item/er_consoestimeeposteconfortthermique": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Confort thermique']",
+                  "item/er_consoestimeepostecuisson": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Cuisson']",
+                  "item/er_consoestimeeposteeauchaudesanitaire": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Eau chaude sanitaire']",
+                  "item/er_consoestimeeposteelcairage": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Elcairage']",
+                  "item/er_consoestimeeposteelectromenager": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Electroménager']",
+                  "item/er_consoestimeepostefroidalimentaire": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Froid alimentaire']",
+                  "item/er_consoestimeepostematerielmedical": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Matériel médical']",
+                  "item/er_consoestimeepostemultimedia": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée - Poste Multimédia']",
+                  "item/er_consoestimeedulogement": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Conso estimée du logement']",
+                  "item/er_datedimportationdesdonneesdudep": "@utcNow()",
+                  "item/er_bool_diagnostic_dep_realise": true,
+                  "item/er_nbredequipementsremisdouchetteeconome": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis Douchette économe']",
+                  "item/er_nbredequipementsremisledabaionnette": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis LED à baionnette']",
+                  "item/er_nbredequipementsremisledavis": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis LED à vis']",
+                  "item/er_nbredequipementsremismousseurseconomes": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis Mousseurs économes']",
+                  "item/er_nbredequipementsremisprogrammateur": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis Programmateur']",
+                  "item/er_nbredequipementsremisthermometrefrigo": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/NB remis Thermomètre de réfrigérateur']",
+                  "item/er_puissancetotaleinstalleedesequipements": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Puissance totale installée']",
+                  "item/er_remarques": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Remarques']",
+                  "item/er_solidiagcompositiondumenage": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Composition du ménage']",
+                  "item/er_solidiagensituationdimpaye": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Des situation d''impayé']",
+                  "item/er_solidiaglemenageaeufroidlhiverdernier": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Pb de froid?']",
+                  "item/er_solidiagtypedhabitat": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Type d''habitation']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "metadata": {
+                "operationMetadataId": "82975f8f-0e1e-466b-b0b3-ad768a779445"
+              }
+            },
+            "Mettre_à_jour_une_ligne_-_Visite": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_visites",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_visite_value']",
+                  "item/er_date_debut_visite": "@addHours(outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Date et heure de la visite'],-4)",
+                  "item/er_statut_visite": 122210003
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Mettre_à_jour_une_ligne_-_Ménage": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Condition_-_Création_d'un_nouveau_contact_(Titulaire_du_contrat_EDF)": {
+              "type": "If",
+              "expression": {
+                "and": [
+                  {
+                    "equals": [
+                      "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Ajout nouveau contact ?']",
+                      "True"
+                    ]
+                  }
+                ]
+              },
+              "actions": {
+                "Ajouter_une_nouvelle_ligne_-_Nouveau_contact_titulaire_du_contrat_EDF": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "entityName": "contacts",
+                      "item/lastname": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Nom']",
+                      "item/firstname": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Prénom']",
+                      "item/address1_postalcode": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Code Postal']",
+                      "item/address1_line1": "@\r\njoin(\r\n  createArray(\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - Numéro'],\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP_-_Données_brutes')?['body/Adresse - Indice de répétition'],\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - nom de la voie']\r\n  ),\r\n  ' '\r\n)\r\n",
+                      "item/address1_city": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Commune']",
+                      "item/emailaddress1": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/E-Mail']",
+                      "item/mobilephone": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Tel Portable']",
+                      "item/er_civilite": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Civilité']",
+                      "item/birthdate": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Date de naissance']",
+                      "item/telephone2": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Tel Fixe']"
+                    },
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "connectionName": "shared_commondataserviceforapps"
+                    }
+                  }
+                },
+                "Définir_une_variable_-_ID_nouveau_Titulaire_contrat_EDF": {
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "ID du contact titulaire du contrat EDF",
+                    "value": "@outputs('Ajouter_une_nouvelle_ligne_-_Nouveau_contact_titulaire_du_contrat_EDF')?['body/contactid']"
+                  },
+                  "runAfter": {
+                    "Ajouter_une_nouvelle_ligne_-_Nouveau_contact_titulaire_du_contrat_EDF": [
+                      "Succeeded"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "actions": {
+                  "Faire_un_upsert_avec_une_ligne_-_MAJ_Titulaire_contrat_EDF": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "entityName": "contacts",
+                        "recordId": "@variables('ID du contact titulaire du contrat EDF')",
+                        "item/address1_postalcode": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Code Postal']",
+                        "item/address1_line1": "@\r\njoin(\r\n  createArray(\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - Numéro'],\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP_-_Données_brutes')?['body/Adresse - Indice de répétition'],\r\n    outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - nom de la voie']\r\n  ),\r\n  ' '\r\n)\r\n",
+                        "item/address1_city": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Commune']",
+                        "item/emailaddress1": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/E-Mail']",
+                        "item/lastname": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Nom']",
+                        "item/firstname": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Prénom']",
+                        "item/mobilephone": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Tel Portable']",
+                        "item/er_civilite": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Civilité']",
+                        "item/birthdate": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Date de naissance']",
+                        "item/telephone2": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Tel Fixe']"
+                      },
+                      "host": {
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                        "operationId": "UpdateRecord",
+                        "connectionName": "shared_commondataserviceforapps"
+                      }
+                    }
+                  },
+                  "Définir_une_variable_-_ID_Titulaire_contrat_EDF": {
+                    "type": "SetVariable",
+                    "inputs": {
+                      "name": "ID du contact titulaire du contrat EDF",
+                      "value": "@outputs('Faire_un_upsert_avec_une_ligne_-_MAJ_Titulaire_contrat_EDF')?['body/contactid']"
+                    },
+                    "runAfter": {
+                      "Faire_un_upsert_avec_une_ligne_-_MAJ_Titulaire_contrat_EDF": [
+                        "Succeeded"
+                      ]
+                    }
+                  }
+                }
+              },
+              "runAfter": {
+                "Message": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Mettre_à_jour_une_ligne_-_Site_Logement": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_sites",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/_er_site_concerne_value']",
+                  "item/er_commune": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Commune']\r\n",
+                  "item/er_complementdadresse": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Complément adresse']",
+                  "item/er_raccordement_reseau_national_electricite": true,
+                  "item/er_altitudedusite": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Altitude']",
+                  "item/er_annee_construction": "@sub(int(utcNow('yyyy')), int(outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Age du logement']))\r\n",
+                  "item/er_bailleursocial": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Bailleur social']",
+                  "item/er_reference_edf": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Référence pour tout contact']",
+                  "item/er_SiteTitulaireduContratEDF@odata.bind": "/contacts(@{variables('ID du contact titulaire du contrat EDF')})",
+                  "item/er_groupedhabitation": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Groupe d''habitation']",
+                  "item/er_surfacehabitable": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Surface habitable']",
+                  "item/er_typologiedelogement": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Typologie de logement']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Message_-_ID_final_du_titulaire_du_contrat_EDF": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Mettre_à_jour_une_ligne_-_Ménage": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "entityName": "er_menages",
+                  "recordId": "@outputs('Obtenir_une_ligne_par_ID_-_Dossier_de_traitement')?['body/_er_menage_beneficiaire_value']",
+                  "item/er_totalnombredepartsdec": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Nombre de parts fiscales']",
+                  "item/er_total_nombre_personnes": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Nombre total d''occupants']",
+                  "item/er_total_revenu_fiscal": "@outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Revenu fiscal de référence']"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "connectionName": "shared_commondataserviceforapps"
+                }
+              },
+              "runAfter": {
+                "Mettre_à_jour_une_ligne_-_Diagnostic_SLIME": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Message_-_ID_final_du_titulaire_du_contrat_EDF": {
+              "type": "Compose",
+              "inputs": "@{variables('ID du contact titulaire du contrat EDF')};\n/contacts(@{variables('ID du contact titulaire du contrat EDF')})",
+              "runAfter": {
+                "Condition_-_Création_d'un_nouveau_contact_(Titulaire_du_contrat_EDF)": [
+                  "Succeeded"
+                ]
+              }
+            },
+            "Message": {
+              "type": "Compose",
+              "inputs": "Value : @{outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - Indice de répétition']}\nLabel : @{outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP')?['body/Adresse - Indice de répétition@OData.Community.Display.V1.FormattedValue']}\nV2:\n@{outputs('Obtenir_une_ligne_-_Lire_la_ligne_d''export_du_DEP_-_Données_brutes')?['body/Adresse - Indice de répétition']\r\n}",
+              "runAfter": {
+                "Mettre_à_jour_une_ligne_-_Visite": [
+                  "Succeeded"
+                ]
+              }
+            }
+          },
+          "runAfter": {
+            "Message_-_ID_initial_du_titulaire_du_contrat_EDF": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Initialiser_la_variable_-_ID_Titulaire_contrat_EDF": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ID du contact titulaire du contrat EDF",
+                "type": "string",
+                "value": "@outputs('Obtenir_une_ligne_par_ID_-_Site_Logement')?['body/_er_sitetitulaireducontratedf_value']"
+              }
+            ]
+          },
+          "runAfter": {
+            "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP_-_Données_brutes": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Message_-_ID_initial_du_titulaire_du_contrat_EDF": {
+          "type": "Compose",
+          "inputs": "@variables('ID du contact titulaire du contrat EDF')",
+          "runAfter": {
+            "Initialiser_la_variable_-_ID_Titulaire_contrat_EDF": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP_-_Données_brutes": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "source": "@parameters('Site Sharepoint (er_Site_Sharepoint)')",
+              "drive": "b!qJyurFG85kOwYwzvc8siH5mmDffRdIFNhnTMqBQZUBTPQMnfgEzbSowT3d5H2NeW",
+              "file": "/@{outputs('Obtenir_une_ligne_par_ID_-_Fichier_SPLER')?['body/er_id_document_spler']}_@{replace(toUpper(outputs('Obtenir_une_ligne_par_ID_-_Fichier_SPLER')?['body/er_document_splerid']),'-','')}/DEP du @{outputs('Obtenir_une_ligne_par_ID_-_Diagnostic_SLIME')?['body/er_id_slime']}.xlsm",
+              "table": "DEP_Sorties",
+              "idColumn": "Champ",
+              "id": "Données brutes"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+              "operationId": "GetItem",
+              "connectionName": "shared_excelonlinebusiness"
+            }
+          },
+          "runAfter": {
+            "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b276a777-e805-4205-9da0-12cda2596335",
+            "tableId": "DEP_Sorties"
+          }
+        },
+        "Réponse_-_Ok": {
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "ResponseDetails": "Importation des données issues du fichier DEP réalisée."
+            }
+          },
+          "runAfter": {
+            "Portée_-_Mettre_à_jour_les_informations_dans_le_dataverse": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Réponse_2_-_Echec": {
+          "type": "Response",
+          "kind": "Http",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "ResponseDetails": "Une erreur est survenue. L'importation n'a pas pu être réalisée."
+            }
+          },
+          "runAfter": {
+            "Portée_-_Obtenir_les_informations_existantes": [
+              "Failed",
+              "TimedOut",
+              "Skipped"
+            ],
+            "Portée_-_Mettre_à_jour_les_informations_dans_le_dataverse": [
+              "Failed",
+              "TimedOut",
+              "Skipped"
+            ],
+            "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP": [
+              "Failed",
+              "Skipped",
+              "TimedOut"
+            ],
+            "Obtenir_une_ligne_-_Lire_la_ligne_d'export_du_DEP_-_Données_brutes": [
+              "Failed",
+              "Skipped",
+              "TimedOut"
+            ]
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

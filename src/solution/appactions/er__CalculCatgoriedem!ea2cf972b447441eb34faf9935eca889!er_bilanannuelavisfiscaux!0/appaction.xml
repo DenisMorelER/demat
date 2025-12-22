@@ -1,0 +1,32 @@
+<appaction uniquename="er__CalculCatgoriedem!ea2cf972b447441eb34faf9935eca889!er_bilanannuelavisfiscaux!0">
+  <buttonlabeltext default="Calcul: Catégorie de ménage">
+    <label description="Calcul: Catégorie de ménage" languagecode="1036" />
+  </buttonlabeltext>
+  <buttontooltipdescription default="Permet de calculer la catégorie de ménage en fonction des informations renseignées">
+    <label description="Permet de calculer la catégorie de ménage en fonction des informations renseignées" languagecode="1036" />
+  </buttontooltipdescription>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_bilanannuelavisfiscaux</logicalname>
+  </contextentity>
+  <contextvalue>er_bilanannuelavisfiscaux</contextvalue>
+  <fonticon>$clientsvg:Calculator</fonticon>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>CalculCatgoriedem!ea2cf972b447441eb34faf9935eca889</name>
+  <onclickeventjavascriptfunctionname>boutonCalculerCategorieMenage</onclickeventjavascriptfunctionname>
+  <onclickeventjavascriptparameters>[{"type":5}]</onclickeventjavascriptparameters>
+  <onclickeventjavascriptwebresourceid>
+    <webresourceid>49134023-dc00-f011-bae3-6045bdde3c36</webresourceid>
+  </onclickeventjavascriptwebresourceid>
+  <onclickeventtype>2</onclickeventtype>
+  <origin>0</origin>
+  <sequence>100100015.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>0</type>
+  <visibilitytype>0</visibilitytype>
+</appaction>

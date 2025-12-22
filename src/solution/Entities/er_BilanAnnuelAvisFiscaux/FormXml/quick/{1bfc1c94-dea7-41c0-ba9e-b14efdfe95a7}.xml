@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{1bfc1c94-dea7-41c0-ba9e-b14efdfe95a7}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{a54151e7-f8ad-41aa-afd1-b1df80527d38}" IsUserDefined="1">
+          <labels>
+            <label description="" languagecode="1036" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{dfd6c153-8830-4f10-8e0e-ad0417600ea6}">
+                  <labels>
+                    <label description="GENERAL" languagecode="1033" />
+                    <label description="GÉNÉRAL" languagecode="1036" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ae7c7a79-fec6-422a-9a55-0b915dee6f78}">
+                        <labels>
+                          <label description="Bilan Annuel des Avis Fiscaux" languagecode="1036" />
+                          <label description="Bilan Annuel des Avis Fiscaux" languagecode="1033" />
+                        </labels>
+                        <control id="er_bilanannueldesavisfiscaux" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="er_bilanannueldesavisfiscaux" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2192a695-552b-48dc-857f-9cc8cf38f9a2}">
+                        <labels>
+                          <label description="Propriétaire" languagecode="1036" />
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Informations" languagecode="1036" />
+    </LocalizedNames>
+  </systemform>
+</forms>

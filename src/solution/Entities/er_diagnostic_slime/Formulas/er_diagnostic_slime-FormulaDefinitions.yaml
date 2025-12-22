@@ -1,0 +1,6 @@
+er_delai_avant_visite: =DateDiff(createdon, er_visite.er_date_previsionnelle,TimeUnit.Days) / 7
+er_etat_civil_referent: =Text(er_menage_concerne.er_personne_referente.familystatuscode)
+er_liendudossiersharepoint: |-
+    ="https://energiesreunion.sharepoint.com/sites/SiteSharePointdeDEV"&"/er_diagnostic_slime/"&er_id_slime&"_"&Substitute(er_diagnostic_slimeid,"-","")
+er_lienmenagesolidiag: |-
+    =If(IsBlank(er_solidiagiddumenage),Blank(),Concatenate("https://v2.solidiag.fr/menage/detail/",er_solidiagiddumenage,"/obligatoire/edit"))

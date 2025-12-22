@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{cb0029b8-65a3-f011-bbd2-7ced8d4676dc}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_releve_index" select="1" icon="1" preview="1">
+        <row name="result" id="er_releve_indexid">
+          <cell name="er_id_releve_index" width="101" />
+          <cell name="er_date_heure_releve" width="170" />
+          <cell name="er_bool_releve_impossible" width="151" />
+          <cell name="er_index_base" width="101" />
+          <cell name="er_index_heure_pleine" width="149" />
+          <cell name="er_index_heure_creuse" width="152" />
+          <cell name="er_index_injection" width="126" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_releve_index">
+          <attribute name="er_releve_indexid" />
+          <attribute name="er_id_releve_index" />
+          <order attribute="er_id_releve_index" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_index_base" />
+          <attribute name="er_index_heure_creuse" />
+          <attribute name="er_index_heure_pleine" />
+          <attribute name="er_date_heure_releve" />
+          <attribute name="er_index_injection" />
+          <attribute name="er_bool_releve_impossible" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Relevés d'index actifs - Visites" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

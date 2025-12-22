@@ -1,0 +1,28 @@
+<appaction uniquename="er__SolidiagV2!d6b88e922c9a4bf5b88100c5b82c19a7!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0">
+  <appmoduleid>
+    <uniquename>er_Dematerialisation_des_Processus_Gesti</uniquename>
+  </appmoduleid>
+  <context>1</context>
+  <contextentity>
+    <logicalname>er_diagnostic_slime</logicalname>
+  </contextentity>
+  <contextvalue>er_diagnostic_slime</contextvalue>
+  <grouptitle default="Solidiag V2">
+    <label description="Solidiag V2" languagecode="1036" />
+  </grouptitle>
+  <hidden>0</hidden>
+  <iscustomizable>1</iscustomizable>
+  <isdisabled>0</isdisabled>
+  <isgrouptitlehidden>0</isgrouptitlehidden>
+  <location>0</location>
+  <name>SolidiagV2!d6b88e922c9a4bf5b88100c5b82c19a7</name>
+  <onclickeventtype>0</onclickeventtype>
+  <origin>0</origin>
+  <parentappactionid>
+    <uniquename>er__Aprslavisite!7bb7f3573c3a43488b4ec09209e0de9d!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0</uniquename>
+  </parentappactionid>
+  <sequence>20000.0000000000</sequence>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <type>3</type>
+</appaction>

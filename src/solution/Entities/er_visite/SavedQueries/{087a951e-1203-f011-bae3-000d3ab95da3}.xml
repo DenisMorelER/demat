@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{087a951e-1203-f011-bae3-000d3ab95da3}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_visite" select="1" icon="1" preview="1">
+        <row name="result" id="er_visiteid">
+          <cell name="er_id_visite" width="101" />
+          <cell name="er_statut_visite" width="137" />
+          <cell name="er_date_previsionnelle" width="150" />
+          <cell name="er_objet_visite" width="238" />
+          <cell name="er_site" width="300" />
+          <cell name="er_menage" width="224" />
+          <cell name="er_dossier" width="100" />
+          <cell name="er_collaborateur_spler" width="163" />
+          <cell name="er_date_debut_visite" width="169" />
+          <cell name="er_date_fin_visite" width="153" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical" distinct="true">
+        <entity name="er_visite">
+          <attribute name="er_visiteid" />
+          <attribute name="er_id_visite" />
+          <attribute name="er_collaborateur_spler" />
+          <attribute name="er_date_previsionnelle" />
+          <attribute name="er_date_debut_visite" />
+          <attribute name="er_date_fin_visite" />
+          <attribute name="er_menage" />
+          <attribute name="er_objet_visite" />
+          <attribute name="er_statut_visite" />
+          <attribute name="er_site" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <link-entity name="er_collaborateur_spler" alias="aa" link-type="inner" from="er_collaborateur_splerid" to="er_collaborateur_spler">
+            <filter type="and">
+              <condition attribute="er_utilisateur_correspondant" operator="eq-userid" />
+            </filter>
+          </link-entity>
+          <attribute name="er_dossier" />
+          <order attribute="er_date_previsionnelle" descending="true" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <roledisplayconditionsxml>
+      <DisplayConditions>
+        <Role Id="{B11C5EF2-C504-F011-BAE3-6045BDDE3C36}" />
+        <Role Id="{BA326B27-C304-F011-BAE3-000D3ADCBF81}" />
+      </DisplayConditions>
+    </roledisplayconditionsxml>
+    <LocalizedNames>
+      <LocalizedName description="Mes visites - Toutes mes visites" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

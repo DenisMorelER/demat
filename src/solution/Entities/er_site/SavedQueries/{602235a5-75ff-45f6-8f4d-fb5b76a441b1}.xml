@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{602235a5-75ff-45f6-8f4d-fb5b76a441b1}</savedqueryid>
+    <layoutxml>
+      <grid name="er_sites" jump="er_adresse" select="1" icon="1" preview="0">
+        <row name="er_site" id="er_siteid">
+          <cell name="er_adresse" width="300" />
+          <cell name="er_codepostal" width="108" />
+          <cell name="er_libelleacheminement" width="175" />
+          <cell name="er_commune" width="100" />
+          <cell name="er_complementdadresse" width="167" />
+          <cell name="er_menage_occupant" width="143" />
+          <cell name="er_menage_proprietaire" width="238" />
+          <cell name="er_bailleursocial" width="122" />
+          <cell name="er_groupedhabitation" width="151" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>64</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_site">
+          <attribute name="er_siteid" />
+          <attribute name="er_adresse" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_bailleursocial" />
+          <attribute name="er_complementdadresse" />
+          <attribute name="er_groupedhabitation" />
+          <attribute name="er_menage_occupant" />
+          <attribute name="er_menage_proprietaire" />
+          <order attribute="er_adresse" descending="false" />
+          <attribute name="er_codepostal" />
+          <attribute name="er_commune" />
+          <attribute name="er_libelleacheminement" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Vue Recherche : Site" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

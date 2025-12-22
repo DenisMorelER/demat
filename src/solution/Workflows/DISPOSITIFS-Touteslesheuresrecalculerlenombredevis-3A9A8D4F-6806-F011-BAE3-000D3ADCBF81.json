@@ -1,0 +1,111 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "er_sharedcommondataserviceforapps_982f2"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Hour",
+            "interval": 1,
+            "startTime": "2025-03-21T09:00:00Z"
+          },
+          "metadata": {
+            "operationMetadataId": "cd89e536-1f17-4569-9b5e-7f843bad204c"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "LIST_-_All_Dispositifs": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "1c511fdc-a864-4132-a238-183796df45c8"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "er_offre_orientations",
+              "$expand": "er_visites_offres_orientations"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Compose": {
+          "runAfter": {
+            "LIST_-_All_Dispositifs": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4f491181-3307-4a24-90ba-349f748a902c"
+          },
+          "type": "Compose",
+          "inputs": "@outputs('LIST_-_All_Dispositifs')?['body/value']"
+        },
+        "FOREACH_-_Dispositifs": {
+          "foreach": "@outputs('LIST_-_All_Dispositifs')?['body/value']",
+          "actions": {
+            "UPDATE_-_Nombre_de_visites_du_dispositif": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "d1ef6869-fb5c-4aaf-8a7a-a336d87845fd"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateOnlyRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "er_offre_orientations",
+                  "recordId": "@items('FOREACH_-_Dispositifs')?['er_offre_orientationid']",
+                  "item/er_nombre_visites": "@length(items('FOREACH_-_Dispositifs')?['er_visites_offres_orientations'])"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Compose": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3759efdc-b312-4894-97c5-e3922eaafa75"
+          },
+          "type": "Foreach"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

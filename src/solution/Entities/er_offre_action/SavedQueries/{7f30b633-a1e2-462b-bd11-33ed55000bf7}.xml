@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{7f30b633-a1e2-462b-bd11-33ed55000bf7}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_id_action" select="1" icon="1" preview="1">
+        <row name="result" id="er_offre_actionid">
+          <cell name="er_id_action" width="300" />
+          <cell name="er_dossier" width="100" />
+          <cell name="er_dispositif_type_action" width="116" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="er_offre_action">
+          <attribute name="er_offre_actionid" />
+          <attribute name="er_id_action" />
+          <order attribute="er_id_action" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="er_dossier" />
+          <attribute name="er_dispositif_type_action" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Offres : Actions actifs" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

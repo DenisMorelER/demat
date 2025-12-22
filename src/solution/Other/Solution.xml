@@ -1,0 +1,1529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.25113.156" SolutionPackageVersion="9.2" languagecode="1036" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25113.156" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25113.00156">
+  <SolutionManifest>
+    <UniqueName>Dematerialisation_des_Processus</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Dématérialisation des Processus" languagecode="1036" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Energies_Reunion</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Energies Réunion" languagecode="1036" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>er</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>12221</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="account" behavior="2" />
+      <RootComponent type="1" schemaName="adx_inviteredemption" behavior="0" />
+      <RootComponent type="1" schemaName="adx_portalcomment" behavior="0" />
+      <RootComponent type="1" schemaName="appointment" behavior="1" />
+      <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="crfc6_correspondancechoix" behavior="0" />
+      <RootComponent type="1" schemaName="email" behavior="1" />
+      <RootComponent type="1" schemaName="er_accompagnement_renforce" behavior="0" />
+      <RootComponent type="1" schemaName="er_alerte" behavior="0" />
+      <RootComponent type="1" schemaName="er_anneeselectionnable" behavior="0" />
+      <RootComponent type="1" schemaName="er_bilanannuelavisfiscaux" behavior="0" />
+      <RootComponent type="1" schemaName="er_collaborateur_spler" behavior="0" />
+      <RootComponent type="1" schemaName="er_contactmenage" behavior="0" />
+      <RootComponent type="1" schemaName="er_demandeautomatisation" behavior="0" />
+      <RootComponent type="1" schemaName="er_diagnostic_slime" behavior="0" />
+      <RootComponent type="1" schemaName="er_document_menage" behavior="0" />
+      <RootComponent type="1" schemaName="er_document_spler" behavior="0" />
+      <RootComponent type="1" schemaName="er_dossier" behavior="0" />
+      <RootComponent type="1" schemaName="er_echanges_menage" behavior="0" />
+      <RootComponent type="1" schemaName="er_listedattentedemanderpasolidiag" behavior="0" />
+      <RootComponent type="1" schemaName="er_menage" behavior="0" />
+      <RootComponent type="1" schemaName="er_offre_action" behavior="0" />
+      <RootComponent type="1" schemaName="er_offre_orientation" behavior="0" />
+      <RootComponent type="1" schemaName="er_orientation" behavior="0" />
+      <RootComponent type="1" schemaName="er_petit_equipement" behavior="0" />
+      <RootComponent type="1" schemaName="er_releve_index" behavior="0" />
+      <RootComponent type="1" schemaName="er_remise_petit_equipement" behavior="0" />
+      <RootComponent type="1" schemaName="er_seuils_anah" behavior="0" />
+      <RootComponent type="1" schemaName="er_site" behavior="0" />
+      <RootComponent type="1" schemaName="er_solidiagdonneurdalerte" behavior="0" />
+      <RootComponent type="1" schemaName="er_sous_type_accompagnements_renforces" behavior="0" />
+      <RootComponent type="1" schemaName="er_suiviautomatisations" behavior="0" />
+      <RootComponent type="1" schemaName="er_type_accompagnements_renforces" behavior="0" />
+      <RootComponent type="1" schemaName="er_visite" behavior="0" />
+      <RootComponent type="1" schemaName="fax" behavior="1" />
+      <RootComponent type="1" schemaName="letter" behavior="2" />
+      <RootComponent type="1" schemaName="phonecall" behavior="1" />
+      <RootComponent type="1" schemaName="position" behavior="1" />
+      <RootComponent type="1" schemaName="sharepointdocument" behavior="2" />
+      <RootComponent type="1" schemaName="sharepointdocumentlocation" behavior="1" />
+      <RootComponent type="1" schemaName="systemuser" behavior="1" />
+      <RootComponent type="1" schemaName="task" behavior="1" />
+      <RootComponent type="161" id="{46eeb1c5-1d03-f011-bae3-7c1e52fc86de}" behavior="0" />
+      <RootComponent type="161" id="{f5b2a52d-1e03-f011-bae2-6045bde00e2f}" behavior="0" />
+      <RootComponent type="161" id="{f69c2645-4603-f011-bae2-6045bde00e2f}" behavior="0" />
+      <RootComponent type="20" id="{269982ef-c404-f011-bae2-002248a1de69}" behavior="0" />
+      <RootComponent type="20" id="{5d785606-9bfd-ef11-bae3-6045bddd5492}" behavior="0" />
+      <RootComponent type="20" id="{b11c5ef2-c504-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="20" id="{ba326b27-c304-f011-bae3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{0a1e615a-d258-f011-877b-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{0b40bd1e-ab8c-f011-b4cc-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{15cadcab-a0f9-ef11-bae1-000d3a956350}" behavior="0" />
+      <RootComponent type="29" id="{184405b1-df20-f011-9989-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{1d4fbe4e-a9a9-f011-bbd3-000d3adccbc3}" behavior="0" />
+      <RootComponent type="29" id="{2b52bfcf-9109-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{2d181df5-d841-f011-877a-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{317f98c1-ed50-f011-877b-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{36cb8f7e-4861-f011-bec3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{36fdcee6-c545-f011-877a-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{3a8d0c1b-cfa8-f011-bbd3-000d3adccb82}" behavior="0" />
+      <RootComponent type="29" id="{3a9a8d4f-6806-f011-bae3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{3ccee567-430a-f011-bae3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{3d3326a4-ef0b-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{436ccaf2-c358-f011-877b-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{4ec8df7e-1771-f011-b4cc-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{52ab9ab3-eb87-f011-b4cc-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{5b92b26a-c88f-f011-b4cc-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{7b0f0046-da20-f011-998a-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{88317ef6-a9a9-f011-bbd2-7ced8d4676dc}" behavior="0" />
+      <RootComponent type="29" id="{8a4f0b99-3afb-ef11-bae1-0022483a781c}" behavior="0" />
+      <RootComponent type="29" id="{8a986c37-270b-f011-bae3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{93577feb-7a31-f011-8c4d-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{a332de41-388e-49a9-8095-c9e94f52ab98}" behavior="0" />
+      <RootComponent type="29" id="{a531b9a7-a9a9-f011-bbd2-7ced8d4676dc}" behavior="0" />
+      <RootComponent type="29" id="{a7925745-0d04-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{aac15a43-0321-f011-9989-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{ac39b733-651b-f011-998a-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{b0f35b65-318e-f011-b4cc-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{b53bdae0-d5a8-f011-bbd3-000d3adccb82}" behavior="0" />
+      <RootComponent type="29" id="{cb7f604b-3158-46a1-a8d1-26a261a7fffd}" behavior="0" />
+      <RootComponent type="29" id="{cf3a3f0c-f00b-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{d4655877-9c84-f011-b4cc-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{d868b31b-09a8-f011-bbd3-000d3adccbc3}" behavior="0" />
+      <RootComponent type="29" id="{da89c754-9008-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{de254c63-d841-f011-8779-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{e3b1e366-10f8-ef11-bae1-0022483a781c}" behavior="0" />
+      <RootComponent type="29" id="{e476ab7f-a9a9-f011-bbd3-000d3adccbc3}" behavior="0" />
+      <RootComponent type="29" id="{e7a066fd-7d52-f011-877b-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{e84b2eb6-f287-f011-b4cc-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{e9338642-9ffa-ef11-bae1-6045bd6c2dc5}" behavior="0" />
+      <RootComponent type="29" id="{ebee742b-26ff-ef11-bae3-000d3adcbf81}" behavior="0" />
+      <RootComponent type="29" id="{ec60e388-674b-f011-877a-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{ed8cf28d-ffaf-f011-bbd2-7ced8d4676dc}" behavior="0" />
+      <RootComponent type="29" id="{f426b2fb-ec71-f011-b4cc-6045bdde3c36}" behavior="0" />
+      <RootComponent type="29" id="{f62a812e-cef9-ef11-bae1-000d3a956350}" behavior="0" />
+      <RootComponent type="29" id="{fc870629-3ba1-4e91-a62f-09c4c5e18936}" behavior="0" />
+      <RootComponent type="29" id="{fe8a6aab-2962-f011-bec3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="300" schemaName="er_appoutilsadmin_fba8b" behavior="0" />
+      <RootComponent type="300" schemaName="er_dematerialisationdesprocessusaccomdefaultcommandlibrary_f409c" behavior="0" />
+      <RootComponent type="300" schemaName="er_dematerialisationdesprocessusgestidefaultcommandlibrary_e7ef3" behavior="0" />
+      <RootComponent type="300" schemaName="er_dmtestautomatisations_c2d79" behavior="0" />
+      <RootComponent type="60" id="{5d431800-1270-40e9-a90a-c970556cf0fe}" behavior="0" />
+      <RootComponent type="60" id="{ad678342-ab04-f011-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="60" id="{c90c5450-5cfe-ef11-bae3-6045bdde3c36}" behavior="0" />
+      <RootComponent type="60" id="{ee50a18b-3f88-df11-8d93-00155db1891a}" behavior="0" />
+      <RootComponent type="60" id="{fd87a006-e39d-f011-bbd3-6045bddce696}" behavior="0" />
+      <RootComponent type="61" schemaName="er_AddressSelectionDialog" behavior="0" />
+      <RootComponent type="61" schemaName="er_Alerte.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Collab_SPLER.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Courrier.png" behavior="0" />
+      <RootComponent type="61" schemaName="er_Courrier.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Diagnostic_Slime.png" behavior="0" />
+      <RootComponent type="61" schemaName="er_Diagnostic_Slime.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Doc_Menage.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Doc_SPLER.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Dossier.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Echanges_Menage.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_ER_rondvert" behavior="0" />
+      <RootComponent type="61" schemaName="er_Mail.png" behavior="0" />
+      <RootComponent type="61" schemaName="er_Mail.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Menage.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Offre_Action.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Offre_Orientations.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Orientation.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Petit_Equipement.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Remise_Petit_Equipement.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Seuils_ANAH.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Site.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Telephone.png" behavior="0" />
+      <RootComponent type="61" schemaName="er_Telephone.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_Toolbox_JS" behavior="0" />
+      <RootComponent type="61" schemaName="er_Toolbox_JS_GED_SharePoint" behavior="0" />
+      <RootComponent type="61" schemaName="er_Visite.svg" behavior="0" />
+      <RootComponent type="61" schemaName="er_workinprogress1" behavior="0" />
+      <RootComponent type="61" schemaName="Process.svg" behavior="0" />
+      <RootComponent type="62" schemaName="er_AdminApp" behavior="0" />
+      <RootComponent type="62" schemaName="er_Dematerialisation_des_Processus_Accom" behavior="0" />
+      <RootComponent type="62" schemaName="er_Dematerialisation_des_Processus_Gesti" behavior="0" />
+      <RootComponent type="80" schemaName="er_AdminApp" behavior="0" />
+      <RootComponent type="80" schemaName="er_Dematerialisation_des_Processus_Accom" behavior="0" />
+      <RootComponent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" behavior="0" />
+      <RootComponent type="9" schemaName="er_activites_referents" behavior="0" />
+      <RootComponent type="9" schemaName="er_bailleursocial" behavior="0" />
+      <RootComponent type="9" schemaName="er_categories_menages" behavior="0" />
+      <RootComponent type="9" schemaName="er_charges_soutiens_renforces" behavior="0" />
+      <RootComponent type="9" schemaName="er_civilites" behavior="0" />
+      <RootComponent type="9" schemaName="er_codepostal" behavior="0" />
+      <RootComponent type="9" schemaName="er_commune" behavior="0" />
+      <RootComponent type="9" schemaName="er_eligibilite" behavior="0" />
+      <RootComponent type="9" schemaName="er_indices_repetition" behavior="0" />
+      <RootComponent type="9" schemaName="er_libelledacheminement" behavior="0" />
+      <RootComponent type="9" schemaName="er_liencontactmenage" behavior="0" />
+      <RootComponent type="9" schemaName="er_listedattentestatutdetraitement" behavior="0" />
+      <RootComponent type="9" schemaName="er_motifs_alertes" behavior="0" />
+      <RootComponent type="9" schemaName="er_motifs_releves_impossibles" behavior="0" />
+      <RootComponent type="9" schemaName="er_nbredepersonnescomposantlemenage" behavior="0" />
+      <RootComponent type="9" schemaName="er_objets_visites" behavior="0" />
+      <RootComponent type="9" schemaName="er_origines_demandes" behavior="0" />
+      <RootComponent type="9" schemaName="er_roles_collaborateurs" behavior="0" />
+      <RootComponent type="9" schemaName="er_siteconstructionneuveouexistante" behavior="0" />
+      <RootComponent type="9" schemaName="er_sitetypedepropriete" behavior="0" />
+      <RootComponent type="9" schemaName="er_situationfonciere" behavior="0" />
+      <RootComponent type="9" schemaName="er_slimestatutdevalidationdudiagnostic" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagactionsdereperage" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagcompositiondumenage" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagenergiechauffageprincipal" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagenergiepourleauchaude" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiaglemenageluimeme" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagmethodedereperage" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagmotifalerte" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagouinonnonconnu" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagstatutdoccupation" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagtypedechauffage" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagtypedechauffagedappoint" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagtypedeproductiondeauchaude" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagtypedhabitat" behavior="0" />
+      <RootComponent type="9" schemaName="er_solidiagypedesystemedechauffageprin" behavior="0" />
+      <RootComponent type="9" schemaName="er_statutdexecution" behavior="0" />
+      <RootComponent type="9" schemaName="er_statutdufichierdep" behavior="0" />
+      <RootComponent type="9" schemaName="er_statutduformulaireslime" behavior="0" />
+      <RootComponent type="9" schemaName="er_statutduresultat" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_alertes" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_dossiers" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_echanges_entrants" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_echanges_sortants" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_orientations" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_remplissage_solidiag" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_stockage_documents" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_transmission_menages" behavior="0" />
+      <RootComponent type="9" schemaName="er_statuts_visites" behavior="0" />
+      <RootComponent type="9" schemaName="er_tagstravaux" behavior="0" />
+      <RootComponent type="9" schemaName="er_typedebatiment" behavior="0" />
+      <RootComponent type="9" schemaName="er_typededocumentslime" behavior="0" />
+      <RootComponent type="9" schemaName="er_typededocumentspler" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_actions" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_documents" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_droits_sites_residence" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_echanges" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_echanges_entrants" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_echanges_sortants" behavior="0" />
+      <RootComponent type="9" schemaName="er_types_logements" behavior="0" />
+      <RootComponent type="9" schemaName="er_typologiedelogement" behavior="0" />
+      <RootComponent type="9" schemaName="er_zones_reunion" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="activityid" displayName="Activité" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="bcc" displayName="Cci" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="cc" displayName="Cc" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdby" displayName="Auteur" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdonbehalfby" displayName="Auteur (délégué)" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="customers" displayName="Clients" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="exchangerate" displayName="Taux de change" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="from" displayName="De" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="lastonholdtime" displayName="Dernière durée de suspension" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedby" displayName="Auteur de la modification" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedonbehalfby" displayName="Auteur de la modification (délégué)" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="onholdtime" displayName="Durée de la suspension (minutes)" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="optionalattendees" displayName="Participants facultatifs" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="organizer" displayName="Organisateur" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="ownerid" displayName="Propriétaire" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningbusinessunit" displayName="Division propriétaire" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningteam" displayName="Équipe propriétaire" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owninguser" displayName="Utilisateur propriétaire" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="partners" displayName="Fournisseurs externes" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="processid" displayName="Processus" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="regardingobjectid" displayName="Concernant" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="requiredattendees" displayName="Participants obligatoires" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="resources" displayName="Ressources" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="sendermailboxid" displayName="Boîte aux lettres de l’expéditeur" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="slaid" displayName="Contrat SLA" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="slainvokedid" displayName="Dernier contrat SLA appliqué" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="stageid" displayName="Phase de processus" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="to" displayName="À" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="transactioncurrencyid" displayName="Devise" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="traversedpath" displayName="Chemin d’accès traversé" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_inviteredemption" displayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="versionnumber" displayName="Numéro de version" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="activityid" displayName="Activité" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="bcc" displayName="Cci" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="cc" displayName="Cc" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdby" displayName="Auteur" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="createdonbehalfby" displayName="Auteur (délégué)" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="customers" displayName="Clients" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="exchangerate" displayName="Taux de change" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="from" displayName="De" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="lastonholdtime" displayName="Dernière durée de suspension" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedby" displayName="Auteur de la modification" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="modifiedonbehalfby" displayName="Auteur de la modification (délégué)" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="onholdtime" displayName="Durée de la suspension (minutes)" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="optionalattendees" displayName="Participants facultatifs" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="organizer" displayName="Organisateur" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="ownerid" displayName="Propriétaire" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningbusinessunit" displayName="Division propriétaire" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owningteam" displayName="Équipe propriétaire" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="owninguser" displayName="Utilisateur propriétaire" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="partners" displayName="Fournisseurs externes" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="processid" displayName="Processus" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="regardingobjectid" displayName="Concernant" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="requiredattendees" displayName="Participants obligatoires" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="resources" displayName="Ressources" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="sendermailboxid" displayName="Boîte aux lettres de l’expéditeur" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="slaid" displayName="Contrat SLA" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="slainvokedid" displayName="Dernier contrat SLA appliqué" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="stageid" displayName="Phase de processus" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="to" displayName="À" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="transactioncurrencyid" displayName="Devise" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="traversedpath" displayName="Chemin d’accès traversé" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="adx_portalcomment" displayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="2" schemaName="versionnumber" displayName="Numéro de version" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="appointment" displayName="Appointment" parentSchemaName="" solution="msdynce_ActivitiesPatch (9.0.25103.251015001)" />
+        <Dependent type="1" schemaName="appointment" displayName="Appointment" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="fax" displayName="Fax" parentSchemaName="" solution="msdynce_ActivitiesPatch (9.0.25103.251015001)" />
+        <Dependent type="1" schemaName="fax" displayName="Fax" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_pmbusinessruleautomationconfig" displayName="Configuration d’automatisation de la règle métier PM" solution="ProcessMining (1.14.8.0)">
+          <package appName="PowerPlatformProcessMining" version="1.14.8.0">ProcessMiningOOBTemplates (1.14.8.0)</package>
+        </Required>
+        <Dependent type="62" schemaName="er_AdminApp" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="msdyn_pmbusinessruleautomationconfig" displayName="Configuration d’automatisation de la règle métier PM" solution="ProcessMining (1.14.8.0)">
+          <package appName="PowerPlatformProcessMining" version="1.14.8.0">ProcessMiningOOBTemplates (1.14.8.0)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_AdminApp" displayName="Admin App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="position" displayName="Position" parentSchemaName="" solution="msdyn_PowerAdminSettingsSecuritySolution (1.1.1.2748)" />
+        <Dependent type="1" schemaName="position" displayName="Position" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="sharepointdocumentlocation" displayName="SharePointDocumentLocation" parentSchemaName="" solution="msdyn_PowerAdminSettingsDocumentManagementSolution (1.1.1.2748)" />
+        <Dependent type="1" schemaName="sharepointdocumentlocation" displayName="SharePointDocumentLocation" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="1" schemaName="systemuser" displayName="SystemUser" parentSchemaName="" solution="msdyn_UserShareSecuredFields (1.0.0.0)" />
+        <Dependent type="1" schemaName="systemuser" displayName="SystemUser" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="actualdurationminutes" displayName="actualdurationminutes" parentSchemaName="phonecall" solution="System (5.0)" />
+        <Dependent type="2" schemaName="actualdurationminutes" displayName="actualdurationminutes" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="adx_ipaddress" displayName="Adresse IP" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="adx_portalcommentdirectioncode" displayName="Direction" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="adx_portalcommentdirectioncode" displayName="Direction" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="birthdate" displayName="birthdate" parentSchemaName="contact" solution="System (5.0)" />
+        <Dependent type="2" schemaName="birthdate" displayName="birthdate" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="createdon" displayName="Date de création" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="description" displayName="Description" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="description" displayName="Description" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="directioncode" displayName="directioncode" parentSchemaName="email" solution="System (5.0)" />
+        <Dependent type="2" schemaName="directioncode" displayName="directioncode" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="familystatuscode" displayName="familystatuscode" parentSchemaName="contact" solution="System (5.0)" />
+        <Dependent type="2" schemaName="familystatuscode" displayName="familystatuscode" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="firstname" displayName="firstname" parentSchemaName="systemuser" solution="System (5.0)" />
+        <Dependent type="2" schemaName="firstname" displayName="firstname" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="from" displayName="from" parentSchemaName="email" solution="System (5.0)" />
+        <Dependent type="2" schemaName="from" displayName="from" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="fullname" displayName="fullname" parentSchemaName="systemuser" solution="System (5.0)" />
+        <Dependent type="2" schemaName="fullname" displayName="fullname" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="gendercode" displayName="gendercode" parentSchemaName="contact" solution="System (5.0)" />
+        <Dependent type="2" schemaName="gendercode" displayName="gendercode" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="isonlinemeeting" displayName="Est une réunion en ligne" parentSchemaName="appointment" parentDisplayName="Rendez-vous" solution="msft_ActivitiesInfra_Extensions (9.2.0.73)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="lastname" displayName="lastname" parentSchemaName="systemuser" solution="AuthorizationCore (1.127.0.0)" />
+        <Dependent type="2" schemaName="lastname" displayName="lastname" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="onlinemeetingjoinurl" displayName="URL de participation à la réunion en ligne" parentSchemaName="appointment" parentDisplayName="Rendez-vous" solution="msft_ActivitiesInfra_Extensions (9.2.0.73)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+          <package appName="ActivitiesInfra Package" version="1.0.0.0">msft_ActivitiesInfra_Anchor (1.0.0.0)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="parentsystemuserid" displayName="parentsystemuserid" parentSchemaName="systemuser" solution="System (5.0)" />
+        <Dependent type="2" schemaName="parentsystemuserid" displayName="parentsystemuserid" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="positionid" displayName="positionid" parentSchemaName="systemuser" solution="System (5.0)" />
+        <Dependent type="2" schemaName="positionid" displayName="positionid" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="prioritycode" displayName="Priorité" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="prioritycode" displayName="Priorité" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="statuscode" displayName="Raison du statut" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="statuscode" displayName="Raison du statut" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="statuscode" displayName="Raison du statut" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="subject" displayName="Objet" parentSchemaName="adx_inviteredemption" parentDisplayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="subject" displayName="Objet" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="subject" displayName="Objet" parentSchemaName="adx_portalcomment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="2" schemaName="systemuserid" displayName="systemuserid" parentSchemaName="systemuser" solution="System (5.0)" />
+        <Dependent type="2" schemaName="systemuserid" displayName="systemuserid" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="26" schemaName="Tous les contacts" displayName="Tous les contacts" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{0d5d377b-5e7c-47b5-bab1-a5cb8b4ac105}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire Principal Simplifié Ménage" parentDisplayName="Ménage" id="{1f7ddadf-f850-f011-877b-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="26" schemaName="Tous les contacts" displayName="Tous les contacts" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{0d5d377b-5e7c-47b5-bab1-a5cb8b4ac105}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="DEPRECATED DM Sous-Formulaire Principal Ménage" parentDisplayName="Ménage" id="{22ce595a-4053-f011-877b-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="26" schemaName="Tous les contacts" displayName="Tous les contacts" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{0d5d377b-5e7c-47b5-bab1-a5cb8b4ac105}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire Principal Ménage Informations" parentDisplayName="Ménage" id="{3fff1996-8eda-4ee3-a6b5-0b8a0fb895ed}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="26" schemaName="Tous les contacts" displayName="Tous les contacts" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{0d5d377b-5e7c-47b5-bab1-a5cb8b4ac105}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="DM Main Form Alerte" parentDisplayName="Alerte" id="{6c953b19-1857-f011-bec1-7ced8d4780ab}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="26" schemaName="Tous les contacts" displayName="Tous les contacts" parentSchemaName="contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{0d5d377b-5e7c-47b5-bab1-a5cb8b4ac105}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="DM Formulaire Principal Ménage" parentDisplayName="Ménage" id="{75d7cf1f-315b-f011-bec2-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="59" schemaName="Courriers électroniques par mois échu" displayName="Courriers électroniques par mois échu" parentSchemaName="email" parentDisplayName="Courrier électronique" solution="msdynce_AppCommon (9.0.4.0066)" id="{1ec1872a-23de-4294-9d7f-1b76272a5fd5}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="DM Ménage formulaire d'aperçu - Activités" parentDisplayName="Ménage" id="{bf9354ab-7f7d-f011-b4cc-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="59" schemaName="Lettres par mois échu" displayName="Lettres par mois échu" parentSchemaName="letter" parentDisplayName="Lettre" solution="msdynce_AppCommon (9.0.4.0066)" id="{82d85b44-0fa5-4009-b840-b409e784673a}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="DM Ménage formulaire d'aperçu - Activités" parentDisplayName="Ménage" id="{bf9354ab-7f7d-f011-b4cc-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Volet de référence du compte" parentDisplayName="Compte" solution="msdynce_AppCommon (9.0.4.0066)" id="{098ae145-1567-41ec-8398-86dbaac70c9b}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Tâche" parentDisplayName="Tâche" solution="msdynce_Activities (9.0.1.2033)" id="{16654191-19ad-48ca-9e46-c4b4fbdad76f}">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Tâche" parentDisplayName="Tâche" id="{16654191-19ad-48ca-9e46-c4b4fbdad76f}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment for interactive experiance" parentDisplayName="Commentaire sur le portail" id="{16a535a3-5b32-4f80-b2c4-0eb5d5e5f8c3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Profils sociaux" parentDisplayName="Compte" solution="msdynce_AppCommon (9.0.4.0066)" id="{2205c86d-ed88-4a2f-a447-3b86a8781f2e}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="carte de contact de compte" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Compte - Donneurs d'alerte" parentDisplayName="Compte" id="{8ab4783a-3157-f011-877b-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="carte de contact de compte" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{29de27bc-a257-4f29-99cf-bab4a84e688f}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Assistant" parentDisplayName="Rendez-vous" solution="msdynce_Activities (9.0.1.2033)" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire Carte de personnage active" parentDisplayName="Contact" solution="msdynce_AppCommonPatch201904 (9.0.25111.10001)" id="{449faa0e-f471-48ec-87d0-4719909546d2}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire de vignette de la hiérarchie du compte" parentDisplayName="Compte" solution="msdynce_AppCommon (9.0.4.0066)" id="{69cff312-cfb6-4289-9631-249ab85d2c62}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="carte de contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{707fc57b-c5e6-471b-a180-e37ed28a38e2}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" solution="PowerPages_RuntimeCore (1.0.2407.1)" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Profils sociaux" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{7bb87dfd-ec3e-4ed9-8e3e-5725d3067295}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire de création rapide d'appel téléphonique." parentDisplayName="Appel téléphonique" solution="msdynce_Activities (9.0.1.2033)" id="{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire de création rapide d'appel téléphonique." parentDisplayName="Appel téléphonique" id="{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="carte de compte" parentDisplayName="Compte" solution="msdynce_AppCommon (9.0.4.0066)" id="{b028db32-3619-48a5-ac51-cf3f947b0ef3}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire de carte de contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire de carte de contact" parentDisplayName="Contact" id="{bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire rapide de contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Formulaire d'utilisateur – Professionnel" parentDisplayName="Utilisateur" solution="msdynce_AppCommon (9.0.4.0066)" id="{c2413504-7eb2-4c59-a087-95d819866114}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire d'utilisateur – Professionnel" parentDisplayName="Utilisateur" id="{c2413504-7eb2-4c59-a087-95d819866114}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Création rapide de compte" parentDisplayName="Compte" solution="msdynce_AppCommon (9.0.4.0066)" id="{c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" solution="PowerPages_RuntimeCore (1.0.2407.1)" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Information" parentDisplayName="Utilisation d’invitation" id="{cb274493-3e72-4937-b54f-ddee4b9ce082}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Volet de référence du contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{d880c3cf-80e2-42f3-82f9-24d040d09f17}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="60" displayName="Incidents récents et droits" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{f3b707fb-3b5f-45f9-9c6b-5e573bb5d19e}">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Activities/SystemLibraries/Email_main_system_library.js" displayName="Activities/SystemLibraries/Email_main_system_library.js" solution="msdynce_Activities (9.0.1.2033)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Email - ER" parentDisplayName="Courrier électronique" id="{6c23e4e0-c8f9-ef11-bae1-0022483a781c}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Activities/SystemLibraries/Fax_main_system_library.js" displayName="Activities/SystemLibraries/Fax_main_system_library.js" solution="msdynce_ActivitiesPatch (9.0.25103.251015001)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Informations" parentDisplayName="Télécopie" id="{69f5f3c9-6654-4482-b188-a0c9f7cea52e}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Activities/SystemLibraries/Letter_main_system_library.js" displayName="Activities/SystemLibraries/Letter_main_system_library.js" solution="msdynce_ActivitiesPatch (9.0.25103.251015001)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Informations - ER" parentDisplayName="Lettre" id="{ac51a304-3bfb-ef11-bae1-6045bd6c2dc5}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Activities/SystemLibraries/PhoneCall_main_system_library.js" displayName="Activities/SystemLibraries/PhoneCall_main_system_library.js" solution="msdynce_Activities (9.0.1.2033)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire de création rapide d'appel téléphonique." parentDisplayName="Appel téléphonique" id="{a80fb36c-353f-4310-a4cb-b8fa47d58b9b}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Activities/SystemLibraries/Task_main_system_library.js" displayName="Activities/SystemLibraries/Task_main_system_library.js" solution="msdynce_Activities (9.0.1.2033)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Informations" parentDisplayName="Tâche" id="{b62ce022-cc0f-4c8c-bb29-21948f70dc74}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="adx_portalcomment_form.js" displayName="adx_portalcomment_form.js" solution="PowerPages_RuntimeCore (1.0.2407.1)">
+          <package appName="Power Pages Core Package" version="1.1.2508.192">PowerPages_Core (1.1.2508.192)</package>
+        </Required>
+        <Dependent type="60" displayName="Portal Comment" parentDisplayName="Commentaire sur le portail" id="{757a4ace-c057-406d-b1a9-1849bf6e5cfa}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="AppCommon/Contact/Contact_main_system_library.js" displayName="AppCommon/Contact/Contact_main_system_library.js" solution="msdynce_AppCommon (9.0.4.0066)">
+          <package appName="msdynce_AppCommon" version="9.0.25111.10001">msdynce_AppCommonAnchor (9.0.25111.10001)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire principal contact - Donneur d'alerte" parentDisplayName="Contact" id="{5bfce658-ea66-f011-bec3-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_AdminApp" displayName="Admin App" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Accom" displayName="App 2 - Techniciens" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_/Images/AppModule_Default_Icon.png" displayName="msdyn_/Images/AppModule_Default_Icon.png" solution="AppModuleWebResources (2.5)">
+          <package appName="AppModule Web Resources Package" version="2.5">AppModuleWebResources (2.5)</package>
+        </Required>
+        <Dependent type="80" schemaName="er_Dematerialisation_des_Processus_Gesti" displayName="App 1 - Standard" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_CopilotIcon.svg" displayName="msdyn_CopilotIcon.svg" solution="msdyn_AppCopilotFeatures (9.2.2025113.251106044)">
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.2025042.250409005">PowerAppsAppCopilotApp_Anchor (9.2.2025042.250409005)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.0">msdyn_M365CopilotAppInfraSettings (9.2.0.0)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="msdyn_CopilotSummarizeLibrary.js" displayName="msdyn_CopilotSummarizeLibrary.js" solution="msdyn_AppCopilotFeatures (9.2.2025113.251106044)">
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.2025042.250409005">PowerAppsAppCopilotApp_Anchor (9.2.2025042.250409005)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.0">msdyn_M365CopilotAppInfraSettings (9.2.0.0)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Process.svg" displayName="Process.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.2748)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.2748">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.2748)</package>
+        </Required>
+        <Dependent type="1" schemaName="er_suiviautomatisations" displayName="Suivi des automatisations" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Process.svg" displayName="Process.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.2748)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.2748">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.2748)</package>
+        </Required>
+        <Dependent type="61" schemaName="Process.svg" displayName="Process.svg" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="fic_Fic.CsvDropdownControl" displayName="fic_Fic.CsvDropdownControl" solution="FicCsvDropdownControl (1.1)" />
+        <Dependent type="60" displayName="Formulaire Principal Simplifié Ménage" parentDisplayName="Ménage" id="{1f7ddadf-f850-f011-877b-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="fic_Fic.CsvDropdownControl" displayName="fic_Fic.CsvDropdownControl" solution="FicCsvDropdownControl (1.1)" />
+        <Dependent type="60" displayName="DEPRECATED DM Sous-Formulaire Principal Ménage" parentDisplayName="Ménage" id="{22ce595a-4053-f011-877b-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="fic_Fic.CsvDropdownControl" displayName="fic_Fic.CsvDropdownControl" solution="FicCsvDropdownControl (1.1)" />
+        <Dependent type="60" displayName="Site/Logement formulaire de création rapide simple" parentDisplayName="Site / Logement" id="{3ca726de-a94d-f011-877a-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="fic_Fic.CsvDropdownControl" displayName="fic_Fic.CsvDropdownControl" solution="FicCsvDropdownControl (1.1)" />
+        <Dependent type="60" displayName="Formulaire Principal Ménage Informations" parentDisplayName="Ménage" id="{3fff1996-8eda-4ee3-a6b5-0b8a0fb895ed}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="fic_Fic.CsvDropdownControl" displayName="fic_Fic.CsvDropdownControl" solution="FicCsvDropdownControl (1.1)" />
+        <Dependent type="60" displayName="DM Formulaire Principal Site" parentDisplayName="Site / Logement" id="{4d03159e-365b-f011-bec2-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="ktcs_ktcs.MultiSelectLookup" displayName="ktcs_ktcs.MultiSelectLookup" solution="MultiSelectLookup (1.0.1.1)" />
+        <Dependent type="60" displayName="Main Form Visite Informations" parentDisplayName="Visite de Ménage" id="{adcb7851-1fd6-41e4-a690-c450044ba227}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Activity.HyperlinkControlWithImage" displayName="MscrmControls.Activity.HyperlinkControlWithImage" solution="msdynce_ActivitiesPatch (9.0.25103.251015001)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.CardFeedContainer.CardFeedContainer" displayName="MscrmControls.CardFeedContainer.CardFeedContainer" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="Compte - Donneurs d'alerte" parentDisplayName="Compte" id="{8ab4783a-3157-f011-877b-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.FieldControls.ToggleControl" displayName="MscrmControls.FieldControls.ToggleControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="26" schemaName="Dossiers finalisés" displayName="Dossiers finalisés" parentSchemaName="er_dossier" parentDisplayName="Dossier" id="{8d6628f6-c3fd-ef11-bae3-000d3ab95da3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.Grid.GridControl" displayName="MscrmControls.Grid.GridControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="26" schemaName="Dossiers affectés" displayName="Dossiers affectés" parentSchemaName="er_dossier" parentDisplayName="Dossier" id="{9d54679e-bcfd-ef11-bae3-7c1e523442f3}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire Principal Simplifié Ménage" parentDisplayName="Ménage" id="{1f7ddadf-f850-f011-877b-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="DEPRECATED DM Sous-Formulaire Principal Ménage" parentDisplayName="Ménage" id="{22ce595a-4053-f011-877b-000d3adcbf81}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="Formulaire Principal Ménage Informations" parentDisplayName="Ménage" id="{3fff1996-8eda-4ee3-a6b5-0b8a0fb895ed}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="Main Form Appel téléphonique" parentDisplayName="Appel téléphonique" id="{becc153e-9858-f011-877b-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.ModelForm.ModelFormControl" displayName="MscrmControls.ModelForm.ModelFormControl" solution="BaseCustomControlsCore (9.0.2511.3007)">
+          <package appName="Base Custom Controls" version="9.0.2511.3007">BaseCustomControlsCore (9.0.2511.3007)</package>
+        </Required>
+        <Dependent type="60" displayName="DM Formulaire principal Diagnostic SLIME" parentDisplayName="Diagnostic SLIME" id="{cad4df50-9c55-f011-877b-6045bdde3c36}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="66" schemaName="MscrmControls.RichTextEditor.RichTextEditorControl" displayName="MscrmControls.RichTextEditor.RichTextEditorControl" solution="msdyn_RichTextEditor (1.25112.6.8680)">
+          <package appName="msdynce_Activities" version="9.0.25103.251015001">msdynce_EnableUCIByDefault (9.0.25103.251015001)</package>
+          <package appName="msdyn_CustomControlsExtended" version="1.25112.6.6109">msdyn_TimelineExtended (1.25112.6.6109)</package>
+        </Required>
+        <Dependent type="60" displayName="Assistant" parentDisplayName="Rendez-vous" id="{3a7d8836-e2d7-4bc3-919b-cc86a8d9688a}" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Activate!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Activate!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Activate!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Activate!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Deactivate!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Deactivate!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.Deactivate!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.Deactivate!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecord!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecord!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecord!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecord!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecordForBPFEntity!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.NewRecordForBPFEntity!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.OpenActiveStage!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.OpenActiveStage!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.OpenActiveStage!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.OpenActiveStage!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!0" id.uniquename="msdyn_Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.contact.Activate!contact!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.contact.Activate!contact!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.contact.Activate!contact!0" id.uniquename="msdyn_Mscrm.Form.contact.Activate!contact!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.contact.Deactivate!contact!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.contact.Deactivate!contact!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.contact.Deactivate!contact!0" id.uniquename="msdyn_Mscrm.Form.contact.Deactivate!contact!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.Form.sharepointdocumentlocation.Assign!sharepointdocumentlocation!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.Form.sharepointdocumentlocation.Assign!sharepointdocumentlocation!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.Form.sharepointdocumentlocation.Assign!sharepointdocumentlocation!0" id.uniquename="msdyn_Mscrm.Form.sharepointdocumentlocation.Assign!sharepointdocumentlocation!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Activate!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Activate!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Assign!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Assign!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Assign!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Assign!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Chart.Delete!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Delete!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Chart.Delete!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Delete!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Chart.Edit!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Edit!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Chart.Edit!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Chart.Edit!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Deactivate!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Deactivate!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecord!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecord!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.NewRecordForBPFEntity!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.NewRecordForBPFEntity!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.OpenActiveStage!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.OpenActiveStage!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.OpenActiveStage!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.OpenActiveStage!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.RefreshButton!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.RefreshButton!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.RefreshButton!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.RefreshButton!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.SaveFiltersToCurrentSystemView!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.SaveFiltersToCurrentSystemView!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.SaveFiltersToCurrentSystemView!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.SaveFiltersToCurrentSystemView!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Sharing!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Sharing!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.HomepageGrid.%7B!EntityLogicalName%7D.Sharing!1" id.uniquename="msdyn_Mscrm.HomepageGrid.{!EntityLogicalName}.Sharing!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Activate!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Activate!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Activate!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Activate!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Activate!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Activate!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Activate!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Activate!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddExistingAssoc!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddExistingAssoc!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddExistingAssoc!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddExistingAssoc!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddExistingStandard!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddExistingStandard!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddExistingStandard!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddExistingStandard!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddNewStandard!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddNewStandard!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddNewStandard!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddNewStandard!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddNewStandard!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddNewStandard!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.AddNewStandard!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.AddNewStandard!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Assign!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Assign!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Assign!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Assign!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Deactivate!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Deactivate!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Deactivate!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Deactivate!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Deactivate!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Deactivate!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Deactivate!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Deactivate!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.NewRecord!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.NewRecord!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.NewRecord!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.NewRecord!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.NewRecord!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.NewRecord!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.NewRecord!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.NewRecord!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Remove!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Remove!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Remove!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Remove!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Remove!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Remove!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Remove!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Remove!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.SendSelected!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.SendSelected!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.SendSelected!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.SendSelected!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.SendSelected!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.SendSelected!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.SendSelected!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.SendSelected!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Sharing!2" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Sharing!2">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Sharing!2" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Sharing!2" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Sharing!3" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Sharing!3">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_Mscrm.SubGrid.%7B!EntityLogicalName%7D.Sharing!3" id.uniquename="msdyn_Mscrm.SubGrid.{!EntityLogicalName}.Sharing!3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" solution="msdyn_AppCopilotFeatures (9.2.2025113.251106044)" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0">
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.2025042.250409005">PowerAppsAppCopilotApp_Anchor (9.2.2025042.250409005)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="1.0.0.2">msdyn_SuggestedAction (1.0.0.2)</package>
+          <package appName="PowerAppsAppCopilotApp Package" version="9.2.0.0">msdyn_M365CopilotAppInfraSettings (9.2.0.0)</package>
+        </Required>
+        <Dependent type="appaction" displayName="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" id.uniquename="msdyn_msdyn_Mscrm.Form.Copilot.Summarize!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.AssignPrimaryPermission!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.AssignPrimaryPermission!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.AssignPrimaryPermission!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.AssignPrimaryPermission!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.AssignPrimaryPermission!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.AssignPrimaryPermission!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.AssignPrimaryPermission!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.AssignPrimaryPermission!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.AvailableOnForm!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.AvailableOnForm!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.AvailableOnForm!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.AvailableOnForm!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanSavePrimary!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanSavePrimary!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.CanSavePrimary!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimary!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.CanSavePrimaryEntityType!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.CanSavePrimaryEntityType!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.CanSavePrimaryEntityType!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.CanSavePrimaryEntityType!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.FormStateNotNew!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.FormStateNotNew!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.FormStateNotNew!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.FormStateNotNew!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.IsEntityAvailableForUserInMocaOffline!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.NotClosedActivity!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.NotClosedActivity!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.NotClosedActivity!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.NotClosedActivity!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.NotOffline!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.NotOffline!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.NotOffline!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.NotOffline!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.OutlookRenderTypeWeb!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.OutlookRenderTypeWeb!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.Assign!er_Dematerialisation_des_Processus_Accom!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.OutlookRenderTypeWeb!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.OutlookRenderTypeWeb!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.OutlookRenderTypeWeb!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.PrimaryIsActivity!1" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.PrimaryIsActivity!1">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.PrimaryIsActivity!1" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.PrimaryIsActivity!1" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="appactionrule" displayName="msdyn_Mscrm.ReadPrimaryPermission!0" solution="msdyn_SystemAppActions (9.1.0.57)" id.uniquename="msdyn_Mscrm.ReadPrimaryPermission!0">
+          <package appName="PowerAppsActions Package" version="9.1.0.57">PowerAppsActions_Anchor (9.1.0.57)</package>
+        </Required>
+        <Dependent type="appaction_appactionrule_classicrules" displayName="appactionid.uniquename=er__Mscrm.Form.%7B!EntityLogicalName%7D.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0,appactionruleid.uniquename=msdyn_Mscrm.ReadPrimaryPermission!0" id.appactionid.uniquename="er__Mscrm.Form.{!EntityLogicalName}.SaveAsComplete!er_Dematerialisation_des_Processus_Gesti!er_diagnostic_slime!0" id.appactionruleid.uniquename="msdyn_Mscrm.ReadPrimaryPermission!0" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.23">PowerAppsAppFramework_Anchor (1.0.0.23)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=er_AdminApp,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="er_AdminApp" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.23">PowerAppsAppFramework_Anchor (1.0.0.23)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=er_Dematerialisation_des_Processus_Accom,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="er_Dematerialisation_des_Processus_Accom" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="AppChannel" solution="msdyn_AppFrameworkInfraExtensions (1.0.0.15)" id.uniquename="AppChannel">
+          <package appName="PowerAppsAppFramework Package" version="1.0.0.23">PowerAppsAppFramework_Anchor (1.0.0.23)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=er_Dematerialisation_des_Processus_Gesti,settingdefinitionid.uniquename=AppChannel" id.parentappmoduleid.uniquename="er_Dematerialisation_des_Processus_Gesti" id.settingdefinitionid.uniquename="AppChannel" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="SettingDefinition" displayName="ServerMode" solution="SettingDefinitionsData (9.2.2508.2508132)" id.uniquename="ServerMode">
+          <package appName="AppModule" version="9.2.2508.2508132">AppModuleSolutionAnchor (9.2.2508.2508132)</package>
+        </Required>
+        <Dependent type="AppSetting" displayName="parentappmoduleid.uniquename=er_Dematerialisation_des_Processus_Accom,settingdefinitionid.uniquename=ServerMode" id.parentappmoduleid.uniquename="er_Dematerialisation_des_Processus_Accom" id.settingdefinitionid.uniquename="ServerMode" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

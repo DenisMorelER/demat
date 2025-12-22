@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{c4449520-f471-f011-b4cb-7ced8d2c1a22}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="er_name" select="1" icon="1" preview="1">
+        <row name="result" id="er_contactmenageid">
+          <cell name="er_liencontactmenage" width="187" />
+          <cell name="er_menage" width="300" />
+          <cell name="a_c0444335e925430aac9289cb3dfca749.er_site_residence" width="300" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical">
+        <entity name="er_contactmenage">
+          <attribute name="er_contactmenageid" />
+          <attribute name="er_menage" />
+          <order attribute="er_menage" descending="false" />
+          <link-entity alias="a_c0444335e925430aac9289cb3dfca749" name="er_menage" to="er_menage" from="er_menageid" link-type="outer" visible="false">
+            <attribute name="er_site_residence" />
+          </link-entity>
+          <attribute name="er_liencontactmenage" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="DM ContactMénage Vue des ménages" languagecode="1036" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
