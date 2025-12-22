@@ -1,0 +1,69 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# OneDrive / fichiers temporaires Office
+~$*
+~.*
+~*.tmp
+
+# Logs et temporaires
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Environnements et dépendances
+node_modules/
+dist/
+build/
+.vagrant/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.venv/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Fichiers d'environnement / secrets
+.env
+.env.*
+
+# Composer / PHP
+/vendor/
+
+# npm debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# lockfiles pour dépendances locales
+package-lock.json
+pnpm-lock.yaml
+
+# Autres
+*.class
+*.exe
+*.dll
+
+# Ajoutez ici vos règles spécifiques au projet
