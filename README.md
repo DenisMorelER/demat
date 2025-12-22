@@ -29,22 +29,28 @@ pac auth select --name prod
 3. Récupérer (exporter) la solution Dataverse en local
 ```bash
 # télécharger / cloner la solution vers un dossier local
-pac solution download --path ./solutions --name <SolutionUniqueName>
+
+pac org select --env https://org2cd222c0.crm4.dynamics.com/ 
+.\Export-Unpack-PP.ps1 -SolutionName "Dematerialisation_des_Processus" -ProcessCanvasApps
+
 ```
 
 4. Versionner la solution
 ```bash
-git checkout -b feature/save-dataverse-solution
-git add solutions/
-git commit -m "Add Dataverse solution snapshot"
-git push origin feature/save-dataverse-solution
+
+git add src/solutions
+git commit -m "DEV updates"
+git push origin dev
 ```
 
 5. Déployer (importer) depuis le dépôt vers Dataverse
 ```bash
+
+#Prendre en main le script de mise en prod à avant de continuer
+
 git checkout main && git pull
 # si la solution est packagée en .zip :
-pac solution import --path ./solutions/<SolutionName>.zip --async
+
 # ou utiliser la commande d'import/deploiement appropriée du CLI
 ```
 
