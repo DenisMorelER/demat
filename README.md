@@ -54,6 +54,11 @@ git checkout main && git pull
 # ou utiliser la commande d'import/deploiement appropriée du CLI
 ```
 
+```bash
+
+#Solution Implementer pour l'intégration continue avec un pipelining en utilisant github actions pour un déploiement automatique de dev à main
+
+```
 6. Intégration continue (recommandé)
 - Créer un workflow CI/CD (GitHub Actions / Azure DevOps) qui :
     - s'authentifie via le CLI (using secrets)
