@@ -5,6 +5,7 @@ ll
 - Git installé et accès à un dépôt (GitHub/GitLab/...)
 - Power Platform CLI (pac) installé
 - Compte Azure AD avec droits sur l'environnement Dataverse
+- test
 
 ## Étapes rapides
 
